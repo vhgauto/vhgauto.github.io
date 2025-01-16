@@ -2,6 +2,8 @@
 title: "Proyectos propios"
 ---
 
-`ggplot2`
+<code>ggplot2 <- ggplot()</code>
 
 `tidyverse`
+
+<span style='font-family: JetBrains Mono;'>0123</span>
