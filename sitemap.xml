@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://vhgauto.github.io/index.html</loc>
-    <lastmod>2025-01-16T22:47:54.691Z</lastmod>
+    <loc>https://vhgauto.github.io/proyectos.html</loc>
+    <lastmod>2025-01-16T23:15:31.470Z</lastmod>
   </url>
   <url>
-    <loc>https://vhgauto.github.io/about.html</loc>
-    <lastmod>2025-01-16T22:47:54.691Z</lastmod>
+    <loc>https://vhgauto.github.io/acerca_de.html</loc>
+    <lastmod>2025-01-16T23:15:31.470Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vhgauto.github.io/index.html</loc>
+    <lastmod>2025-01-16T23:15:31.470Z</lastmod>
   </url>
 </urlset>
