@@ -1,5 +1,7 @@
 ---
 title: "Víctor Gauto"
+editor_options: 
+  chunk_output_type: console
 ---
 
 This is a Quarto website.
@@ -9,3 +11,8 @@ To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 ```{r}
 1 + 1
 ```
+
+```{r}
+Sys.time()
+```
+
