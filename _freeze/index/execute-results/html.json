@@ -1,9 +1,11 @@
 {
-  "hash": "e6d1a15b9366f2bb6d6701efa678326c",
+  "hash": "d21b7ae50a493ef1beabd850c0a397a1",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"vhgauto\"\n---\n\n\n\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Víctor Gauto\"\neditor_options: \n  chunk_output_type: console\n---\n\n\n\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nSys.time()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"2025-01-16 19:10:52 -03\"\n```\n\n\n:::\n:::\n",
+    "supporting": [
+      "index_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
