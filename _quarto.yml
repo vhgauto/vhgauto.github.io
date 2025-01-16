@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "vhgauto"
+  title: "Víctor Gauto"
   navbar:
     left:
       - href: index.qmd
