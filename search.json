@@ -4,7 +4,7 @@
     "href": "proyectos.html",
     "title": "Proyectos propios",
     "section": "",
-    "text": "ggplot2\ntidyverse"
+    "text": "ggplot2 &lt;- ggplot()\ntidyverse\n0123"
   },
   {
     "objectID": "acerca_de.html",
