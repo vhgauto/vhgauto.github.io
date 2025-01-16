@@ -6,6 +6,9 @@ resources:
   - .nojekyll
 ---
 
+<!-- configurar GHA -->
+<!-- https://thedatasavvycorner.com/blogs/03-quarto-github-actions -->
+
 This is a Quarto website.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

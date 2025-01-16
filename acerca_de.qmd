@@ -1,0 +1,15 @@
+---
+title: "Acerca de"
+---
+
+Mis RRSS
+
+twitter
+
+instagram
+
+mastodon
+
+blsky
+
+github

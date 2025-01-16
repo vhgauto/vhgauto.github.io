@@ -7,8 +7,12 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: Inicio
+      - href: acerca_de.qmd
+        text: Acerca de
+      - href: proyectos.qmd
+        text: Proyectos
+  site-url: https://vhgauto.github.io/
 
 format:
   html:
