@@ -2,6 +2,8 @@
 title: "Víctor Gauto"
 editor_options: 
   chunk_output_type: console
+resources:
+  - .nojekyll
 ---
 
 This is a Quarto website.
@@ -12,3 +14,4 @@ To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 Sys.time()
 ```
 
+GitHub Actions.

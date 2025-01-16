@@ -48,3 +48,5 @@ rsconnect/
 /.quarto/
 /_site/
 
+/docs/
+/index_files/

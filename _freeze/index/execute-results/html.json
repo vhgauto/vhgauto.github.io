@@ -1,8 +1,8 @@
 {
-  "hash": "d21b7ae50a493ef1beabd850c0a397a1",
+  "hash": "c0f15361ffd4df4a6a2e8597900ab681",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Víctor Gauto\"\neditor_options: \n  chunk_output_type: console\n---\n\n\n\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nSys.time()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"2025-01-16 19:10:52 -03\"\n```\n\n\n:::\n:::\n",
+    "markdown": "---\ntitle: \"Víctor Gauto\"\neditor_options: \n  chunk_output_type: console\nresources:\n  - .nojekyll\n---\n\n\n\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nSys.time()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"2025-01-16 19:29:40 -03\"\n```\n\n\n:::\n:::\n\n\n\n\nGitHub Actions.\n",
     "supporting": [
       "index_files"
     ],

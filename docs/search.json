@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Víctor Gauto",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\nSys.time()\n\n[1] \"2025-01-16 19:10:52 -03\""
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\nSys.time()\n\n[1] \"2025-01-16 19:29:40 -03\"\n\n\nGitHub Actions."
   },
   {
     "objectID": "about.html",
