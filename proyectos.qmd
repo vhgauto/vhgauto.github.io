@@ -7,3 +7,7 @@ title: "Proyectos propios"
 `tidyverse`
 
 <span style='font-family: JetBrains Mono;'>0123</span>
+
+<span style='font-family: Nerd Font;'>&#xf099;</span>
+
+<span style='font-family: JetBrains Mono;'>0123</span>

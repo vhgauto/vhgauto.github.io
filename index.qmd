@@ -3,6 +3,8 @@ title: "MS Víctor Gauto"
 about:
   template: solana
   image: img/profile.jpg
+  image-shape: round
+  image-width: 20em
   links:
     - icon: twitter
       text: twitter
@@ -20,20 +22,26 @@ about:
 
 ```{r}
 sep <- "<b style='color:red;'>|</b>"
-ubicacion <- '<span class="nf nf-cod-location"></span>'
-calendario <- '<span class="nf nf-fa-calendar"></span>'
-titulo <- '<span class="nf nf-fa-user_graduate"></span>'
-institucion <- '<span class="nf nf-fa-university"></span>'
+ubicacion <- "<span style='color:red'>{{< fa location-dot size=large >}}</span>"
+calendario <- "<span style='color:red'>{{< fa calendar-days size=large >}}</span>"
+titulo <- "<span style='color:red'>{{< fa user-graduate size=large >}}</span>"
+institucion <- "<span style='color:red'>{{< fa building-columns size=large >}}</span>"
 ```
 
 Ciencia de datos, mapas, R, Quarto.
 
 ## Educación
 
--   `r titulo` Doctorado en Geomática y Sistemas Espaciales<br>
-    Instituto Gulich<br>
-    Córdoba, Argentina<br>
-    En proceso<br>
+`r titulo` Doctorado en Geomática y Sistemas Espaciales<br>
+`r institucion` Instituto Gulich<br>
+`r ubicacion` Córdoba, Argentina<br>
+`r calendario` En proceso<br>
+<br>
+<br>
+`r titulo` Doctorado en Geomática y Sistemas Espaciales<br>
+`r institucion` Instituto Gulich<br>
+`r ubicacion` Córdoba, Argentina<br>
+`r calendario` En proceso<br>
 
 <!-- -   Instituto Gulich `r sep` Córdoba, Argentina `r sep` En proceso<br> -->
 <!--     Doctorado en Geomática y Sistemas Espaciales -->
@@ -49,7 +57,13 @@ Ciencia de datos, mapas, R, Quarto.
 
 ## Experiencia
 
--   Doctorado en Geomática y Sistemas Espaciales<br>
-    Instituto Gulich<br>
-    Córdoba, Argentina<br>
-    En proceso<br>
+`r titulo` Doctorado en Geomática y Sistemas Espaciales<br>
+`r institucion` Instituto Gulich<br>
+`r ubicacion` Córdoba, Argentina<br>
+`r calendario` En proceso<br>
+<br>
+<br>
+`r titulo` Doctorado en Geomática y Sistemas Espaciales<br>
+`r institucion` Instituto Gulich<br>
+`r ubicacion` Córdoba, Argentina<br>
+`r calendario` En proceso<br>
