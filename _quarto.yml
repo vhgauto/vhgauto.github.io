@@ -6,6 +6,8 @@ website:
   title: "Víctor Gauto"
   favicon: img/favicon.png
   back-to-top-navigation: true
+  twitter-card: true
+  open-graph: true
   navbar:
     left:
       - href: index.qmd
@@ -39,7 +41,9 @@ website:
 
 format:
   html:
-    theme: darkly
+    theme:
+      dark: darkly
+      light: flatly
     css: styles.css
     toc: true
     mainfont: Ubuntu
