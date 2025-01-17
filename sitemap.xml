@@ -2,18 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://vhgauto.github.io/mapas.html</loc>
-    <lastmod>2025-01-17T14:24:51.598Z</lastmod>
+    <lastmod>2025-01-17T18:03:08.280Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vhgauto.github.io/mapas/mapa1.html</loc>
+    <lastmod>2025-01-17T18:03:08.280Z</lastmod>
   </url>
   <url>
     <loc>https://vhgauto.github.io/index.html</loc>
-    <lastmod>2025-01-17T14:24:51.598Z</lastmod>
+    <lastmod>2025-01-17T18:03:08.280Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vhgauto.github.io/tidytuesday/s01.html</loc>
+    <lastmod>2025-01-17T18:03:08.281Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vhgauto.github.io/viz/viz1.html</loc>
+    <lastmod>2025-01-17T18:03:08.281Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vhgauto.github.io/viz/viz2.html</loc>
+    <lastmod>2025-01-17T18:03:08.281Z</lastmod>
   </url>
   <url>
     <loc>https://vhgauto.github.io/tidytuesday.html</loc>
-    <lastmod>2025-01-17T14:24:51.610Z</lastmod>
+    <lastmod>2025-01-17T18:03:08.280Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vhgauto.github.io/tidytuesday/s02.html</loc>
+    <lastmod>2025-01-17T18:03:08.281Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vhgauto.github.io/mapas/mapa2.html</loc>
+    <lastmod>2025-01-17T18:03:08.280Z</lastmod>
   </url>
   <url>
     <loc>https://vhgauto.github.io/viz.html</loc>
-    <lastmod>2025-01-17T14:24:51.610Z</lastmod>
+    <lastmod>2025-01-17T18:03:08.281Z</lastmod>
   </url>
 </urlset>

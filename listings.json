@@ -1,0 +1,23 @@
+[
+  {
+    "listing": "/mapas.html",
+    "items": [
+      "/mapas/mapa1.html",
+      "/mapas/mapa2.html"
+    ]
+  },
+  {
+    "listing": "/tidytuesday.html",
+    "items": [
+      "/tidytuesday/s01.html",
+      "/tidytuesday/s02.html"
+    ]
+  },
+  {
+    "listing": "/viz.html",
+    "items": [
+      "/viz/viz2.html",
+      "/viz/viz1.html"
+    ]
+  }
+]
