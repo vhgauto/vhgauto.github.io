@@ -10,12 +10,12 @@ website:
   open-graph: true
   navbar:
     left:
-      - href: index.qmd
-        text: Inicio
-      - href: acerca_de.qmd
-        text: Acerca de
-      - href: proyectos.qmd
-        text: Proyectos
+      - href: tidytuesday.qmd
+        text: Tidytuesday
+      - href: mapas.qmd
+        text: Mapas
+      - href: viz.qmd
+        text: Visualizaciones
     tools:
       - icon: github
         href: https://github.com/vhgauto
