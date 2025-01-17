@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "proyectos.html",
-    "href": "proyectos.html",
-    "title": "Proyectos propios",
+    "objectID": "mapas.html",
+    "href": "mapas.html",
+    "title": "Mis mapas",
     "section": "",
-    "text": "ggplot2 &lt;- ggplot()\ntidyverse\n0123\n\n0123"
-  },
-  {
-    "objectID": "acerca_de.html",
-    "href": "acerca_de.html",
-    "title": "Acerca de",
-    "section": "",
-    "text": "Mis RRSS\ntwitter\ninstagram\nmastodon\nblsky\ngithub"
+    "text": "contenido\n\n\n\n Volver arriba"
   },
   {
     "objectID": "index.html",
@@ -25,7 +18,7 @@
     "href": "index.html#educación",
     "title": "MS Víctor Gauto",
     "section": "Educación",
-    "text": "Educación\n Doctorado en Geomática y Sistemas Espaciales  Instituto Gulich  Córdoba, Argentina  En proceso    Doctorado en Geomática y Sistemas Espaciales  Instituto Gulich  Córdoba, Argentina  En proceso"
+    "text": "Educación\n Doctorado en Geomática y Sistemas Espaciales   Instituto Gulich   Córdoba, Argentina   En proceso    Maestría en Aplicaciones de Imágenes Espaciales   Instituto Gulich   Córdoba, Argentina   2023    MS in Chemical and Biomolecular Engineering   Sogang University   Seoul, Corea del Sur   2019    Ingeniería Química   Universidad Tecnológica Nacional Facultad Regional Resistencia   Chaco, Argentina   2014"
   },
   {
     "objectID": "index.html#experiencia",
@@ -33,5 +26,19 @@
     "title": "MS Víctor Gauto",
     "section": "Experiencia",
     "text": "Experiencia\n Doctorado en Geomática y Sistemas Espaciales  Instituto Gulich  Córdoba, Argentina  En proceso    Doctorado en Geomática y Sistemas Espaciales  Instituto Gulich  Córdoba, Argentina  En proceso"
+  },
+  {
+    "objectID": "tidytuesday.html",
+    "href": "tidytuesday.html",
+    "title": "Visualizaciones de tidytuesday",
+    "section": "",
+    "text": "contenido\n\n\n\n Volver arriba"
+  },
+  {
+    "objectID": "viz.html",
+    "href": "viz.html",
+    "title": "Visualizaciones varias",
+    "section": "",
+    "text": "contenido\n\n\n\n Volver arriba"
   }
 ]
