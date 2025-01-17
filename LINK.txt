@@ -1,0 +1,8 @@
+fontawesome:
+https://github.com/quarto-ext/fontawesome
+
+footer:
+https://ucsb-meds.github.io/customizing-quarto-websites/#/add-footer2
+
+github actions
+https://thedatasavvycorner.com/blogs/03-quarto-github-actions
