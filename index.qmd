@@ -1,5 +1,5 @@
 ---
-title: "MS Víctor Gauto"
+title: "<span style='color:red'>MS</span> Víctor Gauto"
 about:
   template: solana
   image: img/profile.jpg
