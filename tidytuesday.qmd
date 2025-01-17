@@ -1,5 +1,18 @@
 ---
 title: "Visualizaciones de `tidytuesday`"
+listing: 
+  id: lista-tidytuesday
+  type: default
+  contents: tidytuesday
+  sort: "date"
+  categories: numbered
+  date-format: iso
+  image-height: 200px
 ---
 
-contenido
+Todo el contenido relacionado  a tidytuesday
+
+::: {#lista-tidytuesday}
+:::
+
+Adiós.

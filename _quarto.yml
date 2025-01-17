@@ -38,6 +38,19 @@ website:
       - icon: mastodon
         href: https://fosstodon.org/@vhgauto
 
+  sidebar:
+    - title: "Tidytuesday"
+      style: docked
+      contents: tidytuesday
+
+    - title: "Mapas"
+      style: docked
+      contents: mapas
+
+    - title: "Visualizaciones"
+      style: docked
+      contents: viz
+
 
 format:
   html:

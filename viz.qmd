@@ -1,5 +1,18 @@
 ---
 title: "Visualizaciones varias"
+listing: 
+  id: lista-viz
+  type: default
+  contents: viz
+  sort: "date"
+  categories: numbered
+  date-format: iso
+  image-height: 200px
 ---
 
-contenido
+Figuras geométricas varias.
+
+::: {#lista-viz}
+:::
+
+Adiós.

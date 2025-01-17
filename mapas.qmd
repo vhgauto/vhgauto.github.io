@@ -1,5 +1,18 @@
 ---
 title: "Mis mapas"
+listing: 
+  id: lista-mapas
+  type: default
+  contents: mapas
+  sort: "date"
+  categories: numbered
+  date-format: iso
+  image-height: 200px
 ---
 
-contenido
+Mapas varios.
+
+::: {#lista-mapas}
+:::
+
+Adiós.
