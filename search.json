@@ -16,8 +16,22 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Víctor Gauto",
+    "title": "MS Víctor Gauto",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\nGitHub Actions.\nFin"
+    "text": "Ciencia de datos, mapas, R, Quarto."
+  },
+  {
+    "objectID": "index.html#educación",
+    "href": "index.html#educación",
+    "title": "MS Víctor Gauto",
+    "section": "Educación",
+    "text": "Educación\n\n Doctorado en Geomática y Sistemas Espaciales Instituto Gulich Córdoba, Argentina En proceso"
+  },
+  {
+    "objectID": "index.html#experiencia",
+    "href": "index.html#experiencia",
+    "title": "MS Víctor Gauto",
+    "section": "Experiencia",
+    "text": "Experiencia\n\nDoctorado en Geomática y Sistemas Espaciales Instituto Gulich Córdoba, Argentina En proceso"
   }
 ]
