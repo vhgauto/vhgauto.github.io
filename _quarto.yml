@@ -30,7 +30,11 @@ format:
     toc: true
     mainfont: Ubuntu
     monofont: JetBrains Mono
+    lang: es
 
 execute:
   freeze: auto
+  echo: false
+  eval: true
+  warning: false
 

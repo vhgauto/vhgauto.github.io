@@ -1,9 +1,11 @@
 {
-  "hash": "a374bbc085a2c6d195cf5b873db09870",
+  "hash": "0fc9f1ce70ab4ded93d7b471e26391c2",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Víctor Gauto\"\neditor_options: \n  chunk_output_type: console\nresources:\n  - .nojekyll\n---\n\n\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nSys.time()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"2025-01-16 19:43:20 -03\"\n```\n\n\n:::\n:::\n\n\n\nGitHub Actions.\n\n<b style='color: red;'>Fin</b>\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"MS Víctor Gauto\"\nabout:\n  template: solana\n  image: img/profile.jpg\n  links:\n    - icon: twitter\n      text: twitter\n      href: https://twitter.com/vhgauto\n    - icon: github\n      text: Github\n      href: https://github.com/vhgauto\n    - icon: instagram\n      text: Instagram\n      href: https://www.instagram.com/vhgauto/\n    - icon: mastodon\n      text: Mastodon\n      href: https://fosstodon.org/@vhgauto\n---\n\n::: {.cell}\n\n:::\n\n\n\n\nCiencia de datos, mapas, R, Quarto.\n\n## Educación\n\n-   <span class=\"nf nf-fa-user_graduate\"></span> Doctorado en Geomática y Sistemas Espaciales<br>\n    Instituto Gulich<br>\n    Córdoba, Argentina<br>\n    En proceso<br>\n\n<!-- -   Instituto Gulich <b style='color:red;'>|</b> Córdoba, Argentina <b style='color:red;'>|</b> En proceso<br> -->\n<!--     Doctorado en Geomática y Sistemas Espaciales -->\n\n<!-- -   Instituto Gulich <b style='color:red;'>|</b> Córdoba, Argentina <b style='color:red;'>|</b> 2023<br> -->\n<!--     Maestría en Aplicaciones de Imágenes Espaciales -->\n\n<!-- -   Sogang University <b style='color:red;'>|</b> Corea del Sur <b style='color:red;'>|</b> 2019 -->\n<!--     MS in Chemical and Biochemical Engineering -->\n\n<!-- -   Universidad Tecnológica Nacional <b style='color:red;'>|</b> Chaco, Argentina <b style='color:red;'>|</b> 2014 -->\n<!--     Ingeniero Químico -->\n\n## Experiencia\n\n-   Doctorado en Geomática y Sistemas Espaciales<br>\n    Instituto Gulich<br>\n    Córdoba, Argentina<br>\n    En proceso<br>\n",
+    "supporting": [
+      "index_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
