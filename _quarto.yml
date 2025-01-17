@@ -5,6 +5,7 @@ project:
 website:
   title: "Víctor Gauto"
   favicon: img/favicon.png
+  back-to-top-navigation: true
   navbar:
     left:
       - href: index.qmd
@@ -14,6 +15,8 @@ website:
       - href: proyectos.qmd
         text: Proyectos
     tools:
+      - icon: github
+        href: https://github.com/vhgauto
       - icon: twitter
         href: https://twitter.com/vhgauto
       - icon: instagram
@@ -21,6 +24,17 @@ website:
       - icon: mastodon
         href: https://fosstodon.org/@vhgauto
   site-url: https://vhgauto.github.io/
+  page-footer:
+    left: Víctor Gauto
+    right:
+      - icon: github
+        href: https://github.com/vhgauto
+      - icon: twitter
+        href: https://twitter.com/vhgauto
+      - icon: instagram
+        href: https://www.instagram.com/vhgauto/
+      - icon: mastodon
+        href: https://fosstodon.org/@vhgauto
 
 
 format:
