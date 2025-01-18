@@ -1,5 +1,5 @@
 ---
-title: "Introducción gral"
+title: ""
 format: html
 editor_options: 
   chunk_output_type: console
@@ -7,12 +7,30 @@ editor_options:
 
 # ¿Qué es tidytuesday?
 
-Intro gral [TidyTuesday](https://tidytues.day/).
+[TidyTuesday](https://tidytues.day/) es un proyecto para compartir datos y que cualquiera pueda utilizarlos para practicar trabajar con datos. Tidytuesday está organizado por [Data Science Learning Community](https://dslc.io/), iniciado en 2018.
 
-# Cuestiones
+Todas las semanas en el repositorio de [GitHub](https://github.com/rfordatascience/tidytuesday/blob/main/README.md#datasets) suben un nuevo set de datos, con la fuente y una breve descripción.
+
+Para facilitar el acceso a los datos existe el paquete [tidytuesdayR](https://dslc-io.github.io/tidytuesdayR/). 
 
 ![](https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/static/tt_logo.png)
 
-# Links
+# Motivación
 
-enlaces
+Tidytuesday ofrece datos de los más variados e interesantes. Te permite practicar las habilidades de manipulación de datos, creación de figuras y modelado con conjuntos de datos reales.
+
+Se incluyen los metadatos que dan una introducción, describiendo cada variable y explicando el contenido.
+
+La comunidad que participa en tidytuesday comparte tus resultados en redes sociales, que motivan a otros a crear sus propias figuras y análisis.
+
+# Mi participación
+
+Inicié mis pasos con TidyTuesday en 2023, y gracias a eso he aprendido muchísimo de R, a generar mejores visualizaciones, a escribir mejor código y a explorar otros paquetes.
+
+En esta sección pueden encontrar todas las figuras que he creado semana a semana.
+
+[2025](2025/intro.qmd)
+
+[2024](2024/intro.qmd)
+
+[2023](2023/intro.qmd)
