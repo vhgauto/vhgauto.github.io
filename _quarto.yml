@@ -73,6 +73,8 @@ format:
     monofont: JetBrains Mono
     lang: es
     link-external-newwindow: true
+    link-external-filter: ^(?:http:|https:)\/\/www\.vhgauto\.github\.io
+
 
 execute:
   freeze: auto
