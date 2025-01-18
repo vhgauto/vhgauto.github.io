@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción gral – Víctor Gauto</title>
+<title>intro – Víctor Gauto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,10 +73,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Introducción gral – Víctor Gauto">
+<meta property="og:title" content="– Víctor Gauto">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Víctor Gauto">
-<meta name="twitter:title" content="Introducción gral – Víctor Gauto">
+<meta name="twitter:title" content="– Víctor Gauto">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
@@ -242,44 +242,37 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#qué-es-tidytuesday" id="toc-qué-es-tidytuesday" class="nav-link active" data-scroll-target="#qué-es-tidytuesday">¿Qué es tidytuesday?</a></li>
-  <li><a href="#cuestiones" id="toc-cuestiones" class="nav-link" data-scroll-target="#cuestiones">Cuestiones</a></li>
-  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
+  <li><a href="#motivación" id="toc-motivación" class="nav-link" data-scroll-target="#motivación">Motivación</a></li>
+  <li><a href="#mi-participación" id="toc-mi-participación" class="nav-link" data-scroll-target="#mi-participación">Mi participación</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Introducción gral</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
 
 
 <section id="qué-es-tidytuesday" class="level1">
 <h1>¿Qué es tidytuesday?</h1>
-<p>Intro gral <a href="https://tidytues.day/">TidyTuesday</a>.</p>
-</section>
-<section id="cuestiones" class="level1">
-<h1>Cuestiones</h1>
+<p><a href="https://tidytues.day/">TidyTuesday</a> es un proyecto para compartir datos y que cualquiera pueda utilizarlos para practicar trabajar con datos. Tidytuesday está organizado por <a href="https://dslc.io/">Data Science Learning Community</a>, iniciado en 2018.</p>
+<p>Todas las semanas en el repositorio de <a href="https://github.com/rfordatascience/tidytuesday/blob/main/README.md#datasets">GitHub</a> suben un nuevo set de datos, con la fuente y una breve descripción.</p>
+<p>Para facilitar el acceso a los datos existe el paquete <a href="https://dslc-io.github.io/tidytuesdayR/">tidytuesdayR</a>.</p>
 <p><img src="https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/static/tt_logo.png" class="img-fluid"></p>
 </section>
-<section id="links" class="level1">
-<h1>Links</h1>
-<p>enlaces</p>
+<section id="motivación" class="level1">
+<h1>Motivación</h1>
+<p>Tidytuesday ofrece datos de los más variados e interesantes. Te permite practicar las habilidades de manipulación de datos, creación de figuras y modelado con conjuntos de datos reales.</p>
+<p>Se incluyen los metadatos que dan una introducción, describiendo cada variable y explicando el contenido.</p>
+<p>La comunidad que participa en tidytuesday comparte tus resultados en redes sociales, que motivan a otros a crear sus propias figuras y análisis.</p>
+</section>
+<section id="mi-participación" class="level1">
+<h1>Mi participación</h1>
+<p>Inicié mis pasos con TidyTuesday en 2023, y gracias a eso he aprendido muchísimo de R, a generar mejores visualizaciones, a escribir mejor código y a explorar otros paquetes.</p>
+<p>En esta sección pueden encontrar todas las figuras que he creado semana a semana.</p>
+<p><a href="../tidytuesday/2025/intro.html">2025</a></p>
+<p><a href="../tidytuesday/2024/intro.html">2024</a></p>
+<p><a href="../tidytuesday/2023/intro.html">2023</a></p>
 
 
 </section>
@@ -519,7 +512,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/vhgauto\.github\.io\/");
+      var filterRegex = new RegExp("^(?:http:|https:)\/\/www\.vhgauto\.github\.io");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

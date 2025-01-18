@@ -91,9 +91,9 @@
   {
     "objectID": "tidytuesday/intro.html",
     "href": "tidytuesday/intro.html",
-    "title": "Introducción gral",
+    "title": "¿Qué es tidytuesday?",
     "section": "",
-    "text": "¿Qué es tidytuesday?\nIntro gral TidyTuesday.\n\n\nCuestiones\n\n\n\nLinks\nenlaces\n\n\n\n\n Volver arriba",
+    "text": "¿Qué es tidytuesday?\nTidyTuesday es un proyecto para compartir datos y que cualquiera pueda utilizarlos para practicar trabajar con datos. Tidytuesday está organizado por Data Science Learning Community, iniciado en 2018.\nTodas las semanas en el repositorio de GitHub suben un nuevo set de datos, con la fuente y una breve descripción.\nPara facilitar el acceso a los datos existe el paquete tidytuesdayR.\n\n\n\nMotivación\nTidytuesday ofrece datos de los más variados e interesantes. Te permite practicar las habilidades de manipulación de datos, creación de figuras y modelado con conjuntos de datos reales.\nSe incluyen los metadatos que dan una introducción, describiendo cada variable y explicando el contenido.\nLa comunidad que participa en tidytuesday comparte tus resultados en redes sociales, que motivan a otros a crear sus propias figuras y análisis.\n\n\nMi participación\nInicié mis pasos con TidyTuesday en 2023, y gracias a eso he aprendido muchísimo de R, a generar mejores visualizaciones, a escribir mejor código y a explorar otros paquetes.\nEn esta sección pueden encontrar todas las figuras que he creado semana a semana.\n2025\n2024\n2023\n\n\n\n\n Volver arriba",
     "crumbs": [
       "Tidytuesday",
       "Inicio"
