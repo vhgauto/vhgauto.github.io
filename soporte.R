@@ -14,5 +14,3 @@ f_edu <- function(tit, ins, ubi, cal) {
   )
 }
 
-
-
