@@ -1,6 +1,6 @@
 ---
-title: "viz 1"
-subtitle: "viz semana 01"
+title: "s01"
+subtitle: "Figura semana 01"
 author: VHG
 description: "geom_col()"
 date: "2025-01-01"

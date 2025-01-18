@@ -1,16 +1,18 @@
 ---
-title: "Visualizaciones de `tidytuesday`"
+title: "Introducción"
 listing: 
   id: lista-tidytuesday
   type: default
-  contents: tidytuesday
-  sort: "date"
+  contents: .
+  sort: "date desc"
+  sort-ui: true
+  filter-ui: true
   categories: numbered
   date-format: iso
   image-height: 200px
 ---
 
-Todo el contenido relacionado  a tidytuesday
+2023
 
 ::: {#lista-tidytuesday}
 :::

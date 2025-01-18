@@ -1,9 +1,9 @@
 ---
-title: "mapa 2"
-subtitle: "mapa semana 02"
+title: "s01"
+subtitle: "Figura semana 01"
 author: VHG
 description: "geom_col()"
-date: "2025-01-11"
+date: "2025-01-01"
 editor_options: 
   chunk_output_type: console
 categories: [a, b]

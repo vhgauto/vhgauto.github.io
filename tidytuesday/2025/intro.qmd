@@ -1,0 +1,20 @@
+---
+title: "Introducción"
+listing: 
+  id: lista-tidytuesday
+  type: default
+  contents: .
+  sort: "date desc"
+  sort-ui: true
+  filter-ui: true
+  categories: numbered
+  date-format: iso
+  image-height: 200px
+---
+
+2025
+
+::: {#lista-tidytuesday}
+:::
+
+Adiós.

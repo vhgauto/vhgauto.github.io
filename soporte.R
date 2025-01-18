@@ -13,3 +13,6 @@ f_edu <- function(tit, ins, ubi, cal) {
     calendario, cal, "<br>"
   )
 }
+
+
+

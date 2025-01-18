@@ -5,17 +5,18 @@ project:
 website:
   title: "Víctor Gauto"
   favicon: img/favicon.png
+  page-navigation: true
   back-to-top-navigation: true
   twitter-card: true
   open-graph: true
   navbar:
     left:
-      - href: tidytuesday.qmd
-        text: Tidytuesday
+      - href: tidytuesday/intro.qmd
+        text: "Tidytuesday"
       - href: mapas.qmd
-        text: Mapas
+        text: "Mapas"
       - href: viz.qmd
-        text: Visualizaciones
+        text: "Visualizaciones"
     tools:
       - icon: github
         href: https://github.com/vhgauto
@@ -40,8 +41,17 @@ website:
 
   sidebar:
     - title: "Tidytuesday"
-      style: docked
-      contents: tidytuesday
+      collapse-level: 1
+      style: "floating"
+      contents:
+        - href: tidytuesday/intro.qmd
+          text: "Inicio"
+        - section: "2025"
+          contents: tidytuesday/2025/*
+        - section: "2024"
+          contents: tidytuesday/2024/*
+        - section: "2023"
+          contents: tidytuesday/2023/*
 
     - title: "Mapas"
       style: docked
@@ -62,6 +72,7 @@ format:
     mainfont: Ubuntu
     monofont: JetBrains Mono
     lang: es
+    link-external-newwindow: true
 
 execute:
   freeze: auto

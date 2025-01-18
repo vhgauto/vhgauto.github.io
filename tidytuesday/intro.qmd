@@ -1,0 +1,18 @@
+---
+title: "Introducción gral"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+
+# ¿Qué es tidytuesday?
+
+Intro gral [TidyTuesday](https://tidytues.day/).
+
+# Cuestiones
+
+![](https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/static/tt_logo.png)
+
+# Links
+
+enlaces
