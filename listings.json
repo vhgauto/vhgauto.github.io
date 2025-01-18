@@ -2,22 +2,34 @@
   {
     "listing": "/mapas.html",
     "items": [
-      "/mapas/mapa1.html",
-      "/mapas/mapa2.html"
+      "/mapas/mapa1.html"
     ]
   },
   {
-    "listing": "/tidytuesday.html",
+    "listing": "/tidytuesday/2024/intro.html",
     "items": [
-      "/tidytuesday/s01.html",
-      "/tidytuesday/s02.html"
+      "/tidytuesday/2024/s02.html",
+      "/tidytuesday/2024/s01.html"
+    ]
+  },
+  {
+    "listing": "/tidytuesday/2023/intro.html",
+    "items": [
+      "/tidytuesday/2023/s02.html",
+      "/tidytuesday/2023/s01.html"
+    ]
+  },
+  {
+    "listing": "/tidytuesday/2025/intro.html",
+    "items": [
+      "/tidytuesday/2025/s02.html",
+      "/tidytuesday/2025/s01.html"
     ]
   },
   {
     "listing": "/viz.html",
     "items": [
-      "/viz/viz2.html",
-      "/viz/viz1.html"
+      "/viz/viz2.html"
     ]
   }
 ]

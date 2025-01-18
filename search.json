@@ -4,7 +4,7 @@
     "href": "mapas.html",
     "title": "Mis mapas",
     "section": "",
-    "text": "Mapas varios.\n\n\n\n\n\n\n\n\n\n\nmapa 1\n\n\nmapa semana 01\n\n\n\na\n\n\nb\n\n\n\ngeom_col()\n\n\n\n\n\n2025-01-01\n\n\nVHG\n\n\n\n\n\n\n\n\n\n\n\n\nmapa 2\n\n\nmapa semana 02\n\n\n\na\n\n\nb\n\n\n\ngeom_col()\n\n\n\n\n\n2025-01-11\n\n\nVHG\n\n\n\n\n\n\nNo hay resultados\n\n\nAdiós.\n\n\n\n\n Volver arriba"
+    "text": "Mapas varios.\n\n\n\n\n\n\n\n\n\n\nmapa 1\n\n\nmapa semana 01\n\n\n\na\n\n\nb\n\n\n\ngeom_col()\n\n\n\n\n\n2025-01-01\n\n\nVHG\n\n\n\n\n\n\nNo hay resultados\n\n\nAdiós.\n\n\n\n\n Volver arriba"
   },
   {
     "objectID": "mapas/mapa1.html",
@@ -15,6 +15,136 @@
     "crumbs": [
       "Mapas",
       "mapa 1"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/s02.html",
+    "href": "tidytuesday/2025/s02.html",
+    "title": "s02",
+    "section": "",
+    "text": "Contenido S02\n\n\n\n\n Volver arriba",
+    "crumbs": [
+      "Tidytuesday",
+      "2025",
+      "s02"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/s01.html",
+    "href": "tidytuesday/2025/s01.html",
+    "title": "s01",
+    "section": "",
+    "text": "Contenido S01\n\n\nCódigo\n# paquetes ----------------------------------------------------------------\n\n# {glue}, {ggtext}, {showtext}, {tidyverse}\n# se cargan automáticamente\n\n# fuente ------------------------------------------------------------------\n\n# colores\nc1 &lt;- \"#447099\"\nc2 &lt;- \"#75AADB\"\nc3 &lt;- \"#F0F5F9\"\nc4 &lt;- \"black\"\n\n# fuente: Ubuntu\nfont_add(\n  family = \"ubuntu\",\n  regular = \"fuente/Ubuntu-Regular.ttf\",\n  bold = \"fuente/Ubuntu-Bold.ttf\",\n  italic = \"fuente/Ubuntu-Italic.ttf\"\n)\n\n# monoespacio & íconos\nfont_add(\n  family = \"jet\",\n  regular = \"fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n# caption\nmi_caption &lt;- caption(\n  fuente1 = \"&lt;span style='font-family:jet'&gt;posit::conf&lt;/jet&gt;\",\n  col = c1,\n  week = 2\n)\n\n# datos -------------------------------------------------------------------\n\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 2)\nconf2023 &lt;- tuesdata$conf2023\nconf2024 &lt;- tuesdata$conf2024\n\n# me interesa la cantidad de conferencias que hablan de QUARTO entre 2023 y 2024\n\n# cantidad de conferencias que mencionan QUARTO, 2023/2024\nn2023 &lt;- conf2023 |&gt; \n  mutate(quarto = str_detect(session_abstract, \"quarto|Quarto\")) |&gt; \n  dplyr::filter(quarto) |&gt; \n  nrow()\n\nn2024 &lt;- conf2024 |&gt; \n  mutate(quarto = str_detect(description, \"quarto|Quarto\")) |&gt; \n  dplyr::filter(quarto) |&gt; \n  nrow()\n\nd &lt;- tibble(\n  año = c(2023, 2024),\n  n = c(n2023, n2024)\n) |&gt; \n  mutate(\n    año = paste0(\"posit::conf\\n\", año)\n  )\n\n# figura ------------------------------------------------------------------\n\n# logo y subtítulo\nlogo &lt;- \"https://quarto.org/quarto.png\"\nlogo_img &lt;- glue(\n  \"&lt;img src='{logo}' width=250 /&gt;\"\n)\n\nmi_subitulo &lt;- glue(\n  \"La cantidad de conferencias&lt;br&gt;que incluyen\n  &lt;span style='font-family:jet; color:{c1}'&gt;quarto&lt;/span&gt; &lt;br&gt;\n  amentaron en las ediciones&lt;br&gt;\n  2023 y 2024 de &lt;span style='font-family:jet; color:{c1}'&gt;posit::conf&lt;/span&gt;\"\n)\n\n# figura\ng &lt;- ggplot(d, aes(año, n, label = n)) +\n  geom_col(fill = c1) +\n  geom_text(vjust = -.2, family = \"jet\", size = 9, color = c2) +\n  annotate(\n    geom = \"richtext\", x = 2.12, y = 25, label = logo_img, fill = NA,\n    vjust = -1.2, label.color = NA\n  ) +\n  scale_y_continuous(limits = c(0, 25)) +\n  coord_cartesian(expand = FALSE, xlim = c(.5, 2.5), clip = \"off\") +\n  labs(caption = mi_caption, subtitle = mi_subitulo) +\n  theme_void(base_size = 22, base_family = \"ubuntu\") +\n  theme(\n    aspect.ratio = 1,\n    plot.margin = margin(25, 5, 5, 5),\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.subtitle = element_markdown(\n      color = c4, size = 30, lineheight = 1.3, margin = margin(b = 30, l = 20)\n    ),\n    plot.caption = element_markdown(\n      color = c2, lineheight = 1.2, margin = margin(b = 5, t = 20)\n    ),\n    axis.text.x = element_text(margin = margin(t = 5), family = \"jet\"),\n  )\n\n# guardo\nggsave(\n  plot = g,\n  filename = \"2025/s02/viz.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)\n\n# abro\nbrowseURL(paste0(getwd(), \"/2025/s02/viz.png\"))\n\n\n\n\n\n\n Volver arriba",
+    "crumbs": [
+      "Tidytuesday",
+      "2025",
+      "s01"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2024/intro.html",
+    "href": "tidytuesday/2024/intro.html",
+    "title": "Introducción",
+    "section": "",
+    "text": "2024\n\n\n   \n     \n     \n       Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\ns02\n\n\nFigura semana 02\n\n\n\na\n\n\nc\n\n\n\ngeom_point()\n\n\n\n\n\n2025-01-10\n\n\nVHG\n\n\n\n\n\n\n\n\n\n\n\n\ns01\n\n\nFigura semana 01\n\n\n\na\n\n\nb\n\n\n\ngeom_col()\n\n\n\n\n\n2025-01-01\n\n\nVHG\n\n\n\n\n\n\nNo hay resultados\n\n\nAdiós.\n\n\n\n\n Volver arriba",
+    "crumbs": [
+      "Tidytuesday",
+      "2024",
+      "Introducción"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2023/s02.html",
+    "href": "tidytuesday/2023/s02.html",
+    "title": "s02",
+    "section": "",
+    "text": "Contenido S02\n\n\n\n\n Volver arriba",
+    "crumbs": [
+      "Tidytuesday",
+      "2023",
+      "s02"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2023/s01.html",
+    "href": "tidytuesday/2023/s01.html",
+    "title": "s01",
+    "section": "",
+    "text": "Contenido S01\n\n\nCódigo\n# paquetes ----------------------------------------------------------------\n\n# {glue}, {ggtext}, {showtext}, {tidyverse}\n# se cargan automáticamente\n\n# fuente ------------------------------------------------------------------\n\n# colores\nc1 &lt;- \"#447099\"\nc2 &lt;- \"#75AADB\"\nc3 &lt;- \"#F0F5F9\"\nc4 &lt;- \"black\"\n\n# fuente: Ubuntu\nfont_add(\n  family = \"ubuntu\",\n  regular = \"fuente/Ubuntu-Regular.ttf\",\n  bold = \"fuente/Ubuntu-Bold.ttf\",\n  italic = \"fuente/Ubuntu-Italic.ttf\"\n)\n\n# monoespacio & íconos\nfont_add(\n  family = \"jet\",\n  regular = \"fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n# caption\nmi_caption &lt;- caption(\n  fuente1 = \"&lt;span style='font-family:jet'&gt;posit::conf&lt;/jet&gt;\",\n  col = c1,\n  week = 2\n)\n\n# datos -------------------------------------------------------------------\n\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 2)\nconf2023 &lt;- tuesdata$conf2023\nconf2024 &lt;- tuesdata$conf2024\n\n# me interesa la cantidad de conferencias que hablan de QUARTO entre 2023 y 2024\n\n# cantidad de conferencias que mencionan QUARTO, 2023/2024\nn2023 &lt;- conf2023 |&gt; \n  mutate(quarto = str_detect(session_abstract, \"quarto|Quarto\")) |&gt; \n  dplyr::filter(quarto) |&gt; \n  nrow()\n\nn2024 &lt;- conf2024 |&gt; \n  mutate(quarto = str_detect(description, \"quarto|Quarto\")) |&gt; \n  dplyr::filter(quarto) |&gt; \n  nrow()\n\nd &lt;- tibble(\n  año = c(2023, 2024),\n  n = c(n2023, n2024)\n) |&gt; \n  mutate(\n    año = paste0(\"posit::conf\\n\", año)\n  )\n\n# figura ------------------------------------------------------------------\n\n# logo y subtítulo\nlogo &lt;- \"https://quarto.org/quarto.png\"\nlogo_img &lt;- glue(\n  \"&lt;img src='{logo}' width=250 /&gt;\"\n)\n\nmi_subitulo &lt;- glue(\n  \"La cantidad de conferencias&lt;br&gt;que incluyen\n  &lt;span style='font-family:jet; color:{c1}'&gt;quarto&lt;/span&gt; &lt;br&gt;\n  amentaron en las ediciones&lt;br&gt;\n  2023 y 2024 de &lt;span style='font-family:jet; color:{c1}'&gt;posit::conf&lt;/span&gt;\"\n)\n\n# figura\ng &lt;- ggplot(d, aes(año, n, label = n)) +\n  geom_col(fill = c1) +\n  geom_text(vjust = -.2, family = \"jet\", size = 9, color = c2) +\n  annotate(\n    geom = \"richtext\", x = 2.12, y = 25, label = logo_img, fill = NA,\n    vjust = -1.2, label.color = NA\n  ) +\n  scale_y_continuous(limits = c(0, 25)) +\n  coord_cartesian(expand = FALSE, xlim = c(.5, 2.5), clip = \"off\") +\n  labs(caption = mi_caption, subtitle = mi_subitulo) +\n  theme_void(base_size = 22, base_family = \"ubuntu\") +\n  theme(\n    aspect.ratio = 1,\n    plot.margin = margin(25, 5, 5, 5),\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.subtitle = element_markdown(\n      color = c4, size = 30, lineheight = 1.3, margin = margin(b = 30, l = 20)\n    ),\n    plot.caption = element_markdown(\n      color = c2, lineheight = 1.2, margin = margin(b = 5, t = 20)\n    ),\n    axis.text.x = element_text(margin = margin(t = 5), family = \"jet\"),\n  )\n\n# guardo\nggsave(\n  plot = g,\n  filename = \"2025/s02/viz.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)\n\n# abro\nbrowseURL(paste0(getwd(), \"/2025/s02/viz.png\"))\n\n\n\n\n\n\n Volver arriba",
+    "crumbs": [
+      "Tidytuesday",
+      "2023",
+      "s01"
+    ]
+  },
+  {
+    "objectID": "viz/viz2.html",
+    "href": "viz/viz2.html",
+    "title": "viz 2",
+    "section": "",
+    "text": "Contenido S02\n\n\nCódigo\n# paquetes ----------------------------------------------------------------\n\n# {glue}, {ggtext}, {showtext}, {tidyverse}\n# se cargan automáticamente\n\n# fuente ------------------------------------------------------------------\n\n# colores\nc1 &lt;- \"#447099\"\nc2 &lt;- \"#75AADB\"\nc3 &lt;- \"#F0F5F9\"\nc4 &lt;- \"black\"\n\n# fuente: Ubuntu\nfont_add(\n  family = \"ubuntu\",\n  regular = \"fuente/Ubuntu-Regular.ttf\",\n  bold = \"fuente/Ubuntu-Bold.ttf\",\n  italic = \"fuente/Ubuntu-Italic.ttf\"\n)\n\n# monoespacio & íconos\nfont_add(\n  family = \"jet\",\n  regular = \"fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n# caption\nmi_caption &lt;- caption(\n  fuente1 = \"&lt;span style='font-family:jet'&gt;posit::conf&lt;/jet&gt;\",\n  col = c1,\n  week = 2\n)\n\n# datos -------------------------------------------------------------------\n\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 2)\nconf2023 &lt;- tuesdata$conf2023\nconf2024 &lt;- tuesdata$conf2024\n\n# me interesa la cantidad de conferencias que hablan de QUARTO entre 2023 y 2024\n\n# cantidad de conferencias que mencionan QUARTO, 2023/2024\nn2023 &lt;- conf2023 |&gt; \n  mutate(quarto = str_detect(session_abstract, \"quarto|Quarto\")) |&gt; \n  dplyr::filter(quarto) |&gt; \n  nrow()\n\nn2024 &lt;- conf2024 |&gt; \n  mutate(quarto = str_detect(description, \"quarto|Quarto\")) |&gt; \n  dplyr::filter(quarto) |&gt; \n  nrow()\n\nd &lt;- tibble(\n  año = c(2023, 2024),\n  n = c(n2023, n2024)\n) |&gt; \n  mutate(\n    año = paste0(\"posit::conf\\n\", año)\n  )\n\n# figura ------------------------------------------------------------------\n\n# logo y subtítulo\nlogo &lt;- \"https://quarto.org/quarto.png\"\nlogo_img &lt;- glue(\n  \"&lt;img src='{logo}' width=250 /&gt;\"\n)\n\nmi_subitulo &lt;- glue(\n  \"La cantidad de conferencias&lt;br&gt;que incluyen\n  &lt;span style='font-family:jet; color:{c1}'&gt;quarto&lt;/span&gt; &lt;br&gt;\n  amentaron en las ediciones&lt;br&gt;\n  2023 y 2024 de &lt;span style='font-family:jet; color:{c1}'&gt;posit::conf&lt;/span&gt;\"\n)\n\n# figura\ng &lt;- ggplot(d, aes(año, n, label = n)) +\n  geom_col(fill = c1) +\n  geom_text(vjust = -.2, family = \"jet\", size = 9, color = c2) +\n  annotate(\n    geom = \"richtext\", x = 2.12, y = 25, label = logo_img, fill = NA,\n    vjust = -1.2, label.color = NA\n  ) +\n  scale_y_continuous(limits = c(0, 25)) +\n  coord_cartesian(expand = FALSE, xlim = c(.5, 2.5), clip = \"off\") +\n  labs(caption = mi_caption, subtitle = mi_subitulo) +\n  theme_void(base_size = 22, base_family = \"ubuntu\") +\n  theme(\n    aspect.ratio = 1,\n    plot.margin = margin(25, 5, 5, 5),\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.subtitle = element_markdown(\n      color = c4, size = 30, lineheight = 1.3, margin = margin(b = 30, l = 20)\n    ),\n    plot.caption = element_markdown(\n      color = c2, lineheight = 1.2, margin = margin(b = 5, t = 20)\n    ),\n    axis.text.x = element_text(margin = margin(t = 5), family = \"jet\"),\n  )\n\n# guardo\nggsave(\n  plot = g,\n  filename = \"2025/s02/viz.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)\n\n# abro\nbrowseURL(paste0(getwd(), \"/2025/s02/viz.png\"))\n\n\n\n\n\n\n Volver arriba",
+    "crumbs": [
+      "Viz",
+      "viz 2"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/intro.html",
+    "href": "tidytuesday/intro.html",
+    "title": "Introducción gral",
+    "section": "",
+    "text": "¿Qué es tidytuesday?\nIntro gral TidyTuesday.\n\n\nCuestiones\n\n\n\nLinks\nenlaces\n\n\n\n\n Volver arriba",
+    "crumbs": [
+      "Tidytuesday",
+      "Inicio"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2023/intro.html",
+    "href": "tidytuesday/2023/intro.html",
+    "title": "Introducción",
+    "section": "",
+    "text": "2023\n\n\n   \n     \n     \n       Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\ns02\n\n\nFigura semana 02\n\n\n\na\n\n\nc\n\n\n\ngeom_point()\n\n\n\n\n\n2025-01-10\n\n\nVHG\n\n\n\n\n\n\n\n\n\n\n\n\ns01\n\n\nFigura semana 01\n\n\n\na\n\n\nb\n\n\n\ngeom_col()\n\n\n\n\n\n2025-01-01\n\n\nVHG\n\n\n\n\n\n\nNo hay resultados\n\n\nAdiós.\n\n\n\n\n Volver arriba",
+    "crumbs": [
+      "Tidytuesday",
+      "2023",
+      "Introducción"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2024/s01.html",
+    "href": "tidytuesday/2024/s01.html",
+    "title": "s01",
+    "section": "",
+    "text": "Contenido S01\n\n\nCódigo\n# paquetes ----------------------------------------------------------------\n\n# {glue}, {ggtext}, {showtext}, {tidyverse}\n# se cargan automáticamente\n\n# fuente ------------------------------------------------------------------\n\n# colores\nc1 &lt;- \"#447099\"\nc2 &lt;- \"#75AADB\"\nc3 &lt;- \"#F0F5F9\"\nc4 &lt;- \"black\"\n\n# fuente: Ubuntu\nfont_add(\n  family = \"ubuntu\",\n  regular = \"fuente/Ubuntu-Regular.ttf\",\n  bold = \"fuente/Ubuntu-Bold.ttf\",\n  italic = \"fuente/Ubuntu-Italic.ttf\"\n)\n\n# monoespacio & íconos\nfont_add(\n  family = \"jet\",\n  regular = \"fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n# caption\nmi_caption &lt;- caption(\n  fuente1 = \"&lt;span style='font-family:jet'&gt;posit::conf&lt;/jet&gt;\",\n  col = c1,\n  week = 2\n)\n\n# datos -------------------------------------------------------------------\n\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 2)\nconf2023 &lt;- tuesdata$conf2023\nconf2024 &lt;- tuesdata$conf2024\n\n# me interesa la cantidad de conferencias que hablan de QUARTO entre 2023 y 2024\n\n# cantidad de conferencias que mencionan QUARTO, 2023/2024\nn2023 &lt;- conf2023 |&gt; \n  mutate(quarto = str_detect(session_abstract, \"quarto|Quarto\")) |&gt; \n  dplyr::filter(quarto) |&gt; \n  nrow()\n\nn2024 &lt;- conf2024 |&gt; \n  mutate(quarto = str_detect(description, \"quarto|Quarto\")) |&gt; \n  dplyr::filter(quarto) |&gt; \n  nrow()\n\nd &lt;- tibble(\n  año = c(2023, 2024),\n  n = c(n2023, n2024)\n) |&gt; \n  mutate(\n    año = paste0(\"posit::conf\\n\", año)\n  )\n\n# figura ------------------------------------------------------------------\n\n# logo y subtítulo\nlogo &lt;- \"https://quarto.org/quarto.png\"\nlogo_img &lt;- glue(\n  \"&lt;img src='{logo}' width=250 /&gt;\"\n)\n\nmi_subitulo &lt;- glue(\n  \"La cantidad de conferencias&lt;br&gt;que incluyen\n  &lt;span style='font-family:jet; color:{c1}'&gt;quarto&lt;/span&gt; &lt;br&gt;\n  amentaron en las ediciones&lt;br&gt;\n  2023 y 2024 de &lt;span style='font-family:jet; color:{c1}'&gt;posit::conf&lt;/span&gt;\"\n)\n\n# figura\ng &lt;- ggplot(d, aes(año, n, label = n)) +\n  geom_col(fill = c1) +\n  geom_text(vjust = -.2, family = \"jet\", size = 9, color = c2) +\n  annotate(\n    geom = \"richtext\", x = 2.12, y = 25, label = logo_img, fill = NA,\n    vjust = -1.2, label.color = NA\n  ) +\n  scale_y_continuous(limits = c(0, 25)) +\n  coord_cartesian(expand = FALSE, xlim = c(.5, 2.5), clip = \"off\") +\n  labs(caption = mi_caption, subtitle = mi_subitulo) +\n  theme_void(base_size = 22, base_family = \"ubuntu\") +\n  theme(\n    aspect.ratio = 1,\n    plot.margin = margin(25, 5, 5, 5),\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.subtitle = element_markdown(\n      color = c4, size = 30, lineheight = 1.3, margin = margin(b = 30, l = 20)\n    ),\n    plot.caption = element_markdown(\n      color = c2, lineheight = 1.2, margin = margin(b = 5, t = 20)\n    ),\n    axis.text.x = element_text(margin = margin(t = 5), family = \"jet\"),\n  )\n\n# guardo\nggsave(\n  plot = g,\n  filename = \"2025/s02/viz.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)\n\n# abro\nbrowseURL(paste0(getwd(), \"/2025/s02/viz.png\"))\n\n\n\n\n\n\n Volver arriba",
+    "crumbs": [
+      "Tidytuesday",
+      "2024",
+      "s01"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2024/s02.html",
+    "href": "tidytuesday/2024/s02.html",
+    "title": "s02",
+    "section": "",
+    "text": "Contenido S02\n\n\n\n\n Volver arriba",
+    "crumbs": [
+      "Tidytuesday",
+      "2024",
+      "s02"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/intro.html",
+    "href": "tidytuesday/2025/intro.html",
+    "title": "Introducción",
+    "section": "",
+    "text": "2025\n\n\n   \n     \n     \n       Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\ns02\n\n\nFigura semana 02\n\n\n\na\n\n\nc\n\n\n\ngeom_point()\n\n\n\n\n\n2025-01-10\n\n\nVHG\n\n\n\n\n\n\n\n\n\n\n\n\ns01\n\n\nFigura semana 01\n\n\n\na\n\n\nb\n\n\n\ngeom_col()\n\n\n\n\n\n2025-01-01\n\n\nVHG\n\n\n\n\n\n\nNo hay resultados\n\n\nAdiós.\n\n\n\n\n Volver arriba",
+    "crumbs": [
+      "Tidytuesday",
+      "2025",
+      "Introducción"
     ]
   },
   {
@@ -39,72 +169,10 @@
     "text": "Experiencia\n Doctorado en Geomática y Sistemas Espaciales  Instituto Gulich  Córdoba, Argentina  En proceso    Doctorado en Geomática y Sistemas Espaciales  Instituto Gulich  Córdoba, Argentina  En proceso"
   },
   {
-    "objectID": "tidytuesday/s01.html",
-    "href": "tidytuesday/s01.html",
-    "title": "s01",
-    "section": "",
-    "text": "Contenido S01\n\n\nCódigo\n# paquetes ----------------------------------------------------------------\n\n# {glue}, {ggtext}, {showtext}, {tidyverse}\n# se cargan automáticamente\n\n# fuente ------------------------------------------------------------------\n\n# colores\nc1 &lt;- \"#447099\"\nc2 &lt;- \"#75AADB\"\nc3 &lt;- \"#F0F5F9\"\nc4 &lt;- \"black\"\n\n# fuente: Ubuntu\nfont_add(\n  family = \"ubuntu\",\n  regular = \"fuente/Ubuntu-Regular.ttf\",\n  bold = \"fuente/Ubuntu-Bold.ttf\",\n  italic = \"fuente/Ubuntu-Italic.ttf\"\n)\n\n# monoespacio & íconos\nfont_add(\n  family = \"jet\",\n  regular = \"fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n# caption\nmi_caption &lt;- caption(\n  fuente1 = \"&lt;span style='font-family:jet'&gt;posit::conf&lt;/jet&gt;\",\n  col = c1,\n  week = 2\n)\n\n# datos -------------------------------------------------------------------\n\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 2)\nconf2023 &lt;- tuesdata$conf2023\nconf2024 &lt;- tuesdata$conf2024\n\n# me interesa la cantidad de conferencias que hablan de QUARTO entre 2023 y 2024\n\n# cantidad de conferencias que mencionan QUARTO, 2023/2024\nn2023 &lt;- conf2023 |&gt; \n  mutate(quarto = str_detect(session_abstract, \"quarto|Quarto\")) |&gt; \n  dplyr::filter(quarto) |&gt; \n  nrow()\n\nn2024 &lt;- conf2024 |&gt; \n  mutate(quarto = str_detect(description, \"quarto|Quarto\")) |&gt; \n  dplyr::filter(quarto) |&gt; \n  nrow()\n\nd &lt;- tibble(\n  año = c(2023, 2024),\n  n = c(n2023, n2024)\n) |&gt; \n  mutate(\n    año = paste0(\"posit::conf\\n\", año)\n  )\n\n# figura ------------------------------------------------------------------\n\n# logo y subtítulo\nlogo &lt;- \"https://quarto.org/quarto.png\"\nlogo_img &lt;- glue(\n  \"&lt;img src='{logo}' width=250 /&gt;\"\n)\n\nmi_subitulo &lt;- glue(\n  \"La cantidad de conferencias&lt;br&gt;que incluyen\n  &lt;span style='font-family:jet; color:{c1}'&gt;quarto&lt;/span&gt; &lt;br&gt;\n  amentaron en las ediciones&lt;br&gt;\n  2023 y 2024 de &lt;span style='font-family:jet; color:{c1}'&gt;posit::conf&lt;/span&gt;\"\n)\n\n# figura\ng &lt;- ggplot(d, aes(año, n, label = n)) +\n  geom_col(fill = c1) +\n  geom_text(vjust = -.2, family = \"jet\", size = 9, color = c2) +\n  annotate(\n    geom = \"richtext\", x = 2.12, y = 25, label = logo_img, fill = NA,\n    vjust = -1.2, label.color = NA\n  ) +\n  scale_y_continuous(limits = c(0, 25)) +\n  coord_cartesian(expand = FALSE, xlim = c(.5, 2.5), clip = \"off\") +\n  labs(caption = mi_caption, subtitle = mi_subitulo) +\n  theme_void(base_size = 22, base_family = \"ubuntu\") +\n  theme(\n    aspect.ratio = 1,\n    plot.margin = margin(25, 5, 5, 5),\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.subtitle = element_markdown(\n      color = c4, size = 30, lineheight = 1.3, margin = margin(b = 30, l = 20)\n    ),\n    plot.caption = element_markdown(\n      color = c2, lineheight = 1.2, margin = margin(b = 5, t = 20)\n    ),\n    axis.text.x = element_text(margin = margin(t = 5), family = \"jet\"),\n  )\n\n# guardo\nggsave(\n  plot = g,\n  filename = \"2025/s02/viz.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)\n\n# abro\nbrowseURL(paste0(getwd(), \"/2025/s02/viz.png\"))\n\n\n\n\n\n\n Volver arriba",
-    "crumbs": [
-      "Tidytuesday",
-      "s01"
-    ]
-  },
-  {
-    "objectID": "viz/viz1.html",
-    "href": "viz/viz1.html",
-    "title": "viz 1",
-    "section": "",
-    "text": "Contenido S01\n\n\nCódigo\n# paquetes ----------------------------------------------------------------\n\n# {glue}, {ggtext}, {showtext}, {tidyverse}\n# se cargan automáticamente\n\n# fuente ------------------------------------------------------------------\n\n# colores\nc1 &lt;- \"#447099\"\nc2 &lt;- \"#75AADB\"\nc3 &lt;- \"#F0F5F9\"\nc4 &lt;- \"black\"\n\n# fuente: Ubuntu\nfont_add(\n  family = \"ubuntu\",\n  regular = \"fuente/Ubuntu-Regular.ttf\",\n  bold = \"fuente/Ubuntu-Bold.ttf\",\n  italic = \"fuente/Ubuntu-Italic.ttf\"\n)\n\n# monoespacio & íconos\nfont_add(\n  family = \"jet\",\n  regular = \"fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n# caption\nmi_caption &lt;- caption(\n  fuente1 = \"&lt;span style='font-family:jet'&gt;posit::conf&lt;/jet&gt;\",\n  col = c1,\n  week = 2\n)\n\n# datos -------------------------------------------------------------------\n\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 2)\nconf2023 &lt;- tuesdata$conf2023\nconf2024 &lt;- tuesdata$conf2024\n\n# me interesa la cantidad de conferencias que hablan de QUARTO entre 2023 y 2024\n\n# cantidad de conferencias que mencionan QUARTO, 2023/2024\nn2023 &lt;- conf2023 |&gt; \n  mutate(quarto = str_detect(session_abstract, \"quarto|Quarto\")) |&gt; \n  dplyr::filter(quarto) |&gt; \n  nrow()\n\nn2024 &lt;- conf2024 |&gt; \n  mutate(quarto = str_detect(description, \"quarto|Quarto\")) |&gt; \n  dplyr::filter(quarto) |&gt; \n  nrow()\n\nd &lt;- tibble(\n  año = c(2023, 2024),\n  n = c(n2023, n2024)\n) |&gt; \n  mutate(\n    año = paste0(\"posit::conf\\n\", año)\n  )\n\n# figura ------------------------------------------------------------------\n\n# logo y subtítulo\nlogo &lt;- \"https://quarto.org/quarto.png\"\nlogo_img &lt;- glue(\n  \"&lt;img src='{logo}' width=250 /&gt;\"\n)\n\nmi_subitulo &lt;- glue(\n  \"La cantidad de conferencias&lt;br&gt;que incluyen\n  &lt;span style='font-family:jet; color:{c1}'&gt;quarto&lt;/span&gt; &lt;br&gt;\n  amentaron en las ediciones&lt;br&gt;\n  2023 y 2024 de &lt;span style='font-family:jet; color:{c1}'&gt;posit::conf&lt;/span&gt;\"\n)\n\n# figura\ng &lt;- ggplot(d, aes(año, n, label = n)) +\n  geom_col(fill = c1) +\n  geom_text(vjust = -.2, family = \"jet\", size = 9, color = c2) +\n  annotate(\n    geom = \"richtext\", x = 2.12, y = 25, label = logo_img, fill = NA,\n    vjust = -1.2, label.color = NA\n  ) +\n  scale_y_continuous(limits = c(0, 25)) +\n  coord_cartesian(expand = FALSE, xlim = c(.5, 2.5), clip = \"off\") +\n  labs(caption = mi_caption, subtitle = mi_subitulo) +\n  theme_void(base_size = 22, base_family = \"ubuntu\") +\n  theme(\n    aspect.ratio = 1,\n    plot.margin = margin(25, 5, 5, 5),\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.subtitle = element_markdown(\n      color = c4, size = 30, lineheight = 1.3, margin = margin(b = 30, l = 20)\n    ),\n    plot.caption = element_markdown(\n      color = c2, lineheight = 1.2, margin = margin(b = 5, t = 20)\n    ),\n    axis.text.x = element_text(margin = margin(t = 5), family = \"jet\"),\n  )\n\n# guardo\nggsave(\n  plot = g,\n  filename = \"2025/s02/viz.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)\n\n# abro\nbrowseURL(paste0(getwd(), \"/2025/s02/viz.png\"))\n\n\n\n\n\n\n Volver arriba",
-    "crumbs": [
-      "Viz",
-      "viz 1"
-    ]
-  },
-  {
-    "objectID": "viz/viz2.html",
-    "href": "viz/viz2.html",
-    "title": "viz 2",
-    "section": "",
-    "text": "Contenido S02\n\n\nCódigo\n# paquetes ----------------------------------------------------------------\n\n# {glue}, {ggtext}, {showtext}, {tidyverse}\n# se cargan automáticamente\n\n# fuente ------------------------------------------------------------------\n\n# colores\nc1 &lt;- \"#447099\"\nc2 &lt;- \"#75AADB\"\nc3 &lt;- \"#F0F5F9\"\nc4 &lt;- \"black\"\n\n# fuente: Ubuntu\nfont_add(\n  family = \"ubuntu\",\n  regular = \"fuente/Ubuntu-Regular.ttf\",\n  bold = \"fuente/Ubuntu-Bold.ttf\",\n  italic = \"fuente/Ubuntu-Italic.ttf\"\n)\n\n# monoespacio & íconos\nfont_add(\n  family = \"jet\",\n  regular = \"fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n# caption\nmi_caption &lt;- caption(\n  fuente1 = \"&lt;span style='font-family:jet'&gt;posit::conf&lt;/jet&gt;\",\n  col = c1,\n  week = 2\n)\n\n# datos -------------------------------------------------------------------\n\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 2)\nconf2023 &lt;- tuesdata$conf2023\nconf2024 &lt;- tuesdata$conf2024\n\n# me interesa la cantidad de conferencias que hablan de QUARTO entre 2023 y 2024\n\n# cantidad de conferencias que mencionan QUARTO, 2023/2024\nn2023 &lt;- conf2023 |&gt; \n  mutate(quarto = str_detect(session_abstract, \"quarto|Quarto\")) |&gt; \n  dplyr::filter(quarto) |&gt; \n  nrow()\n\nn2024 &lt;- conf2024 |&gt; \n  mutate(quarto = str_detect(description, \"quarto|Quarto\")) |&gt; \n  dplyr::filter(quarto) |&gt; \n  nrow()\n\nd &lt;- tibble(\n  año = c(2023, 2024),\n  n = c(n2023, n2024)\n) |&gt; \n  mutate(\n    año = paste0(\"posit::conf\\n\", año)\n  )\n\n# figura ------------------------------------------------------------------\n\n# logo y subtítulo\nlogo &lt;- \"https://quarto.org/quarto.png\"\nlogo_img &lt;- glue(\n  \"&lt;img src='{logo}' width=250 /&gt;\"\n)\n\nmi_subitulo &lt;- glue(\n  \"La cantidad de conferencias&lt;br&gt;que incluyen\n  &lt;span style='font-family:jet; color:{c1}'&gt;quarto&lt;/span&gt; &lt;br&gt;\n  amentaron en las ediciones&lt;br&gt;\n  2023 y 2024 de &lt;span style='font-family:jet; color:{c1}'&gt;posit::conf&lt;/span&gt;\"\n)\n\n# figura\ng &lt;- ggplot(d, aes(año, n, label = n)) +\n  geom_col(fill = c1) +\n  geom_text(vjust = -.2, family = \"jet\", size = 9, color = c2) +\n  annotate(\n    geom = \"richtext\", x = 2.12, y = 25, label = logo_img, fill = NA,\n    vjust = -1.2, label.color = NA\n  ) +\n  scale_y_continuous(limits = c(0, 25)) +\n  coord_cartesian(expand = FALSE, xlim = c(.5, 2.5), clip = \"off\") +\n  labs(caption = mi_caption, subtitle = mi_subitulo) +\n  theme_void(base_size = 22, base_family = \"ubuntu\") +\n  theme(\n    aspect.ratio = 1,\n    plot.margin = margin(25, 5, 5, 5),\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.subtitle = element_markdown(\n      color = c4, size = 30, lineheight = 1.3, margin = margin(b = 30, l = 20)\n    ),\n    plot.caption = element_markdown(\n      color = c2, lineheight = 1.2, margin = margin(b = 5, t = 20)\n    ),\n    axis.text.x = element_text(margin = margin(t = 5), family = \"jet\"),\n  )\n\n# guardo\nggsave(\n  plot = g,\n  filename = \"2025/s02/viz.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)\n\n# abro\nbrowseURL(paste0(getwd(), \"/2025/s02/viz.png\"))\n\n\n\n\n\n\n Volver arriba",
-    "crumbs": [
-      "Viz",
-      "viz 2"
-    ]
-  },
-  {
-    "objectID": "tidytuesday.html",
-    "href": "tidytuesday.html",
-    "title": "Visualizaciones de tidytuesday",
-    "section": "",
-    "text": "Todo el contenido relacionado a tidytuesday\n\n\n\n\n\n\n\n\n\n\ns01\n\n\nFigura semana 01\n\n\n\na\n\n\nb\n\n\n\ngeom_col()\n\n\n\n\n\n2025-01-01\n\n\nVHG\n\n\n\n\n\n\n\n\n\n\n\n\ns02\n\n\nFigura semana 02\n\n\n\na\n\n\nc\n\n\n\ngeom_point()\n\n\n\n\n\n2025-01-10\n\n\nVHG\n\n\n\n\n\n\nNo hay resultados\n\n\nAdiós.\n\n\n\n\n Volver arriba"
-  },
-  {
-    "objectID": "tidytuesday/s02.html",
-    "href": "tidytuesday/s02.html",
-    "title": "s02",
-    "section": "",
-    "text": "Contenido S02\n\n\n\n\n Volver arriba",
-    "crumbs": [
-      "Tidytuesday",
-      "s02"
-    ]
-  },
-  {
-    "objectID": "mapas/mapa2.html",
-    "href": "mapas/mapa2.html",
-    "title": "mapa 2",
-    "section": "",
-    "text": "Contenido S01\n\n\nCódigo\n# paquetes ----------------------------------------------------------------\n\n# {glue}, {ggtext}, {showtext}, {tidyverse}\n# se cargan automáticamente\n\n# fuente ------------------------------------------------------------------\n\n# colores\nc1 &lt;- \"#447099\"\nc2 &lt;- \"#75AADB\"\nc3 &lt;- \"#F0F5F9\"\nc4 &lt;- \"black\"\n\n# fuente: Ubuntu\nfont_add(\n  family = \"ubuntu\",\n  regular = \"fuente/Ubuntu-Regular.ttf\",\n  bold = \"fuente/Ubuntu-Bold.ttf\",\n  italic = \"fuente/Ubuntu-Italic.ttf\"\n)\n\n# monoespacio & íconos\nfont_add(\n  family = \"jet\",\n  regular = \"fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n# caption\nmi_caption &lt;- caption(\n  fuente1 = \"&lt;span style='font-family:jet'&gt;posit::conf&lt;/jet&gt;\",\n  col = c1,\n  week = 2\n)\n\n# datos -------------------------------------------------------------------\n\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 2)\nconf2023 &lt;- tuesdata$conf2023\nconf2024 &lt;- tuesdata$conf2024\n\n# me interesa la cantidad de conferencias que hablan de QUARTO entre 2023 y 2024\n\n# cantidad de conferencias que mencionan QUARTO, 2023/2024\nn2023 &lt;- conf2023 |&gt; \n  mutate(quarto = str_detect(session_abstract, \"quarto|Quarto\")) |&gt; \n  dplyr::filter(quarto) |&gt; \n  nrow()\n\nn2024 &lt;- conf2024 |&gt; \n  mutate(quarto = str_detect(description, \"quarto|Quarto\")) |&gt; \n  dplyr::filter(quarto) |&gt; \n  nrow()\n\nd &lt;- tibble(\n  año = c(2023, 2024),\n  n = c(n2023, n2024)\n) |&gt; \n  mutate(\n    año = paste0(\"posit::conf\\n\", año)\n  )\n\n# figura ------------------------------------------------------------------\n\n# logo y subtítulo\nlogo &lt;- \"https://quarto.org/quarto.png\"\nlogo_img &lt;- glue(\n  \"&lt;img src='{logo}' width=250 /&gt;\"\n)\n\nmi_subitulo &lt;- glue(\n  \"La cantidad de conferencias&lt;br&gt;que incluyen\n  &lt;span style='font-family:jet; color:{c1}'&gt;quarto&lt;/span&gt; &lt;br&gt;\n  amentaron en las ediciones&lt;br&gt;\n  2023 y 2024 de &lt;span style='font-family:jet; color:{c1}'&gt;posit::conf&lt;/span&gt;\"\n)\n\n# figura\ng &lt;- ggplot(d, aes(año, n, label = n)) +\n  geom_col(fill = c1) +\n  geom_text(vjust = -.2, family = \"jet\", size = 9, color = c2) +\n  annotate(\n    geom = \"richtext\", x = 2.12, y = 25, label = logo_img, fill = NA,\n    vjust = -1.2, label.color = NA\n  ) +\n  scale_y_continuous(limits = c(0, 25)) +\n  coord_cartesian(expand = FALSE, xlim = c(.5, 2.5), clip = \"off\") +\n  labs(caption = mi_caption, subtitle = mi_subitulo) +\n  theme_void(base_size = 22, base_family = \"ubuntu\") +\n  theme(\n    aspect.ratio = 1,\n    plot.margin = margin(25, 5, 5, 5),\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.subtitle = element_markdown(\n      color = c4, size = 30, lineheight = 1.3, margin = margin(b = 30, l = 20)\n    ),\n    plot.caption = element_markdown(\n      color = c2, lineheight = 1.2, margin = margin(b = 5, t = 20)\n    ),\n    axis.text.x = element_text(margin = margin(t = 5), family = \"jet\"),\n  )\n\n# guardo\nggsave(\n  plot = g,\n  filename = \"2025/s02/viz.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)\n\n# abro\nbrowseURL(paste0(getwd(), \"/2025/s02/viz.png\"))\n\n\n\n\n\n\n Volver arriba",
-    "crumbs": [
-      "Mapas",
-      "mapa 2"
-    ]
-  },
-  {
     "objectID": "viz.html",
     "href": "viz.html",
     "title": "Visualizaciones varias",
     "section": "",
-    "text": "Figuras geométricas varias.\n\n\n\n\n\n\n\n\n\n\nviz 2\n\n\nviz semana 02\n\n\n\na\n\n\nb\n\n\n\ngeom_col()\n\n\n\n\n\n2025-01-01\n\n\nVHG\n\n\n\n\n\n\n\n\n\n\n\n\nviz 1\n\n\nviz semana 01\n\n\n\na\n\n\nb\n\n\n\ngeom_col()\n\n\n\n\n\n2025-01-01\n\n\nVHG\n\n\n\n\n\n\nNo hay resultados\n\n\nAdiós.\n\n\n\n\n Volver arriba"
+    "text": "Figuras geométricas varias.\n\n\n\n\n\n\n\n\n\n\nviz 2\n\n\nviz semana 02\n\n\n\na\n\n\nb\n\n\n\ngeom_col()\n\n\n\n\n\n2025-01-01\n\n\nVHG\n\n\n\n\n\n\nNo hay resultados\n\n\nAdiós.\n\n\n\n\n Volver arriba"
   }
 ]

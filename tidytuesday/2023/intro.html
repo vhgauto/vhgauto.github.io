@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MS Víctor Gauto – Víctor Gauto</title>
+<title>Introducción – Víctor Gauto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,29 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./img/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7e181ca1f1469620988eacefc61851ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-8f33751933731511974cc5ba07f95f41.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../tidytuesday/2023/s01.html" rel="next">
+<link href="../../tidytuesday/2024/s02.html" rel="prev">
+<link href="../../img/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-7e181ca1f1469620988eacefc61851ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8f33751933731511974cc5ba07f95f41.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,25 +73,83 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-lista-tidytuesday .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="MS Víctor Gauto – Víctor Gauto">
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-lista-tidytuesday'] = new List('listing-lista-tidytuesday', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Introducción – Víctor Gauto">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Víctor Gauto">
-<meta name="twitter:title" content="MS Víctor Gauto – Víctor Gauto">
+<meta name="twitter:title" content="Introducción – Víctor Gauto">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Víctor Gauto</span>
     </a>
   </div>
@@ -99,15 +160,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./tidytuesday/intro.html"> 
+    <a class="nav-link active" href="../../tidytuesday/intro.html" aria-current="page"> 
 <span class="menu-text">Tidytuesday</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./mapas.html"> 
+    <a class="nav-link" href="../../mapas.html"> 
 <span class="menu-text">Mapas</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./viz.html"> 
+    <a class="nav-link" href="../../viz.html"> 
 <span class="menu-text">Visualizaciones</span></a>
   </li>  
 </ul>
@@ -121,68 +182,257 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../tidytuesday/2023/intro.html">2023</a></li><li class="breadcrumb-item"><a href="../../tidytuesday/2023/intro.html">Introducción</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tidytuesday/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inicio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">2025</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tidytuesday/2025/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introducción</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tidytuesday/2025/s01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">s01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tidytuesday/2025/s02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">s02</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">2024</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tidytuesday/2024/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introducción</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tidytuesday/2024/s01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">s01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tidytuesday/2024/s02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">s02</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">2023</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tidytuesday/2023/intro.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Introducción</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tidytuesday/2023/s01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">s01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tidytuesday/2023/s02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">s02</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
-  <ul>
-  <li><a href="#educación" id="toc-educación" class="nav-link active" data-scroll-target="#educación">Educación</a></li>
-  <li><a href="#experiencia" id="toc-experiencia" class="nav-link" data-scroll-target="#experiencia">Experiencia</a></li>
-  </ul>
-</nav>
-    </div>
+        
+    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="YQ==">a <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Yg==">b <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Yw==">c <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<div class="quarto-about-solana column-body">
-  <div class="about-entity">
-    <div class="entity-contents">
-      <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../tidytuesday/2023/intro.html">2023</a></li><li class="breadcrumb-item"><a href="../../tidytuesday/2023/intro.html">Introducción</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span style="color:red">MS</span> Víctor Gauto</h1>
+<h1 class="title">Introducción</h1>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
-</header> <div class="about-links">
-  <a href="https://twitter.com/vhgauto" class="about-link" rel="" target="">
-    <i class="bi bi-twitter"></i>
-     <span class="about-link-text">twitter</span>
-  </a>
-  <a href="https://github.com/vhgauto" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="https://www.instagram.com/vhgauto/" class="about-link" rel="" target="">
-    <i class="bi bi-instagram"></i>
-     <span class="about-link-text">Instagram</span>
-  </a>
-  <a href="https://fosstodon.org/@vhgauto" class="about-link" rel="" target="">
-    <i class="bi bi-mastodon"></i>
-     <span class="about-link-text">Mastodon</span>
-  </a>
-</div>
-      <div class="about-contents"><main class="content" id="quarto-document-content">
-
-<p>Ciencia de datos, mapas, R, Quarto.</p>
-<section id="educación" class="level2">
-<h2 data-anchor-id="educación">Educación</h2>
-<p><span style="color:red"><i class="fa-solid fa-user-graduate fa-large" aria-label="user-graduate"></i></span> Doctorado en Geomática y Sistemas Espaciales <br> <span style="color:red"><i class="fa-solid fa-building-columns fa-large" aria-label="building-columns"></i></span> Instituto Gulich <br> <span style="color:red"><i class="fa-solid fa-location-dot fa-large" aria-label="location-dot"></i></span> Córdoba, Argentina <br> <span style="color:red"><i class="fa-solid fa-calendar-days fa-large" aria-label="calendar-days"></i></span> En proceso <br> <br> <span style="color:red"><i class="fa-solid fa-user-graduate fa-large" aria-label="user-graduate"></i></span> Maestría en Aplicaciones de Imágenes Espaciales <br> <span style="color:red"><i class="fa-solid fa-building-columns fa-large" aria-label="building-columns"></i></span> Instituto Gulich <br> <span style="color:red"><i class="fa-solid fa-location-dot fa-large" aria-label="location-dot"></i></span> Córdoba, Argentina <br> <span style="color:red"><i class="fa-solid fa-calendar-days fa-large" aria-label="calendar-days"></i></span> 2023 <br> <br> <span style="color:red"><i class="fa-solid fa-user-graduate fa-large" aria-label="user-graduate"></i></span> MS in Chemical and Biomolecular Engineering <br> <span style="color:red"><i class="fa-solid fa-building-columns fa-large" aria-label="building-columns"></i></span> Sogang University <br> <span style="color:red"><i class="fa-solid fa-location-dot fa-large" aria-label="location-dot"></i></span> Seoul, Corea del Sur <br> <span style="color:red"><i class="fa-solid fa-calendar-days fa-large" aria-label="calendar-days"></i></span> 2019 <br> <br> <span style="color:red"><i class="fa-solid fa-user-graduate fa-large" aria-label="user-graduate"></i></span> Ingeniería Química <br> <span style="color:red"><i class="fa-solid fa-building-columns fa-large" aria-label="building-columns"></i></span> Universidad Tecnológica Nacional Facultad Regional Resistencia <br> <span style="color:red"><i class="fa-solid fa-location-dot fa-large" aria-label="location-dot"></i></span> Chaco, Argentina <br> <span style="color:red"><i class="fa-solid fa-calendar-days fa-large" aria-label="calendar-days"></i></span> 2014 <br></p>
-</section>
-<section id="experiencia" class="level2">
-<h2 data-anchor-id="experiencia">Experiencia</h2>
-<p><span style="color:red"><i class="fa-solid fa-user-graduate fa-large" aria-label="user-graduate"></i></span> Doctorado en Geomática y Sistemas Espaciales<br> <span style="color:red"><i class="fa-solid fa-building-columns fa-large" aria-label="building-columns"></i></span> Instituto Gulich<br> <span style="color:red"><i class="fa-solid fa-location-dot fa-large" aria-label="location-dot"></i></span> Córdoba, Argentina<br> <span style="color:red"><i class="fa-solid fa-calendar-days fa-large" aria-label="calendar-days"></i></span> En proceso<br> <br> <br> <span style="color:red"><i class="fa-solid fa-user-graduate fa-large" aria-label="user-graduate"></i></span> Doctorado en Geomática y Sistemas Espaciales<br> <span style="color:red"><i class="fa-solid fa-building-columns fa-large" aria-label="building-columns"></i></span> Instituto Gulich<br> <span style="color:red"><i class="fa-solid fa-location-dot fa-large" aria-label="location-dot"></i></span> Córdoba, Argentina<br> <span style="color:red"><i class="fa-solid fa-calendar-days fa-large" aria-label="calendar-days"></i></span> En proceso<br></p>
+  
 
 
-</section>
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main></div>
+</header>
+
+
+<p>2023</p>
+<div id="listing-lista-tidytuesday" class="quarto-listing quarto-listing-container-default">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-lista-tidytuesday-sort" class="form-select" aria-label="Ordenar por" onchange="window['quarto-listings']['listing-lista-tidytuesday'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Ordenar por</option>
+       <option value="index" data-direction="asc">Por defecto</option>
+         <option value="listing-title" data-direction="asc">
+          Título
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Fecha - Menos reciente
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Fecha - Más reciente
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Autor/a
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filtro">
     </div>
-    <img src="img/profile.jpg" class="about-image
-  round " style="height: 20em; width: 20em;">
-  </div>
 </div>
- <!-- /main -->
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="YSUyQ2M=" data-listing-date-sort="1736467200000" data-listing-file-modified-sort="1737173245081" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
+<div class="thumbnail">
+<p><a href="../../tidytuesday/2023/s02.html" class="no-external"></a></p><a href="../../tidytuesday/2023/s02.html" class="no-external">
+<p><img loading="lazy" src="https://raw.githubusercontent.com/vhgauto/tidytuesday/refs/heads/main/2024/s02/viz.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="../../tidytuesday/2023/s02.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../tidytuesday/2023/s02.html" class="no-external">s02</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../../tidytuesday/2023/s02.html" class="no-external">Figura semana 02</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YQ=='); return false;">
+a
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Yw=='); return false;">
+c
+</div>
+</div>
+<div class="listing-description">
+<a href="../../tidytuesday/2023/s02.html" class="no-external">geom_point()</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../../tidytuesday/2023/s02.html" class="no-external">
+<div class="listing-date">
+2025-01-10
+</div>
+<div class="listing-author">
+VHG
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="YSUyQ2I=" data-listing-date-sort="1735689600000" data-listing-file-modified-sort="1737173245081" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
+<div class="thumbnail">
+<p><a href="../../tidytuesday/2023/s01.html" class="no-external"></a></p><a href="../../tidytuesday/2023/s01.html" class="no-external">
+<p><img loading="lazy" src="https://raw.githubusercontent.com/vhgauto/tidytuesday/main/2025/s02/viz.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="../../tidytuesday/2023/s01.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../tidytuesday/2023/s01.html" class="no-external">s01</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../../tidytuesday/2023/s01.html" class="no-external">Figura semana 01</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('YQ=='); return false;">
+a
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Yg=='); return false;">
+b
+</div>
+</div>
+<div class="listing-description">
+<a href="../../tidytuesday/2023/s01.html" class="no-external">geom_col()</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../../tidytuesday/2023/s01.html" class="no-external">
+<div class="listing-date">
+2025-01-01
+</div>
+<div class="listing-author">
+VHG
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No hay resultados
+</div>
+</div>
+<p>Adiós.</p>
+
+
+
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -347,6 +597,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   } else {
     toggleColorMode(false);
   }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -742,6 +999,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../tidytuesday/2024/s02.html" class="pagination-link" aria-label="s02">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">s02</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../tidytuesday/2023/s01.html" class="pagination-link" aria-label="s01">
+        <span class="nav-page-text">s01</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
