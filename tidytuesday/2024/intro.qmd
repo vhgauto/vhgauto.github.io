@@ -7,7 +7,7 @@ listing:
   sort: "date desc"
   sort-ui: true
   filter-ui: true
-  categories: numbered
+  categories: cloud
   date-format: iso
   image-height: 200px
 ---
