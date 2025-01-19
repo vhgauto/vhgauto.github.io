@@ -45,6 +45,13 @@ f_principal <- function(semana) {
 
   ll <- readLines(l)
 
+  arg <- tibble(
+    tex = ll
+  ) |>
+    mutate(tex = toupper(tex)) |>
+    filter(str_detect(tex, "ARGENTINA")) |>
+    nrow()
+
   categ <- tibble(
     tex = ll
   ) |>
@@ -56,6 +63,10 @@ f_principal <- function(semana) {
     distinct() |>
     pull() |>
     str_flatten(", ")
+
+  if (arg != 0) {
+    categ <- str_flatten(c(categ, "argentina"), ", ")
+  }
 
   fecha <- ymd(20230101) + weeks(semana)
 

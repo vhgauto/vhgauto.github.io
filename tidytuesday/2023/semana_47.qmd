@@ -5,7 +5,7 @@ author: Víctor Gauto
 date: "2023-11-26"
 editor_options:
   chunk_output_type: console
-categories: [geom_sf, geom_segment, geom_richtext]
+categories: [geom_sf, geom_segment, geom_richtext, argentina]
 image: https://raw.githubusercontent.com/vhgauto/tidytuesday/refs/heads/main/2023/semana_47/viz.png
 execute:
   eval: false

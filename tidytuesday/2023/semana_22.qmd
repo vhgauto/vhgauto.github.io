@@ -5,7 +5,7 @@ author: Víctor Gauto
 date: "2023-06-04"
 editor_options:
   chunk_output_type: console
-categories: [geom_hline, geom_segment, geom_text_repel, geom_richtext, geom_point]
+categories: [geom_hline, geom_segment, geom_text_repel, geom_richtext, geom_point, argentina]
 image: https://raw.githubusercontent.com/vhgauto/tidytuesday/refs/heads/main/2023/semana_22/viz.png
 execute:
   eval: false

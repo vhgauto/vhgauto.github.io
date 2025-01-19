@@ -5,7 +5,7 @@ author: Víctor Gauto
 date: "2023-12-10"
 editor_options:
   chunk_output_type: console
-categories: [geom_line, geom_point, geom_flag, geom_richtext, geom_curve]
+categories: [geom_line, geom_point, geom_flag, geom_richtext, geom_curve, argentina]
 image: https://raw.githubusercontent.com/vhgauto/tidytuesday/refs/heads/main/2023/semana_49/viz.png
 execute:
   eval: false
