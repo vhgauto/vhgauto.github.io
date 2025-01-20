@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Financiamiento de proyectos de [**R Consortium**](https://www.r-consortium.org/).
 
 # Script
 

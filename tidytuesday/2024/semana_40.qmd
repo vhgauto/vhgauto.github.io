@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Duración y cantidad de turnos en el ajedrez.
 
 # Script
 

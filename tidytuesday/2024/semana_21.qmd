@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Proporción entre empresas estatales y privadas en la generación de CO<sub>2</sub>.
 
 # Script
 

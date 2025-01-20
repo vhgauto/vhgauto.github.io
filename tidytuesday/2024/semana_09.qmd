@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+29 personas nacidas/muertas un 29 de febrero, de acuerdo al artículo de [Wikipedia](https://en.wikipedia.org/wiki/February_29) dedicado a la fecha.
 
 # Script
 

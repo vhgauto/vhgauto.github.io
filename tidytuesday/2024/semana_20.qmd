@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+¿Cuánto es lo máximo que pagaron por café? La respuesta varía según si la persona conoce o no el origen del café.
 
 # Script
 

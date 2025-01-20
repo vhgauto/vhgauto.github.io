@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Plantaciones por lote y año del paquete <code>[{gardenR}](https://github.com/llendway/gardenR)</code>
 
 # Script
 

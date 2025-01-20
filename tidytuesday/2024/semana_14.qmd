@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Profesiones de personas negras graduadas en 1900 en la Universidad de Atlanta.
 
 # Script
 

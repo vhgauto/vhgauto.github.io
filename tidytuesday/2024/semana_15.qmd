@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Ciudades alcanzadas total o parcialmente por los eclipses solares de 2023 y 2024, en EE.UU.
 
 # Script
 

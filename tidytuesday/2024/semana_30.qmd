@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Audiencia de <b>American Idol</b>.
 
 # Script
 

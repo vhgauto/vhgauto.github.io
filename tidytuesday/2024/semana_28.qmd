@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Paquetes y funciones más frecuentes en este repositorio, utilizando el paquete [`{funspotr}`](https://brshallo.github.io/funspotr/).
 
 # Script
 

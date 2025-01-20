@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Uso de signos de exclamación e interrogación en episodios de <b>Bob's Burger</b>.
 
 # Script
 

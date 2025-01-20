@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Mapa de Patrimonios de la Humanidad de UNESCO, inspirado en esta [figura](https://100.datavizproject.com/data-type/viz46/) de [1 dataset, 100 visualizations](https://100.datavizproject.com/).
 
 # Script
 

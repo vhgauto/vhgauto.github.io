@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Porcentaje de democracias, presidencias y monarquías.
 
 # Script
 

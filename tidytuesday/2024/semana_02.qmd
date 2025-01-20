@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Diferencias en los meses de nacimientos en Canadá y NHL.
 
 # Script
 

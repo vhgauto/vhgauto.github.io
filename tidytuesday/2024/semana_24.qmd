@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+El <b>Campus Pride Index</b> clasifica los campus universitarios de EE.UU.
 
 # Script
 

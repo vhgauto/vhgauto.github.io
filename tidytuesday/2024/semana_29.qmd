@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Presencia en las tribunas de los partidos de <b>Fútbol Femenino Inglés</b>, indicando el equipo más popular por año.
 
 # Script
 

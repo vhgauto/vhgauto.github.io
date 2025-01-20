@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Códigos ISO 3166-1 de 3 letras que son iguales al inicio del nombre del país, en inglés.
 
 # Script
 

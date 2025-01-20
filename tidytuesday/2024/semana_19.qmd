@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Semanas en el ranking de <b>Rolling Stone</b>, separados por género del álbum.
 
 # Script
 

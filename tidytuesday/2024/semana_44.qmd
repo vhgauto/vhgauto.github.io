@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Palabras anteriores y posteriores a los títulos de películas de <b>MONSTRUOS</b>.
 
 # Script
 

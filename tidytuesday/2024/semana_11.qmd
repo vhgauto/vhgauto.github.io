@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Empresas con categoría **501(c)(3)**, por década.
 
 # Script
 

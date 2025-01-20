@@ -55,8 +55,8 @@ showtext_opts(dpi = 300)
 # caption
 fuente <- glue(
   "Datos: <span style='color:{c3};'><span style='font-family:mono;'>",
-  "{{<b>tidytuesdayR</b>}}</span> semana 42. ",
-  "{{<span style='font-family:victor'>taylor</span>}}, ",
+  "<b>{{tidytuesdayR}}</b></span> semana 42. ",
+  "<span style='font-family:victor'>{{taylor}}</span>, ",
   "**W. Jake Thompson**</span>")
 autor <- glue("Autor: <span style='color:{c3};'>**Víctor Gauto**</span>")
 icon_twitter <- glue("<span style='font-family:fa-brands;'>&#xf099;</span>")

@@ -3,7 +3,7 @@
 
 library(tidyverse)
 
-l <- "https://raw.githubusercontent.com/vhgauto/tidytuesday/refs/heads/main/2023/README.md"
+readme <- "https://raw.githubusercontent.com/vhgauto/tidytuesday/refs/heads/main/2023/README.md"
 
 l_tbl <- readLines(l) |>
   tibble(tex = _) |>

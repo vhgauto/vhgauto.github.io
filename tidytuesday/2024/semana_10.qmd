@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Tendencias en la recolección de basura de [Mr. Trash Wheel](https://www.mrtrashwheel.com/).
 
 # Script
 

@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Paquetes que dependen de <code>{ggplot2}</code>, asociados a <code>{shiny}</code>.
 
 # Script
 

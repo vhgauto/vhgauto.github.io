@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Diferencia entre los ingresos a Universidades de Elite, comparado con Universidades públicas, según los ingresos en el hogar.
 
 # Script
 

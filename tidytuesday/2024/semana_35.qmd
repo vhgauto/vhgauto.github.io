@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Popularidad y puntaje de episodios de los <b>Power Rangers</b>, dividido entr las primeras y las últimas cinco temporadas.
 
 # Script
 

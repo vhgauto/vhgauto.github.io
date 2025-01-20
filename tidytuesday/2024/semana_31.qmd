@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Puntaje de películas con `summer` en el título, y la mejor calificada por género.
 
 # Script
 

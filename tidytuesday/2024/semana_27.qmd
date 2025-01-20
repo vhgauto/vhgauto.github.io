@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Datos geográficos presentes en los datasets de TidyTuesday.
 
 # Script
 

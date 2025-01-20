@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Consumos durante **San Valentín** y cambio en el porcentaje de personas que participan.
 
 # Script
 

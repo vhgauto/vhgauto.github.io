@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Lugares de votación en EE.UU., para cuatro elecciones.
 
 # Script
 
