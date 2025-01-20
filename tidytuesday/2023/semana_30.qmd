@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Diferentes tratamientos para escorbuto, en un estudio clínico de 1757.
 
 # Script
 

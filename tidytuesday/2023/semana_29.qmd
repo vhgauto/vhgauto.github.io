@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Los detectores de IA tienen serias limitaciones en detectar texto escrito en inglés por quienes no son nativos del idioma.
 
 # Script
 

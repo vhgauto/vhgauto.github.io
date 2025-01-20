@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Consumo energético argentino, y su comparación con los valores medios mundiales. En combustibles fósiles y renovables.
 
 # Script
 

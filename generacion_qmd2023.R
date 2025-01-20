@@ -3,6 +3,39 @@
 
 library(tidyverse)
 
+# variables ---------------------------------------------------------------
+
+prologo <- '---
+title: "Semana x_semana"
+subtitle: "Figura semana x_semana"
+author: Víctor Gauto
+date: "x_fecha"
+editor_options:
+  chunk_output_type: console
+categories: [x_categorias]
+image: x_imagen
+execute:
+  eval: false
+  echo: true
+code-fold: true
+---'
+
+cuerpo <- 'x_prologo
+
+x_descripcion
+
+# Script
+
+```{r}
+x_script
+```
+
+# Figura
+
+![](x_imagen)
+
+'
+
 # funciones ---------------------------------------------------------------
 
 # genera los links de los scripts
@@ -31,8 +64,9 @@ f_prologo <- function(semana, fecha, categorias, imagen) {
 }
 
 # genera el contenido del .qmd
-f_qmd <- function(prologo, script, imagen) {
+f_qmd <- function(prologo, descripcion, script, imagen) {
   p <- gsub("x_prologo", prologo, cuerpo)
+  p <- gsub("x_descripcion", descripcion, p)
   p <- gsub("x_script", script, p)
   p <- gsub("x_imagen", imagen, p)
   return(p)
@@ -70,11 +104,16 @@ f_principal <- function(semana) {
 
   fecha <- ymd(20230101) + weeks(semana)
 
+  descripcion <- f_readme(semana)
+
   prologo <- f_prologo(
     semana = semana, fecha = fecha, categorias = categ, imagen = i
   )
 
-  qmd <- f_qmd(prologo = prologo, script = str_flatten(ll, "\n"), imagen = i)
+  qmd <- f_qmd(
+    prologo = prologo, descripcion = descripcion,
+    script = str_flatten(ll, "\n"), imagen = i
+  )
 
   writeLines(qmd, paste0("tidytuesday/2023/semana_", semana, ".qmd"))
 
@@ -82,37 +121,38 @@ f_principal <- function(semana) {
 
 }
 
-# variables ---------------------------------------------------------------
+f_readme <- function(x) {
+  filter(readme_tbl, semana == x)$desc
+}
 
-prologo <- '---
-title: "Semana x_semana"
-subtitle: "Figura semana x_semana"
-author: Víctor Gauto
-date: "x_fecha"
-editor_options:
-  chunk_output_type: console
-categories: [x_categorias]
-image: x_imagen
-execute:
-  eval: false
-  echo: true
-code-fold: true
----
-'
+# README ------------------------------------------------------------------
 
-cuerpo <- 'x_prologo
+readme <- "https://raw.githubusercontent.com/vhgauto/tidytuesday/refs/heads/main/2023/README.md"
 
-# Script
+l_tbl <- readLines(readme) |>
+  tibble(tex = _) |>
+  mutate(fila = row_number())
 
-```{r}
-x_script
-```
+filas <- l_tbl |>
+  mutate(semana = str_detect(tex, "##")) |>
+  filter(semana) |>
+  pull(fila)
 
-# Figura
+desc <- l_tbl |>
+  filter(fila %in% c(filas+2)) |>
+  pull(tex)
 
-![](x_imagen)
-
-'
+readme_tbl <- l_tbl |>
+  filter(str_detect(tex, "##")) |>
+  mutate(desc = desc) |>
+  rename(semana = tex) |>
+  mutate(semana = str_remove(semana, "## Semana ")) |>
+  select(-fila) |>
+  arrange(semana) |>
+  mutate(
+    semana = if_else(nchar(semana) == 1, paste0("0", semana), semana)
+  ) |>
+  arrange(semana)
 
 # ejecución ---------------------------------------------------------------
 
@@ -121,4 +161,4 @@ f_principal(semana = "07")
 
 # múltiples semanas
 semana <- as.character(12:52)
-map(semana, f_principal)
+walk(semana, f_principal)

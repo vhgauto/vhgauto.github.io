@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Valores de anomalía de temperatura de la superficie terrestre.
 
 # Script
 

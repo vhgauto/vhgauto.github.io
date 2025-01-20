@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Historias verdaderas y falsas de [Snopes.com](https://www.snopes.com/).
 
 # Script
 

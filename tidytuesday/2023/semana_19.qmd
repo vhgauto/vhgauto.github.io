@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Costo asociado al cuidado de bebés.
 
 # Script
 

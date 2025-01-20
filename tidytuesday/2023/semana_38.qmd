@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Paquetes con nombre 'gg' y que dependen de ggplot2.
 
 # Script
 

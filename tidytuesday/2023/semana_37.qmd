@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Día cotidiano argentino, comparado con el resto del mundo.
 
 # Script
 

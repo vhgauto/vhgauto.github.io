@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Brecha de género entre diferentes grupos demográficos, en dólares/hora, en EEUU.
 
 # Script
 

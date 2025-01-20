@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Calificaciones de películas navideñas, por género.
 
 # Script
 

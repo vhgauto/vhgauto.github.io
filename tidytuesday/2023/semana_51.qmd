@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Relación entre popularidad y calificación en episodios de Navidad.
 
 # Script
 

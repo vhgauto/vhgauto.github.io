@@ -1,3 +1,6 @@
+fuente Noto:
+https://fonts.google.com/noto/specimen/Noto+Sans
+
 fontawesome:
 https://github.com/quarto-ext/fontawesome
 

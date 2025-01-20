@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+En el estado de Texas, EE.UU., ubicación de sitios históricos relacionados con iglesias y cementerios.
 
 # Script
 

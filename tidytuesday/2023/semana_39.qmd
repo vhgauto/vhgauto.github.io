@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Cantidad de veces que los personajes de **Ted Lasso** dicen *fuck*.
 
 # Script
 

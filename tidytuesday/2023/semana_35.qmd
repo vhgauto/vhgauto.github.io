@@ -13,6 +13,7 @@ execute:
 code-fold: true
 ---
 
+Veredictos de uso legítimo, por categorías, en EEUU.
 
 # Script
 
