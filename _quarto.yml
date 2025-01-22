@@ -64,13 +64,8 @@ website:
 
 format:
   html:
-    theme:
-      dark: darkly
-      light: flatly
-    css: styles.css
+    theme: [darkly, styles.css]
     toc: true
-    mainfont: Ubuntu
-    monofont: JetBrains Mono
     lang: es
     link-external-newwindow: true
     link-external-filter: ^(?:http:|https:)\/\/www\.vhgauto\.github\.io
