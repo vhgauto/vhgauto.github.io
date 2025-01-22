@@ -61,12 +61,15 @@ website:
       style: docked
       contents: viz
 
-
 format:
   html:
-    theme: [darkly, styles.css]
+    theme: [darkly, mi_estilo.scss]
     toc: true
     lang: es
+    language:
+      es:
+        toc-title-website: "Contenido"
+        back-to-top: "Subir"
     link-external-newwindow: true
     link-external-filter: ^(?:http:|https:)\/\/www\.vhgauto\.github\.io
 
