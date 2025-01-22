@@ -1,5 +1,5 @@
 ---
-title: "<cc>MS</cc> Víctor Gauto"
+title: "<c1>MS</c1> Víctor Gauto"
 about:
   template: solana
   image: img/profile.jpg
@@ -7,73 +7,38 @@ about:
   image-width: 20em
   links:
     - icon: twitter
-      text: twitter
       href: https://twitter.com/vhgauto
     - icon: github
-      text: Github
       href: https://github.com/vhgauto
     - icon: instagram
-      text: Instagram
       href: https://www.instagram.com/vhgauto/
     - icon: mastodon
-      text: Mastodon
       href: https://fosstodon.org/@vhgauto
+execute: 
+  eval: true
+  echo: false
 ---
 
 ```{r}
-
 source("soporte.R")
-
-edu1 <- f_edu(
-  tit = "Doctorado en Geomática y Sistemas Espaciales",
-  ins = "Instituto Gulich",
-  ubi = "Córdoba, Argentina",
-  cal = "En proceso"
-)
-
-edu2 <- f_edu(
-  tit = "Maestría en Aplicaciones de Imágenes Espaciales",
-  ins = "Instituto Gulich",
-  ubi = "Córdoba, Argentina",
-  cal = "2023"
-)
-
-edu3 <- f_edu(
-  tit = "MS in Chemical and Biomolecular Engineering",
-  ins = "Sogang University",
-  ubi = "Seoul, Corea del Sur",
-  cal = "2019"
-)
-
-edu4 <- f_edu(
-  tit = "Ingeniería Química",
-  ins = "Universidad Tecnológica Nacional Facultad Regional Resistencia",
-  ubi = "Chaco, Argentina",
-  cal = "2014"
-)
 ```
-
-Ciencia de datos, mapas, R, Quarto.
 
 ## Educación
 
-`r edu1`
+`r cv4`
 <br>
-`r edu2`
+`r cv3`
 <br>
-`r edu3`
+`r cv2`
 <br>
-`r edu4`
+`r cv1`
 
 ## Experiencia
 
-`r titulo` Doctorado en Geomática y Sistemas Espaciales<br>
-`r institucion` Instituto Gulich<br>
-`r ubicacion` Córdoba, Argentina<br>
-`r calendario` En proceso<br>
+`r cv4`
 <br>
+`r cv3`
 <br>
-`r titulo` Doctorado en Geomática y Sistemas Espaciales<br>
-`r institucion` Instituto Gulich<br>
-`r ubicacion` Córdoba, Argentina<br>
-`r calendario` En proceso<br>
+`r cv2`
+<br>
+`r cv1`
