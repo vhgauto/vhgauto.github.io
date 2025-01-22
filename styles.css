@@ -9,17 +9,62 @@
 // JetBrains Mono
 @import url('https://fonts.googleapis.com/css2?family=Gloock&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
+$c1: #C049A6; // violeta
+$c2: #278091; // verdeazul
+$c3: #F6B40E; // dorado
+$c4: #222222; // gris oscuro
 
+$font-family-sans-serif: "Ubuntu", Arial;
+$font-family-monospace: "JetBrains Mono";
+$font-size-root: 18px;
+$link-color: $c1;
 
 
 /*-- scss:rules --*/
+
+// mi nombre en la barra de navegación
+.navbar-title {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+// cambio color y fondo de íconos de RRSS en hover
+div.quarto-about-solana .about-entity .about-link {
+  font-size: 1.2em;
+  padding: .25em .5em;
+  border-color: transparent;
+  &:hover {
+    .bi {
+      color: $c4;
+    }
+    border-color: $c2;
+    background-color: $c2;
+    border-radius: 5px
+  }
+}
+
+// color de íconos de RRSS
+.about-links * {
+  color: $c1;
+}
+
+// todos los íconos de NERD FONT de un mismo color
+.nf {
+  color: $c1
+}
+
+//
+h1, h2, h3, h4 {
+  color: $c2;
+}
+
 
 pre, code, .sourceCode {
   font-family: JetBrains Mono;
 }
 
-cc {
-  color: #CE2090;
+c1 {
+  color: $c1;
 }
 
 /* SCROLL BAR -----------*/
@@ -43,3 +88,4 @@ cc {
 ::-webkit-scrollbar-thumb:hover {
   background: #333333;
 }
+
