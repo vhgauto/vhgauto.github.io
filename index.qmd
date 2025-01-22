@@ -14,10 +14,13 @@ about:
       href: https://www.instagram.com/vhgauto/
     - icon: mastodon
       href: https://fosstodon.org/@vhgauto
-execute: 
+execute:
   eval: true
   echo: false
 ---
+
+<!-- traducciones a español
+https://raw.githubusercontent.com/quarto-dev/quarto-cli/refs/heads/main/src/resources/language/_language-es.yml -->
 
 ```{r}
 source("soporte.R")
