@@ -1,16 +1,43 @@
 
 sep <- "<b style='color:red;'>|</b>"
-ubicacion <- "<span style='color:red'>{{< fa location-dot size=large >}}</span>"
-calendario <- "<span style='color:red'>{{< fa calendar-days size=large >}}</span>"
-titulo <- "<span style='color:red'>{{< fa user-graduate size=large >}}</span>"
-institucion <- "<span style='color:red'>{{< fa building-columns size=large >}}</span>"
+i_titulo <- "<span class='nf nf-fa-user_graduate'></span>"
+i_institucion <- "<span class='nf nf-fa-university'></span>"
+i_ubicacion <- "<span class='nf nf-fa-location_dot'></span>"
+i_calendario <- "<span class='nf nf-fa-calendar_days'></span>"
 
-f_edu <- function(tit, ins, ubi, cal) {
+f_tabla <- function(titulo, institucion, ubicacion, calendario) {
   paste(
-    titulo, tit, "<br>",
-    institucion, ins, "<br>",
-    ubicacion, ubi, "<br>",
-    calendario, cal, "<br>"
+    i_titulo, titulo, "<br>",
+    i_institucion, institucion, "<br>",
+    i_ubicacion, ubicacion, "<br>",
+    i_calendario, calendario, "<br>"
   )
 }
 
+cv4 <- f_tabla(
+  titulo = "Doctorado en Geomática y Sistemas Espaciales",
+  institucion = "Instituto Gulich",
+  ubicacion = "Córdoba, Argentina",
+  calendario = "En proceso"
+)
+
+cv3 <- f_tabla(
+  titulo = "Maestría en Aplicaciones de Imágenes Espaciales",
+  institucion = "Instituto Gulich",
+  ubicacion = "Córdoba, Argentina",
+  calendario = "2023"
+)
+
+cv2 <- f_tabla(
+  titulo = "MS in Chemical and Biomolecular Engineering",
+  institucion = "Sogang University",
+  ubicacion = "Seoul, Corea del Sur",
+  calendario = "2019"
+)
+
+cv1 <- f_tabla(
+  titulo = "Ingeniería Química",
+  institucion = "Universidad Tecnológica Nacional Facultad Regional Resistencia",
+  ubicacion = "Chaco, Argentina",
+  calendario = "2014"
+)
