@@ -51,16 +51,24 @@ est1 {
     text-decoration: underline;
 }
 
+.quarto-title-breadcrumbs .breadcrumb {
+    margin-bottom: .5em;
+    font-size: .9rem;
+    font-family: JetBrains Mono;
+}
+
 // íconos de RRSS en navbar
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
     color: $c-blanco;
     font-weight: bold;
+    text-decoration: underline 1px $c-rojo;
 }
 
 // mi nombre en la barra de navegación
 .navbar-title {
   font-weight: bold;
-  text-decoration: underline;
+  text-decoration: none;
+  font-size: xx-large;
 }
 
 // cambio color y fondo de íconos de RRSS en hover
