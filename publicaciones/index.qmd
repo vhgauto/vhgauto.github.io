@@ -1,5 +1,5 @@
 ---
-title: "<i class='bi bi-file-text'></i> Publicaciones"
+title: "{{< iconify carbon:document >}} Publicaciones"
 listing:
 #   template: template.ejs
   id: lista-papers
@@ -21,6 +21,8 @@ format:
 ---
 
 Lista de publicaciones y trabajos en los que he participado.
+<br>
+<br>
 
 ::: {#lista-papers}
 :::

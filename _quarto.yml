@@ -12,12 +12,11 @@ website:
   navbar:
     left:
       - href: tidytuesday/index.qmd
-        text: "Tidytuesday"
+        text: "{{< iconify fa6-brands:r-project >}} Tidytuesday"
       - href: publicaciones/index.qmd
-        text: "Publicaciones"
-        icon: file-text
+        text: "{{< iconify carbon:document >}} Publicaciones"
       - href: viz.qmd
-        text: "Visualizaciones"
+        text: "{{< iconify zondicons:chart-bar >}} Visualizaciones"
     tools:
       - icon: github
         href: https://github.com/vhgauto
