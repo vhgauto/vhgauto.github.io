@@ -1,0 +1,47 @@
+- title: "Spatio-temporal characterization of precipitation in the Middle and Lower Paraguay Basin based on satellite products and weather station data"
+  author: [Rossana Villalba, Anabella Ferral, Julián Baéz, Jorge Kurita, <est1>Víctor Hugo Gauto</est1>, Juan Carlos Bertoni]
+  date: 01-01-2024
+  path: https://doi.org/10.5194/isprs-archives-XLVIII-2-W6-2024-65-2024
+  categories: [<categ>IMERG, CHIRPS, El Niño, Validation, Accumulated precipitation, Anomalies</categ>]
+
+- title: "Comparison of water surface temperature retrieval methods from Landsat 9 satellite data"
+  author: [Matias Bonansea, Sofia Gutierrez, Mariana Correa, Sofia Pana, <est1>Víctor Hugo Gauto</est1>, Francisco Nemiña, Alba Germán, Giuliana Beltramone, Lucio Pinotti, Anabella Ferral]
+  date: 01-01-2024
+  path: https://doi.org/10.5194/isprs-archives-XLVIII-2-W6-2024-1-2024
+  categories: [Landsat Collection 2 Level 2 products, Single-Channel method, Split-Window algorithm, Surface temperature]
+
+- title: "Remote Sensing Regression Models to Estimate Water Quality Indicators in Continental Waters in North-East Argentina"
+  author: [<est1>Víctor Hugo Gauto</est1>, Enid Marta Utgés, Elsa Ivonne Hervot, María Daniela Tenev, Alejandro Farías, Matías Bonansea, Anabella Ferral]
+  date: 01-01-2024
+  path: https://doi.org/10.1109/ARGENCON62399.2024.10735875
+  categories: [Remote sensing, Water quality, Empirical algorithm, Chlorophyll-a, Turbidity, Sentinel-2]
+
+- title: "Modelling of Phosphorus and Nitrogen Delivery in a Strategic River Basin"
+  author: [Sofía Paná, Matías Bonansea, Vera Camacho Valdéz, Inés del Valle Asís, <est1>Víctor Hugo Gauto</est1>, Anabella Ferral]
+  date: 01-01-2024
+  path: https://doi.org/10.1109/ARGENCON62399.2024.10735960
+  categories: [Water quality, Ecosystem services, Nutrients, InVEST]
+
+- title: "Changes in Land Covers in Two River Basins in Central Argentina Region. Monitoring the SDG 15.3. 1 Indicator"
+  author: [Sofía Paná, <est1>Víctor Hugo Gauto</est1>, Mattia Terzaghi, Anabella Ferral, Fransisco Nemiña, Inés del Valle Asís, Matías Bonansea]
+  date: 01-01-2023
+  path: https://doi.org/10.1109/RPIC59053.2023.10530795
+  categories: [Land degradation, Urbanization, Basin scale, Riverine scale]
+
+- title: "Caracterización óptica de aguas superficiales a partir de imágenes satelitales multi e hiperespectrales en la región de Gran Resistencia, Chaco"
+  author: [<est1>Víctor Hugo Gauto</est1>]
+  date: 01-01-2023
+  path: https://rdu.unc.edu.ar/handle/11086/550551
+  categories: [Aguas interiores, Sentinel-2, PRISMA, Sensor hiperespectral, Análisis cromático]
+
+- title: "Studies of Adsorption-Desorption of Methylene Blue in a Fixed-Bed Reactor Filled with Cotton and Tanine Industry Waste"
+  author: [María Daniela Tenev, Camila Torre, Gimena Fontana, <est1>Víctor Hugo Gauto</est1>, Mario Sergio Cleva, Néstor Caracciolo, Susana Boeykens]
+  date: 01-01-2023
+  path: https://doi.org/10.18687/LACCEI2023.1.1.1594
+  categories: [Methylene blue, fixed-bed reactor, cotton husk, quebracho chip]
+
+- title: "First results of PRISMA satellite data applied to water quality monitoring in Argentina"
+  author: [<est1>Víctor Hugo Gauto</est1>, Anabella Ferral, Matias Bonansea, Alejandro Farías, Marcelo Scavuzzo, Osvaldo Cardozo, Alba German, Claudia Giardino]
+  date: 01-01-2022
+  path: https://doi.org/10.1109/ARGENCON55245.2022.9939810
+  categories: [PRISMA, Sentinel 2, Hyperspectral, Turbid waters, Atmospheric correction, Cromaticity, Spectral signature]

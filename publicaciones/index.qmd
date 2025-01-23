@@ -1,0 +1,26 @@
+---
+title: "<i class='bi bi-file-text'></i> Publicaciones"
+listing:
+#   template: template.ejs
+  id: lista-papers
+  type: table
+  contents:
+    - lista.yml
+  sort: "date desc"
+  sort-ui: false
+  filter-ui: false
+  date-format: "YYYY"
+  image-height: 200px
+  field-display-names:
+    categories: "Palabras clave"
+    author: "Autores"
+    date: "Año"
+format:
+    html:
+        page-layout: full
+---
+
+Lista de publicaciones y trabajos en los que he participado.
+
+::: {#lista-papers}
+:::
