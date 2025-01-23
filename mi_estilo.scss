@@ -46,6 +46,11 @@ $footer-hl: $c-azul;
 
 /*-- scss:rules --*/
 
+est1 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 // íconos de RRSS en navbar
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
     color: $c-blanco;
