@@ -11,10 +11,11 @@ website:
   open-graph: true
   navbar:
     left:
-      - href: tidytuesday/intro.qmd
+      - href: tidytuesday/index.qmd
         text: "Tidytuesday"
-      - href: mapas.qmd
-        text: "Mapas"
+      - href: publicaciones/index.qmd
+        text: "Publicaciones"
+        icon: file-text
       - href: viz.qmd
         text: "Visualizaciones"
     tools:
@@ -44,7 +45,7 @@ website:
       collapse-level: 1
       style: "floating"
       contents:
-        - href: tidytuesday/intro.qmd
+        - href: tidytuesday/index.qmd
           text: "Inicio"
         - section: "2025"
           contents: tidytuesday/2025/*
@@ -52,14 +53,6 @@ website:
           contents: tidytuesday/2024/*
         - section: "2023"
           contents: tidytuesday/2023/*
-
-    - title: "Mapas"
-      style: docked
-      contents: mapas
-
-    - title: "Visualizaciones"
-      style: docked
-      contents: viz
 
 format:
   html:
@@ -70,6 +63,7 @@ format:
       es:
         toc-title-website: "Contenido"
         back-to-top: "Subir"
+        title-block-author-single: "Autor"
     link-external-newwindow: true
     link-external-filter: ^(?:http:|https:)\/\/www\.vhgauto\.github\.io
 
