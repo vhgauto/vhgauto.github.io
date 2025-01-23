@@ -1,12 +1,13 @@
 ---
 title: "Introducción"
-listing: 
+listing:
   id: lista-tidytuesday
   type: default
   contents: .
   sort: "date desc"
   sort-ui: true
   filter-ui: true
+  fields: [date, title, description, image, categories]
   categories: cloud
   date-format: iso
   image-height: 200px
