@@ -46,11 +46,35 @@ $footer-hl: $c-azul;
 
 /*-- scss:rules --*/
 
+// estilo de los nombres de las propiedades de las publicaciones
+// año, doi, autores
+listing-names {
+    color: $c-blanco;
+    background-color: $c-rojo-oscuro;
+    padding: .15em;
+    border-radius: .25rem;
+}
+
+// estilo de las categorías en las publicaciones
+listing-categories {
+    border: solid $c-azul-oscuro 1px;
+    background-color: $c-azul-oscuro;
+    border-radius: .25rem;
+    text-transform: uppercase;
+    font-size: .8em;
+    padding-left: .25em;
+    padding-right: .25em;
+    padding-top: .15em;
+    padding-bottom: .15em;
+    margin-right: .7em;
+}
+
 est1 {
     font-weight: bold;
     text-decoration: underline;
 }
 
+// breadcrumbs
 .quarto-title-breadcrumbs .breadcrumb {
     margin-bottom: .5em;
     font-size: .9rem;
