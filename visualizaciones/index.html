@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-67be89186a351f6f574bec0cd68a7468.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e4619433f53344b8816d46cf878a4891.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-253e064ba44c2aa386ddcf787ec59917.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script src="../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -80,9 +80,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -184,7 +184,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9wb2ludA==">geom_point <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV92bGluZQ==">geom_vline <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -210,13 +210,103 @@ window.Quarto = {
 <p>Figuras geométricas varias.</p>
 <div id="listing-lista-viz" class="quarto-listing quarto-listing-container-default">
 <div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-lista-viz-sort" class="form-select" aria-label="Ordenar por" onchange="window['quarto-listings']['listing-lista-viz'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Ordenar por</option>
+       <option value="index" data-direction="asc">Por defecto</option>
+         <option value="listing-title" data-direction="asc">
+          Título
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Fecha - Menos reciente
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Fecha - Más reciente
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Autor/a
+        </option>
+     </select>
+  </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filtro">
     </div>
 </div>
 <div class="list quarto-listing-default">
-
+<div class="quarto-post image-right" data-index="0" data-categories="Z2VvbV92bGluZSUyQ2dlb21fcG9pbnQ=" data-listing-date-sort="1676764800000" data-listing-file-modified-sort="1737694100730" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1876">
+<div class="thumbnail">
+<p><a href="../visualizaciones/s02.html" class="no-external"></a></p><a href="../visualizaciones/s02.html" class="no-external">
+<p><img loading="lazy" src="https://raw.githubusercontent.com/vhgauto/tidytuesday/refs/heads/main/2023/semana_07/viz.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="../visualizaciones/s02.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../visualizaciones/s02.html" class="no-external">Semana 07</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../visualizaciones/s02.html" class="no-external">Figura semana 07</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Z2VvbV92bGluZQ=='); return false;">
+geom_vline
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Z2VvbV9wb2ludA=='); return false;">
+geom_point
+</div>
+</div>
+<div class="listing-description">
+<a href="../visualizaciones/s02.html" class="no-external">Deferencia de edad entre parejas en películas de Hollywood.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../visualizaciones/s02.html" class="no-external">
+<div class="listing-date">
+2023-02-19
+</div>
+<div class="listing-author">
+Víctor Gauto
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Z2VvbV92bGluZSUyQ2dlb21fcG9pbnQ=" data-listing-date-sort="1676764800000" data-listing-file-modified-sort="1737694100730" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1876">
+<div class="thumbnail">
+<p><a href="../visualizaciones/s01.html" class="no-external"></a></p><a href="../visualizaciones/s01.html" class="no-external">
+<p><img loading="lazy" src="https://raw.githubusercontent.com/vhgauto/tidytuesday/refs/heads/main/2023/semana_07/viz.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="../visualizaciones/s01.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../visualizaciones/s01.html" class="no-external">Semana 07</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../visualizaciones/s01.html" class="no-external">Figura semana 07</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Z2VvbV92bGluZQ=='); return false;">
+geom_vline
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Z2VvbV9wb2ludA=='); return false;">
+geom_point
+</div>
+</div>
+<div class="listing-description">
+<a href="../visualizaciones/s01.html" class="no-external">Deferencia de edad entre parejas en películas de Hollywood.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../visualizaciones/s01.html" class="no-external">
+<div class="listing-date">
+2023-02-19
+</div>
+<div class="listing-author">
+Víctor Gauto
+</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No hay resultados

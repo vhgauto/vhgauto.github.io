@@ -58,7 +58,10 @@
   },
   {
     "listing": "/visualizaciones/index.html",
-    "items": []
+    "items": [
+      "/visualizaciones/s02.html",
+      "/visualizaciones/s01.html"
+    ]
   },
   {
     "listing": "/tidytuesday/2024/index.html",
