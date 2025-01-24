@@ -4,11 +4,61 @@
     "items": []
   },
   {
-    "listing": "/tidytuesday/2025/index.html",
+    "listing": "/tidytuesday/2023/index.html",
     "items": [
-      "/tidytuesday/2025/s02.html",
-      "/tidytuesday/2025/s01.html"
+      "/tidytuesday/2023/semana_52.html",
+      "/tidytuesday/2023/semana_51.html",
+      "/tidytuesday/2023/semana_50.html",
+      "/tidytuesday/2023/semana_49.html",
+      "/tidytuesday/2023/semana_48.html",
+      "/tidytuesday/2023/semana_47.html",
+      "/tidytuesday/2023/semana_46.html",
+      "/tidytuesday/2023/semana_45.html",
+      "/tidytuesday/2023/semana_44.html",
+      "/tidytuesday/2023/semana_43.html",
+      "/tidytuesday/2023/semana_42.html",
+      "/tidytuesday/2023/semana_41.html",
+      "/tidytuesday/2023/semana_40.html",
+      "/tidytuesday/2023/semana_39.html",
+      "/tidytuesday/2023/semana_38.html",
+      "/tidytuesday/2023/semana_37.html",
+      "/tidytuesday/2023/semana_36.html",
+      "/tidytuesday/2023/semana_35.html",
+      "/tidytuesday/2023/semana_34.html",
+      "/tidytuesday/2023/semana_33.html",
+      "/tidytuesday/2023/semana_32.html",
+      "/tidytuesday/2023/semana_31.html",
+      "/tidytuesday/2023/semana_30.html",
+      "/tidytuesday/2023/semana_29.html",
+      "/tidytuesday/2023/semana_28.html",
+      "/tidytuesday/2023/semana_27.html",
+      "/tidytuesday/2023/semana_26.html",
+      "/tidytuesday/2023/semana_25.html",
+      "/tidytuesday/2023/semana_24.html",
+      "/tidytuesday/2023/semana_23.html",
+      "/tidytuesday/2023/semana_22.html",
+      "/tidytuesday/2023/semana_21.html",
+      "/tidytuesday/2023/semana_20.html",
+      "/tidytuesday/2023/semana_19.html",
+      "/tidytuesday/2023/semana_18.html",
+      "/tidytuesday/2023/semana_17.html",
+      "/tidytuesday/2023/semana_16.html",
+      "/tidytuesday/2023/semana_15.html",
+      "/tidytuesday/2023/semana_14.html",
+      "/tidytuesday/2023/semana_13.html",
+      "/tidytuesday/2023/semana_12.html",
+      "/tidytuesday/2023/semana_07.html"
     ]
+  },
+  {
+    "listing": "/mapas.html",
+    "items": [
+      "/mapas/mapa1.html"
+    ]
+  },
+  {
+    "listing": "/visualizaciones/index.html",
+    "items": []
   },
   {
     "listing": "/tidytuesday/2024/index.html",
@@ -68,62 +118,10 @@
     ]
   },
   {
-    "listing": "/mapas.html",
+    "listing": "/tidytuesday/2025/index.html",
     "items": [
-      "/mapas/mapa1.html"
-    ]
-  },
-  {
-    "listing": "/tidytuesday/2023/index.html",
-    "items": [
-      "/tidytuesday/2023/semana_52.html",
-      "/tidytuesday/2023/semana_51.html",
-      "/tidytuesday/2023/semana_50.html",
-      "/tidytuesday/2023/semana_49.html",
-      "/tidytuesday/2023/semana_48.html",
-      "/tidytuesday/2023/semana_47.html",
-      "/tidytuesday/2023/semana_46.html",
-      "/tidytuesday/2023/semana_45.html",
-      "/tidytuesday/2023/semana_44.html",
-      "/tidytuesday/2023/semana_43.html",
-      "/tidytuesday/2023/semana_42.html",
-      "/tidytuesday/2023/semana_41.html",
-      "/tidytuesday/2023/semana_40.html",
-      "/tidytuesday/2023/semana_39.html",
-      "/tidytuesday/2023/semana_38.html",
-      "/tidytuesday/2023/semana_37.html",
-      "/tidytuesday/2023/semana_36.html",
-      "/tidytuesday/2023/semana_35.html",
-      "/tidytuesday/2023/semana_34.html",
-      "/tidytuesday/2023/semana_33.html",
-      "/tidytuesday/2023/semana_32.html",
-      "/tidytuesday/2023/semana_31.html",
-      "/tidytuesday/2023/semana_30.html",
-      "/tidytuesday/2023/semana_29.html",
-      "/tidytuesday/2023/semana_28.html",
-      "/tidytuesday/2023/semana_27.html",
-      "/tidytuesday/2023/semana_26.html",
-      "/tidytuesday/2023/semana_25.html",
-      "/tidytuesday/2023/semana_24.html",
-      "/tidytuesday/2023/semana_23.html",
-      "/tidytuesday/2023/semana_22.html",
-      "/tidytuesday/2023/semana_21.html",
-      "/tidytuesday/2023/semana_20.html",
-      "/tidytuesday/2023/semana_19.html",
-      "/tidytuesday/2023/semana_18.html",
-      "/tidytuesday/2023/semana_17.html",
-      "/tidytuesday/2023/semana_16.html",
-      "/tidytuesday/2023/semana_15.html",
-      "/tidytuesday/2023/semana_14.html",
-      "/tidytuesday/2023/semana_13.html",
-      "/tidytuesday/2023/semana_12.html",
-      "/tidytuesday/2023/semana_07.html"
-    ]
-  },
-  {
-    "listing": "/viz.html",
-    "items": [
-      "/viz/viz2.html"
+      "/tidytuesday/2025/s02.html",
+      "/tidytuesday/2025/s01.html"
     ]
   }
 ]
