@@ -1,6 +1,6 @@
 ---
 title: "{{< iconify zondicons:chart-bar >}} Visualizaciones"
-listing: 
+listing:
   id: lista-viz
   type: default
   contents: .

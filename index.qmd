@@ -33,3 +33,6 @@ source("soporte.R")
 <br>
 `r cv1`
 
+## Experiencia
+
+`r cv4`
