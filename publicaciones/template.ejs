@@ -1,11 +1,11 @@
 ```{=html}
 <ul>
 <% for (const item of items) { %>
-    <h2> <a href="<%- item.path %>"><%= item.title %></a> </h2>
+  <li>
+    <a href="<%- item.path %>"><%= item.title %></a><br/>
     <%= item.date %><br>
-
-    <li><%= item['categories'] %></li>
-
+    <%= item['categories'] %>
+  </li>
 <% } %>
 </ul>
 ```

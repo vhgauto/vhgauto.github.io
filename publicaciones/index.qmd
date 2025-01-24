@@ -1,11 +1,10 @@
 ---
 title: "{{< iconify carbon:document >}} Publicaciones"
 listing:
-#   template: template.ejs
+  template: template.ejs
   id: lista-papers
   type: table
-  contents:
-    - lista.yml
+  contents: lista.yml
   sort: "date desc"
   sort-ui: false
   filter-ui: false
