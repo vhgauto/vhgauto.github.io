@@ -1,10 +1,12 @@
 ---
-title: "Visualizaciones varias"
+title: "{{< iconify zondicons:chart-bar >}} Visualizaciones"
 listing: 
   id: lista-viz
   type: default
-  contents: viz
-  sort: "date"
+  contents: .
+  sort: "date desc"
+  sort-ui: true
+  filter-ui: true
   categories: numbered
   date-format: iso
   image-height: 200px
