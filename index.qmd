@@ -17,6 +17,9 @@ about:
 execute:
   eval: true
   echo: false
+format:
+    html:
+        page-layout: full
 ---
 
 ```{r}
