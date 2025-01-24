@@ -1,9 +1,9 @@
 
 sep <- "<b style='color:red;'>|</b>"
-i_titulo <- "<span class='nf nf-fa-user_graduate'></span>"
-i_institucion <- "<span class='nf nf-fa-university'></span>"
-i_ubicacion <- "<span class='nf nf-fa-location_dot'></span>"
-i_calendario <- "<span class='nf nf-fa-calendar_days'></span>"
+i_titulo <- "<span class='nf nf-fa-user_graduate nf-lista'></span>"
+i_institucion <- "<span class='nf nf-fa-university nf-lista'></span>"
+i_ubicacion <- "<span class='nf nf-fa-location_dot nf-lista'></span>"
+i_calendario <- "<span class='nf nf-fa-calendar_days nf-lista'></span>"
 
 f_tabla <- function(titulo, institucion, ubicacion, calendario) {
   paste(
