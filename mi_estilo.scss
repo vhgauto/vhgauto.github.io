@@ -26,6 +26,9 @@ $c-gris: #222222;
 // blanco
 $c-blanco: #FFFFFF;
 
+// color de ORCID
+$c-orcid: #A6CE39;
+
 $font-family-sans-serif: "Ubuntu", Arial;
 $font-family-monospace: "JetBrains Mono";
 $font-size-root: 18px;
@@ -46,19 +49,54 @@ $footer-hl: $c-azul;
 
 /*-- scss:rules --*/
 
+.nf-lista {
+    color: $c-rojo;
+    margin-right: .7rem;
+}
+
+a.listing-title {
+    color: $c-azul;
+    text-decoration: none;
+}
+
+a.listing-author-name {
+    color: $c-blanco;
+    text-decoration: none;
+}
+
+a.listing-doi {
+    color: $c-azul;
+    text-decoration: solid;
+}
+
+.separator {
+    color: $c-azul;
+}
+
+.orcid {
+    color: $c-orcid;
+}
+
+hr.listing {
+    color: $c-rojo;
+    border-color: $c-rojo;
+    border-width: 1px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
 // estilo de los nombres de las propiedades de las publicaciones
 // año, doi, autores
 listing-names {
     color: $c-blanco;
-    background-color: $c-rojo-oscuro;
+    background-color: $c-azul-oscuro;
     padding: .15em;
-    border-radius: .25rem;
+    border-radius: .0rem;
 }
 
 // estilo de las categorías en las publicaciones
 listing-categories {
-    border: solid $c-azul-oscuro 1px;
-    background-color: $c-azul-oscuro;
+    border: solid $c-azul 1px;
     border-radius: .25rem;
     text-transform: uppercase;
     font-size: .8em;
@@ -116,9 +154,9 @@ div.quarto-about-solana .about-entity .about-link {
 }
 
 // todos los íconos de NERD FONT de un mismo color
-.nf {
-  color: $c-rojo
-}
+// .nf {
+//   color: $c-rojo
+// }
 
 //
 h1, h2, h3, h4 {

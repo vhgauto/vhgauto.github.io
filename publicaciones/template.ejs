@@ -1,20 +1,32 @@
 ```{=html}
 <% for (const item of items) { %>
 
-    <h4 style="margin-bottom: 25px; margin-top: 5px;"><a href="<%- item.path %>"><%= item.title %></a></h4>
+    <h3 style="margin-bottom: 25px; margin-top: 5px;"><a class="listing-title" href="<%- item.path %>"><%= item.title %></a></h3>
 
-    <listing-names>AUTORES</listing-names> <%= item.author %><br>
+    <i class="nf nf-oct-person_fill nf-lista"></i>
+    <% item.autores.forEach((autor, index) => { %>
+        <% if (autor.orcid) { %>
+            <a class="listing-author-name" href="<%= autor.orcid %>"> <b><%= autor.name %></b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
+        <% } else { %>
+            <b><%= autor.name %></b>
+        <% } %>
+        <% if (index < item.autores.length - 1) { %> <b class="separator">|</b> <% } %>
+    <% }) %>
+    <br>
 
     <% if (item.doi) { %>
-        <listing-names>DOI</listing-names> <a href="https://doi.org/<%- item.doi %>"><%= item.doi %></a><br>
-    <% } else { %>
-
+        <i class="nf nf-cod-link nf-lista"></i> <a class="listing-doi" href="https://doi.org/<%- item.doi %>"><%= item.doi %></a><br>
     <% } %>
 
-    <listing-names>AÑO</listing-names> <span style="font-family: JetBrains Mono;"><%= item.date %></span><br>
-    <% for (const semester of item.categories) { %>
-        <listing-categories> <%= semester %> </listing-categories>
+    <i class="nf nf-md-calendar nf-lista"></i> <%= item.date %><br>
+
+    <i class="nf nf-fa-hashtag nf-lista"></i>
+    <% for (const categories of item.categories) { %>
+        <listing-categories> <%= categories %> </listing-categories>
     <% } %>
-  <hr style="margin-bottom: 0px;"><br>
+
+    <hr class="listing"><br>
+
 <% } %>
+
 ```
