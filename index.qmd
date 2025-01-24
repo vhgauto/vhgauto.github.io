@@ -19,9 +19,6 @@ execute:
   echo: false
 ---
 
-<!-- traducciones a español
-https://raw.githubusercontent.com/quarto-dev/quarto-cli/refs/heads/main/src/resources/language/_language-es.yml -->
-
 ```{r}
 source("soporte.R")
 ```
@@ -36,12 +33,3 @@ source("soporte.R")
 <br>
 `r cv1`
 
-## Experiencia
-
-`r cv4`
-<br>
-`r cv3`
-<br>
-`r cv2`
-<br>
-`r cv1`

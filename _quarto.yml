@@ -15,7 +15,7 @@ website:
         text: "{{< iconify fa6-brands:r-project >}} Tidytuesday"
       - href: publicaciones/index.qmd
         text: "{{< iconify carbon:document >}} Publicaciones"
-      - href: viz.qmd
+      - href: visualizaciones/index.qmd
         text: "{{< iconify zondicons:chart-bar >}} Visualizaciones"
     tools:
       - icon: github
