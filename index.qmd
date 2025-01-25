@@ -6,14 +6,20 @@ about:
   image-shape: round
   image-width: 20em
   links:
-    - icon: twitter
+    - text: "{{< iconify mdi:twitter >}}"
       href: https://twitter.com/vhgauto
-    - icon: github
+    - text: "{{< iconify mdi:github >}}"
       href: https://github.com/vhgauto
-    - icon: instagram
+    - text: "{{< iconify mdi:instagram >}}"
       href: https://www.instagram.com/vhgauto/
-    - icon: mastodon
+    - text: "{{< iconify mdi:mastodon >}}"
       href: https://fosstodon.org/@vhgauto
+    - text: "{{< iconify ri:bluesky-fill >}}"
+      href: https://bsky.app/profile/vhgauto.bsky.social<br>
+    - text: "{{< iconify academicons:google-scholar >}}"
+      href: https://scholar.google.es/citations?user=nxCfD0AAAAAJ
+    - text: "{{< iconify simple-icons:orcid >}}"
+      href: https://orcid.org/0000-0001-9960-8558
 execute:
   eval: true
   echo: false
