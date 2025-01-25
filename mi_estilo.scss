@@ -152,12 +152,12 @@ div.quarto-about-solana .about-entity .about-link {
 // color de íconos de RRSS
 .about-links * {
     color: $c-azul;
-    transition-duration: 1s;
+    transition-duration: .7s;
 
     &:hover {
         color: $c-rojo;
         text-decoration: underline $c-rojo;
-        transition-duration: 1s;
+        transition-duration: .7s;
   }
 }
 
