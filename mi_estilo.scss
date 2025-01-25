@@ -49,6 +49,16 @@ $footer-hl: $c-azul;
 
 /*-- scss:rules --*/
 
+// imagen personal en about
+.about-image {
+    border: solid 3px $c-azul;
+    transition-duration: 1s;
+    &:hover {
+        border: solid 3px $c-rojo;
+        transition-duration: 1s;
+    }
+}
+
 .nf-lista {
     color: $c-rojo;
     margin-right: .7rem;
@@ -135,34 +145,26 @@ est1 {
 
 // cambio color y fondo de íconos de RRSS en hover
 div.quarto-about-solana .about-entity .about-link {
-  font-size: 1.2em;
-  padding: .25em .5em;
-  border-color: transparent;
-  &:hover {
-    .bi {
-      color: $c-gris;
-    }
-    border-color: $c-azul;
-    background-color: $c-azul;
-    border-radius: 5px
-  }
+    font-size: 1.5em;
+    border: none;
 }
 
 // color de íconos de RRSS
 .about-links * {
-  color: $c-rojo;
-}
+    color: $c-azul;
+    transition-duration: 1s;
 
-// todos los íconos de NERD FONT de un mismo color
-// .nf {
-//   color: $c-rojo
-// }
+    &:hover {
+        color: $c-rojo;
+        text-decoration: underline $c-rojo;
+        transition-duration: 1s;
+  }
+}
 
 //
 h1, h2, h3, h4 {
   color: $c-azul;
 }
-
 
 pre, code, .sourceCode {
   font-family: JetBrains Mono;
