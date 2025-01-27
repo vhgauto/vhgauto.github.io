@@ -23,7 +23,7 @@ execute:
   warning: false
 ---
 
-![Semana 02, 2025](s02.png)
+![Semana 02, 2025](semana_02.png)
 
 # Paquetes
 
@@ -50,14 +50,14 @@ Fuentes: Ubuntu y JetBrains Mono
 ```{r}
 font_add(
   family = "ubuntu",
-  regular = "../../fuente/Ubuntu-Regular.ttf",
-  bold = "../../fuente/Ubuntu-Bold.ttf",
-  italic = "../../fuente/Ubuntu-Italic.ttf"
+  regular = "././fuente/Ubuntu-Regular.ttf",
+  bold = "././fuente/Ubuntu-Bold.ttf",
+  italic = "././fuente/Ubuntu-Italic.ttf"
 )
 
 font_add(
   family = "jet",
-  regular = "../../fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf"
+  regular = "././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf"
 )
 
 showtext_auto()
@@ -171,7 +171,7 @@ Guardo
 ```{r}
 ggsave(
   plot = g,
-  filename = "s02.png",
+  filename = "tidytuesday/2025/semana_02.png",
   width = 30,
   height = 40,
   units = "cm"
