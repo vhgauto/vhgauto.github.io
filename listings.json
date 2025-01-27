@@ -4,6 +4,14 @@
     "items": []
   },
   {
+    "listing": "/tidytuesday/2025/index.html",
+    "items": [
+      "/tidytuesday/2025/semana_02.html",
+      "/tidytuesday/2025/semana_03.html",
+      "/tidytuesday/2025/semana_04.html"
+    ]
+  },
+  {
     "listing": "/tidytuesday/2024/index.html",
     "items": [
       "/tidytuesday/2024/semana_53.html",
@@ -118,12 +126,6 @@
       "/tidytuesday/2023/semana_13.html",
       "/tidytuesday/2023/semana_12.html",
       "/tidytuesday/2023/semana_07.html"
-    ]
-  },
-  {
-    "listing": "/tidytuesday/2025/index.html",
-    "items": [
-      "/tidytuesday/2025/semana_02.html"
     ]
   }
 ]
