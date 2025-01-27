@@ -1,0 +1,122 @@
+---
+format:
+  html:
+    title: "Semana X_semana"
+    date: "2025-XX-XX"
+    code-fold: show
+    code-summary: "Ver el código"
+    code-line-numbers: false
+    code-annotations: false
+    code-link: true
+    code-tools:
+        source: true
+        toggle: true
+        caption: "Código"
+    code-overflow: scroll
+    page-layout: full
+editor_options:
+  chunk_output_type: console
+categories: "---GEOM---"
+execute:
+  eval: false
+  echo: true
+  warning: false
+---
+
+![Semana X_semana, X_año](semana_X_semana.png)
+
+# Paquetes
+
+```{r}
+library(glue)
+library(ggtext)
+library(showtext)
+library(tidyverse)
+```
+
+# Estilos
+
+Colores
+
+```{r}
+c1 <- "#000000"
+c2 <- "#000000"
+c3 <- "#000000"
+```
+
+Fuentes: Ubuntu y JetBrains Mono
+
+```{r}
+font_add(
+  family = "ubuntu",
+  regular = "././fuente/Ubuntu-Regular.ttf",
+  bold = "././fuente/Ubuntu-Bold.ttf",
+  italic = "././fuente/Ubuntu-Italic.ttf"
+)
+
+font_add(
+  family = "jet",
+  regular = "././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf"
+)
+
+showtext_auto()
+showtext_opts(dpi = 300)
+```
+
+# Epígrafe
+
+```{r}
+fuente <- glue(
+    "Datos: <span style='color:{c1};'><span style='font-family:jet;'>",
+    "{{<b>tidytuesdayR</b>}}</span> semana X_semana, ",
+    "<b>---FUENTE---</b>.</span>"
+)
+
+autor <- glue("<span style='color:{c1};'>**Víctor Gauto**</span>")
+icon_twitter <- glue("<span style='font-family:jet;'>&#xf099;</span>")
+icon_instagram <- glue("<span style='font-family:jet;'>&#xf16d;</span>")
+icon_github <- glue("<span style='font-family:jet;'>&#xf09b;</span>")
+icon_mastodon <- glue("<span style='font-family:jet;'>&#xf0ad1;</span>")
+icon_bsky <- glue("<span style='font-family:jet;'>&#xe28e;</span>")
+usuario <- glue("<span style='color:{c1};'>**vhgauto**</span>")
+sep <- glue("**|**")
+
+mi_caption <- glue(
+    "{fuente}<br>{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} ",
+    "{icon_mastodon} {icon_bsky} {usuario}"
+)
+```
+
+# Datos
+
+```{r}
+tuesdata <- tidytuesdayR::tt_load(X_año, X_semana)
+```
+
+# Procesamiento
+
+Me interesa...
+
+```{r}
+
+```
+
+# Figura
+
+Figura
+
+```{r}
+g <- ggplot()
+```
+
+Guardo
+
+```{r}
+ggsave(
+  plot = g,
+  filename = "tidytuesday/X_año/semana_X_semana.png",
+  width = 30,
+  height = 30,
+  units = "cm"
+)
+```
