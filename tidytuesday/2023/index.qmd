@@ -8,7 +8,7 @@ listing:
   sort-ui: true
   filter-ui: true
   fields: [date, title, description, image, categories]
-  categories: cloud
+  categories: numbered
   date-format: iso
   image-height: 200px
 ---

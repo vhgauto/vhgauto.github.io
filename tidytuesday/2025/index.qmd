@@ -1,6 +1,6 @@
 ---
 title: "Introducción"
-listing: 
+listing:
   id: lista-tidytuesday
   type: default
   contents: .
