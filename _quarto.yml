@@ -28,7 +28,8 @@ website:
         href: https://fosstodon.org/@vhgauto
   site-url: https://vhgauto.github.io/
   page-footer:
-    left: Víctor Gauto
+    center: "Víctor Gauto"
+    left: "Creado con <img src='https://quarto.org/quarto.png' height=20px /> y {{< iconify fa6-brands:r-project >}}"
     right:
       - icon: github
         href: https://github.com/vhgauto
