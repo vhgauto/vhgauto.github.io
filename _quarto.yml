@@ -32,7 +32,7 @@ website:
   site-url: https://vhgauto.github.io/
   page-footer:
     center: "Víctor Gauto"
-    left: "Creado con <img src='https://quarto.org/quarto.png' height=20px /> y {{< iconify fa6-brands:r-project >}}"
+    left: "Creado con <a href='https://quarto.org/'><img src='https://quarto.org/quarto.png' height=20px /></a> y <a href='https://www.r-project.org/'>{{< iconify fa6-brands:r-project >}}</a>"
     right:
       - icon: github
         href: "https://github.com/vhgauto"
