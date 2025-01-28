@@ -14,25 +14,6 @@ mensaje <- function(x) {
   )
 }
 
-# paquetes ----------------------------------------------------------------
-
-# paquetes <- function() {
-#   purrr::map(
-#     c("glue", "ggtext", "showtext", "tidyverse"),
-#     ~suppressPackageStartupMessages(
-#       library(
-#         package = .x,
-#         character.only = TRUE,
-#         warn.conflicts = FALSE,
-#         quietly = TRUE,
-#         verbose = FALSE
-#       )
-#     )
-#   )
-# }
-
-# paquetes()
-
 # nueva semana ------------------------------------------------------------
 
 # función que crea una nueva carpeta con un script para el procesamiento
@@ -74,8 +55,13 @@ nueva_semana <- function(semana_numero, año = 2025) {
     )
   }
 
-  # creo directorio
-  # dir.create(semana_carpeta, recursive = TRUE)
+  # fecha del martes de la semana dada
+  i <- seq.Date(
+    from = lubridate::ymd(paste0(año, "0101")),
+    to = lubridate::ymd(paste0(año, "1231")),
+    by = "1 day"
+  )
+  fecha_tidytuesday <- i[lubridate::week(i) == semana_numero & lubridate::wday(i) == 3]
 
   if (!file.exists(new_file)) {
     file.create(new_file)
@@ -96,11 +82,11 @@ nueva_semana <- function(semana_numero, año = 2025) {
       x = r_txt
     )
 
-    # r_txt <- gsub(
-    #   pattern = "semana_numero",
-    #   replacement = semana_numero,
-    #   x = r_txt
-    # )
+    r_txt <- gsub(
+      pattern = "X_fecha",
+      replacement = fecha_tidytuesday,
+      x = r_txt
+    )
 
     # creo el nuevo script
     writeLines(r_txt, con = new_file)
@@ -111,46 +97,7 @@ nueva_semana <- function(semana_numero, año = 2025) {
 
   system(glue::glue("open {paste0(getwd(), '/', new_file)}"))
 
-  # source(new_file)
-
 }
-
-# caption -----------------------------------------------------------------
-
-# caption <- function(fuente1, fuente2 = NULL, col, week) {
-#
-#   if (is.null(fuente2)) {
-#     fuente <- glue(
-#       "Datos: <span style='color:{col};'><span style='font-family:jet;'>",
-#       "{{<b>tidytuesdayR</b>}}</span> semana {week}, ",
-#       "<b>{fuente1}</b>.</span>"
-#     )
-#   } else {
-#     fuente <- glue(
-#       "Datos: <span style='color:{col};'><span style='font-family:jet;'>",
-#       "{{<b>tidytuesdayR</b>}}</span> semana {week}, ",
-#       "<b>{fuente1}</b>, {fuente2}.</span>"
-#     )
-#   }
-#
-#   autor <- glue("<span style='color:{col};'>**Víctor Gauto**</span>")
-#   icon_twitter <- glue("<span style='font-family:jet;'>&#xf099;</span>")
-#   icon_instagram <- glue("<span style='font-family:jet;'>&#xf16d;</span>")
-#   icon_github <- glue("<span style='font-family:jet;'>&#xf09b;</span>")
-#   icon_mastodon <- glue("<span style='font-family:jet;'>&#xf0ad1;</span>")
-#   icon_bsky <- glue("<span style='font-family:jet;'>&#xe28e;</span>")
-#   usuario <- glue("<span style='color:{col};'>**vhgauto**</span>")
-#   sep <- glue("**|**")
-#
-#   mi_caption <- glue(
-#     "{fuente}<br>{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} ",
-#     "{icon_mastodon} {icon_bsky} {usuario}"
-#   )
-#
-#   return(mi_caption)
-# }
-
-# mensaje("Paquetes y funciones cargadas")
 
 mensaje(
   glue::glue(
