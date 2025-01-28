@@ -21,7 +21,10 @@ $c-azul-oscuro: #003560;
 $c-dorado: #F6B40E;
 
 // gris oscuro
-$c-gris: #222222;
+$c-gris:#222222;
+
+// gris claro
+$c-gris-claro:#999999;
 
 // blanco
 $c-blanco: #FFFFFF;
@@ -49,6 +52,26 @@ $footer-hl: $c-azul;
 
 /*-- scss:rules --*/
 
+// etiquetas de categorías en .qmd con bordes cuadrados
+.quarto-title .quarto-categories .quarto-category {
+    padding: .25em .75em;
+    font-size: .65em;
+    text-transform: uppercase;
+    border: solid 1px;
+    border-radius: 0rem;
+    opacity: .6;
+}
+
+// tamaño de las categorías a la derecha
+.quarto-listing-category .category {
+    cursor: pointer;
+    font-size: .9em;
+    color: $c-gris-claro;
+    &:hover {
+        color: $c-rojo;
+    }
+}
+
 // imagen personal en about
 .about-image {
     border: solid 3px $c-azul;
@@ -59,34 +82,41 @@ $footer-hl: $c-azul;
     }
 }
 
+// íconos en about, educación y experiencia
 .nf-lista {
     color: $c-rojo;
     margin-right: .7rem;
 }
 
+// título de las publicaciones
 a.listing-title {
     color: $c-azul;
     text-decoration: none;
 }
 
+// nombre de los autores en las publicaciones
 a.listing-author-name {
     color: $c-blanco;
     text-decoration: none;
 }
 
+// separador de autores
+.separator {
+    color: $c-azul;
+}
+
+// link del DOI en las publicaciones
 a.listing-doi {
     color: $c-azul;
     text-decoration: solid;
 }
 
-.separator {
-    color: $c-azul;
-}
-
+// color del ícono de ORCID
 .orcid {
     color: $c-orcid;
 }
 
+// barra horizontal entre publicaciones
 hr.listing {
     color: $c-rojo;
     border-color: $c-rojo;
@@ -127,6 +157,9 @@ est1 {
     margin-bottom: .5em;
     font-size: .9rem;
     font-family: JetBrains Mono;
+    background-color: transparent;
+    border: solid 1px $c-gris-claro;
+    border-radius: 0em;
 }
 
 // íconos de RRSS en navbar
