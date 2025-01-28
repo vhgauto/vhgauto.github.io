@@ -52,6 +52,13 @@ $footer-hl: $c-azul;
 
 /*-- scss:rules --*/
 
+.navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    opacity: .5;
+}
+
 // etiquetas de categorías en .qmd con bordes cuadrados
 .quarto-title .quarto-categories .quarto-category {
     padding: .25em .75em;
