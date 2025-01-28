@@ -14,7 +14,7 @@ format:
     page-layout: full
 editor_options:
   chunk_output_type: console
-categories: "geom_point"
+categories: [geom_point]
 execute:
   eval: false
   echo: true
