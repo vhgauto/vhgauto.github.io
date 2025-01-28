@@ -6,39 +6,42 @@ website:
   title: "Víctor Gauto"
   favicon: img/favicon.png
   page-navigation: true
+  repo-url: "https://github.com/vhgauto/vhgauto.github.io"
+  repo-actions: [edit, issue]
+  repo-link-target: "_blank"
   back-to-top-navigation: true
   twitter-card: true
   open-graph: true
   navbar:
     left:
-      - href: tidytuesday/index.qmd
+      - href: "tidytuesday/index.qmd"
         text: "{{< iconify fa6-brands:r-project >}} Tidytuesday"
-      - href: publicaciones/index.qmd
+      - href: "publicaciones/index.qmd"
         text: "{{< iconify carbon:document >}} Publicaciones"
-      - href: visualizaciones/index.qmd
+      - href: "visualizaciones/index.qmd"
         text: "{{< iconify zondicons:chart-bar >}} Visualizaciones"
     tools:
       - icon: github
-        href: https://github.com/vhgauto
+        href: "https://github.com/vhgauto"
       - icon: twitter
-        href: https://twitter.com/vhgauto
+        href: "https://twitter.com/vhgauto"
       - icon: instagram
-        href: https://www.instagram.com/vhgauto/
+        href: "https://www.instagram.com/vhgauto/"
       - icon: mastodon
-        href: https://fosstodon.org/@vhgauto
+        href: "https://fosstodon.org/@vhgauto"
   site-url: https://vhgauto.github.io/
   page-footer:
     center: "Víctor Gauto"
     left: "Creado con <img src='https://quarto.org/quarto.png' height=20px /> y {{< iconify fa6-brands:r-project >}}"
     right:
       - icon: github
-        href: https://github.com/vhgauto
+        href: "https://github.com/vhgauto"
       - icon: twitter
-        href: https://twitter.com/vhgauto
+        href: "https://twitter.com/vhgauto"
       - icon: instagram
-        href: https://www.instagram.com/vhgauto/
+        href: "https://www.instagram.com/vhgauto/"
       - icon: mastodon
-        href: https://fosstodon.org/@vhgauto
+        href: "https://fosstodon.org/@vhgauto"
 
   sidebar:
     - title: "Tidytuesday"
@@ -67,10 +70,8 @@ format:
     link-external-newwindow: true
     link-external-filter: ^(?:http:|https:)\/\/www\.vhgauto\.github\.io
 
-
 execute:
   freeze: auto
   echo: false
   eval: true
   warning: false
-
