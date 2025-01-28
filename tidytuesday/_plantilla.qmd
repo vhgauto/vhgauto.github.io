@@ -1,8 +1,6 @@
 ---
 format:
   html:
-    title: "Semana X_semana"
-    date: "2025-XX-XX"
     code-fold: show
     code-summary: "Ver el código"
     code-line-numbers: false
@@ -21,6 +19,9 @@ execute:
   eval: false
   echo: true
   warning: false
+title: "Semana X_semana"
+date: X_fecha
+author: Víctor Gauto
 ---
 
 ![Semana X_semana, X_año](semana_X_semana.png)
