@@ -1,8 +1,6 @@
 ---
 format:
   html:
-    title: "Semana 04"
-    date: "2025-01-28"
     code-fold: show
     code-summary: "Ver el código"
     code-line-numbers: false
@@ -21,7 +19,12 @@ execute:
   eval: false
   echo: true
   warning: false
+title: "Semana 04"
+date: 2025-01-28
+author: Víctor Gauto
 ---
+
+Falta de acceso al agua en EE.UU.
 
 ![Semana 04, 2025](semana_04.png)
 

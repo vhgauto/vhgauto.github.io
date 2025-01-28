@@ -1,8 +1,6 @@
 ---
 format:
   html:
-    title: "Semana 02"
-    date: "2025-01-14"
     code-fold: show
     code-summary: "Ver el código"
     code-line-numbers: false
@@ -21,7 +19,12 @@ execute:
   eval: false
   echo: true
   warning: false
+title: "Semana 02"
+date: 2025-01-14
+author: Víctor Gauto
 ---
+
+Conferencias asociadas a quarto en <b>posit::conf</b> entre 2023 y 2024.
 
 ![Semana 02, 2025](semana_02.png)
 

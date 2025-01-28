@@ -1,8 +1,6 @@
 ---
 format:
   html:
-    title: "Semana 03"
-    date: "2025-01-21"
     code-fold: show
     code-summary: "Ver el código"
     code-line-numbers: false
@@ -21,7 +19,12 @@ execute:
   eval: false
   echo: true
   warning: false
+title: "Semana 03"
+date: 2025-01-21
+author: Víctor Gauto
 ---
+
+Cantidad de personas muertas en expediciones al Himalaya.
 
 ![Semana 03, 2025](semana_03.png)
 
@@ -107,11 +110,11 @@ Me interesa la cantidad de muertes que ocurrieron en cada año.
 Sumo las muertes de integrantes y personal de la expedición
 
 ```{r}
-d <- exped |> 
-  select(PEAKID, YEAR, contains("DEATH")) |> 
+d <- exped |>
+  select(PEAKID, YEAR, contains("DEATH")) |>
   mutate(
     m = MDEATHS + HDEATHS
-  ) |> 
+  ) |>
   reframe(
     s = sum(m),
     .by = YEAR
@@ -128,7 +131,7 @@ mi_subtitulo <- glue(
 )
 
 nota <- str_wrap(
-  "Las muertes incluyen a los integrantes de la expedición y al personal 
+  "Las muertes incluyen a los integrantes de la expedición y al personal
   contratado.",
   30
 )
@@ -158,7 +161,7 @@ g <- ggplot(d, aes(YEAR, s)) +
     color = c3, fill = NA, label.color = NA, hjust = 1
   ) +
   annotate(
-    geom = "text", x = 2020.1, y = 24, label = nota, color = c3, size = 6, 
+    geom = "text", x = 2020.1, y = 24, label = nota, color = c3, size = 6,
     hjust = 0, lineheight = .8
   ) +
   scale_y_continuous(
