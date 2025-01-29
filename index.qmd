@@ -18,7 +18,7 @@ about:
     - text: "{{< iconify mdi:mastodon >}}"
       href: https://fosstodon.org/@vhgauto
     - text: "{{< iconify ri:bluesky-fill >}}"
-      href: https://bsky.app/profile/vhgauto.bsky.social<br>
+      href: https://bsky.app/profile/vhgauto.bsky.social
     - text: "{{< iconify academicons:google-scholar >}}"
       href: https://scholar.google.es/citations?user=nxCfD0AAAAAJ
     - text: "{{< iconify simple-icons:orcid >}}"
@@ -35,25 +35,73 @@ source(".sudoku.R")
 
 ## Educación
 
-`r cv4`
-<br>
-`r cv3`
-<br>
-`r cv2`
-<br>
-`r cv1`
+:::: {.grid}
+::: {.g-col-9}
+`r edu4`
+:::
 
-## Experiencia
+::: {.g-col-3}
+![](img/logo_ig.jpg){fig-align="center" height="100"}
+:::
 
-`r cv4`
+::: {.g-col-9}
+`r edu3`
+:::
+
+::: {.g-col-3}
+![](img/logo_ig.jpg){fig-align="center" height="100px"}
+:::
+
+::: {.g-col-9}
+`r edu2`
+:::
+
+::: {.g-col-3}
+![](img/logo_sogang.png){fig-align="center" height="100px"}
+:::
+
+::: {.g-col-9}
+`r edu1`
+:::
+
+::: {.g-col-3}
+![](img/logo_utn.png){fig-align="center" height="100px"}
+:::
+::::
+
+## Investigación
+
+:::: {.grid}
+::: {.g-col-9}
+`r inv3`
+:::
+
+::: {.g-col-3}
+![](img/logo_utn.png){fig-align="center" height="80px"}
+:::
+
+::: {.g-col-9}
+`r inv2`
+:::
+
+::: {.g-col-3}
+![](img/logo_irea.png){fig-align="center" height="80px"}
+:::
+
+::: {.g-col-9}
+`r inv1`
+:::
+
+::: {.g-col-3}
+![](img/logo_sogang.png){fig-align="center" height="80px"}
+:::
+::::
 
 ## Sudoku
 
 Disfruto mucho resolver los [sudokus](https://www.nytimes.com/puzzles/sudoku) de New York Times {{< iconify simple-icons:newyorktimes >}}.
 
-Llevo registro de los tiempos que me lleva resolver los tres niveles de dificultad.
-<br>
-<br>
+Llevo registro de los tiempos que me lleva resolver los tres niveles de dificultad. <br> <br>
 
 ```{r}
 #| eval: true
@@ -61,5 +109,3 @@ Llevo registro de los tiempos que me lleva resolver los tres niveles de dificult
 
 h
 ```
-
-
