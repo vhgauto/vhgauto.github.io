@@ -21,7 +21,7 @@ colores <- c(
 # datos -------------------------------------------------------------------
 
 d <- read_tsv(
-  file = "C:/Users/victo/OneDrive/R_recursos/viz/sudoku_tiempos/tiempos.txt"
+  file = "datos/tiempos.txt"
 ) |>
   mutate(fecha = dmy(fecha)) |>
   mutate(
