@@ -52,6 +52,25 @@ $footer-hl: $c-azul;
 
 /*-- scss:rules --*/
 
+// herramientas de GITHUB en toc
+.sidebar .toc-actions>ul, .sidebar .quarto-code-links>ul, .sidebar .quarto-other-links>ul, .sidebar .quarto-alternate-notebooks>ul, .sidebar .quarto-alternate-formats>ul {
+    font-size: 0.8rem;
+    color: $c-gris-claro;
+}
+
+// announcement
+#quarto-announcement {
+    padding: .5em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    color: $c-azul-oscuro;
+    font-weight: bold;
+    background-color: $c-blanco;
+    font-size: 1.2em;
+}
+
+//estilo de chunks
 pre.sourceCode {
     border-radius: 0em;
     font-size: .8em;
@@ -189,6 +208,12 @@ est1 {
   font-weight: bold;
   text-decoration: none;
   font-size: xx-large;
+  color: $c-blanco;
+  transition-duration: 1s;
+  &:hover {
+    color: $c-rojo;
+    transition-duration: 1s;
+  }
 }
 
 // cambio color y fondo de íconos de RRSS en hover
