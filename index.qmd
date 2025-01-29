@@ -52,14 +52,12 @@ source(".sudoku.R")
 Disfruto mucho resolver los [sudokus](https://www.nytimes.com/puzzles/sudoku) de New York Times {{< iconify simple-icons:newyorktimes >}}.
 
 Llevo registro de los tiempos que me lleva resolver los tres niveles de dificultad.
+<br>
+<br>
 
 ```{r}
 #| eval: true
 #| echo: false
-#| column: body-outset
-#| out-height: 400px
-#| fig-cap: Disfruto mucho resolver los [sudokus](https://www.nytimes.com/puzzles/sudoku) de New York Times {{< iconify simple-icons:newyorktimes >}}.<br>Llevo registro de los tiempos que me lleva resolver los tres niveles de dificultad.
-#| cap-location: margin
 
 h
 ```
