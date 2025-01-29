@@ -12,6 +12,12 @@ website:
   back-to-top-navigation: true
   twitter-card: true
   open-graph: true
+  announcement:
+    icon: info-circle-fill
+    dismissable: true
+    content: "Sitio en construcción"
+    type: primary
+    position: below-navbar
   navbar:
     left:
       - href: "tidytuesday/index.qmd"
