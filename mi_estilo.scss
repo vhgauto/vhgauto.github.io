@@ -52,6 +52,14 @@ $footer-hl: $c-azul;
 
 /*-- scss:rules --*/
 
+pre.sourceCode {
+    border-radius: 0em;
+    font-size: .8em;
+    overflow: visible !important;
+    padding: .4em;
+}
+
+// botón de búsqueda en navbar
 .navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
     width: 20px;
     height: 20px;
@@ -201,9 +209,19 @@ div.quarto-about-solana .about-entity .about-link {
   }
 }
 
-//
+// todos los headers en azul
 h1, h2, h3, h4 {
   color: $c-azul;
+}
+
+// mi nombre en about con transición a rojo
+h1.title {
+  font-size: 4em;
+  transition-duration: 1s;
+    &:hover {
+        color: $c-rojo;
+        transition-duration: 1s;
+    }
 }
 
 pre, code, .sourceCode {
