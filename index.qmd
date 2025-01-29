@@ -1,10 +1,13 @@
 ---
-title: "<c1>MS</c1> Víctor Gauto"
+title: "Víctor Gauto"
+subtitle: |
+  Ingeniería química, calidad de agua, datos geográficos, visualizaciones de datos.
 about:
+  id: about-cv
   template: solana
   image: img/profile.jpg
   image-shape: round
-  image-width: 20em
+  image-width: 13em
   links:
     - text: "{{< iconify mdi:twitter >}}"
       href: https://twitter.com/vhgauto
@@ -20,17 +23,15 @@ about:
       href: https://scholar.google.es/citations?user=nxCfD0AAAAAJ
     - text: "{{< iconify simple-icons:orcid >}}"
       href: https://orcid.org/0000-0001-9960-8558
-execute:
-  eval: true
-  echo: false
-format:
-    html:
-        page-layout: full
 ---
 
 ```{r}
-source("soporte.R")
+source(".soporte.R")
+source(".sudoku.R")
 ```
+
+::: {#about-cv}
+:::
 
 ## Educación
 
@@ -45,3 +46,22 @@ source("soporte.R")
 ## Experiencia
 
 `r cv4`
+
+## Sudoku
+
+Disfruto mucho resolver los [sudokus](https://www.nytimes.com/puzzles/sudoku) de New York Times {{< iconify simple-icons:newyorktimes >}}.
+
+Llevo registro de los tiempos que me lleva resolver los tres niveles de dificultad.
+
+```{r}
+#| eval: true
+#| echo: false
+#| column: body-outset
+#| out-height: 400px
+#| fig-cap: Disfruto mucho resolver los [sudokus](https://www.nytimes.com/puzzles/sudoku) de New York Times {{< iconify simple-icons:newyorktimes >}}.<br>Llevo registro de los tiempos que me lleva resolver los tres niveles de dificultad.
+#| cap-location: margin
+
+h
+```
+
+
