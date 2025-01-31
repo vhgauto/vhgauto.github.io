@@ -50,7 +50,42 @@ $footer-bg: $c-azul-oscuro;
 $footer-fg: $c-blanco;
 $footer-hl: $c-azul;
 
+// tiempo de transiciones
+$t-trans: .7s;
+
 /*-- scss:rules --*/
+
+// tamaño de logo
+.navbar-logo {
+    max-height: 60px;
+    max-width: 60px;
+    padding-right: 10px;
+}
+
+// cambio de color en íconos RRSS en navbar en hover
+.navbar .quarto-navbar-tools .quarto-navigation-tool {
+  transition-duration: $t-trans;
+    &:hover {
+      transition-duration: $t-trans;
+    }
+}
+
+// color blanco para título en about (✌️)
+.est-blanco {
+  color: $c-dorado;
+  transition-duration: $t-trans;
+}
+
+// color azul para título en about
+.est-azul {
+  color: $c-azul;
+  transition-duration: $t-trans;
+}
+
+// transición a color rojo en título en about
+.quarto-title:hover .est-blanco, .quarto-title:hover .est-azul {
+  color: $c-rojo;
+}
 
 // herramientas de GITHUB en toc
 .sidebar .toc-actions>ul, .sidebar .quarto-code-links>ul, .sidebar .quarto-other-links>ul, .sidebar .quarto-alternate-notebooks>ul, .sidebar .quarto-alternate-formats>ul {
@@ -82,8 +117,13 @@ pre.sourceCode {
 .navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
     width: 20px;
     height: 20px;
-    color: #fff;
+    color: $c-blanco;
     opacity: .5;
+    transition-duration: $t-trans;
+    &:hover {
+      opacity: 1;
+      transition-duration: $t-trans;
+    }
 }
 
 // etiquetas de categorías en .qmd con bordes cuadrados
@@ -109,10 +149,10 @@ pre.sourceCode {
 // imagen personal en about
 .about-image {
     border: solid 3px $c-azul;
-    transition-duration: 1s;
+    transition-duration: $t-trans;
     &:hover {
         border: solid 3px $c-rojo;
-        transition-duration: 1s;
+        transition-duration: $t-trans;
     }
 }
 
@@ -196,7 +236,7 @@ est1 {
     border-radius: 0em;
 }
 
-// íconos de RRSS en navbar
+// tabs en navbar
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
     color: $c-blanco;
     font-weight: bold;
@@ -209,10 +249,10 @@ est1 {
   text-decoration: none;
   font-size: xx-large;
   color: $c-blanco;
-  transition-duration: 1s;
+  transition-duration: $t-trans;
   &:hover {
     color: $c-rojo;
-    transition-duration: 1s;
+    transition-duration: $t-trans;
   }
 }
 
@@ -225,12 +265,10 @@ div.quarto-about-solana .about-entity .about-link {
 // color de íconos de RRSS
 .about-links * {
     color: $c-azul;
-    transition-duration: .7s;
-
+    transition-duration: $t-trans;
     &:hover {
         color: $c-rojo;
-        text-decoration: underline $c-rojo;
-        transition-duration: .7s;
+        transition-duration: $t-trans;
   }
 }
 
@@ -239,14 +277,9 @@ h1, h2, h3, h4 {
   color: $c-azul;
 }
 
-// mi nombre en about con transición a rojo
+// títulos H1 en todos los .qmd
 h1.title {
   font-size: 4em;
-  transition-duration: 1s;
-    &:hover {
-        color: $c-rojo;
-        transition-duration: 1s;
-    }
 }
 
 pre, code, .sourceCode {
