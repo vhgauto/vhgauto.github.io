@@ -1,7 +1,7 @@
 ---
 title: "Víctor Gauto"
 subtitle: |
-  Ingeniería química, calidad de agua, datos geográficos, visualizaciones de datos.
+  Ingeniería química, calidad de agua, GIS, visualizaciones de datos, películas, sudokus, `R`.
 about:
   id: about-cv
   template: solana
