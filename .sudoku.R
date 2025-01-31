@@ -21,7 +21,8 @@ colores <- c(
 # datos -------------------------------------------------------------------
 
 d <- read_tsv(
-  file = "datos/tiempos.txt"
+  file = "datos/tiempos.txt",
+  col_types = "cccc"
 ) |>
   mutate(fecha = dmy(fecha)) |>
   mutate(
