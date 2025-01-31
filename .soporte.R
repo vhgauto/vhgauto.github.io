@@ -1,13 +1,25 @@
 
 sep <- "<b style='color:red;'>|</b>"
+i_link <- "<span class='nf nf-cod-link_external nf-lista'></span>"
 i_titulo <- "<span class='nf nf-fa-user_graduate nf-lista'></span>"
 i_institucion <- "<span class='nf nf-fa-university nf-lista'></span>"
 i_ubicacion <- "<span class='nf nf-fa-location_dot nf-lista'></span>"
 i_calendario <- "<span class='nf nf-fa-calendar_days nf-lista'></span>"
 
+f_link <- function(institucion, link) {
+  paste0(
+    "<a href='",
+    link,
+    "'> ",
+    institucion,
+    i_link,
+    "</a>"
+  )
+}
+
 f_edu <- function(titulo, institucion, ubicacion, calendario) {
   paste(
-    i_titulo, titulo, "<br>",
+    i_titulo, "<b style='font-size:1.2em'>", titulo, "</b>", "<br>",
     i_institucion, institucion, "<br>",
     i_ubicacion, ubicacion, "<br>",
     i_calendario, calendario, "<br>"
@@ -16,7 +28,7 @@ f_edu <- function(titulo, institucion, ubicacion, calendario) {
 
 f_inv <- function(institucion, ubicacion, calendario) {
   paste(
-    i_institucion, institucion, "<br>",
+    i_institucion, "<b style='font-size:1.2em'>", institucion, "</b>", "<br>",
     i_ubicacion, ubicacion, "<br>",
     i_calendario, calendario, "<br>"
   )
