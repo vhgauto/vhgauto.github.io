@@ -1,5 +1,5 @@
 ---
-title: "Víctor Gauto"
+title: "<span class='est-azul'>Víctor Gauto<span class='est-azul'> <span class='est-blanco'>{{< iconify fluent-emoji-high-contrast:victory-hand >}}</span>"
 subtitle: |
   Ingeniería química, calidad de agua, GIS, visualizaciones de datos, películas, sudokus, `R`.
 about:
