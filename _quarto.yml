@@ -19,6 +19,7 @@ website:
     type: primary
     position: below-navbar
   navbar:
+    logo: "img/v.svg"
     left:
       - href: "tidytuesday/index.qmd"
         text: "{{< iconify fa6-brands:r-project >}} Tidytuesday"
