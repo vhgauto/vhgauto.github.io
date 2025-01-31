@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Víctor Gauto"
-  favicon: img/favicon.png
+  favicon: "img/v.svg"
   page-navigation: true
   repo-url: "https://github.com/vhgauto/vhgauto.github.io"
   repo-actions: [edit, issue]
