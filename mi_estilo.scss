@@ -1,13 +1,19 @@
 /*-- scss:defaults --*/
 
-// Ubuntu
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-
 // Nerd Font
 @import "https://www.nerdfonts.com/assets/css/webfont.css";
 
 // JetBrains Mono
-@import url('https://fonts.googleapis.com/css2?family=Gloock&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+// Rufina
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+
+// Berkshire Swash
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
+// Noto Sans
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 // rojo
 $c-rojo: #DF8271;
@@ -32,8 +38,10 @@ $c-blanco: #FFFFFF;
 // color de ORCID
 $c-orcid: #A6CE39;
 
-$font-family-sans-serif: "Ubuntu", Arial;
+$font-family-sans-serif: "Noto Sans", sans-serif;
 $font-family-monospace: "JetBrains Mono";
+$font-family-title: "Berkshire Swash";
+$font-family-header: "Rufina";
 $font-size-root: 18px;
 $link-color: $c-rojo;
 $body-bg: #181818;
@@ -79,6 +87,7 @@ $t-trans: .7s;
 // color azul para título en about
 .est-azul {
   color: $c-azul;
+  font-family: $font-family-title;
   transition-duration: $t-trans;
 }
 
@@ -86,6 +95,7 @@ $t-trans: .7s;
 .quarto-title:hover .est-blanco, .quarto-title:hover .est-azul {
   color: $c-rojo;
 }
+
 
 // herramientas de GITHUB en toc
 .sidebar .toc-actions>ul, .sidebar .quarto-code-links>ul, .sidebar .quarto-other-links>ul, .sidebar .quarto-alternate-notebooks>ul, .sidebar .quarto-alternate-formats>ul {
@@ -230,7 +240,7 @@ est1 {
 .quarto-title-breadcrumbs .breadcrumb {
     margin-bottom: .5em;
     font-size: .9rem;
-    font-family: JetBrains Mono;
+    font-family: $font-family-monospace;
     background-color: transparent;
     border: solid 1px $c-gris-claro;
     border-radius: 0em;
@@ -245,6 +255,7 @@ est1 {
 
 // mi nombre en la barra de navegación
 .navbar-title {
+  font-family: $font-family-title;
   font-weight: bold;
   text-decoration: none;
   font-size: xx-large;
@@ -275,6 +286,8 @@ div.quarto-about-solana .about-entity .about-link {
 // todos los headers en azul
 h1, h2, h3, h4 {
   color: $c-azul;
+  font-family: $font-family-header;
+  font-weight: 700;
 }
 
 // títulos H1 en todos los .qmd
@@ -283,7 +296,7 @@ h1.title {
 }
 
 pre, code, .sourceCode {
-  font-family: JetBrains Mono;
+  font-family: $font-family-monospace;
 }
 
 c1 {
