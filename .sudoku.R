@@ -186,28 +186,28 @@ g <- ggplot(
     strip.text = element_text(
       hjust = 0, margin = margin(l = 0, b = 2), face = "bold", color = c1
     )
-  ); h <- girafe(
-    ggobj = g,
-    width_svg = 6,
-    height_svg = 2,
-    bg = "transparent",
-    options = list(
-      opts_hover(css = girafe_css(
-        css = glue("")
-      )),
-      opts_tooltip(
-        opacity = 1,
-        css = glue(
-          "background-color:transparent;padding:2px;border: none;
+  )
+
+h <- girafe(
+  ggobj = g,
+  width_svg = 6,
+  height_svg = 2,
+  bg = "transparent",
+  options = list(
+    opts_hover(css = girafe_css(
+      css = glue("")
+    )),
+    opts_tooltip(
+      opacity = 1,
+      css = glue(
+        "background-color:transparent;padding:2px;border: none;
         font-family:JetBrains Mono;font-size:11pt;color:white"
-        ),
-        use_cursor_pos = FALSE,
-        offx = 50,
-        offy = -20),
-      opts_sizing(width = 1, rescale = TRUE),
-      opts_toolbar = opts_toolbar(saveaspng = FALSE),
-      opts_hover_inv(css = "opacity:0.3;")
-    )
-  ); h
-
-
+      ),
+      use_cursor_pos = FALSE,
+      offx = 50,
+      offy = -20),
+    opts_sizing(width = 1, rescale = TRUE),
+    opts_toolbar = opts_toolbar(saveaspng = FALSE),
+    opts_hover_inv(css = "opacity:0.3;")
+  )
+)
