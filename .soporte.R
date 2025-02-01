@@ -17,20 +17,54 @@ f_link <- function(institucion, link) {
   )
 }
 
+# f_edu <- function(titulo, institucion, ubicacion, calendario) {
+#   paste(
+#     i_titulo, "<b style='font-size:1.2em'>", titulo, "</b>", "<br>",
+#     i_institucion, institucion, "<br>",
+#     i_ubicacion, ubicacion, "<br>",
+#     i_calendario, calendario, "<br>"
+#   )
+# }
+
+# f_inv <- function(institucion, ubicacion, calendario) {
+#   paste(
+#     i_institucion, "<b style='font-size:1.2em'>", institucion, "</b>", "<br>",
+#     i_ubicacion, ubicacion, "<br>",
+#     i_calendario, calendario, "<br>"
+#   )
+# }
+
+ff <- function(i, x) {
+  glue::glue(
+    "\n
+    :::: {{.grid style='--bs-columns: 12; --bs-gap: 0rem'}}
+    ::: {{.g-col-1 style='text-align: right;'}}
+    <p class='estrecho'>{i}</p>
+    :::
+
+    ::: {{.g-col-11}}
+    <p class='estrecho'>{x}</p>
+    :::
+
+    ::::\n
+    "
+  )
+}
+
 f_edu <- function(titulo, institucion, ubicacion, calendario) {
-  paste(
-    i_titulo, "<b style='font-size:1.2em'>", titulo, "</b>", "<br>",
-    i_institucion, institucion, "<br>",
-    i_ubicacion, ubicacion, "<br>",
-    i_calendario, calendario, "<br>"
+  paste0(
+    ff(i_titulo, paste0("<b style='font-size:1.2em'>", titulo, "</b>")),
+    ff(i_institucion, institucion),
+    ff(i_ubicacion, ubicacion),
+    ff(i_calendario, calendario)
   )
 }
 
 f_inv <- function(institucion, ubicacion, calendario) {
-  paste(
-    i_institucion, "<b style='font-size:1.2em'>", institucion, "</b>", "<br>",
-    i_ubicacion, ubicacion, "<br>",
-    i_calendario, calendario, "<br>"
+  paste0(
+    ff(i_institucion, paste0("<b style='font-size:1.2em'>", institucion, "</b>")),
+    ff(i_ubicacion, ubicacion),
+    ff(i_calendario, calendario)
   )
 }
 
