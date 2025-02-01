@@ -2,6 +2,6 @@
 
 # Sitio web personal
 
-El presente repositorio genera mi sitio personal, utilizando `r` y `quarto`.
+El presente repositorio genera [mi sitio personal](https://vhgauto.github.io/), utilizando `r` y `quarto`.
 
-Incluye mis redes sociales, mis aportes a `tidyverse` y proyectos personales.
+Incluye datos de educación, experiencia laboral, redes sociales, mis aportes a `tidyverse` y proyectos personales varios.
