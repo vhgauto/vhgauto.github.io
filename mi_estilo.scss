@@ -61,7 +61,13 @@ $footer-hl: $c-azul;
 // tiempo de transiciones
 $t-trans: .7s;
 
+// grillas
+
 /*-- scss:rules --*/
+
+p.estrecho {
+  margin-bottom: 0rem;
+}
 
 // tamaño de logo
 .navbar-logo {
