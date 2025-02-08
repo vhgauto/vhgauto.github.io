@@ -74,7 +74,7 @@ d_label <- d |>
     .by = fecha
   ) |>
   mutate(
-    fecha_label = toupper(format(fecha, "%d/%b/%y"))
+    fecha_label = toupper(format(fecha, "%d/%b/%Y"))
   ) |>
   mutate(
     l = paste0(fecha_label, ": ", l)
@@ -172,9 +172,6 @@ g <- ggplot(
     panel.grid.major = element_line(
       color = c3, linetype = 1, linewidth = .1
     ),
-    # panel.grid.minor.x = element_line(
-    #   color = c3, linetype = 1, linewidth = .2
-    # ),
     panel.spacing.y = unit(1, "line"),
     axis.ticks = element_blank(),
     axis.text = element_text(color = c2, family = "JetBrains Mono"),
