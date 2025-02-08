@@ -69,6 +69,7 @@ format:
     theme: [darkly, mi_estilo.scss]
     toc: true
     lang: es
+    code-copy: true
     language:
       es:
         toc-title-website: "Contenido"
