@@ -112,8 +112,6 @@ h
 
 ::: {.column-screen-right}
 
-<br>
-<br>
-<p style='color:grey; text-align: right; font-family: JetBrains Mono'>`r format(Sys.time(), "%Y-%m-%d")`</p>
+<p style='color:grey; text-align: right; font-family: JetBrains Mono; font-size:.8em'>`r format(Sys.time(), "%Y-%m-%d")`</p>
 
 :::
