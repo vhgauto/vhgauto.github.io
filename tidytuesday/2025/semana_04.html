@@ -877,7 +877,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Paquetes</h1>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Ver el código</summary>
+<summary>Ocultar código</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtext)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(showtext)</span>
@@ -890,7 +890,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Colores</p>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Ver el código</summary>
+<summary>Ocultar código</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">&lt;-</span> <span class="st">"#4060C8"</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>c2 <span class="ot">&lt;-</span> <span class="st">"#9A153D"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>c3 <span class="ot">&lt;-</span> <span class="st">"#EAF3FF"</span></span>
@@ -900,7 +900,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Fuentes: Ubuntu y JetBrains Mono</p>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Ver el código</summary>
+<summary>Ocultar código</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">font_add</span>(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="st">"ubuntu"</span>,</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">regular =</span> <span class="st">"././fuente/Ubuntu-Regular.ttf"</span>,</span>
@@ -922,7 +922,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Epígrafe</h1>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Ver el código</summary>
+<summary>Ocultar código</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fuente <span class="ot">&lt;-</span> <span class="fu">glue</span>(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Datos: &lt;span style='color:{c1};'&gt;&lt;span style='font-family:jet;'&gt;"</span>,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 04, "</span>,</span>
@@ -949,7 +949,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Datos</h1>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Ver el código</summary>
+<summary>Ocultar código</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="dv">2025</span>, <span class="dv">04</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>w23 <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>water_insecurity_2023</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -961,7 +961,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Cantidad total de viviendas SIN conexión, y formato para subtítulo</p>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Ver el código</summary>
+<summary>Ocultar código</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>s23 <span class="ot">&lt;-</span> <span class="fu">sum</span>(w23<span class="sc">$</span>plumbing, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>s23_formato <span class="ot">&lt;-</span> <span class="fu">format</span>(s23, <span class="at">big.mark =</span> <span class="st">"."</span>, <span class="at">decimal.mark =</span> <span class="st">","</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -970,7 +970,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Ecuación: <a href="https://mathworld.wolfram.com/TeardropCurve.html">Teardrop Curve</a>.</p>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Ver el código</summary>
+<summary>Ocultar código</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>gota_tbl <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">t =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">1000</span>),</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">x_eje =</span> <span class="fu">cos</span>(t),</span>
@@ -991,7 +991,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Dentro de la gota agrego puntos aleatoriamente, extraigo las coordenadas para usar con <code>ggplot()</code>. La cantidad de puntos es la de viviendas SIN conexión</p>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Ver el código</summary>
+<summary>Ocultar código</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>p23 <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">spatSample</span>(gota_v, s23) <span class="sc">|&gt;</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  terra<span class="sc">::</span><span class="fu">geom</span>(<span class="at">df =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -1002,7 +1002,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Subtítulo, rodeando la gota</p>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Ver el código</summary>
+<summary>Ocultar código</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>l1 <span class="ot">&lt;-</span> <span class="fu">glue</span>(<span class="st">"En 2023, &lt;b style='color:{c1}'&gt;{s23_formato}&lt;/b&gt; viviendas"</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>l2 <span class="ot">&lt;-</span> <span class="fu">glue</span>(<span class="st">"&lt;b style='color:{c2}'&gt;NO&lt;/b&gt; tenían instalaciones"</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>l3 <span class="ot">&lt;-</span> <span class="st">"completas* de agua"</span></span>
@@ -1013,7 +1013,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Anotación, con viñetas</p>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Ver el código</summary>
+<summary>Ocultar código</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>punto <span class="ot">&lt;-</span> <span class="st">"&lt;span style='font-family:jet; font-size: 10px'&gt;&amp;#xf111;&lt;/span&gt;"</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>mi_nota <span class="ot">&lt;-</span> <span class="fu">glue</span>(<span class="st">"</span></span>
@@ -1027,7 +1027,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Figura</p>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Ver el código</summary>
+<summary>Ocultar código</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(p23, <span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> .<span class="dv">05</span>, <span class="fu">aes</span>(<span class="at">color =</span> <span class="st">"a"</span>), <span class="at">alpha =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(</span>
@@ -1072,7 +1072,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Guardo</p>
 <div class="cell">
 <details open="" class="code-fold">
-<summary>Ver el código</summary>
+<summary>Ocultar código</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">plot =</span> g,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">filename =</span> <span class="st">"tidytuesday/2025/semana_04.png"</span>,</span>
@@ -1578,7 +1578,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: show</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">    code-summary: "Ver el código"</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">    code-summary: "Ocultar código"</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">    code-line-numbers: false</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">    code-annotations: false</span></span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">    code-link: true</span></span>
@@ -1590,7 +1590,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co">    page-layout: full</span></span>
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span></span>
 <span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [geom_point]</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> ["geom_point"]</span></span>
 <span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
 <span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: false</span></span>
 <span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: true</span></span>
