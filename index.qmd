@@ -9,17 +9,17 @@ about:
   image-shape: round
   image-width: 13em
   links:
-    - text: "{{< iconify mdi:twitter >}}"
-      href: https://twitter.com/vhgauto
     - text: "{{< iconify mdi:github >}}"
       href: https://github.com/vhgauto
+    - text: "{{< iconify mdi:twitter >}}"
+      href: https://twitter.com/vhgauto
     - text: "{{< iconify mdi:instagram >}}"
       href: https://www.instagram.com/vhgauto/
     - text: "{{< iconify mdi:mastodon >}}"
       href: https://fosstodon.org/@vhgauto
     - text: "{{< iconify ri:bluesky-fill >}}"
       href: https://bsky.app/profile/vhgauto.bsky.social
-    - text: "{{< iconify academicons:google-scholar >}}"
+    - text: "{{< iconify simple-icons:googlescholar >}}"
       href: https://scholar.google.es/citations?user=nxCfD0AAAAAJ
     - text: "{{< iconify simple-icons:orcid >}}"
       href: https://orcid.org/0000-0001-9960-8558
@@ -109,3 +109,11 @@ Llevo registro de los tiempos que me lleva resolver los tres niveles de dificult
 
 h
 ```
+
+::: {.column-screen-right}
+
+<br>
+<br>
+<p style='color:grey; text-align: right; font-family: JetBrains Mono'>`r format(Sys.time(), "%Y-%m-%d")`</p>
+
+:::
