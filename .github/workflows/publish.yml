@@ -11,13 +11,13 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Check out repository
+      - name: Verifico repositorio
         uses: actions/checkout@v4
 
-      - name: Set up Quarto
+      - name: Configuro Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Render and Publish
+      - name: Creo sitio y publico
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
