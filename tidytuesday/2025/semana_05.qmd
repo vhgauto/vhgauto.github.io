@@ -2,7 +2,7 @@
 format:
   html:
     code-fold: show
-    code-summary: "Ocultar el código"
+    code-summary: "Ocultar código"
     code-line-numbers: false
     code-annotations: false
     code-link: true
@@ -23,6 +23,8 @@ title: "Semana 05"
 date: 2025-02-04
 author: Víctor Gauto
 ---
+
+Lugares más frecuentes de la familia Simpson.
 
 ![Semana 05, 2025](semana_05.png)
 

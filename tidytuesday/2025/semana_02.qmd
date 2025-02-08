@@ -2,7 +2,7 @@
 format:
   html:
     code-fold: show
-    code-summary: "Ver el código"
+    code-summary: "Ocultar código"
     code-line-numbers: false
     code-annotations: false
     code-link: true
