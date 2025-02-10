@@ -28,7 +28,7 @@ Lugares más frecuentes de la familia Simpson.
 
 ![Semana 05, 2025](semana_05.png)
 
-# Paquetes
+## Paquetes
 
 ```{r}
 library(glue)
@@ -38,7 +38,7 @@ library(tidyverse)
 library(patchwork)
 ```
 
-# Estilos
+## Estilos
 
 Colores
 
@@ -69,7 +69,7 @@ showtext_auto()
 showtext_opts(dpi = 300)
 ```
 
-# Epígrafe
+## Epígrafe
 
 ```{r}
 fuente <- glue(
@@ -93,7 +93,7 @@ mi_caption <- glue(
 )
 ```
 
-# Datos
+## Datos
 
 ```{r}
 tuesdata <- tidytuesdayR::tt_load(2025, 05)
@@ -101,7 +101,7 @@ locations <- tuesdata$simpsons_locations
 script_lines <- tuesdata$simpsons_script_lines
 ```
 
-# Procesamiento
+## Procesamiento
 
 Me interesa asociar lugares a los integrantes principales de la familia <b>Simpson</b>.
 
@@ -209,7 +209,7 @@ d <- d |>
 ```
 
 
-# Figura
+## Figura
 
 Genero un tibble para las etiquetas del eje horizontal.
 

@@ -28,7 +28,7 @@ Falta de acceso al agua en EE.UU.
 
 ![Semana 04, 2025](semana_04.png)
 
-# Paquetes
+## Paquetes
 
 ```{r}
 library(glue)
@@ -37,7 +37,7 @@ library(showtext)
 library(tidyverse)
 ```
 
-# Estilos
+## Estilos
 
 Colores
 
@@ -67,7 +67,7 @@ showtext_auto()
 showtext_opts(dpi = 300)
 ```
 
-# Epígrafe
+## Epígrafe
 
 ```{r}
 fuente <- glue(
@@ -91,14 +91,14 @@ mi_caption <- glue(
 )
 ```
 
-# Datos
+## Datos
 
 ```{r}
 tuesdata <- tidytuesdayR::tt_load(2025, 04)
 w23 <- tuesdata$water_insecurity_2023
 ```
 
-# Procesamiento
+## Procesamiento
 
 Me interesa ver la cantidad de gente SIN conexión a agua potable en 2023.
 
@@ -139,7 +139,7 @@ p23 <- terra::spatSample(gota_v, s23) |>
   terra::geom(df = TRUE)
 ```
 
-# Figura
+## Figura
 
 Subtítulo, rodeando la gota
 

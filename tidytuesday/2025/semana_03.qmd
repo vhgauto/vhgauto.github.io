@@ -28,7 +28,7 @@ Cantidad de personas muertas en expediciones al Himalaya.
 
 ![Semana 03, 2025](semana_03.png)
 
-# Paquetes
+## Paquetes
 
 ```{r}
 library(glue)
@@ -37,7 +37,7 @@ library(showtext)
 library(tidyverse)
 ```
 
-# Estilos
+## Estilos
 
 Colores
 
@@ -72,7 +72,7 @@ showtext_auto()
 showtext_opts(dpi = 300)
 ```
 
-# Epígrafe
+## Epígrafe
 
 ```{r}
 fuente <- glue(
@@ -96,14 +96,14 @@ mi_caption <- glue(
 )
 ```
 
-# Datos
+## Datos
 
 ```{r}
 tuesdata <- tidytuesdayR::tt_load(2025, 03)
 exped <- tuesdata$exped_tidy
 ```
 
-# Procesamiento
+## Procesamiento
 
 Me interesa la cantidad de muertes que ocurrieron en cada año.
 
@@ -121,7 +121,7 @@ d <- exped |>
   )
 ```
 
-# Figura
+## Figura
 
 Subtítulo, nota y símbolo de calavera.
 
@@ -151,7 +151,7 @@ relleno <- grid::linearGradient(
 )
 ```
 
-Figura
+Figura.
 
 ```{r}
 g <- ggplot(d, aes(YEAR, s)) +

@@ -28,7 +28,7 @@ Agencias de EE.UU. afectadas por la deshabilitación al acceso de bases de datos
 
 ![Semana 06, 2025](semana_06.png)
 
-# Paquetes
+## Paquetes
 
 ```{r}
 library(glue)
@@ -39,7 +39,7 @@ library(ggpath)
 library(tidyverse)
 ```
 
-# Estilos
+## Estilos
 
 Colores
 
@@ -68,7 +68,7 @@ showtext_auto()
 showtext_opts(dpi = 300)
 ```
 
-# Epígrafe
+## Epígrafe
 
 ```{r}
 fuente <- glue(
@@ -92,7 +92,7 @@ mi_caption <- glue(
 )
 ```
 
-# Datos
+## Datos
 
 ```{r}
 tuesdata <- tidytuesdayR::tt_load(2025, 06)
@@ -101,30 +101,30 @@ omb_codes <- tuesdata$omb_codes
 fpi_codes <- tuesdata$fpi_codes
 ```
 
-# Procesamiento
+## Procesamiento
 
 Me interesa la proporción de agencias en las bases de datos eliminadas.
 
 La figura es un [treemap](https://en.wikipedia.org/wiki/Treemapping), que puede generarse con el paquete [`{treemapify}`](https://wilkox.org/treemapify/).
 
 ```{r}
-d <- cdc_datasets |> 
-  select(bureau_code) |> 
+d <- cdc_datasets |>
+  select(bureau_code) |>
   separate_wider_delim(
     cols = bureau_code, delim = ":", names = c("agency_code", "bureau_code")
-  ) |> 
+  ) |>
   mutate(
     across(
       .cols = everything(),
       .fns = as.numeric
     )
-  ) |> 
+  ) |>
   inner_join(
     omb_codes, by = join_by(agency_code, bureau_code),
-    relationship = "many-to-many") |> 
-  select(agency_name, bureau_name) |> 
-  count(agency_name, bureau_name, sort = TRUE) |> 
-  select(-agency_name) |> 
+    relationship = "many-to-many") |>
+  select(agency_name, bureau_name) |>
+  count(agency_name, bureau_name, sort = TRUE) |>
+  select(-agency_name) |>
   mutate(
     bureau_name = str_wrap(bureau_name, 15)
   )
@@ -148,7 +148,7 @@ logos_tbl <- tibble(
 )
 ```
 
-# Figura
+## Figura
 
 Subtítulo y figura principal
 
@@ -161,7 +161,7 @@ mi_subtitulo <- glue(
 
 g <- ggplot(d, aes(area = n, label = bureau_name)) +
   geom_treemap(
-    alpha = 1, layout = "srow", linetype = 1, color = c3, size = 1, 
+    alpha = 1, layout = "srow", linetype = 1, color = c3, size = 1,
     fill = c1
   ) +
   geom_from_path(

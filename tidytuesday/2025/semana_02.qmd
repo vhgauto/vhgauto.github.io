@@ -28,7 +28,7 @@ Conferencias asociadas a quarto en <b>posit::conf</b> entre 2023 y 2024.
 
 ![Semana 02, 2025](semana_02.png)
 
-# Paquetes
+## Paquetes
 
 ```{r}
 library(glue)
@@ -37,7 +37,7 @@ library(showtext)
 library(tidyverse)
 ```
 
-# Estilos
+## Estilos
 
 Colores
 
@@ -67,7 +67,7 @@ showtext_auto()
 showtext_opts(dpi = 300)
 ```
 
-# Epígrafe
+## Epígrafe
 
 ```{r}
 fuente <- glue(
@@ -91,7 +91,7 @@ mi_caption <- glue(
 )
 ```
 
-# Datos
+## Datos
 
 ```{r}
 tuesdata <- tidytuesdayR::tt_load(2025, 2)
@@ -99,7 +99,7 @@ conf2023 <- tuesdata$conf2023
 conf2024 <- tuesdata$conf2024
 ```
 
-# Procesamiento
+## Procesamiento
 
 Me interesa la cantidad de conferencias que hablan de QUARTO entre 2023 y 2024
 
@@ -123,7 +123,7 @@ d <- tibble(
   )
 ```
 
-# Figura
+## Figura
 
 Logo y subtítulo
 
