@@ -29,7 +29,79 @@
     "href": "tidytuesday/2025/semana_06.html",
     "title": "Semana 06",
     "section": "",
-    "text": "Agencias de EE.UU. afectadas por la deshabilitación al acceso de bases de datos.\n\n\n\nSemana 06, 2025\n\n\n\nPaquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(treemapify)\nlibrary(ggpath)\nlibrary(tidyverse)\n\n\n\n\nEstilos\nColores\n\n\nOcultar código\nc1 &lt;- \"#0A3161\"\nc2 &lt;- \"#B31942\"\nc3 &lt;- \"grey90\"\n\n\nFuentes: Ubuntu y JetBrains Mono\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n\n\n\nEpígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n    \"Datos: &lt;span style='color:{c1};'&gt;&lt;span style='font-family:jet;'&gt;\",\n    \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 06,&lt;br&gt;\",\n    \"&lt;b&gt;CDC datasets&lt;/b&gt; en &lt;i&gt;archive.org&lt;/i&gt;, Jon Harmon.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n    \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n    \"{icon_mastodon} {icon_bsky} {usuario}\"\n)\n\n\n\n\nDatos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 06)\ncdc_datasets &lt;- tuesdata$cdc_datasets\nomb_codes &lt;- tuesdata$omb_codes\nfpi_codes &lt;- tuesdata$fpi_codes\n\n\n\n\nProcesamiento\nMe interesa la proporción de agencias en las bases de datos eliminadas.\nLa figura es un treemap, que puede generarse con el paquete {treemapify}.\n\n\nOcultar código\nd &lt;- cdc_datasets |&gt; \n  select(bureau_code) |&gt; \n  separate_wider_delim(\n    cols = bureau_code, delim = \":\", names = c(\"agency_code\", \"bureau_code\")\n  ) |&gt; \n  mutate(\n    across(\n      .cols = everything(),\n      .fns = as.numeric\n    )\n  ) |&gt; \n  inner_join(\n    omb_codes, by = join_by(agency_code, bureau_code),\n    relationship = \"many-to-many\") |&gt; \n  select(agency_name, bureau_name) |&gt; \n  count(agency_name, bureau_name, sort = TRUE) |&gt; \n  select(-agency_name) |&gt; \n  mutate(\n    bureau_name = str_wrap(bureau_name, 15)\n  )\n\n\nLogos de las agencias y coordenadas para las flechas curvas.\n\n\nOcultar código\nlogos &lt;- c(\n  `Centers for Disease Control and Prevention` = \"https://www.cdc.gov/TemplatePackage/5.0/img/logo/cdc-logo-tag-right.svg\",\n  `Department of Health and Human Services` = \"https://www.hhs.gov/themes/custom/hhs_uswds/logo-desktop.svg\",\n  `Health Resources and Services Administration` = \"https://www.hrsa.gov/themes/hrsa/uswds_hrsa/images/hrsa-logo.png\",\n  `Centers for Medicare and Medicaid Services` = \"https://www.cms.gov/themes/custom/cms_evo/logo.svg\"\n)\n\nlogos_tbl &lt;- tibble(\n  img = logos,\n  x = c(.5, .5, 1.11, 1.11),\n  y = c(.4, .9, .87, 1.03),\n  width = c(.3, .4, .2, .2)\n)\n\n\n\n\nFigura\nSubtítulo y figura principal\n\n\nOcultar código\nmi_subtitulo &lt;- glue(\n  \"La gestión actual de EE.UU. comenzó a &lt;span style='color:{c2}'&gt;deshabilitar\",\n  \"&lt;/span&gt; el acceso a&lt;br&gt;bases de datos, en particular de agencias de salud \",\n  \"federales.\"\n)\n\ng &lt;- ggplot(d, aes(area = n, label = bureau_name)) +\n  geom_treemap(\n    alpha = 1, layout = \"srow\", linetype = 1, color = c3, size = 1, \n    fill = c1\n  ) +\n  geom_from_path(\n    data = logos_tbl, aes(x, y, path = img, width = width), inherit.aes = FALSE\n  ) +\n  annotate(\n    geom = \"curve\", x = 1.1, y = 1.01, xend = 1.001, yend = .98,\n    curvature = -.1, color = c2, arrow.fill = c2,\n    arrow = arrow(angle = 15, length = unit(5, \"pt\"), type = \"closed\")\n  ) +\n  annotate(\n    geom = \"curve\", x = 1.1, y = .83, xend = 1.001, yend = .8,\n    curvature = -.1, color = c2, arrow.fill = c2,\n    arrow = arrow(angle = 15, length = unit(5, \"pt\"), type = \"closed\")\n  ) +\n  coord_cartesian(\n    xlim = c(0, 1), ylim = c(0, 1), expand = FALSE, clip = \"off\"\n  ) +\n  labs(subtitle = mi_subtitulo, caption = mi_caption) +\n  theme_void() +\n  theme(\n    aspect.ratio = 1,\n    text = element_text(family = \"ubuntu\"),\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.margin = margin(10, 210, 2, 5),\n    plot.subtitle = element_markdown(\n      color = c1, face = \"bold\", size = 20, margin = margin(b = 10),\n      lineheight = 1.2\n    ),\n    plot.caption = element_markdown(\n      color = c2, size = 10, lineheight = 1.4,\n      margin = margin(t = -45, r = -200, l = 10)\n    ),\n    legend.position = \"none\"\n  )\n\n\nGuardo\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_06.png\",\n  width = 30,\n  height = 25,\n  units = \"cm\"\n)\n\n\n\n\n\n\n\n\n Subir",
+    "text": "Agencias de EE.UU. afectadas por la deshabilitación al acceso de bases de datos.",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 06"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_06.html#paquetes",
+    "href": "tidytuesday/2025/semana_06.html#paquetes",
+    "title": "Semana 06",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(treemapify)\nlibrary(ggpath)\nlibrary(tidyverse)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 06"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_06.html#estilos",
+    "href": "tidytuesday/2025/semana_06.html#estilos",
+    "title": "Semana 06",
+    "section": "Estilos",
+    "text": "Estilos\nColores\n\n\nOcultar código\nc1 &lt;- \"#0A3161\"\nc2 &lt;- \"#B31942\"\nc3 &lt;- \"grey90\"\n\n\nFuentes: Ubuntu y JetBrains Mono\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 06"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_06.html#epígrafe",
+    "href": "tidytuesday/2025/semana_06.html#epígrafe",
+    "title": "Semana 06",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n    \"Datos: &lt;span style='color:{c1};'&gt;&lt;span style='font-family:jet;'&gt;\",\n    \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 06,&lt;br&gt;\",\n    \"&lt;b&gt;CDC datasets&lt;/b&gt; en &lt;i&gt;archive.org&lt;/i&gt;, Jon Harmon.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n    \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n    \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 06"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_06.html#datos",
+    "href": "tidytuesday/2025/semana_06.html#datos",
+    "title": "Semana 06",
+    "section": "Datos",
+    "text": "Datos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 06)\ncdc_datasets &lt;- tuesdata$cdc_datasets\nomb_codes &lt;- tuesdata$omb_codes\nfpi_codes &lt;- tuesdata$fpi_codes",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 06"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_06.html#procesamiento",
+    "href": "tidytuesday/2025/semana_06.html#procesamiento",
+    "title": "Semana 06",
+    "section": "Procesamiento",
+    "text": "Procesamiento\nMe interesa la proporción de agencias en las bases de datos eliminadas.\nLa figura es un treemap, que puede generarse con el paquete {treemapify}.\n\n\nOcultar código\nd &lt;- cdc_datasets |&gt;\n  select(bureau_code) |&gt;\n  separate_wider_delim(\n    cols = bureau_code, delim = \":\", names = c(\"agency_code\", \"bureau_code\")\n  ) |&gt;\n  mutate(\n    across(\n      .cols = everything(),\n      .fns = as.numeric\n    )\n  ) |&gt;\n  inner_join(\n    omb_codes, by = join_by(agency_code, bureau_code),\n    relationship = \"many-to-many\") |&gt;\n  select(agency_name, bureau_name) |&gt;\n  count(agency_name, bureau_name, sort = TRUE) |&gt;\n  select(-agency_name) |&gt;\n  mutate(\n    bureau_name = str_wrap(bureau_name, 15)\n  )\n\n\nLogos de las agencias y coordenadas para las flechas curvas.\n\n\nOcultar código\nlogos &lt;- c(\n  `Centers for Disease Control and Prevention` = \"https://www.cdc.gov/TemplatePackage/5.0/img/logo/cdc-logo-tag-right.svg\",\n  `Department of Health and Human Services` = \"https://www.hhs.gov/themes/custom/hhs_uswds/logo-desktop.svg\",\n  `Health Resources and Services Administration` = \"https://www.hrsa.gov/themes/hrsa/uswds_hrsa/images/hrsa-logo.png\",\n  `Centers for Medicare and Medicaid Services` = \"https://www.cms.gov/themes/custom/cms_evo/logo.svg\"\n)\n\nlogos_tbl &lt;- tibble(\n  img = logos,\n  x = c(.5, .5, 1.11, 1.11),\n  y = c(.4, .9, .87, 1.03),\n  width = c(.3, .4, .2, .2)\n)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 06"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_06.html#figura",
+    "href": "tidytuesday/2025/semana_06.html#figura",
+    "title": "Semana 06",
+    "section": "Figura",
+    "text": "Figura\nSubtítulo y figura principal\n\n\nOcultar código\nmi_subtitulo &lt;- glue(\n  \"La gestión actual de EE.UU. comenzó a &lt;span style='color:{c2}'&gt;deshabilitar\",\n  \"&lt;/span&gt; el acceso a&lt;br&gt;bases de datos, en particular de agencias de salud \",\n  \"federales.\"\n)\n\ng &lt;- ggplot(d, aes(area = n, label = bureau_name)) +\n  geom_treemap(\n    alpha = 1, layout = \"srow\", linetype = 1, color = c3, size = 1,\n    fill = c1\n  ) +\n  geom_from_path(\n    data = logos_tbl, aes(x, y, path = img, width = width), inherit.aes = FALSE\n  ) +\n  annotate(\n    geom = \"curve\", x = 1.1, y = 1.01, xend = 1.001, yend = .98,\n    curvature = -.1, color = c2, arrow.fill = c2,\n    arrow = arrow(angle = 15, length = unit(5, \"pt\"), type = \"closed\")\n  ) +\n  annotate(\n    geom = \"curve\", x = 1.1, y = .83, xend = 1.001, yend = .8,\n    curvature = -.1, color = c2, arrow.fill = c2,\n    arrow = arrow(angle = 15, length = unit(5, \"pt\"), type = \"closed\")\n  ) +\n  coord_cartesian(\n    xlim = c(0, 1), ylim = c(0, 1), expand = FALSE, clip = \"off\"\n  ) +\n  labs(subtitle = mi_subtitulo, caption = mi_caption) +\n  theme_void() +\n  theme(\n    aspect.ratio = 1,\n    text = element_text(family = \"ubuntu\"),\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.margin = margin(10, 210, 2, 5),\n    plot.subtitle = element_markdown(\n      color = c1, face = \"bold\", size = 20, margin = margin(b = 10),\n      lineheight = 1.2\n    ),\n    plot.caption = element_markdown(\n      color = c2, size = 10, lineheight = 1.4,\n      margin = margin(t = -45, r = -200, l = 10)\n    ),\n    legend.position = \"none\"\n  )\n\n\nGuardo\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_06.png\",\n  width = 30,\n  height = 25,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
@@ -41,7 +113,79 @@
     "href": "tidytuesday/2025/semana_02.html",
     "title": "Semana 02",
     "section": "",
-    "text": "Conferencias asociadas a quarto en posit::conf entre 2023 y 2024.\n\n\n\nSemana 02, 2025\n\n\n\nPaquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)\n\n\n\n\nEstilos\nColores\n\n\nOcultar código\nc1 &lt;- \"#447099\"\nc2 &lt;- \"#75AADB\"\nc3 &lt;- \"#F0F5F9\"\nc4 &lt;- \"black\"\n\n\nFuentes: Ubuntu y JetBrains Mono\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n\n\n\nEpígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n    \"Datos: &lt;span style='color:{c1};'&gt;&lt;span style='font-family:jet;'&gt;\",\n    \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 2, \",\n    \"&lt;b&gt;&lt;span style='font-family:jet'&gt;posit::conf&lt;/jet&gt;&lt;/b&gt;.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n    \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n    \"{icon_mastodon} {icon_bsky} {usuario}\"\n)\n\n\n\n\nDatos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 2)\nconf2023 &lt;- tuesdata$conf2023\nconf2024 &lt;- tuesdata$conf2024\n\n\n\n\nProcesamiento\nMe interesa la cantidad de conferencias que hablan de QUARTO entre 2023 y 2024\n\n\nOcultar código\nn2023 &lt;- conf2023 |&gt;\n  mutate(quarto = str_detect(session_abstract, \"quarto|Quarto\")) |&gt;\n  dplyr::filter(quarto) |&gt;\n  nrow()\n\nn2024 &lt;- conf2024 |&gt;\n  mutate(quarto = str_detect(description, \"quarto|Quarto\")) |&gt;\n  dplyr::filter(quarto) |&gt;\n  nrow()\n\nd &lt;- tibble(\n  año = c(2023, 2024),\n  n = c(n2023, n2024)\n) |&gt;\n  mutate(\n    año = paste0(\"posit::conf\\n\", año)\n  )\n\n\n\n\nFigura\nLogo y subtítulo\n\n\nOcultar código\nlogo &lt;- \"https://quarto.org/quarto.png\"\nlogo_img &lt;- glue(\n  \"&lt;img src='{logo}' width=250 /&gt;\"\n)\n\nmi_subitulo &lt;- glue(\n  \"La cantidad de conferencias&lt;br&gt;que incluyen\n  &lt;span style='font-family:jet; color:{c1}'&gt;quarto&lt;/span&gt; &lt;br&gt;\n  amentaron en las ediciones&lt;br&gt;\n  2023 y 2024 de &lt;span style='font-family:jet; color:{c1}'&gt;posit::conf&lt;/span&gt;\"\n)\n\n\nFigura\n\n\nOcultar código\ng &lt;- ggplot(d, aes(año, n, label = n)) +\n  geom_col(fill = c1) +\n  geom_text(vjust = -.2, family = \"jet\", size = 9, color = c2) +\n  annotate(\n    geom = \"richtext\", x = 2.12, y = 25, label = logo_img, fill = NA,\n    vjust = -1.2, label.color = NA\n  ) +\n  scale_y_continuous(limits = c(0, 25)) +\n  coord_cartesian(expand = FALSE, xlim = c(.5, 2.5), clip = \"off\") +\n  labs(caption = mi_caption, subtitle = mi_subitulo) +\n  theme_void(base_size = 22, base_family = \"ubuntu\") +\n  theme(\n    aspect.ratio = 1,\n    plot.margin = margin(25, 5, 5, 5),\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.subtitle = element_markdown(\n      color = c4, size = 30, lineheight = 1.3, margin = margin(b = 30, l = 20)\n    ),\n    plot.caption = element_markdown(\n      color = c2, lineheight = 1.2, margin = margin(b = 5, t = 20)\n    ),\n    axis.text.x = element_text(margin = margin(t = 5), family = \"jet\"),\n  )\n\n\nGuardo\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_02.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)\n\n\n\n\n\n\n\n\n Subir",
+    "text": "Conferencias asociadas a quarto en posit::conf entre 2023 y 2024.",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 02"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_02.html#paquetes",
+    "href": "tidytuesday/2025/semana_02.html#paquetes",
+    "title": "Semana 02",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 02"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_02.html#estilos",
+    "href": "tidytuesday/2025/semana_02.html#estilos",
+    "title": "Semana 02",
+    "section": "Estilos",
+    "text": "Estilos\nColores\n\n\nOcultar código\nc1 &lt;- \"#447099\"\nc2 &lt;- \"#75AADB\"\nc3 &lt;- \"#F0F5F9\"\nc4 &lt;- \"black\"\n\n\nFuentes: Ubuntu y JetBrains Mono\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 02"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_02.html#epígrafe",
+    "href": "tidytuesday/2025/semana_02.html#epígrafe",
+    "title": "Semana 02",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n    \"Datos: &lt;span style='color:{c1};'&gt;&lt;span style='font-family:jet;'&gt;\",\n    \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 2, \",\n    \"&lt;b&gt;&lt;span style='font-family:jet'&gt;posit::conf&lt;/jet&gt;&lt;/b&gt;.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n    \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n    \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 02"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_02.html#datos",
+    "href": "tidytuesday/2025/semana_02.html#datos",
+    "title": "Semana 02",
+    "section": "Datos",
+    "text": "Datos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 2)\nconf2023 &lt;- tuesdata$conf2023\nconf2024 &lt;- tuesdata$conf2024",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 02"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_02.html#procesamiento",
+    "href": "tidytuesday/2025/semana_02.html#procesamiento",
+    "title": "Semana 02",
+    "section": "Procesamiento",
+    "text": "Procesamiento\nMe interesa la cantidad de conferencias que hablan de QUARTO entre 2023 y 2024\n\n\nOcultar código\nn2023 &lt;- conf2023 |&gt;\n  mutate(quarto = str_detect(session_abstract, \"quarto|Quarto\")) |&gt;\n  dplyr::filter(quarto) |&gt;\n  nrow()\n\nn2024 &lt;- conf2024 |&gt;\n  mutate(quarto = str_detect(description, \"quarto|Quarto\")) |&gt;\n  dplyr::filter(quarto) |&gt;\n  nrow()\n\nd &lt;- tibble(\n  año = c(2023, 2024),\n  n = c(n2023, n2024)\n) |&gt;\n  mutate(\n    año = paste0(\"posit::conf\\n\", año)\n  )",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 02"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_02.html#figura",
+    "href": "tidytuesday/2025/semana_02.html#figura",
+    "title": "Semana 02",
+    "section": "Figura",
+    "text": "Figura\nLogo y subtítulo\n\n\nOcultar código\nlogo &lt;- \"https://quarto.org/quarto.png\"\nlogo_img &lt;- glue(\n  \"&lt;img src='{logo}' width=250 /&gt;\"\n)\n\nmi_subitulo &lt;- glue(\n  \"La cantidad de conferencias&lt;br&gt;que incluyen\n  &lt;span style='font-family:jet; color:{c1}'&gt;quarto&lt;/span&gt; &lt;br&gt;\n  amentaron en las ediciones&lt;br&gt;\n  2023 y 2024 de &lt;span style='font-family:jet; color:{c1}'&gt;posit::conf&lt;/span&gt;\"\n)\n\n\nFigura\n\n\nOcultar código\ng &lt;- ggplot(d, aes(año, n, label = n)) +\n  geom_col(fill = c1) +\n  geom_text(vjust = -.2, family = \"jet\", size = 9, color = c2) +\n  annotate(\n    geom = \"richtext\", x = 2.12, y = 25, label = logo_img, fill = NA,\n    vjust = -1.2, label.color = NA\n  ) +\n  scale_y_continuous(limits = c(0, 25)) +\n  coord_cartesian(expand = FALSE, xlim = c(.5, 2.5), clip = \"off\") +\n  labs(caption = mi_caption, subtitle = mi_subitulo) +\n  theme_void(base_size = 22, base_family = \"ubuntu\") +\n  theme(\n    aspect.ratio = 1,\n    plot.margin = margin(25, 5, 5, 5),\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.subtitle = element_markdown(\n      color = c4, size = 30, lineheight = 1.3, margin = margin(b = 30, l = 20)\n    ),\n    plot.caption = element_markdown(\n      color = c2, lineheight = 1.2, margin = margin(b = 5, t = 20)\n    ),\n    axis.text.x = element_text(margin = margin(t = 5), family = \"jet\"),\n  )\n\n\nGuardo\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_02.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
@@ -635,7 +779,62 @@
     "href": "argentina/aeropuertos.html",
     "title": "Aeropuertos",
     "section": "",
-    "text": "Mapa de aeropuertos de Argentina.\n\n\n\nAeropuertos en actividad en Argentina.\n\n\n\nPaquetes\n\n\nOcultar código\nlibrary(terra)\nlibrary(tidyterra)\nlibrary(glue)\nlibrary(showtext)\nlibrary(ggtext)\nlibrary(tidyverse)\n\n\n\n\nEstilos\nColores aleatorios a partir de una gama de rosados.\n\n\nOcultar código\nset.seed(2024)\npp &lt;- PrettyCols::prettycols(palette = \"Pinks\", n = 24, type = \"continuous\") |&gt;\n  sample()\n\nc1 &lt;- \"black\"\nc2 &lt;- \"white\"\nc3 &lt;- \"#FCAADE\"\nc4 &lt;- \"#860A4D\"\n\n\nFuentes: Ubuntu, JetBrains Mono y fontawesome.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nfont_add(\n  family = \"fa\",\n  regular = \"././fuente/Font Awesome 6 Free-Solid-900.otf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n\n\n\nEpígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{c1};'&gt;IGN&lt;/span&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon}&lt;/b&gt; {usuario}\"\n)\n\n\n\n\nDatos\nVectores de las provincias con sus departamentos. Obtengo el vector de aeropuertos del Instituto Geográfico Nacional, y conservo únicamente los que se encuentran en actividad.\n\n\nOcultar código\npcias &lt;- vect(\"argentina/vectores/pcias_continental.gpkg\") |&gt;\n  project(\"EPSG:5346\")\n\ndptos_pcias &lt;- vect(\"argentina/vectores/dptos_pcias_continental.gpkg\")\n\naer &lt;- vect(\"argentina/vectores/extras/puntos_de_transporte_aereo_GB005.json\") |&gt;\n  project(\"EPSG:5346\")\n\naer &lt;- aer[aer$fun == 6]\n\n\n\n\nFigura\nÍconos de los aviones\n\n\nOcultar código\nicon1 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5b0;&lt;/span&gt; \")\nicon2 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf072;&lt;/span&gt; \")\nicon3 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5af;&lt;/span&gt; \")\nicon &lt;- glue(\"{icon1} {icon2} {icon3}\")\n\n\nSubtítulo y posición.\n\n\nOcultar código\nx_sub &lt;- ext(aer)$xmax\ny_sub &lt;- ext(aer)$ymax\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {c1}'&gt;Argentina&lt;/b&gt; hay en\",\n  \"funcionamiento &lt;b style='color:{c4}'&gt;{nrow(aer)}&lt;/b&gt;\",\n  \"aeropuertos.&lt;br&gt;\",\n  \"{icon}\",\n  .sep = \"&lt;br&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # departamentos\n  geom_sf(\n    data = dptos_pcias, aes(fill = provincia), color = c2, linewidth = .3,\n    linetype = \"22\"\n  ) +\n  # provincias\n  geom_sf(\n    data = pcias, fill = NA, color = c1, linewidth = .4\n  ) +\n  # aeropuertos\n  geom_sf(\n    data = aer, fill = c2, color = c1, size = 11, alpha = .8,\n    stroke = 1, shape = 21) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = x_sub*.84, y = y_sub*.66, label = mi_subtitle,\n    fill = NA, label.color = NA, size = 12, color = c1, hjust = 0,\n    family = \"ubuntu\"\n  ) +\n  scale_fill_manual(values = pp) +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 8, l = 8, t = 2),\n    plot.background = element_rect(\n      fill = c3, color = c4, linewidth = 3),\n    plot.caption = element_markdown(\n      family = \"jet\", color = c4, hjust = .5, size = 20,\n      margin = margin(b = 10)),\n    legend.position = \"none\"\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/aeropuertos.png\",\n  width = 30,\n  height = 65,\n  units = \"cm\"\n)\n\n\n\n\n\n\n\n\n Subir",
+    "text": "Mapa de aeropuertos de Argentina.",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Aeropuertos"
+    ]
+  },
+  {
+    "objectID": "argentina/aeropuertos.html#paquetes",
+    "href": "argentina/aeropuertos.html#paquetes",
+    "title": "Aeropuertos",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(terra)\nlibrary(tidyterra)\nlibrary(glue)\nlibrary(showtext)\nlibrary(ggtext)\nlibrary(tidyverse)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Aeropuertos"
+    ]
+  },
+  {
+    "objectID": "argentina/aeropuertos.html#estilos",
+    "href": "argentina/aeropuertos.html#estilos",
+    "title": "Aeropuertos",
+    "section": "Estilos",
+    "text": "Estilos\nColores aleatorios a partir de una gama de rosados.\n\n\nOcultar código\nset.seed(2024)\npp &lt;- PrettyCols::prettycols(palette = \"Pinks\", n = 24, type = \"continuous\") |&gt;\n  sample()\n\nc1 &lt;- \"black\"\nc2 &lt;- \"white\"\nc3 &lt;- \"#FCAADE\"\nc4 &lt;- \"#860A4D\"\n\n\nFuentes: Ubuntu, JetBrains Mono y fontawesome.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nfont_add(\n  family = \"fa\",\n  regular = \"././fuente/Font Awesome 6 Free-Solid-900.otf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Aeropuertos"
+    ]
+  },
+  {
+    "objectID": "argentina/aeropuertos.html#epígrafe",
+    "href": "argentina/aeropuertos.html#epígrafe",
+    "title": "Aeropuertos",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{c1};'&gt;IGN&lt;/span&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon}&lt;/b&gt; {usuario}\"\n)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Aeropuertos"
+    ]
+  },
+  {
+    "objectID": "argentina/aeropuertos.html#datos",
+    "href": "argentina/aeropuertos.html#datos",
+    "title": "Aeropuertos",
+    "section": "Datos",
+    "text": "Datos\nVectores de las provincias con sus departamentos. Obtengo el vector de aeropuertos del Instituto Geográfico Nacional, y conservo únicamente los que se encuentran en actividad.\n\n\nOcultar código\npcias &lt;- vect(\"argentina/vectores/pcias_continental.gpkg\") |&gt;\n  project(\"EPSG:5346\")\n\ndptos_pcias &lt;- vect(\"argentina/vectores/dptos_pcias_continental.gpkg\")\n\naer &lt;- vect(\"argentina/vectores/extras/puntos_de_transporte_aereo_GB005.json\") |&gt;\n  project(\"EPSG:5346\")\n\naer &lt;- aer[aer$fun == 6]",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Aeropuertos"
+    ]
+  },
+  {
+    "objectID": "argentina/aeropuertos.html#figura",
+    "href": "argentina/aeropuertos.html#figura",
+    "title": "Aeropuertos",
+    "section": "Figura",
+    "text": "Figura\nÍconos de los aviones\n\n\nOcultar código\nicon1 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5b0;&lt;/span&gt; \")\nicon2 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf072;&lt;/span&gt; \")\nicon3 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5af;&lt;/span&gt; \")\nicon &lt;- glue(\"{icon1} {icon2} {icon3}\")\n\n\nSubtítulo y posición.\n\n\nOcultar código\nx_sub &lt;- ext(aer)$xmax\ny_sub &lt;- ext(aer)$ymax\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {c1}'&gt;Argentina&lt;/b&gt; hay en\",\n  \"funcionamiento &lt;b style='color:{c4}'&gt;{nrow(aer)}&lt;/b&gt;\",\n  \"aeropuertos.&lt;br&gt;\",\n  \"{icon}\",\n  .sep = \"&lt;br&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # departamentos\n  geom_sf(\n    data = dptos_pcias, aes(fill = provincia), color = c2, linewidth = .3,\n    linetype = \"22\"\n  ) +\n  # provincias\n  geom_sf(\n    data = pcias, fill = NA, color = c1, linewidth = .4\n  ) +\n  # aeropuertos\n  geom_sf(\n    data = aer, fill = c2, color = c1, size = 11, alpha = .8,\n    stroke = 1, shape = 21) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = x_sub*.84, y = y_sub*.66, label = mi_subtitle,\n    fill = NA, label.color = NA, size = 12, color = c1, hjust = 0,\n    family = \"ubuntu\"\n  ) +\n  scale_fill_manual(values = pp) +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 8, l = 8, t = 2),\n    plot.background = element_rect(\n      fill = c3, color = c4, linewidth = 3),\n    plot.caption = element_markdown(\n      family = \"jet\", color = c4, hjust = .5, size = 20,\n      margin = margin(b = 10)),\n    legend.position = \"none\"\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/aeropuertos.png\",\n  width = 30,\n  height = 65,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
       "Aeropuertos"
@@ -646,7 +845,62 @@
     "href": "argentina/estaciones_smn.html",
     "title": "Estaciones meteorológicas",
     "section": "",
-    "text": "Mapa de estaciones del Servicio Meteorológico Nacional de Argentina.\n\n\n\nEstaciones meteorológicas en Argentina.\n\n\n\nPaquetes\n\n\nOcultar código\nlibrary(sf)\nlibrary(patchwork)\nlibrary(ggpattern)\nlibrary(ggtext)\nlibrary(glue)\nlibrary(showtext)\nlibrary(tidyverse)\n\n\n\n\nEstilos\nColores aleatorios a partir de una gama de rosados.\n\n\nOcultar código\ncol &lt;- monochromeR::generate_palette(\n  color = \"#D485AA\",\n  modification = \"go_both_ways\",\n  n_colours = 9\n)\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n\n\n\nEpígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"Datos: &lt;b style='color:{col[9]};'&gt;IGN&lt;/b&gt;, &lt;b style='color:{col[9]};'&gt;SMN&lt;/b&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{col[9]};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{col[9]};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)\n\n\n\n\nDatos\nVectores de las provincias con sus departamentos. Obtengo el vector de estaciones meteorológicas del Instituto Geográfico Nacional.\n\n\nOcultar código\np &lt;- st_read(\"argentina/vectores/extras/smn_estaciones_meteorologicas.json\") |&gt;\n  st_transform(crs = 5346) |&gt;\n  select(nombre)\n\npcias_cont &lt;- st_read(\"argentina/vectores/pcias_continental.gpkg\")\n\ndptos_cont &lt;- st_read(\"argentina/vectores/dptos_continental.gpkg\")\n\ndptos_antart &lt;- st_read(\"argentina/vectores/dptos_antartida.gpkg\")\n\np_cont &lt;- st_crop(p, dptos_cont)\np_antart &lt;- st_crop(p, dptos_antart)\n\n\nCreo buffer alrededor de los puntos de las estaciones. NO pueden ser puntos para el difuminado de los colores, tiene que ser un polígono.\nComo el mapa de Antártida es más pequeño, los polígonos tiene que ser más grandes.\n\n\nOcultar código\np_cont_buffer &lt;- st_buffer(p_cont, dist = 12000)\np_antart_buffer &lt;- st_buffer(p_antart, dist = 30000)\n\n\n\n\nFigura\nLogo del SMN y subtítulo de la figura.\n\n\nOcultar código\nsmn &lt;- \"&lt;img src='https://www.smn.gob.ar/sites/all/themes/smn/img/logo.png' width='200'&gt;&lt;/img&gt;\"\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {col[9]}'&gt;Argentina&lt;/b&gt; hay {nrow(p)}&lt;br&gt;estaciones meteorológicas.&lt;br&gt;\"\n)\n\n\nContorno del mapa y diseño de la figura compuesta.\n\n\nOcultar código\nbb &lt;- st_bbox(pcias_cont)\n\ndiseño &lt;- \"\nA#\nAB\n\"\n\n\nMapa del sector Antártico.\n\n\nOcultar código\ng_antart &lt;- ggplot() +\n  # departamentos\n  geom_sf(data = dptos_antart, fill = col[3], color = col[5]) +\n  # estaciones meteorológicas\n  geom_sf_pattern(\n    data = p_antart_buffer, color = NA, pattern = \"gradient\",\n    pattern_orientation = \"radial\",\n    pattern_fill = col[3], # centro\n    pattern_fill2 = col[8], # exterior\n    pattern_density = 1) +\n  scale_fill_viridis_d(option = \"turbo\") +\n  coord_sf(clip = \"off\", expand = TRUE) +\n  theme_void() +\n  theme(\n    plot.background = element_rect(color = NA, linewidth = 2, fill = col[2])\n  )\n\n\nMapa de Argentina continental.\n\n\nOcultar código\ng_cont &lt;- ggplot() +\n  # departamentos\n  geom_sf(data = dptos_cont, fill = col[2], color = col[5]) +\n  # provincias\n  geom_sf(data = pcias_cont, fill = NA, color = col[7], linewidth = .25) +\n  # estaciones meteorológicas\n  geom_sf_pattern(\n    data = p_cont_buffer, color = NA, pattern = \"gradient\",\n    pattern_orientation = \"radial\",\n    pattern_fill = col[3], # centro\n    pattern_fill2 = col[8], # exterior\n    pattern_density = 1) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = bb[\"xmax\"], y = bb[\"ymax\"], label = mi_subtitle,\n    fill = NA, label.color = NA, hjust = 0, size = 9, color = col[7],\n    family = \"ubuntu\", vjust = 1\n  ) +\n  # logo SMN\n  annotate(\n    geom = \"richtext\", x = bb[\"xmax\"], y = 5.5e6,\n    label.padding = unit(rep(1, 4), \"lines\"),\n    label.margin = unit(rep(4, 4), \"lines\"),\n    label = smn, fill = NA, label.color = NA, hjust = 0, vjust = 0\n  ) +\n  scale_fill_viridis_d(option = \"turbo\") +\n  coord_sf(clip = \"off\", expand = FALSE) +\n  theme_void()\n\n\nComposición final del mapa.\n\n\nOcultar código\ng &lt;- g_cont + g_antart +\n  plot_layout(widths = c(1, .6), design = diseño) +\n  plot_annotation(\n    caption = mi_caption,\n    theme = theme(\n      plot.margin = margin(t = 25, r = 25, b = 25, l = 25),\n      plot.background = element_rect(\n        fill = col[1], color = col[4], linewidth = 3),\n      plot.caption = element_markdown(\n        family = \"ubuntu\", size = 15, color = col[7], lineheight = 1.2)\n    )\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/estaciones_smn.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)\n\n\n\n\n\n\n\n\n Subir",
+    "text": "Mapa de estaciones del Servicio Meteorológico Nacional de Argentina.",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Estaciones meteorológicas"
+    ]
+  },
+  {
+    "objectID": "argentina/estaciones_smn.html#paquetes",
+    "href": "argentina/estaciones_smn.html#paquetes",
+    "title": "Estaciones meteorológicas",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(sf)\nlibrary(patchwork)\nlibrary(ggpattern)\nlibrary(ggtext)\nlibrary(glue)\nlibrary(showtext)\nlibrary(tidyverse)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Estaciones meteorológicas"
+    ]
+  },
+  {
+    "objectID": "argentina/estaciones_smn.html#estilos",
+    "href": "argentina/estaciones_smn.html#estilos",
+    "title": "Estaciones meteorológicas",
+    "section": "Estilos",
+    "text": "Estilos\nColores aleatorios a partir de una gama de rosados.\n\n\nOcultar código\ncol &lt;- monochromeR::generate_palette(\n  color = \"#D485AA\",\n  modification = \"go_both_ways\",\n  n_colours = 9\n)\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Estaciones meteorológicas"
+    ]
+  },
+  {
+    "objectID": "argentina/estaciones_smn.html#epígrafe",
+    "href": "argentina/estaciones_smn.html#epígrafe",
+    "title": "Estaciones meteorológicas",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"Datos: &lt;b style='color:{col[9]};'&gt;IGN&lt;/b&gt;, &lt;b style='color:{col[9]};'&gt;SMN&lt;/b&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{col[9]};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{col[9]};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Estaciones meteorológicas"
+    ]
+  },
+  {
+    "objectID": "argentina/estaciones_smn.html#datos",
+    "href": "argentina/estaciones_smn.html#datos",
+    "title": "Estaciones meteorológicas",
+    "section": "Datos",
+    "text": "Datos\nVectores de las provincias con sus departamentos. Obtengo el vector de estaciones meteorológicas del Instituto Geográfico Nacional.\n\n\nOcultar código\np &lt;- st_read(\"argentina/vectores/extras/smn_estaciones_meteorologicas.json\") |&gt;\n  st_transform(crs = 5346) |&gt;\n  select(nombre)\n\npcias_cont &lt;- st_read(\"argentina/vectores/pcias_continental.gpkg\")\n\ndptos_cont &lt;- st_read(\"argentina/vectores/dptos_continental.gpkg\")\n\ndptos_antart &lt;- st_read(\"argentina/vectores/dptos_antartida.gpkg\")\n\np_cont &lt;- st_crop(p, dptos_cont)\np_antart &lt;- st_crop(p, dptos_antart)\n\n\nCreo buffer alrededor de los puntos de las estaciones. NO pueden ser puntos para el difuminado de los colores, tiene que ser un polígono.\nComo el mapa de Antártida es más pequeño, los polígonos tiene que ser más grandes.\n\n\nOcultar código\np_cont_buffer &lt;- st_buffer(p_cont, dist = 12000)\np_antart_buffer &lt;- st_buffer(p_antart, dist = 30000)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Estaciones meteorológicas"
+    ]
+  },
+  {
+    "objectID": "argentina/estaciones_smn.html#figura",
+    "href": "argentina/estaciones_smn.html#figura",
+    "title": "Estaciones meteorológicas",
+    "section": "Figura",
+    "text": "Figura\nLogo del SMN y subtítulo de la figura.\n\n\nOcultar código\nsmn &lt;- \"&lt;img src='https://upload.wikimedia.org/wikipedia/commons/7/72/SMN_Logo_Alta.png' width='200'&gt;&lt;/img&gt;\"\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {col[9]}'&gt;Argentina&lt;/b&gt; hay {nrow(p)}&lt;br&gt;estaciones meteorológicas.&lt;br&gt;\"\n)\n\n\nContorno del mapa y diseño de la figura compuesta.\n\n\nOcultar código\nbb &lt;- st_bbox(pcias_cont)\n\ndiseño &lt;- \"\nA#\nAB\n\"\n\n\nMapa del sector Antártico.\n\n\nOcultar código\ng_antart &lt;- ggplot() +\n  # departamentos\n  geom_sf(data = dptos_antart, fill = col[3], color = col[5]) +\n  # estaciones meteorológicas\n  geom_sf_pattern(\n    data = p_antart_buffer, color = NA, pattern = \"gradient\",\n    pattern_orientation = \"radial\",\n    pattern_fill = col[3], # centro\n    pattern_fill2 = col[8], # exterior\n    pattern_density = 1) +\n  scale_fill_viridis_d(option = \"turbo\") +\n  coord_sf(clip = \"off\", expand = TRUE) +\n  theme_void() +\n  theme(\n    plot.background = element_rect(color = NA, linewidth = 2, fill = col[2])\n  )\n\n\nMapa de Argentina continental.\n\n\nOcultar código\ng_cont &lt;- ggplot() +\n  # departamentos\n  geom_sf(data = dptos_cont, fill = col[2], color = col[5]) +\n  # provincias\n  geom_sf(data = pcias_cont, fill = NA, color = col[7], linewidth = .25) +\n  # estaciones meteorológicas\n  geom_sf_pattern(\n    data = p_cont_buffer, color = NA, pattern = \"gradient\",\n    pattern_orientation = \"radial\",\n    pattern_fill = col[3], # centro\n    pattern_fill2 = col[8], # exterior\n    pattern_density = 1) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = bb[\"xmax\"], y = bb[\"ymax\"], label = mi_subtitle,\n    fill = NA, label.color = NA, hjust = 0, size = 9, color = col[7],\n    family = \"ubuntu\", vjust = 1\n  ) +\n  # logo SMN\n  annotate(\n    geom = \"richtext\", x = bb[\"xmax\"], y = 5.5e6,\n    label.padding = unit(rep(1, 4), \"lines\"),\n    label.margin = unit(rep(4, 4), \"lines\"),\n    label = smn, fill = NA, label.color = NA, hjust = 0, vjust = 0\n  ) +\n  scale_fill_viridis_d(option = \"turbo\") +\n  coord_sf(clip = \"off\", expand = FALSE) +\n  theme_void()\n\n\nComposición final del mapa.\n\n\nOcultar código\ng &lt;- g_cont + g_antart +\n  plot_layout(widths = c(1, .6), design = diseño) +\n  plot_annotation(\n    caption = mi_caption,\n    theme = theme(\n      plot.margin = margin(t = 25, r = 25, b = 25, l = 25),\n      plot.background = element_rect(\n        fill = col[1], color = col[4], linewidth = 3),\n      plot.caption = element_markdown(\n        family = \"ubuntu\", size = 15, color = col[7], lineheight = 1.2)\n    )\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/estaciones_smn.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
       "Estaciones meteorológicas"
@@ -657,7 +911,62 @@
     "href": "argentina/plantas_potabilizadoras.html",
     "title": "Plantas potabilizadoras",
     "section": "",
-    "text": "Mapa de plantas de tratamiento de agua de Argentina.\n\n\n\nPlantas potabilizadoras de agua activas en Argentina.\n\n\n\nPaquetes\n\n\nOcultar código\nlibrary(sf)\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)\n\n\n\n\nEstilos\nPaleta de colores.\n\n\nOcultar código\ncol &lt;- MoMAColors::moma.colors(palette_name = \"Smith\")\nc1 &lt;- \"#FFFFFF\"\nc2 &lt;- \"#000000\"\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n\n\n\nEpígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{col[4]};'&gt;IGN&lt;/span&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{col[4]};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{col[4]};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon}&lt;/b&gt; {usuario}\"\n)\n\n\n\n\nDatos\nVectores de las provincias con sus departamentos. Obtengo el vector de plantas potabilizadoras del Instituto Geográfico Nacional, y conservo únicamente los que se encuentran en actividad. Asigno a cada provincia un color de la gama del azul.\n\n\nOcultar código\ndeptos &lt;- st_read(\"argentina/vectores/dptos_continental.gpkg\") |&gt;\n  st_transform(crs = 5346) |&gt;\n  st_geometry()\n\ncol_pcias &lt;- colorRampPalette(\n  c(col[5], scales::muted(col[5])), alpha = .6)(24)\n\npcias &lt;- st_read(\"argentina/vectores/pcias_continental.gpkg\") |&gt;\n  mutate(fill_pcias = col_pcias)\n\nv &lt;- st_read(\n  \"argentina/vectores/extras/puntos_de_fabricacion_y_procesamiento_BH220.json\") |&gt;\n  filter(fun == 6) |&gt;\n  st_transform(crs = 5346)\n\n\n\n\nFigura\nSubtítulo y posición.\n\n\nOcultar código\nx_sub &lt;- st_bbox(deptos)$xmax\ny_sub &lt;- st_bbox(deptos)$ymax\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {c1}'&gt;Argentina&lt;/b&gt; hay en\",\n  \"funcionamiento &lt;b style='color:#EF7923'&gt;{nrow(v)}&lt;/b&gt;\",\n  \"plantas de tratamiento\",\n  \"de agua.\",\n  .sep = \"&lt;br&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # provincias\n  geom_sf(\n    data = pcias, aes(fill = fill_pcias), linewidth = .4, color = c1,\n    show.legend = TRUE\n  ) +\n  # departamentos\n  geom_sf(\n    data = deptos, fill = NA, color = c1, linewidth = .1, linetype = \"55\"\n  ) +\n  # plantas potabilizadoras\n  geom_sf(\n    data = v, shape = 21, fill = col[4], size = 7, color = c2, alpha = .9\n  ) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = x_sub*.84, y = y_sub*.66, label = mi_subtitle,\n    fill = NA, label.color = NA, size = 12, color = col[4], hjust = 0,\n    family = \"ubuntu\"\n  ) +\n  scale_fill_identity() +\n  scale_shape_identity() +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 8, l = 8, t = 2),\n    plot.background = element_rect(\n      fill = col[5], color = col[2], linewidth = 3),\n    plot.caption = element_markdown(\n      family = \"jet\", color = c1, hjust = .5, size = 20,\n      margin = margin(b = 10))\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/plantas_potabilizadoras.png\",\n  width = 30,\n  height = 65,\n  units = \"cm\"\n)\n\n\n\n\n\n\n\n\n Subir",
+    "text": "Mapa de plantas de tratamiento de agua de Argentina.",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Plantas potabilizadoras"
+    ]
+  },
+  {
+    "objectID": "argentina/plantas_potabilizadoras.html#paquetes",
+    "href": "argentina/plantas_potabilizadoras.html#paquetes",
+    "title": "Plantas potabilizadoras",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(sf)\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Plantas potabilizadoras"
+    ]
+  },
+  {
+    "objectID": "argentina/plantas_potabilizadoras.html#estilos",
+    "href": "argentina/plantas_potabilizadoras.html#estilos",
+    "title": "Plantas potabilizadoras",
+    "section": "Estilos",
+    "text": "Estilos\nPaleta de colores.\n\n\nOcultar código\ncol &lt;- MoMAColors::moma.colors(palette_name = \"Smith\")\nc1 &lt;- \"#FFFFFF\"\nc2 &lt;- \"#000000\"\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Plantas potabilizadoras"
+    ]
+  },
+  {
+    "objectID": "argentina/plantas_potabilizadoras.html#epígrafe",
+    "href": "argentina/plantas_potabilizadoras.html#epígrafe",
+    "title": "Plantas potabilizadoras",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{col[4]};'&gt;IGN&lt;/span&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{col[4]};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{col[4]};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon}&lt;/b&gt; {usuario}\"\n)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Plantas potabilizadoras"
+    ]
+  },
+  {
+    "objectID": "argentina/plantas_potabilizadoras.html#datos",
+    "href": "argentina/plantas_potabilizadoras.html#datos",
+    "title": "Plantas potabilizadoras",
+    "section": "Datos",
+    "text": "Datos\nVectores de las provincias con sus departamentos. Obtengo el vector de plantas potabilizadoras del Instituto Geográfico Nacional, y conservo únicamente los que se encuentran en actividad. Asigno a cada provincia un color de la gama del azul.\n\n\nOcultar código\ndeptos &lt;- st_read(\"argentina/vectores/dptos_continental.gpkg\") |&gt;\n  st_transform(crs = 5346) |&gt;\n  st_geometry()\n\ncol_pcias &lt;- colorRampPalette(\n  c(col[5], scales::muted(col[5])), alpha = .6)(24)\n\npcias &lt;- st_read(\"argentina/vectores/pcias_continental.gpkg\") |&gt;\n  mutate(fill_pcias = col_pcias)\n\nv &lt;- st_read(\n  \"argentina/vectores/extras/puntos_de_fabricacion_y_procesamiento_BH220.json\") |&gt;\n  filter(fun == 6) |&gt;\n  st_transform(crs = 5346)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Plantas potabilizadoras"
+    ]
+  },
+  {
+    "objectID": "argentina/plantas_potabilizadoras.html#figura",
+    "href": "argentina/plantas_potabilizadoras.html#figura",
+    "title": "Plantas potabilizadoras",
+    "section": "Figura",
+    "text": "Figura\nSubtítulo y posición.\n\n\nOcultar código\nx_sub &lt;- st_bbox(deptos)$xmax\ny_sub &lt;- st_bbox(deptos)$ymax\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {c1}'&gt;Argentina&lt;/b&gt; hay en\",\n  \"funcionamiento &lt;b style='color:#EF7923'&gt;{nrow(v)}&lt;/b&gt;\",\n  \"plantas de tratamiento\",\n  \"de agua.\",\n  .sep = \"&lt;br&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # provincias\n  geom_sf(\n    data = pcias, aes(fill = fill_pcias), linewidth = .4, color = c1,\n    show.legend = TRUE\n  ) +\n  # departamentos\n  geom_sf(\n    data = deptos, fill = NA, color = c1, linewidth = .1, linetype = \"55\"\n  ) +\n  # plantas potabilizadoras\n  geom_sf(\n    data = v, shape = 21, fill = col[4], size = 7, color = c2, alpha = .9\n  ) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = x_sub*.84, y = y_sub*.66, label = mi_subtitle,\n    fill = NA, label.color = NA, size = 12, color = col[4], hjust = 0,\n    family = \"ubuntu\"\n  ) +\n  scale_fill_identity() +\n  scale_shape_identity() +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 8, l = 8, t = 2),\n    plot.background = element_rect(\n      fill = col[5], color = col[2], linewidth = 3),\n    plot.caption = element_markdown(\n      family = \"jet\", color = c1, hjust = .5, size = 20,\n      margin = margin(b = 10))\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/plantas_potabilizadoras.png\",\n  width = 30,\n  height = 65,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
       "Plantas potabilizadoras"
@@ -1265,7 +1574,79 @@
     "href": "tidytuesday/2025/semana_03.html",
     "title": "Semana 03",
     "section": "",
-    "text": "Cantidad de personas muertas en expediciones al Himalaya.\n\n\n\nSemana 03, 2025\n\n\n\nPaquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)\n\n\n\n\nEstilos\nColores\n\n\nOcultar código\nc1 &lt;- \"grey5\"\nc2 &lt;- \"grey40\"\nc3 &lt;- \"grey70\"\nc4 &lt;- \"grey90\"\n\n\nFuentes: Ubuntu, JetBrains Mono y Bebas Neue\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nfont_add(\n  family = \"bebas\",\n  regular = \"././fuente/BebasNeue-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n\n\n\nEpígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n    \"Datos: &lt;span style='color:{c4};'&gt;&lt;span style='font-family:jet;'&gt;\",\n    \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 03, \",\n    \"&lt;b&gt;Himalayan Database&lt;/b&gt;.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c4};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c4};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n    \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n    \"{icon_mastodon} {icon_bsky} {usuario}\"\n)\n\n\n\n\nDatos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 03)\nexped &lt;- tuesdata$exped_tidy\n\n\n\n\nProcesamiento\nMe interesa la cantidad de muertes que ocurrieron en cada año.\nSumo las muertes de integrantes y personal de la expedición\n\n\nOcultar código\nd &lt;- exped |&gt;\n  select(PEAKID, YEAR, contains(\"DEATH\")) |&gt;\n  mutate(\n    m = MDEATHS + HDEATHS\n  ) |&gt;\n  reframe(\n    s = sum(m),\n    .by = YEAR\n  )\n\n\n\n\nFigura\nSubtítulo, nota y símbolo de calavera.\n\n\nOcultar código\nmi_subtitulo &lt;- glue(\n  \"Cantidad de muertes en expediciones al &lt;b style='color: {c4}'&gt;Himalaya&lt;/b&gt;\"\n)\n\nnota &lt;- str_wrap(\n  \"Las muertes incluyen a los integrantes de la expedición y al personal\n  contratado.\",\n  30\n)\n\ncalavera &lt;- \"&lt;span style='font-family:jet;'&gt;&#xf068c;&lt;/span&gt;\"\n\n\nGradiente de color para la figura\n\n\nOcultar código\nrelleno &lt;- grid::linearGradient(\n  colours = colorRampPalette(c(c1, c2, c3, c4), bias =.25)(10),\n  x1 = 0,\n  y1 = 0,\n  x2 = 0,\n  y2 = 1\n)\n\n\nFigura\n\n\nOcultar código\ng &lt;- ggplot(d, aes(YEAR, s)) +\n  geom_area(fill = relleno) +\n  annotate(\n    geom = \"richtext\", x = 2020, y = seq(5, 25, 5), label = calavera, size = 10,\n    color = c3, fill = NA, label.color = NA, hjust = 1\n  ) +\n  annotate(\n    geom = \"text\", x = 2020.1, y = 24, label = nota, color = c3, size = 6,\n    hjust = 0, lineheight = .8\n  ) +\n  scale_y_continuous(\n    limits = c(0, 25),\n    expand = c(0, 0),\n    breaks = seq(0, 25, 5)\n  ) +\n  labs(subtitle = mi_subtitulo, caption = mi_caption) +\n  coord_cartesian(expand = FALSE, clip = \"off\") +\n  theme_void() +\n  theme(\n    aspect.ratio = 1,\n    plot.margin = margin(l = 0, r = 20),\n    plot.background = element_rect(fill = c1, color = NA),\n    plot.subtitle = element_markdown(\n      family = \"ubuntu\", color = c3, size = 30, hjust = .5,\n      margin = margin(b = 30, t = 20)\n    ),\n    plot.caption = element_markdown(\n      family = \"ubuntu\", size = 12, color = c3, margin = margin(b = 10, t = 20),\n      lineheight = 1.5\n    ),\n    panel.grid.major.y = element_line(\n      color = c2, linewidth = .2, linetype = \"FF\"\n    ),\n    axis.text.y = element_markdown(\n      color = c3, family = \"jet\", size = 15, margin = margin(r = 25)\n    ),\n    axis.text.x = element_text(\n      color = c3, family = \"bebas\", size = 25, margin = margin(t = 15)\n    )\n  )\n\n\nGuardo\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_03.png\",\n  width = 30,\n  height = 30,\n  units = \"cm\"\n)\n\n\n\n\n\n\n\n\n Subir",
+    "text": "Cantidad de personas muertas en expediciones al Himalaya.",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 03"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_03.html#paquetes",
+    "href": "tidytuesday/2025/semana_03.html#paquetes",
+    "title": "Semana 03",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 03"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_03.html#estilos",
+    "href": "tidytuesday/2025/semana_03.html#estilos",
+    "title": "Semana 03",
+    "section": "Estilos",
+    "text": "Estilos\nColores\n\n\nOcultar código\nc1 &lt;- \"grey5\"\nc2 &lt;- \"grey40\"\nc3 &lt;- \"grey70\"\nc4 &lt;- \"grey90\"\n\n\nFuentes: Ubuntu, JetBrains Mono y Bebas Neue\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nfont_add(\n  family = \"bebas\",\n  regular = \"././fuente/BebasNeue-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 03"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_03.html#epígrafe",
+    "href": "tidytuesday/2025/semana_03.html#epígrafe",
+    "title": "Semana 03",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n    \"Datos: &lt;span style='color:{c4};'&gt;&lt;span style='font-family:jet;'&gt;\",\n    \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 03, \",\n    \"&lt;b&gt;Himalayan Database&lt;/b&gt;.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c4};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c4};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n    \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n    \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 03"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_03.html#datos",
+    "href": "tidytuesday/2025/semana_03.html#datos",
+    "title": "Semana 03",
+    "section": "Datos",
+    "text": "Datos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 03)\nexped &lt;- tuesdata$exped_tidy",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 03"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_03.html#procesamiento",
+    "href": "tidytuesday/2025/semana_03.html#procesamiento",
+    "title": "Semana 03",
+    "section": "Procesamiento",
+    "text": "Procesamiento\nMe interesa la cantidad de muertes que ocurrieron en cada año.\nSumo las muertes de integrantes y personal de la expedición\n\n\nOcultar código\nd &lt;- exped |&gt;\n  select(PEAKID, YEAR, contains(\"DEATH\")) |&gt;\n  mutate(\n    m = MDEATHS + HDEATHS\n  ) |&gt;\n  reframe(\n    s = sum(m),\n    .by = YEAR\n  )",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 03"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_03.html#figura",
+    "href": "tidytuesday/2025/semana_03.html#figura",
+    "title": "Semana 03",
+    "section": "Figura",
+    "text": "Figura\nSubtítulo, nota y símbolo de calavera.\n\n\nOcultar código\nmi_subtitulo &lt;- glue(\n  \"Cantidad de muertes en expediciones al &lt;b style='color: {c4}'&gt;Himalaya&lt;/b&gt;\"\n)\n\nnota &lt;- str_wrap(\n  \"Las muertes incluyen a los integrantes de la expedición y al personal\n  contratado.\",\n  30\n)\n\ncalavera &lt;- \"&lt;span style='font-family:jet;'&gt;&#xf068c;&lt;/span&gt;\"\n\n\nGradiente de color para la figura\n\n\nOcultar código\nrelleno &lt;- grid::linearGradient(\n  colours = colorRampPalette(c(c1, c2, c3, c4), bias =.25)(10),\n  x1 = 0,\n  y1 = 0,\n  x2 = 0,\n  y2 = 1\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot(d, aes(YEAR, s)) +\n  geom_area(fill = relleno) +\n  annotate(\n    geom = \"richtext\", x = 2020, y = seq(5, 25, 5), label = calavera, size = 10,\n    color = c3, fill = NA, label.color = NA, hjust = 1\n  ) +\n  annotate(\n    geom = \"text\", x = 2020.1, y = 24, label = nota, color = c3, size = 6,\n    hjust = 0, lineheight = .8\n  ) +\n  scale_y_continuous(\n    limits = c(0, 25),\n    expand = c(0, 0),\n    breaks = seq(0, 25, 5)\n  ) +\n  labs(subtitle = mi_subtitulo, caption = mi_caption) +\n  coord_cartesian(expand = FALSE, clip = \"off\") +\n  theme_void() +\n  theme(\n    aspect.ratio = 1,\n    plot.margin = margin(l = 0, r = 20),\n    plot.background = element_rect(fill = c1, color = NA),\n    plot.subtitle = element_markdown(\n      family = \"ubuntu\", color = c3, size = 30, hjust = .5,\n      margin = margin(b = 30, t = 20)\n    ),\n    plot.caption = element_markdown(\n      family = \"ubuntu\", size = 12, color = c3, margin = margin(b = 10, t = 20),\n      lineheight = 1.5\n    ),\n    panel.grid.major.y = element_line(\n      color = c2, linewidth = .2, linetype = \"FF\"\n    ),\n    axis.text.y = element_markdown(\n      color = c3, family = \"jet\", size = 15, margin = margin(r = 25)\n    ),\n    axis.text.x = element_text(\n      color = c3, family = \"bebas\", size = 25, margin = margin(t = 15)\n    )\n  )\n\n\nGuardo\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_03.png\",\n  width = 30,\n  height = 30,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
@@ -1277,7 +1658,79 @@
     "href": "tidytuesday/2025/semana_05.html",
     "title": "Semana 05",
     "section": "",
-    "text": "Lugares más frecuentes de la familia Simpson.\n\n\n\nSemana 05, 2025\n\n\n\nPaquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)\nlibrary(patchwork)\n\n\n\n\nEstilos\nColores\n\n\nOcultar código\nc1 &lt;- \"#7FABD3\"\nc2 &lt;- \"#3573B9\"\nc3 &lt;- \"#273871\"\nc4 &lt;- \"#FED41D\"\nc5 &lt;- \"white\"\n\n\nFuentes: Ubuntu y JetBrains Mono\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n\n\n\nEpígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n    \"Datos: &lt;span style='color:{c2};'&gt;&lt;span style='font-family:jet;'&gt;\",\n    \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 05, \",\n    \"&lt;b&gt;The Simpsons Dataset&lt;/b&gt;, Prashant Banerjee.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c2};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c2};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n    \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n    \"{icon_mastodon} {icon_bsky} {usuario}\"\n)\n\n\n\n\nDatos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 05)\nlocations &lt;- tuesdata$simpsons_locations\nscript_lines &lt;- tuesdata$simpsons_script_lines\n\n\n\n\nProcesamiento\nMe interesa asociar lugares a los integrantes principales de la familia Simpson.\nCreo un vector con los nombres y links a sus imágenes sacado de Wikipedia.\n\n\nOcultar código\nfamilia &lt;- c(\n  \"Homer Simpson\", \"Lisa Simpson\", \"Bart Simpson\", \"Marge Simpson\",\n  \"Maggie Simpson\"\n)\n\nlink_familia &lt;- c(\n  Homero = \"https://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png\",\n  Marge = \"https://upload.wikimedia.org/wikipedia/en/0/0b/Marge_Simpson.png\",\n  Bart = \"https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png\",\n  Lisa = \"https://upload.wikimedia.org/wikipedia/en/e/ec/Lisa_Simpson.png\",\n  Maggie = \"https://upload.wikimedia.org/wikipedia/en/9/9d/Maggie_Simpson.png\"\n)\n\nimg_familia &lt;- glue(\"&lt;img src='{link_familia}' height=90 /&gt;\") |&gt;\n  as.character()\n\nimg_familia &lt;- set_names(img_familia, names(link_familia))\n\n\nFiltro el dataset del guión obteniendo los 5 sitios más frecuentes por cada integrante.\n\n\nOcultar código\nd &lt;- script_lines |&gt;\n  filter(raw_character_text %in% familia) |&gt;\n  count(raw_character_text, location_id) |&gt;\n  inner_join(locations, by = join_by(location_id == id)) |&gt;\n  select(!normalized_name) |&gt;\n  select(\n    personaje = raw_character_text,\n    lugar = name,\n    n\n  ) |&gt;\n  mutate(\n    personaje = str_remove(personaje, \" Simpson\")\n  ) |&gt;\n  mutate(\n    personaje = if_else(personaje == \"Homer\", \"Homero\", personaje)\n  ) |&gt;\n  mutate(\n    personaje = fct(\n      personaje, levels = c(\"Homero\", \"Marge\", \"Bart\", \"Lisa\", \"Maggie\")\n    )\n  ) |&gt;\n  arrange(personaje, n) |&gt;\n  mutate(\n    puesto = row_number(), .by = personaje\n  ) |&gt;\n  arrange(personaje, puesto) |&gt;\n  mutate(\n    p = n/sum(n),\n    .by = personaje\n  ) |&gt;\n  mutate(\n    puesto = factor(puesto)\n  ) |&gt;\n  mutate(\n    img = img_familia[personaje]\n  ) |&gt;\n  mutate(\n    lugar = str_to_sentence(lugar)\n  ) |&gt;\n  mutate(\n    hjust = if_else(lugar == \"Simpson home\", 1.1, 0)\n  ) |&gt;\n  mutate(\n    relleno = if_else(lugar == \"Simpson home\", c3, c2)\n  ) |&gt;\n  slice_max(order_by = puesto, n = 5, by = personaje, with_ties = FALSE)\n\n\nTraduzco los lugares\n\n\nOcultar código\nd &lt;- d |&gt;\n  mutate(\n    lugar = case_match(\n      lugar,\n      \"Simpson home\" ~ \"Domicilio Simpson\",\n      \"Springfield nuclear power plant\" ~ \"Planta nuclear Springfield\",\n      \"Moe's tavern\" ~ \"Taverna de Moe\",\n      \"Springfield street\" ~ \"Calle de Springfield\",\n      \"Homer's car\" ~ \"Auto de Homero\",\n      \"Evergreen terrace\" ~ \"Techo del domicilio\",\n      \"Simpson master bedroom\" ~ \"Habitación del matrimonio\",\n      \"Marge's car\" ~ \"Auto de Marge\",\n      \"Mother hubbard's sandwich cupboard\" ~ \"Sandwich Armario de la Madre Hubbard\",\n      \"Outer concourse\" ~ \"Afuera del vestíbulo\",\n      \"Olympic village\" ~ \"Villa Olímpica\",\n      \"First church of springfield\" ~ \"1ra Iglesia de Springfield\",\n      \"Springfield elementary school\" ~ \"Escuela Primaria de Springfield\",\n      \"Bart's bedroom\" ~ \"Habitación de Bart\",\n      \"Bart's treehouse\" ~ \"Casita del árbol de Bart\",\n      \"Lisa's bedroom\" ~ \"Habitación de Lisa\",\n      \"Parking structure\" ~ \"Estacionamiento\",\n      \"Springfield zoo\" ~ \"Zoológico de Springfield\",\n      .default = lugar\n    )\n  )\n\n\n\n\nFigura\nGenero un tibble para las etiquetas del eje horizontal.\n\n\nOcultar código\neje_x &lt;- tibble(\n  x = seq(.1, .7, .1), y = .5\n) |&gt;\n  mutate(\n    label = paste0(x*100, \"%\")\n  )\n\n\nFigura principal.\n\n\nOcultar código\ng &lt;- ggplot(d, aes(p, puesto)) +\n  geom_segment(\n    aes(x = 0, xend = p, yend = puesto), linewidth = 15, color = c3\n  ) +\n  geom_label(\n    aes(label = lugar, hjust = hjust, fill = I(relleno)),\n    size = 12, size.unit = \"pt\", color = c5, family = \"ubuntu\",\n    label.size = 0, fontface = \"bold\"\n  ) +\n  geom_richtext(\n    aes(I(1), I(.7), label = img), fill = NA, label.color = NA, hjust = 1,\n    vjust = 0\n  ) +\n  labs(caption = mi_caption) +\n  facet_wrap(\n    vars(personaje), ncol = 2, scales = \"free\", strip.position = \"left\",\n    dir = \"h\"\n  ) +\n  scale_x_continuous(\n    breaks = seq(.1, .8, .1),\n    expand = c(.01, 0),\n    labels = scales::label_percent()\n  ) +\n  scale_y_discrete(\n    expand = c(0, .6)\n  ) +\n  coord_cartesian(clip = \"off\") +\n  theme_void() +\n  theme(\n    aspect.ratio = .6,\n    text = element_text(size = 10),\n    plot.margin = margin(t = 15,  b = 15),\n    plot.background = element_rect(fill = c1, color = NA),\n    plot.caption = element_markdown(\n      family = \"ubuntu\", size = 11, color = c3, lineheight = 1.1,\n      margin = margin(t = -20, b = 0, r = 20)\n    ),\n    axis.text.x = element_text(\n      family = \"jet\", color = c5, size = 8, margin = margin(t = -12), hjust = 1\n    ),\n    panel.background = element_rect(fill = c2, color = NA),\n    panel.spacing = unit(1.5, \"line\"),\n    panel.grid.major.x = element_line(\n      color = c1, linewidth = .1, linetype = \"FF\"\n    ),\n    strip.text = element_blank()\n  )\n\n\nAgrego sobre la figura principal el título y subtítulo utilizando patchwork.\n\n\nOcultar código\nmi_titulo &lt;- glue(\n  \"En la familia &lt;span style='color:{c4}'&gt;Simpson&lt;/span&gt;&lt;br&gt;todo queda en casa\"\n)\n\nmi_subtitulo &lt;- \"Top 5 de lugares en los que aparece&lt;br&gt;\n  cada integrante de la familia\"\n\nh &lt;- ggplot() +\n  annotate(\n    geom = \"richtext\", x = 0, y = c(0, -.9), color = c5, size = c(13, 7),\n    label = c(mi_titulo, mi_subtitulo), family = \"ubuntu\", fontface = \"bold\",\n    lineheight = 1, hjust = 0, fill = NA, label.color = NA\n  ) +\n  coord_cartesian(\n    expand = FALSE, xlim = c(-.02, 1), ylim = c(-1, .5), clip = \"off\"\n  ) +\n  theme_void() +\n  theme(\n    aspect.ratio = .3\n  )\n\ni &lt;- g +\n  inset_element(\n    h,\n    left = .5,\n    bottom = -.01,\n    right = 1,\n    top = .5,\n    align_to = \"full\",\n    clip = FALSE\n  ) +\n  plot_annotation(\n    theme = theme_void()\n  )\n\n\nGuardo\n\n\nOcultar código\nggsave(\n  plot = i,\n  filename = \"tidytuesday/2025/semana_05.png\",\n  width = 30,\n  height = 28,\n  units = \"cm\"\n)\n\n\n\n\n\n\n\n\n Subir",
+    "text": "Lugares más frecuentes de la familia Simpson.",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 05"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_05.html#paquetes",
+    "href": "tidytuesday/2025/semana_05.html#paquetes",
+    "title": "Semana 05",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)\nlibrary(patchwork)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 05"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_05.html#estilos",
+    "href": "tidytuesday/2025/semana_05.html#estilos",
+    "title": "Semana 05",
+    "section": "Estilos",
+    "text": "Estilos\nColores\n\n\nOcultar código\nc1 &lt;- \"#7FABD3\"\nc2 &lt;- \"#3573B9\"\nc3 &lt;- \"#273871\"\nc4 &lt;- \"#FED41D\"\nc5 &lt;- \"white\"\n\n\nFuentes: Ubuntu y JetBrains Mono\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 05"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_05.html#epígrafe",
+    "href": "tidytuesday/2025/semana_05.html#epígrafe",
+    "title": "Semana 05",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n    \"Datos: &lt;span style='color:{c2};'&gt;&lt;span style='font-family:jet;'&gt;\",\n    \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 05, \",\n    \"&lt;b&gt;The Simpsons Dataset&lt;/b&gt;, Prashant Banerjee.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c2};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c2};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n    \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n    \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 05"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_05.html#datos",
+    "href": "tidytuesday/2025/semana_05.html#datos",
+    "title": "Semana 05",
+    "section": "Datos",
+    "text": "Datos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 05)\nlocations &lt;- tuesdata$simpsons_locations\nscript_lines &lt;- tuesdata$simpsons_script_lines",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 05"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_05.html#procesamiento",
+    "href": "tidytuesday/2025/semana_05.html#procesamiento",
+    "title": "Semana 05",
+    "section": "Procesamiento",
+    "text": "Procesamiento\nMe interesa asociar lugares a los integrantes principales de la familia Simpson.\nCreo un vector con los nombres y links a sus imágenes sacado de Wikipedia.\n\n\nOcultar código\nfamilia &lt;- c(\n  \"Homer Simpson\", \"Lisa Simpson\", \"Bart Simpson\", \"Marge Simpson\",\n  \"Maggie Simpson\"\n)\n\nlink_familia &lt;- c(\n  Homero = \"https://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png\",\n  Marge = \"https://upload.wikimedia.org/wikipedia/en/0/0b/Marge_Simpson.png\",\n  Bart = \"https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png\",\n  Lisa = \"https://upload.wikimedia.org/wikipedia/en/e/ec/Lisa_Simpson.png\",\n  Maggie = \"https://upload.wikimedia.org/wikipedia/en/9/9d/Maggie_Simpson.png\"\n)\n\nimg_familia &lt;- glue(\"&lt;img src='{link_familia}' height=90 /&gt;\") |&gt;\n  as.character()\n\nimg_familia &lt;- set_names(img_familia, names(link_familia))\n\n\nFiltro el dataset del guión obteniendo los 5 sitios más frecuentes por cada integrante.\n\n\nOcultar código\nd &lt;- script_lines |&gt;\n  filter(raw_character_text %in% familia) |&gt;\n  count(raw_character_text, location_id) |&gt;\n  inner_join(locations, by = join_by(location_id == id)) |&gt;\n  select(!normalized_name) |&gt;\n  select(\n    personaje = raw_character_text,\n    lugar = name,\n    n\n  ) |&gt;\n  mutate(\n    personaje = str_remove(personaje, \" Simpson\")\n  ) |&gt;\n  mutate(\n    personaje = if_else(personaje == \"Homer\", \"Homero\", personaje)\n  ) |&gt;\n  mutate(\n    personaje = fct(\n      personaje, levels = c(\"Homero\", \"Marge\", \"Bart\", \"Lisa\", \"Maggie\")\n    )\n  ) |&gt;\n  arrange(personaje, n) |&gt;\n  mutate(\n    puesto = row_number(), .by = personaje\n  ) |&gt;\n  arrange(personaje, puesto) |&gt;\n  mutate(\n    p = n/sum(n),\n    .by = personaje\n  ) |&gt;\n  mutate(\n    puesto = factor(puesto)\n  ) |&gt;\n  mutate(\n    img = img_familia[personaje]\n  ) |&gt;\n  mutate(\n    lugar = str_to_sentence(lugar)\n  ) |&gt;\n  mutate(\n    hjust = if_else(lugar == \"Simpson home\", 1.1, 0)\n  ) |&gt;\n  mutate(\n    relleno = if_else(lugar == \"Simpson home\", c3, c2)\n  ) |&gt;\n  slice_max(order_by = puesto, n = 5, by = personaje, with_ties = FALSE)\n\n\nTraduzco los lugares\n\n\nOcultar código\nd &lt;- d |&gt;\n  mutate(\n    lugar = case_match(\n      lugar,\n      \"Simpson home\" ~ \"Domicilio Simpson\",\n      \"Springfield nuclear power plant\" ~ \"Planta nuclear Springfield\",\n      \"Moe's tavern\" ~ \"Taverna de Moe\",\n      \"Springfield street\" ~ \"Calle de Springfield\",\n      \"Homer's car\" ~ \"Auto de Homero\",\n      \"Evergreen terrace\" ~ \"Techo del domicilio\",\n      \"Simpson master bedroom\" ~ \"Habitación del matrimonio\",\n      \"Marge's car\" ~ \"Auto de Marge\",\n      \"Mother hubbard's sandwich cupboard\" ~ \"Sandwich Armario de la Madre Hubbard\",\n      \"Outer concourse\" ~ \"Afuera del vestíbulo\",\n      \"Olympic village\" ~ \"Villa Olímpica\",\n      \"First church of springfield\" ~ \"1ra Iglesia de Springfield\",\n      \"Springfield elementary school\" ~ \"Escuela Primaria de Springfield\",\n      \"Bart's bedroom\" ~ \"Habitación de Bart\",\n      \"Bart's treehouse\" ~ \"Casita del árbol de Bart\",\n      \"Lisa's bedroom\" ~ \"Habitación de Lisa\",\n      \"Parking structure\" ~ \"Estacionamiento\",\n      \"Springfield zoo\" ~ \"Zoológico de Springfield\",\n      .default = lugar\n    )\n  )",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 05"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_05.html#figura",
+    "href": "tidytuesday/2025/semana_05.html#figura",
+    "title": "Semana 05",
+    "section": "Figura",
+    "text": "Figura\nGenero un tibble para las etiquetas del eje horizontal.\n\n\nOcultar código\neje_x &lt;- tibble(\n  x = seq(.1, .7, .1), y = .5\n) |&gt;\n  mutate(\n    label = paste0(x*100, \"%\")\n  )\n\n\nFigura principal.\n\n\nOcultar código\ng &lt;- ggplot(d, aes(p, puesto)) +\n  geom_segment(\n    aes(x = 0, xend = p, yend = puesto), linewidth = 15, color = c3\n  ) +\n  geom_label(\n    aes(label = lugar, hjust = hjust, fill = I(relleno)),\n    size = 12, size.unit = \"pt\", color = c5, family = \"ubuntu\",\n    label.size = 0, fontface = \"bold\"\n  ) +\n  geom_richtext(\n    aes(I(1), I(.7), label = img), fill = NA, label.color = NA, hjust = 1,\n    vjust = 0\n  ) +\n  labs(caption = mi_caption) +\n  facet_wrap(\n    vars(personaje), ncol = 2, scales = \"free\", strip.position = \"left\",\n    dir = \"h\"\n  ) +\n  scale_x_continuous(\n    breaks = seq(.1, .8, .1),\n    expand = c(.01, 0),\n    labels = scales::label_percent()\n  ) +\n  scale_y_discrete(\n    expand = c(0, .6)\n  ) +\n  coord_cartesian(clip = \"off\") +\n  theme_void() +\n  theme(\n    aspect.ratio = .6,\n    text = element_text(size = 10),\n    plot.margin = margin(t = 15,  b = 15),\n    plot.background = element_rect(fill = c1, color = NA),\n    plot.caption = element_markdown(\n      family = \"ubuntu\", size = 11, color = c3, lineheight = 1.1,\n      margin = margin(t = -20, b = 0, r = 20)\n    ),\n    axis.text.x = element_text(\n      family = \"jet\", color = c5, size = 8, margin = margin(t = -12), hjust = 1\n    ),\n    panel.background = element_rect(fill = c2, color = NA),\n    panel.spacing = unit(1.5, \"line\"),\n    panel.grid.major.x = element_line(\n      color = c1, linewidth = .1, linetype = \"FF\"\n    ),\n    strip.text = element_blank()\n  )\n\n\nAgrego sobre la figura principal el título y subtítulo utilizando patchwork.\n\n\nOcultar código\nmi_titulo &lt;- glue(\n  \"En la familia &lt;span style='color:{c4}'&gt;Simpson&lt;/span&gt;&lt;br&gt;todo queda en casa\"\n)\n\nmi_subtitulo &lt;- \"Top 5 de lugares en los que aparece&lt;br&gt;\n  cada integrante de la familia\"\n\nh &lt;- ggplot() +\n  annotate(\n    geom = \"richtext\", x = 0, y = c(0, -.9), color = c5, size = c(13, 7),\n    label = c(mi_titulo, mi_subtitulo), family = \"ubuntu\", fontface = \"bold\",\n    lineheight = 1, hjust = 0, fill = NA, label.color = NA\n  ) +\n  coord_cartesian(\n    expand = FALSE, xlim = c(-.02, 1), ylim = c(-1, .5), clip = \"off\"\n  ) +\n  theme_void() +\n  theme(\n    aspect.ratio = .3\n  )\n\ni &lt;- g +\n  inset_element(\n    h,\n    left = .5,\n    bottom = -.01,\n    right = 1,\n    top = .5,\n    align_to = \"full\",\n    clip = FALSE\n  ) +\n  plot_annotation(\n    theme = theme_void()\n  )\n\n\nGuardo\n\n\nOcultar código\nggsave(\n  plot = i,\n  filename = \"tidytuesday/2025/semana_05.png\",\n  width = 30,\n  height = 28,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
@@ -1289,7 +1742,79 @@
     "href": "tidytuesday/2025/semana_04.html",
     "title": "Semana 04",
     "section": "",
-    "text": "Falta de acceso al agua en EE.UU.\n\n\n\nSemana 04, 2025\n\n\n\nPaquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)\n\n\n\n\nEstilos\nColores\n\n\nOcultar código\nc1 &lt;- \"#4060C8\"\nc2 &lt;- \"#9A153D\"\nc3 &lt;- \"#EAF3FF\"\nc4 &lt;- \"grey50\"\n\n\nFuentes: Ubuntu y JetBrains Mono\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n\n\n\nEpígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n    \"Datos: &lt;span style='color:{c1};'&gt;&lt;span style='font-family:jet;'&gt;\",\n    \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 04, \",\n    \"&lt;b&gt;U.S. Census Bureau&lt;/b&gt;, {{tidycensus}}.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n    \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n    \"{icon_mastodon} {icon_bsky} {usuario}\"\n)\n\n\n\n\nDatos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 04)\nw23 &lt;- tuesdata$water_insecurity_2023\n\n\n\n\nProcesamiento\nMe interesa ver la cantidad de gente SIN conexión a agua potable en 2023.\nCantidad total de viviendas SIN conexión, y formato para subtítulo\n\n\nOcultar código\ns23 &lt;- sum(w23$plumbing, na.rm = TRUE)\ns23_formato &lt;- format(s23, big.mark = \".\", decimal.mark = \",\")\n\n\nTibble que generan puntos con forma de gota y convierto a vector.\nEcuación: Teardrop Curve.\n\n\nOcultar código\ngota_tbl &lt;- tibble(\n  t = seq(-10, 10, length.out = 1000),\n  x_eje = cos(t),\n  y_eje = sin(t)*sin(t/2)^1.5\n) |&gt;\n  transmute(\n    y = x_eje,\n    x = -y_eje\n  ) |&gt;\n  drop_na()\n\ngota_v &lt;- terra::vect(gota_tbl, geom = c(\"x\", \"y\")) |&gt;\n  terra::as.lines() |&gt;\n  terra::aggregate() |&gt;\n  terra::as.polygons()\n\n\nDentro de la gota agrego puntos aleatoriamente, extraigo las coordenadas para usar con ggplot(). La cantidad de puntos es la de viviendas SIN conexión\n\n\nOcultar código\np23 &lt;- terra::spatSample(gota_v, s23) |&gt;\n  terra::geom(df = TRUE)\n\n\n\n\nFigura\nSubtítulo, rodeando la gota\n\n\nOcultar código\nl1 &lt;- glue(\"En 2023, &lt;b style='color:{c1}'&gt;{s23_formato}&lt;/b&gt; viviendas\")\nl2 &lt;- glue(\"&lt;b style='color:{c2}'&gt;NO&lt;/b&gt; tenían instalaciones\")\nl3 &lt;- \"completas* de agua\"\nl4 &lt;- \"en &lt;b&gt;EE.UU.&lt;/b&gt;\"\nmi_subtitulo &lt;- c(l1, l2, l3, l4)\n\n\nAnotación, con viñetas\n\n\nOcultar código\npunto &lt;- \"&lt;span style='font-family:jet; font-size: 10px'&gt;&#xf111;&lt;/span&gt;\"\n\nmi_nota &lt;- glue(\"\n&lt;sup style='color: black; font-size: 20px'&gt;*&lt;/sup&gt;Se considera instalación&lt;br&gt;\ncompleta a:&lt;br&gt;\n{punto} Agua corriente fría/caliente&lt;br&gt;\n{punto} Inodoro&lt;br&gt;\n{punto} Bañera/ducha\")\n\n\nFigura\n\n\nOcultar código\ng &lt;- ggplot(p23, aes(x, y)) +\n  geom_point(size = .05, aes(color = \"a\"), alpha = .8) +\n  annotate(\n    geom = \"richtext\", x = seq(.02, .15, length.out = 4),\n    y = seq(1, .78, length.out = 4), label = mi_subtitulo,  hjust = 0,\n    vjust = 1, size = 9, family = \"ubuntu\", label.color = NA, fill = NA\n  ) +\n  annotate(\n    geom = \"richtext\", x = -1, y = .3, label = mi_nota, family = \"ubuntu\",\n    hjust = 0, vjust = 1, size = 5, lineheight = 1.1, fill = NA, color = c4,\n    label.color = NA\n  ) +\n  scale_color_manual(\n    breaks = \"a\",\n    values = c1,\n    name = NULL,\n    labels = \"=  Vivienda sin conexión de agua\"\n  ) +\n  coord_equal(expand = FALSE, clip = \"off\", xlim = range(p23$x)) +\n  labs(caption = mi_caption) +\n  guides(\n    color = guide_legend(override.aes = list(size = 5))\n  ) +\n  theme_void(base_family = \"ubuntu\") +\n  theme(\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.margin = margin(20, 20, 20, 20),\n    plot.subtitle = element_markdown(),\n    plot.caption = element_markdown(\n      size = 15, color = c2, lineheight = 1.2,\n      margin = margin(r = -120, t = 20, b = -15)\n    ),\n    legend.position = \"inside\",\n    legend.position.inside = c(.05, 0),\n    legend.justification.inside = c(.5, 0),\n    legend.text.position = \"right\",\n    legend.key.height = unit(25, \"pt\"),\n    legend.text = element_text(size = 15)\n  )\n\n\nGuardo\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_04.png\",\n  width = 30,\n  height = 31,\n  units = \"cm\"\n)\n\n\n\n\n\n\n\n\n Subir",
+    "text": "Falta de acceso al agua en EE.UU.",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 04"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_04.html#paquetes",
+    "href": "tidytuesday/2025/semana_04.html#paquetes",
+    "title": "Semana 04",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 04"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_04.html#estilos",
+    "href": "tidytuesday/2025/semana_04.html#estilos",
+    "title": "Semana 04",
+    "section": "Estilos",
+    "text": "Estilos\nColores\n\n\nOcultar código\nc1 &lt;- \"#4060C8\"\nc2 &lt;- \"#9A153D\"\nc3 &lt;- \"#EAF3FF\"\nc4 &lt;- \"grey50\"\n\n\nFuentes: Ubuntu y JetBrains Mono\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 04"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_04.html#epígrafe",
+    "href": "tidytuesday/2025/semana_04.html#epígrafe",
+    "title": "Semana 04",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n    \"Datos: &lt;span style='color:{c1};'&gt;&lt;span style='font-family:jet;'&gt;\",\n    \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 04, \",\n    \"&lt;b&gt;U.S. Census Bureau&lt;/b&gt;, {{tidycensus}}.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n    \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n    \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 04"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_04.html#datos",
+    "href": "tidytuesday/2025/semana_04.html#datos",
+    "title": "Semana 04",
+    "section": "Datos",
+    "text": "Datos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 04)\nw23 &lt;- tuesdata$water_insecurity_2023",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 04"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_04.html#procesamiento",
+    "href": "tidytuesday/2025/semana_04.html#procesamiento",
+    "title": "Semana 04",
+    "section": "Procesamiento",
+    "text": "Procesamiento\nMe interesa ver la cantidad de gente SIN conexión a agua potable en 2023.\nCantidad total de viviendas SIN conexión, y formato para subtítulo\n\n\nOcultar código\ns23 &lt;- sum(w23$plumbing, na.rm = TRUE)\ns23_formato &lt;- format(s23, big.mark = \".\", decimal.mark = \",\")\n\n\nTibble que generan puntos con forma de gota y convierto a vector.\nEcuación: Teardrop Curve.\n\n\nOcultar código\ngota_tbl &lt;- tibble(\n  t = seq(-10, 10, length.out = 1000),\n  x_eje = cos(t),\n  y_eje = sin(t)*sin(t/2)^1.5\n) |&gt;\n  transmute(\n    y = x_eje,\n    x = -y_eje\n  ) |&gt;\n  drop_na()\n\ngota_v &lt;- terra::vect(gota_tbl, geom = c(\"x\", \"y\")) |&gt;\n  terra::as.lines() |&gt;\n  terra::aggregate() |&gt;\n  terra::as.polygons()\n\n\nDentro de la gota agrego puntos aleatoriamente, extraigo las coordenadas para usar con ggplot(). La cantidad de puntos es la de viviendas SIN conexión\n\n\nOcultar código\np23 &lt;- terra::spatSample(gota_v, s23) |&gt;\n  terra::geom(df = TRUE)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 04"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_04.html#figura",
+    "href": "tidytuesday/2025/semana_04.html#figura",
+    "title": "Semana 04",
+    "section": "Figura",
+    "text": "Figura\nSubtítulo, rodeando la gota\n\n\nOcultar código\nl1 &lt;- glue(\"En 2023, &lt;b style='color:{c1}'&gt;{s23_formato}&lt;/b&gt; viviendas\")\nl2 &lt;- glue(\"&lt;b style='color:{c2}'&gt;NO&lt;/b&gt; tenían instalaciones\")\nl3 &lt;- \"completas* de agua\"\nl4 &lt;- \"en &lt;b&gt;EE.UU.&lt;/b&gt;\"\nmi_subtitulo &lt;- c(l1, l2, l3, l4)\n\n\nAnotación, con viñetas\n\n\nOcultar código\npunto &lt;- \"&lt;span style='font-family:jet; font-size: 10px'&gt;&#xf111;&lt;/span&gt;\"\n\nmi_nota &lt;- glue(\"\n&lt;sup style='color: black; font-size: 20px'&gt;*&lt;/sup&gt;Se considera instalación&lt;br&gt;\ncompleta a:&lt;br&gt;\n{punto} Agua corriente fría/caliente&lt;br&gt;\n{punto} Inodoro&lt;br&gt;\n{punto} Bañera/ducha\")\n\n\nFigura\n\n\nOcultar código\ng &lt;- ggplot(p23, aes(x, y)) +\n  geom_point(size = .05, aes(color = \"a\"), alpha = .8) +\n  annotate(\n    geom = \"richtext\", x = seq(.02, .15, length.out = 4),\n    y = seq(1, .78, length.out = 4), label = mi_subtitulo,  hjust = 0,\n    vjust = 1, size = 9, family = \"ubuntu\", label.color = NA, fill = NA\n  ) +\n  annotate(\n    geom = \"richtext\", x = -1, y = .3, label = mi_nota, family = \"ubuntu\",\n    hjust = 0, vjust = 1, size = 5, lineheight = 1.1, fill = NA, color = c4,\n    label.color = NA\n  ) +\n  scale_color_manual(\n    breaks = \"a\",\n    values = c1,\n    name = NULL,\n    labels = \"=  Vivienda sin conexión de agua\"\n  ) +\n  coord_equal(expand = FALSE, clip = \"off\", xlim = range(p23$x)) +\n  labs(caption = mi_caption) +\n  guides(\n    color = guide_legend(override.aes = list(size = 5))\n  ) +\n  theme_void(base_family = \"ubuntu\") +\n  theme(\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.margin = margin(20, 20, 20, 20),\n    plot.subtitle = element_markdown(),\n    plot.caption = element_markdown(\n      size = 15, color = c2, lineheight = 1.2,\n      margin = margin(r = -120, t = 20, b = -15)\n    ),\n    legend.position = \"inside\",\n    legend.position.inside = c(.05, 0),\n    legend.justification.inside = c(.5, 0),\n    legend.text.position = \"right\",\n    legend.key.height = unit(25, \"pt\"),\n    legend.text = element_text(size = 15)\n  )\n\n\nGuardo\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_04.png\",\n  width = 30,\n  height = 31,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
