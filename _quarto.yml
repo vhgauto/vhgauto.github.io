@@ -25,8 +25,8 @@ website:
         text: "{{< iconify fa6-brands:r-project >}} Tidytuesday"
       - href: "publicaciones/index.qmd"
         text: "{{< iconify carbon:document >}} Publicaciones"
-      - href: "visualizaciones/index.qmd"
-        text: "{{< iconify zondicons:chart-bar >}} Visualizaciones"
+      - href: "argentina/index.qmd"
+        text: "{{< iconify hugeicons:maps >}} Mapas de Argentina"
     tools:
       - icon: github
         href: "https://github.com/vhgauto"
@@ -63,6 +63,12 @@ website:
           contents: tidytuesday/2024/*
         - section: "2023"
           contents: tidytuesday/2023/*
+    - title: "Mapas de Argentina"
+      collapse-level: 1
+      style: "floating"
+      contents:
+        - argentina/index.qmd
+        - auto: "argentina/*.qmd"
 
 format:
   html:
