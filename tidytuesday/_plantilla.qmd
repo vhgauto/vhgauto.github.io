@@ -2,7 +2,7 @@
 format:
   html:
     code-fold: show
-    code-summary: "Ver el código"
+    code-summary: "Ocultar código"
     code-line-numbers: false
     code-annotations: false
     code-link: true
@@ -14,7 +14,7 @@ format:
     page-layout: full
 editor_options:
   chunk_output_type: console
-categories: "---GEOM---"
+categories: ["---GEOM---"]
 execute:
   eval: false
   echo: true
