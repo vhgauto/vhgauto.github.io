@@ -75,6 +75,7 @@ format:
     theme: [darkly, mi_estilo.scss]
     toc: true
     lang: es
+    anchor-sections: true
     code-copy: true
     language:
       es:
