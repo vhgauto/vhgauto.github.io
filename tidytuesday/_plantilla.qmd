@@ -26,7 +26,7 @@ author: Víctor Gauto
 
 ![Semana X_semana, X_año](semana_X_semana.png)
 
-# Paquetes
+## Paquetes
 
 ```{r}
 library(glue)
@@ -35,7 +35,7 @@ library(showtext)
 library(tidyverse)
 ```
 
-# Estilos
+## Estilos
 
 Colores
 
@@ -64,7 +64,7 @@ showtext_auto()
 showtext_opts(dpi = 300)
 ```
 
-# Epígrafe
+## Epígrafe
 
 ```{r}
 fuente <- glue(
@@ -88,13 +88,13 @@ mi_caption <- glue(
 )
 ```
 
-# Datos
+## Datos
 
 ```{r}
 tuesdata <- tidytuesdayR::tt_load(X_año, X_semana)
 ```
 
-# Procesamiento
+## Procesamiento
 
 Me interesa...
 
@@ -102,7 +102,7 @@ Me interesa...
 
 ```
 
-# Figura
+## Figura
 
 Figura
 
