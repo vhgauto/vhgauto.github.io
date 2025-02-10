@@ -71,16 +71,17 @@
     ]
   },
   {
-    "listing": "/visualizaciones/index.html",
-    "items": [
-      "/visualizaciones/s02.html",
-      "/visualizaciones/s01.html"
-    ]
-  },
-  {
     "listing": "/mapas.html",
     "items": [
       "/mapas/mapa1.html"
+    ]
+  },
+  {
+    "listing": "/argentina/index.html",
+    "items": [
+      "/argentina/plantas_potabilizadoras.html",
+      "/argentina/aeropuertos.html",
+      "/argentina/estaciones_smn.html"
     ]
   },
   {
