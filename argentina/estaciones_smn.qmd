@@ -1,6 +1,7 @@
 ---
 format:
   html:
+    anchor-sections: true
     code-fold: show
     code-summary: "Ocultar código"
     code-line-numbers: false
@@ -28,7 +29,7 @@ Mapa de estaciones del Servicio Meteorológico Nacional de Argentina.
 
 ![Estaciones meteorológicas en Argentina.](estaciones_smn.png)
 
-# Paquetes
+## Paquetes
 
 ```{r}
 library(sf)
@@ -40,7 +41,7 @@ library(showtext)
 library(tidyverse)
 ```
 
-# Estilos
+## Estilos
 
 Colores aleatorios a partir de una gama de rosados.
 
@@ -71,7 +72,7 @@ showtext_auto()
 showtext_opts(dpi = 300)
 ```
 
-# Epígrafe
+## Epígrafe
 
 ```{r}
 fuente <- glue(
@@ -91,7 +92,7 @@ mi_caption <- glue(
 )
 ```
 
-# Datos
+## Datos
 
 Vectores de las provincias con sus departamentos. Obtengo el vector de estaciones meteorológicas del [Instituto Geográfico Nacional](https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG).
 
@@ -119,7 +120,7 @@ p_cont_buffer <- st_buffer(p_cont, dist = 12000)
 p_antart_buffer <- st_buffer(p_antart, dist = 30000)
 ```
 
-# Figura
+## Figura
 
 Logo del SMN y subtítulo de la figura.
 

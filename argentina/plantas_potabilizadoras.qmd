@@ -28,7 +28,7 @@ Mapa de plantas de tratamiento de agua de Argentina.
 
 ![Plantas potabilizadoras de agua activas en Argentina.](plantas_potabilizadoras.png)
 
-# Paquetes
+## Paquetes
 
 ```{r}
 library(sf)
@@ -38,7 +38,7 @@ library(showtext)
 library(tidyverse)
 ```
 
-# Estilos
+## Estilos
 
 Paleta de colores.
 
@@ -67,7 +67,7 @@ showtext_auto()
 showtext_opts(dpi = 300)
 ```
 
-# Epígrafe
+## Epígrafe
 
 ```{r}
 fuente <- glue(
@@ -86,7 +86,7 @@ mi_caption <- glue(
 )
 ```
 
-# Datos
+## Datos
 
 Vectores de las provincias con sus departamentos. Obtengo el vector de plantas potabilizadoras del [Instituto Geográfico Nacional](https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG), y conservo únicamente los que se encuentran en actividad. Asigno a cada provincia un color de la gama del azul.
 
@@ -107,7 +107,7 @@ v <- st_read(
   st_transform(crs = 5346)
 ```
 
-# Figura
+## Figura
 
 Subtítulo y posición.
 
