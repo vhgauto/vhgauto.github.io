@@ -16,12 +16,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 // rojo
-$c-rojo: #DF8271;
-$c-rojo-oscuro: #611300;
+$c-rojo: #F28AAA;
+$c-rojo-oscuro: #CF3A35;
+
 
 // azul
-$c-azul: #6FAFD1;
-$c-azul-oscuro: #003560;
+$c-azul: #72BCD5;
+$c-azul-oscuro: #1E466E;
 
 // dorado
 $c-dorado: #F6B40E;
@@ -51,7 +52,7 @@ $sidebar-fg: darken($c-blanco, 10%);
 // navbar
 $navbar-bg: $c-azul-oscuro;
 $navbar-fg: $c-blanco;
-$navbar-hl: $c-azul;
+$navbar-hl: $c-blanco;
 
 // footer
 $footer-bg: $c-azul-oscuro;
@@ -60,8 +61,6 @@ $footer-hl: $c-azul;
 
 // tiempo de transiciones
 $t-trans: .7s;
-
-// grillas
 
 /*-- scss:rules --*/
 
@@ -81,6 +80,7 @@ p.estrecho {
   transition-duration: $t-trans;
     &:hover {
       transition-duration: $t-trans;
+      color: $c-azul;
     }
 }
 
@@ -101,7 +101,6 @@ p.estrecho {
 .quarto-title:hover .est-blanco, .quarto-title:hover .est-azul {
   color: $c-rojo;
 }
-
 
 // herramientas de GITHUB en toc
 .sidebar .toc-actions>ul, .sidebar .quarto-code-links>ul, .sidebar .quarto-other-links>ul, .sidebar .quarto-alternate-notebooks>ul, .sidebar .quarto-alternate-formats>ul {
@@ -215,8 +214,8 @@ hr.listing {
     margin-bottom: 0px;
 }
 
-// estilo de los nombres de las propiedades de las publicaciones
-// año, doi, autores
+/* estilo de los nombres de las propiedades de las publicaciones
+año, doi, autores */
 listing-names {
     color: $c-blanco;
     background-color: $c-azul-oscuro;
@@ -254,9 +253,11 @@ est1 {
 
 // tabs en navbar
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
-    color: $c-blanco;
     font-weight: bold;
-    text-decoration: underline 1px $c-blanco;
+    text-shadow: 2px 2px 2px $c-rojo-oscuro;
+    &hover {
+        color: $c-dorado;
+    }
 }
 
 // mi nombre en la barra de navegación
@@ -268,7 +269,7 @@ est1 {
   color: $c-blanco;
   transition-duration: $t-trans;
   &:hover {
-    color: $c-rojo;
+    color: $c-dorado;
     transition-duration: $t-trans;
   }
 }
