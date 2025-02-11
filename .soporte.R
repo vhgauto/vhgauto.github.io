@@ -17,11 +17,11 @@ f_link <- function(institucion, link) {
   )
 }
 
-ff <- function(i, x) {
+f_div <- function(i, x) {
   glue::glue(
     "\n
     :::: {{.grid style='--bs-columns: 12; --bs-gap: 0rem'}}
-    ::: {{.g-col-1 style='text-align: right;'}}
+    ::: {{.g-col-1 style='text-align: center;'}}
     <p class='estrecho'>{i}</p>
     :::
 
@@ -36,18 +36,20 @@ ff <- function(i, x) {
 
 f_edu <- function(titulo, institucion, ubicacion, calendario) {
   paste0(
-    ff(i_titulo, paste0("<b style='font-size:1.2em'>", titulo, "</b>")),
-    ff(i_institucion, institucion),
-    ff(i_ubicacion, ubicacion),
-    ff(i_calendario, calendario)
+    f_div(i_titulo, paste0("<b style='font-size:1.2em'>", titulo, "</b>")),
+    f_div(i_institucion, institucion),
+    f_div(i_ubicacion, ubicacion),
+    f_div(i_calendario, calendario)
   )
 }
 
 f_inv <- function(institucion, ubicacion, calendario) {
   paste0(
-    ff(i_institucion, paste0("<b style='font-size:1.2em'>", institucion, "</b>")),
-    ff(i_ubicacion, ubicacion),
-    ff(i_calendario, calendario)
+    f_div(
+      i_institucion, paste0("<b style='font-size:1.2em'>", institucion, "</b>")
+    ),
+    f_div(i_ubicacion, ubicacion),
+    f_div(i_calendario, calendario)
   )
 }
 
@@ -100,3 +102,16 @@ inv1 <- f_inv(
   ubicacion = "Seúl, Corea del Sur",
   calendario = "2019"
 )
+
+# colores -----------------------------------------------------------------
+
+r <- readLines("mi_estilo.scss")
+
+f_color <- function(color) {
+  r[stringr::str_detect(r, paste0("c-", color, ":"))] |>
+    stringr::str_extract("(\\#.+);", 1)
+}
+
+c_azul <- f_color("azul")
+c_rojo <- f_color("rojo")
+c_gold <- f_color("dorado")
