@@ -13,9 +13,9 @@ c3 <- "grey20"
 c4 <- "#181818"
 
 colores <- c(
-  FÁCIL = "#DF8271",
-  MEDIO = "#6FAFD1",
-  DIFÍCIL = "#F6B40E"
+  FÁCIL = c_azul,
+  MEDIO = c_rojo,
+  DIFÍCIL = c_gold
 )
 
 # datos -------------------------------------------------------------------
