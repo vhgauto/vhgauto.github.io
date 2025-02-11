@@ -35,67 +35,21 @@ source(".sudoku.R")
 
 ## Educación
 
-:::: {.grid}
-::: {.g-col-9}
 `r edu4`
-:::
-
-::: {.g-col-3}
-![](img/logo_ig.jpg){fig-align="center" height="100"}
-:::
-
-::: {.g-col-9}
+<br>
 `r edu3`
-:::
-
-::: {.g-col-3}
-![](img/logo_ig.jpg){fig-align="center" height="100px"}
-:::
-
-::: {.g-col-9}
+<br>
 `r edu2`
-:::
-
-::: {.g-col-3}
-![](img/logo_sogang.png){fig-align="center" height="100px"}
-:::
-
-::: {.g-col-9}
+<br>
 `r edu1`
-:::
-
-::: {.g-col-3}
-![](img/logo_utn.png){fig-align="center" height="100px"}
-:::
-::::
 
 ## Investigación
 
-:::: {.grid}
-::: {.g-col-9}
 `r inv3`
-:::
-
-::: {.g-col-3}
-![](img/logo_utn.png){fig-align="center" height="80px"}
-:::
-
-::: {.g-col-9}
+<br>
 `r inv2`
-:::
-
-::: {.g-col-3}
-![](img/logo_irea.png){fig-align="center" height="80px"}
-:::
-
-::: {.g-col-9}
+<br>
 `r inv1`
-:::
-
-::: {.g-col-3}
-![](img/logo_sogang.png){fig-align="center" height="80px"}
-:::
-::::
 
 ## Sudoku
 
