@@ -1,0 +1,212 @@
+---
+format:
+  html:
+    code-fold: show
+    code-summary: "Ocultar código"
+    code-line-numbers: false
+    code-annotations: false
+    code-link: true
+    code-tools:
+        source: true
+        toggle: true
+        caption: "Código"
+    code-overflow: scroll
+    page-layout: full
+editor_options:
+  chunk_output_type: console
+categories: ["geom_sf"]
+execute:
+  eval: false
+  echo: true
+  warning: false
+title: "Crecimientos de rutas"
+date: 2024-08-03
+author: Víctor Gauto
+---
+
+Animación de crecimiento de rutas nacionales y provinciales, con centro en el Obelisco de Ciudad Autónoma de Buenos Aires.
+
+![Animación de crecimiento de rutas.](crecimiento_rutas.mp4)
+
+## Paquetes
+
+```{r}
+library(terra)
+library(tidyterra)
+library(magick)
+library(showtext)
+library(glue)
+library(ggtext)
+library(ggplot2)
+library(purrr)
+```
+
+## Estilos
+
+Colores.
+
+```{r}
+c1 <- "dodgerblue"
+c2 <- "violetred"
+c3 <- "grey95"
+c4 <- "grey90"
+```
+
+Fuentes: Ubuntu y JetBrains Mono.
+
+```{r}
+font_add(
+  family = "ubuntu",
+  regular = "./fuente/Ubuntu-Regular.ttf",
+  bold = "./fuente/Ubuntu-Bold.ttf",
+  italic = "./fuente/Ubuntu-Italic.ttf"
+)
+
+font_add(
+  family = "jet",
+  regular = "./fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf"
+)
+
+showtext_auto()
+showtext_opts(dpi = 300)
+```
+
+## Epígrafe
+
+```{r}
+fuente <- glue(
+  "Datos: <b style='color: {c1};'>Instituto Geográfico Nacional</b>"
+)
+autor <- glue("<span style='color:{c1};'>**Víctor Gauto**</span>")
+icon_twitter <- glue("<span style='font-family:jet;'>&#xf099;</span>")
+icon_instagram <- glue("<span style='font-family:jet;'>&#xf16d;</span>")
+icon_github <- glue("<span style='font-family:jet;'>&#xf09b;</span>")
+icon_mastodon <- glue("<span style='font-family:jet;'>&#xf0ad1;</span>")
+icon_bsky <- glue("<span style='font-family:jet;'>&#xe28e;</span>")
+usuario <- glue("<span style='color:{c1};'>**vhgauto**</span>")
+sep <- glue("**|**")
+
+mi_caption <- glue(
+  "{fuente}<br>{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} ",
+  "{icon_mastodon} {icon_bsky} {usuario}"
+)
+```
+
+## Funciones
+
+Lectura y transformación de sistema de coordenadas geográficas.
+
+```{r}
+f_proj <- function(v) {
+  project(vect(v), "EPSG:5346")
+}
+```
+
+Generación y almacenamiento de mapas.
+
+```{r}
+f_gg <- function(x) {
+
+  if (x < 10) {
+    i <- paste0("0", x)
+  } else {
+    i <- x
+  }
+
+  g <- ggplot() +
+    geom_spatvector(data = arg, fill = c4, color = NA) +
+    geom_spatvector(
+      data = lista_crop_pro[[x]], aes(color = "pro"), linewidth = .1,
+      show.legend = TRUE, key_glyph = "path"
+    ) +
+    geom_spatvector(
+      data = lista_crop_nac[[x]], fill = NA, aes(color = "nac"), linewidth = .2,
+      show.legend = TRUE, key_glyph = "path"
+    ) +
+    scale_color_manual(
+      breaks = c("nac", "pro"),
+      labels = c("Ruta Nacional", "Ruta Provincial"),
+      values = c(c1, c2)
+    ) +
+    labs(color = NULL, caption = mi_caption) +
+    guides(
+      color = guide_legend(override.aes = list(linewidth = 1))
+    ) +
+    theme_void() +
+    theme(
+      plot.background = element_rect(fill = c3, color = NA),
+      plot.caption = element_markdown(
+        family = "ubuntu", size = 8, color = c2, lineheight = 1.2,
+        margin = margin(b = 5)
+      ),
+      legend.text = element_text(family = "ubuntu"),
+      legend.position = "inside",
+      legend.position.inside = c(.7, .3),
+      legend.key.width = unit(20, "pt")
+    )
+
+  ggsave(
+    plot = g,
+    filename = paste0("./argentina/animaciones/crecimiento_rutas/", i, ".png"),
+    width = 1000,
+    height = 2084,
+    units = "px"
+  )
+
+  print(glue::glue("\n\n--- Figura {i} generada ---\n\n"))
+}
+```
+
+## Datos
+
+Vector de Argentina, rutas nacionales y provinciales, y coordenadas del Obelisco.
+
+```{r}
+arg <- f_proj("./argentina/vectores/arg_continental.gpkg")
+
+r_nac <- f_proj("./argentina/vectores/extras/LíneaRed vial nacional.json")
+r_pro <- f_proj("./argentina/vectores/extras/LíneaRed vial provincial.json")
+
+o <- vect(
+  data.frame(x = -58.38162, y = -34.60376), geom = c("x", "y"),
+  crs = "EPSG:4326"
+) |>
+  project("EPSG:5346")
+```
+
+## Figura
+
+Lista de buffers alrededor del Obelisco, y los recortes de las rutas de cada uno.
+
+```{r}
+lista_buffer_nac <- map(seq(50, 2500, 25)*1e3, ~buffer(o, .x, quadsegs = 250))
+lista_crop_nac <- map(lista_buffer_nac, ~terra::crop(r_nac, .x))
+lista_crop_pro <- map(lista_buffer_nac, ~terra::crop(r_pro, .x))
+```
+
+Creación de cada figura.
+
+```{r}
+map(1:length(lista_buffer_nac), f_gg)
+```
+
+## Animación
+
+Generación de la animación a partir de todas las figuras. El archivo de salida está en formato `.mp4`.
+
+```{r}
+av::av_encode_video(
+  input = list.files(
+    path = "./argentina/animaciones/crecimiento_rutas/",
+    full.names = TRUE, pattern = ".png"
+  ),
+  output = "./argentina/animaciones/crecimiento_rutas.mp4"
+)
+```
+
+Elimino los mapas creados y la carpeta que los contiene.
+
+```{r}
+unlink("./argentina/animaciones/crecimiento_rutas/", recursive = TRUE)
+```
+
