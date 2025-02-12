@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title> Publicaciones – Víctor Gauto</title>
+<title>Animaciones de mapas de Argentina – Víctor Gauto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,28 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../img/v.svg" rel="icon" type="image/svg+xml">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-67be89186a351f6f574bec0cd68a7468.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e2d2ddd33dde11d533f5443475efa098.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
-<script src="../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../argentina/animaciones/crecimiento_rutas.html" rel="next">
+<link href="../../argentina/plantas_potabilizadoras.html" rel="prev">
+<link href="../../img/v.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-67be89186a351f6f574bec0cd68a7468.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-e2d2ddd33dde11d533f5443475efa098.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,20 +75,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-lista-papers .list');
+    const listingTargetEl = window.document.querySelector('#listing-lista-anim .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-title','listing-autores','listing-date','listing-doi','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-autores","listing-date","listing-doi","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-lista-papers'] = new List('listing-lista-papers', options);
+    window['quarto-listings']['listing-lista-anim'] = new List('listing-lista-anim', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -130,25 +132,25 @@ window.Quarto = {
 };
 </script>
 
-<meta property="og:title" content=" Publicaciones – Víctor Gauto">
+<meta property="og:title" content="Animaciones de mapas de Argentina – Víctor Gauto">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Víctor Gauto">
-<meta name="twitter:title" content=" Publicaciones – Víctor Gauto">
+<meta name="twitter:title" content="Animaciones de mapas de Argentina – Víctor Gauto">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../img/v.svg" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../img/v.svg" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Víctor Gauto</span>
     </a>
   </div>
@@ -159,15 +161,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../tidytuesday/index.html"> 
+    <a class="nav-link" href="../../tidytuesday/index.html"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="fa6-brands:r-project" aria-label="Icon r-project from fa6-brands Iconify.design set." title="Icon r-project from fa6-brands Iconify.design set."></iconify-icon> Tidytuesday</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../publicaciones/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../publicaciones/index.html"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="carbon:document" aria-label="Icon document from carbon Iconify.design set." title="Icon document from carbon Iconify.design set."></iconify-icon> Publicaciones</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../argentina/index.html"> 
+    <a class="nav-link active" href="../../argentina/index.html" aria-current="page"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="hugeicons:maps" aria-label="Icon maps from hugeicons Iconify.design set." title="Icon maps from hugeicons Iconify.design set."></iconify-icon> Mapas de Argentina</span></a>
   </li>  
 </ul>
@@ -180,28 +182,92 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../argentina/animaciones/index.html">Animaciones</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
   <div id="quarto-announcement" data-announcement-id="b7ec57b73f4c8c13ab5478dcd304e1e7" class="alert alert-primary hidden"><i class="bi bi-info-circle-fill quarto-announcement-icon"></i><div class="quarto-announcement-content">
 <p>Sitio en construcción</p>
 </div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../argentina/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapas de Argentina</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../argentina/aeropuertos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aeropuertos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../argentina/estaciones_smn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estaciones meteorológicas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../argentina/plantas_potabilizadoras.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plantas potabilizadoras</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../argentina/animaciones/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Animaciones</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../argentina/animaciones/crecimiento_rutas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Crecimientos de rutas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../argentina/animaciones/torres_celulares.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Torres de telecomunicaciones</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
     </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9zZg==">geom_sf <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9zZl9wYXR0ZXJu">geom_sf_pattern <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><iconify-icon role="img" inline="" icon="carbon:document" aria-label="Icon document from carbon Iconify.design set." title="Icon document from carbon Iconify.design set."></iconify-icon> Publicaciones</h1>
+<h1 class="title">Animaciones de mapas de Argentina</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta">
 
     
   
@@ -213,487 +279,109 @@ window.Quarto = {
 </header>
 
 
-<p><br> Lista de publicaciones y trabajos en los que he participado. <br> <br></p>
-<div id="listing-lista-papers" class="quarto-listing quarto-listing-container-custom">
-
-    <h3 style="margin-bottom: 25px; margin-top: 5px;" class="anchored"><a class="listing-title" href="https://doi.org/10.5194/isprs-archives-XLVIII-2-W6-2024-65-2024">Spatio-temporal characterization of precipitation in the Middle and Lower Paraguay Basin based on satellite products and weather station data</a></h3>
-
-    <i class="nf nf-oct-person_fill nf-lista"></i>
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0009-0000-3418-3624"> <b>Rossana Villalba</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0002-9383-7728"> <b>Anabella Ferral</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <b>Julián Baéz</b>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0003-0141-5171"> <b>Jorge Kurita</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0001-9960-8558"> <b>Víctor Hugo Gauto</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <b>Juan Carlos Bertoni</b>
-        
-        
-    
-    <br>
-
-    
-        <i class="nf nf-cod-link nf-lista"></i> <a class="listing-doi" href="https://doi.org/10.5194/isprs-archives-XLVIII-2-W6-2024-65-2024">10.5194/isprs-archives-XLVIII-2-W6-2024-65-2024</a><br>
-    
-
-    <i class="nf nf-md-calendar nf-lista"></i> 2024<br>
-
-    <i class="nf nf-fa-hashtag nf-lista"></i>
-    
-        <listing-categories> IMERG </listing-categories>
-    
-        <listing-categories> CHIRPS </listing-categories>
-    
-        <listing-categories> El Niño </listing-categories>
-    
-        <listing-categories> Validation </listing-categories>
-    
-        <listing-categories> Accumulated precipitation </listing-categories>
-    
-        <listing-categories> Anomalies </listing-categories>
-    
-
-    <hr class="listing"><br>
-
-    <h3 style="margin-bottom: 25px; margin-top: 5px;" class="anchored"><a class="listing-title" href="https://doi.org/10.5194/isprs-archives-XLVIII-2-W6-2024-1-2024">Comparison of water surface temperature retrieval methods from Landsat 9 satellite data</a></h3>
-
-    <i class="nf nf-oct-person_fill nf-lista"></i>
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0003-1953-2595"> <b>Matias Bonansea</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <b>Sofía Gutiérrez</b>
-        
-         <b class="separator">|</b> 
-    
-        
-            <b>Mariana Correa</b>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0009-0002-4079-1209"> <b>Sofía Paná</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0001-9960-8558"> <b>Víctor Hugo Gauto</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0009-0002-6382-8991"> <b>Francisco Nemiña</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0003-3216-5945"> <b>Alba Germán</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0002-7755-5704"> <b>Giuliana Beltramone</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0002-3582-7417"> <b>Lucio Pinotti</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0002-9383-7728"> <b>Anabella Ferral</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-        
-    
-    <br>
-
-    
-        <i class="nf nf-cod-link nf-lista"></i> <a class="listing-doi" href="https://doi.org/10.5194/isprs-archives-XLVIII-2-W6-2024-1-2024">10.5194/isprs-archives-XLVIII-2-W6-2024-1-2024</a><br>
-    
-
-    <i class="nf nf-md-calendar nf-lista"></i> 2024<br>
-
-    <i class="nf nf-fa-hashtag nf-lista"></i>
-    
-        <listing-categories> Landsat Collection 2 Level 2 products </listing-categories>
-    
-        <listing-categories> Single-Channel method </listing-categories>
-    
-        <listing-categories> Split-Window algorithm </listing-categories>
-    
-        <listing-categories> Surface temperature </listing-categories>
-    
-
-    <hr class="listing"><br>
-
-    <h3 style="margin-bottom: 25px; margin-top: 5px;" class="anchored"><a class="listing-title" href="https://doi.org/10.1109/ARGENCON62399.2024.10735875">Remote Sensing Regression Models to Estimate Water Quality Indicators in Continental Waters in North-East Argentina</a></h3>
-
-    <i class="nf nf-oct-person_fill nf-lista"></i>
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0001-9960-8558"> <b>Víctor Hugo Gauto</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0009-0003-5263-5198"> <b>Enid Marta Utgés</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <b>Elsa Ivonne Hervot</b>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0003-0860-9139"> <b>María Daniela Tenev</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0009-0008-3378-942X"> <b>Alejandro Farías</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0003-1953-2595"> <b>Matías Bonansea</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0002-9383-7728"> <b>Anabella Ferral</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-        
-    
-    <br>
-
-    
-        <i class="nf nf-cod-link nf-lista"></i> <a class="listing-doi" href="https://doi.org/10.1109/ARGENCON62399.2024.10735875">10.1109/ARGENCON62399.2024.10735875</a><br>
-    
-
-    <i class="nf nf-md-calendar nf-lista"></i> 2024<br>
-
-    <i class="nf nf-fa-hashtag nf-lista"></i>
-    
-        <listing-categories> Remote sensing </listing-categories>
-    
-        <listing-categories> Water quality </listing-categories>
-    
-        <listing-categories> Empirical algorithm </listing-categories>
-    
-        <listing-categories> Chlorophyll-a </listing-categories>
-    
-        <listing-categories> Turbidity </listing-categories>
-    
-        <listing-categories> Sentinel-2 </listing-categories>
-    
-
-    <hr class="listing"><br>
-
-    <h3 style="margin-bottom: 25px; margin-top: 5px;" class="anchored"><a class="listing-title" href="https://doi.org/10.1109/ARGENCON62399.2024.10735960">Modelling of Phosphorus and Nitrogen Delivery in a Strategic River Basin</a></h3>
-
-    <i class="nf nf-oct-person_fill nf-lista"></i>
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0009-0002-4079-1209"> <b>Sofía Paná</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0003-1953-2595"> <b>Matías Bonansea</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <b>Vera Camacho Valdéz</b>
-        
-         <b class="separator">|</b> 
-    
-        
-            <b>Inés del Valle Asís</b>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0001-9960-8558"> <b>Víctor Hugo Gauto</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0002-9383-7728"> <b>Anabella Ferral</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-        
-    
-    <br>
-
-    
-        <i class="nf nf-cod-link nf-lista"></i> <a class="listing-doi" href="https://doi.org/10.1109/ARGENCON62399.2024.10735960">10.1109/ARGENCON62399.2024.10735960</a><br>
-    
-
-    <i class="nf nf-md-calendar nf-lista"></i> 2024<br>
-
-    <i class="nf nf-fa-hashtag nf-lista"></i>
-    
-        <listing-categories> Water quality </listing-categories>
-    
-        <listing-categories> Ecosystem services </listing-categories>
-    
-        <listing-categories> Nutrients </listing-categories>
-    
-        <listing-categories> InVEST </listing-categories>
-    
-
-    <hr class="listing"><br>
-
-    <h3 style="margin-bottom: 25px; margin-top: 5px;" class="anchored"><a class="listing-title" href="https://doi.org/10.1109/RPIC59053.2023.10530795">Changes in Land Covers in Two River Basins in Central Argentina Region. Monitoring the SDG 15.3. 1 Indicator</a></h3>
-
-    <i class="nf nf-oct-person_fill nf-lista"></i>
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0009-0002-4079-1209"> <b>Sofía Paná</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0001-9960-8558"> <b>Víctor Hugo Gauto</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0002-8803-7726"> <b>Mattia Terzaghi</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0002-9383-7728"> <b>Anabella Ferral</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0009-0002-6382-8991"> <b>Fransisco Nemiña</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <b>Inés del Valle Asís</b>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0003-1953-2595"> <b>Matías Bonansea</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-        
-    
-    <br>
-
-    
-        <i class="nf nf-cod-link nf-lista"></i> <a class="listing-doi" href="https://doi.org/10.1109/RPIC59053.2023.10530795">10.1109/RPIC59053.2023.10530795</a><br>
-    
-
-    <i class="nf nf-md-calendar nf-lista"></i> 2023<br>
-
-    <i class="nf nf-fa-hashtag nf-lista"></i>
-    
-        <listing-categories> Land degradation </listing-categories>
-    
-        <listing-categories> Urbanization </listing-categories>
-    
-        <listing-categories> Basin scale </listing-categories>
-    
-        <listing-categories> Riverine scale </listing-categories>
-    
-
-    <hr class="listing"><br>
-
-    <h3 style="margin-bottom: 25px; margin-top: 5px;" class="anchored"><a class="listing-title" href="https://rdu.unc.edu.ar/handle/11086/550551">Caracterización óptica de aguas superficiales a partir de imágenes satelitales multi e hiperespectrales en la región de Gran Resistencia, Chaco</a></h3>
-
-    <i class="nf nf-oct-person_fill nf-lista"></i>
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0001-9960-8558"> <b>Víctor Hugo Gauto</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-        
-    
-    <br>
-
-    
-
-    <i class="nf nf-md-calendar nf-lista"></i> 2023<br>
-
-    <i class="nf nf-fa-hashtag nf-lista"></i>
-    
-        <listing-categories> Aguas interiores </listing-categories>
-    
-        <listing-categories> Sentinel-2 </listing-categories>
-    
-        <listing-categories> PRISMA </listing-categories>
-    
-        <listing-categories> Sensor hiperespectral </listing-categories>
-    
-        <listing-categories> Análisis cromático </listing-categories>
-    
-
-    <hr class="listing"><br>
-
-    <h3 style="margin-bottom: 25px; margin-top: 5px;" class="anchored"><a class="listing-title" href="https://doi.org/10.18687/LACCEI2023.1.1.1594">Studies of Adsorption-Desorption of Methylene Blue in a Fixed-Bed Reactor Filled with Cotton and Tanine Industry Waste</a></h3>
-
-    <i class="nf nf-oct-person_fill nf-lista"></i>
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0003-0860-9139"> <b>María Daniela Tenev</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <b>Camila Torre</b>
-        
-         <b class="separator">|</b> 
-    
-        
-            <b>Gimena Fontana</b>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0001-9960-8558"> <b>Víctor Hugo Gauto</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0002-0515-7272"> <b>Mario Sergio Cleva</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0003-3312-7078"> <b>Néstor Caracciolo</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0003-2138-3840"> <b>Susana Boeykens</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-        
-    
-    <br>
-
-    
-        <i class="nf nf-cod-link nf-lista"></i> <a class="listing-doi" href="https://doi.org/10.18687/LACCEI2023.1.1.1594">10.18687/LACCEI2023.1.1.1594</a><br>
-    
-
-    <i class="nf nf-md-calendar nf-lista"></i> 2023<br>
-
-    <i class="nf nf-fa-hashtag nf-lista"></i>
-    
-        <listing-categories> Methylene blue </listing-categories>
-    
-        <listing-categories> fixed-bed reactor </listing-categories>
-    
-        <listing-categories> cotton husk </listing-categories>
-    
-        <listing-categories> quebracho chip </listing-categories>
-    
-
-    <hr class="listing"><br>
-
-    <h3 style="margin-bottom: 25px; margin-top: 5px;" class="anchored"><a class="listing-title" href="https://doi.org/10.1109/ARGENCON55245.2022.9939810">First results of PRISMA satellite data applied to water quality monitoring in Argentina</a></h3>
-
-    <i class="nf nf-oct-person_fill nf-lista"></i>
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0001-9960-8558"> <b>Víctor Hugo Gauto</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0002-9383-7728"> <b>Anabella Ferral</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0003-1953-2595"> <b>Matias Bonansea</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0009-0008-3378-942X"> <b>Alejandro Farías</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0003-0905-6361"> <b>Marcelo Scavuzzo</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0002-0345-4505"> <b>Osvaldo Cardozo</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0003-3216-5945"> <b>Alba Germán</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-         <b class="separator">|</b> 
-    
-        
-            <a class="listing-author-name" href="https://orcid.org/0000-0002-3937-4988"> <b>Claudia Giardino</b> <i class="nf nf-fa-orcid orcid" style="font-size: 1.2rem;"></i></a>
-        
-        
-    
-    <br>
-
-    
-        <i class="nf nf-cod-link nf-lista"></i> <a class="listing-doi" href="https://doi.org/10.1109/ARGENCON55245.2022.9939810">10.1109/ARGENCON55245.2022.9939810</a><br>
-    
-
-    <i class="nf nf-md-calendar nf-lista"></i> 2022<br>
-
-    <i class="nf nf-fa-hashtag nf-lista"></i>
-    
-        <listing-categories> PRISMA </listing-categories>
-    
-        <listing-categories> Sentinel 2 </listing-categories>
-    
-        <listing-categories> Hyperspectral </listing-categories>
-    
-        <listing-categories> Turbid waters </listing-categories>
-    
-        <listing-categories> Atmospheric correction </listing-categories>
-    
-        <listing-categories> Cromaticity </listing-categories>
-    
-        <listing-categories> Spectral signature </listing-categories>
-    
-
-    <hr class="listing"><br>
-
+<p>Animaciones de interés de Argentina.</p>
+<div id="listing-lista-anim" class="quarto-listing quarto-listing-container-default">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-lista-anim-sort" class="form-select" aria-label="Ordenar por" onchange="window['quarto-listings']['listing-lista-anim'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Ordenar por</option>
+       <option value="index" data-direction="asc">Por defecto</option>
+         <option value="listing-title" data-direction="asc">
+          Título
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Fecha - Menos reciente
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Fecha - Más reciente
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Autor/a
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filtro">
+    </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="Z2VvbV9zZg==" data-listing-date-sort="1722643200000" data-listing-file-modified-sort="1739331002868" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="594">
+<div class="thumbnail">
+<p><a href="../../argentina/animaciones/crecimiento_rutas.html" class="no-external"></a></p><a href="../../argentina/animaciones/crecimiento_rutas.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" style="height: 200px;">&nbsp;</div>
+</a><p><a href="../../argentina/animaciones/crecimiento_rutas.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../argentina/animaciones/crecimiento_rutas.html" class="no-external">Crecimientos de rutas</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../../argentina/animaciones/crecimiento_rutas.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Z2VvbV9zZg=='); return false;">
+geom_sf
+</div>
+</div>
+<div class="listing-description">
+<a href="../../argentina/animaciones/crecimiento_rutas.html" class="no-external">Animación de crecimiento de rutas nacionales y provinciales, con centro en el Obelisco de Ciudad Autónoma de Buenos Aires.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../../argentina/animaciones/crecimiento_rutas.html" class="no-external">
+<div class="listing-date">
+2024-08-03
+</div>
+<div class="listing-author">
+Víctor Gauto
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Z2VvbV9zZiUyQ2dlb21fc2ZfcGF0dGVybg==" data-listing-date-sort="1708128000000" data-listing-file-modified-sort="1739331002870" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1193">
+<div class="thumbnail">
+<p><a href="../../argentina/animaciones/torres_celulares.html" class="no-external"></a></p><a href="../../argentina/animaciones/torres_celulares.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" style="height: 200px;">&nbsp;</div>
+</a><p><a href="../../argentina/animaciones/torres_celulares.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../argentina/animaciones/torres_celulares.html" class="no-external">Torres de telecomunicaciones</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../../argentina/animaciones/torres_celulares.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Z2VvbV9zZg=='); return false;">
+geom_sf
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Z2VvbV9zZl9wYXR0ZXJu'); return false;">
+geom_sf_pattern
+</div>
+</div>
+<div class="listing-description">
+<a href="../../argentina/animaciones/torres_celulares.html" class="no-external">Animación del avance de las torres de telecomunicaciones en Argentina, entr 2009 y 2024, para redes GSM, UMTS y LTE.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../../argentina/animaciones/torres_celulares.html" class="no-external">
+<div class="listing-date">
+2024-02-17
+</div>
+<div class="listing-author">
+Víctor Gauto
+</div>
+</a>
+</div>
+</div>
+</div>
 <div class="listing-no-matching d-none">
 No hay resultados
 </div>
 </div>
+<p>Adiós.</p>
 
 
 
@@ -1121,6 +809,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../argentina/plantas_potabilizadoras.html" class="pagination-link" aria-label="Plantas potabilizadoras">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Plantas potabilizadoras</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../argentina/animaciones/crecimiento_rutas.html" class="pagination-link" aria-label="Crecimientos de rutas">
+        <span class="nav-page-text">Crecimientos de rutas</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1129,7 +829,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 <p>Víctor Gauto</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/vhgauto/vhgauto.github.io/edit/main/publicaciones/index.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/vhgauto/vhgauto.github.io/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/vhgauto/vhgauto.github.io/edit/main/argentina/animaciones/index.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/vhgauto/vhgauto.github.io/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
