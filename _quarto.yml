@@ -64,11 +64,13 @@ website:
         - section: "2023"
           contents: tidytuesday/2023/*
     - title: "Mapas de Argentina"
-      collapse-level: 1
+      collapse-level: 2
       style: "floating"
       contents:
         - argentina/index.qmd
         - auto: "argentina/*.qmd"
+        - section: "Animaciones"
+          contents: argentina/animaciones/*.qmd
 
 format:
   html:
