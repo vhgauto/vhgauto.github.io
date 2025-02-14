@@ -68,7 +68,8 @@ website:
       style: "floating"
       contents:
         - argentina/index.qmd
-        - auto: "argentina/*.qmd"
+        - section: "Instalaciones"
+          contents: argentina/instalaciones/*.qmd
         - section: "Animaciones"
           contents: argentina/animaciones/*.qmd
 
