@@ -1,20 +1,13 @@
 ---
 title: "Mapas de Argentina"
-listing:
-  id: lista-arg
-  type: default
-  contents: .
-  sort: "date desc"
-  sort-ui: true
-  filter-ui: true
-  categories: numbered
-  date-format: iso
-  image-height: 200px
 ---
 
 Mapas de interés de Argentina.
 
-::: {#lista-arg}
-:::
+Las fuentes de datos más frecuentes son:
 
-Adiós.
+* [Instituto Geográfico Nacional](https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG): Las capas SIG contienen vectores útiles.
+
+
+
+Los mapas se dividen en [animados](animaciones/index.qmd) e [instalaciones](instalaciones/index.qmd).

@@ -1,0 +1,20 @@
+---
+title: "Instalaciones en Argentina"
+listing:
+  id: lista-instal
+  type: default
+  contents: .
+  sort: "date desc"
+  sort-ui: true
+  filter-ui: true
+  categories: numbered
+  date-format: iso
+  image-height: 200px
+---
+
+Animaciones de interés de Argentina.
+
+::: {#lista-instal}
+:::
+
+Adiós.
