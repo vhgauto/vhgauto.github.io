@@ -64,6 +64,16 @@ $t-trans: .7s;
 
 /*-- scss:rules --*/
 
+:root{
+  --bs-code-color: #{$c-dorado};
+}
+
+// color de fondo de texto verbatim
+p code:not(.sourceCode) {
+    background-color: $c-gris;
+}
+
+// clase para grid en About
 p.estrecho {
   margin-bottom: 0rem;
 }
