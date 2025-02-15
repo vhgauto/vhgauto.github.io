@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-67be89186a351f6f574bec0cd68a7468.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e2d2ddd33dde11d533f5443475efa098.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-3bdea773806c21198b2b92b72130ef30.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script src="../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -204,8 +204,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul>
+  <li><a href="#vectores" id="toc-vectores" class="nav-link active" data-scroll-target="#vectores">Vectores</a></li>
+  <li><a href="#ráster" id="toc-ráster" class="nav-link" data-scroll-target="#ráster">Ráster</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/vhgauto/vhgauto.github.io/edit/main/argentina/index.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/vhgauto/vhgauto.github.io/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -229,14 +236,24 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Mapas de interés de Argentina.</p>
-<p>Las fuentes de datos más frecuentes son:</p>
+<p>En esta sección hay diferentes mapas de Argentina, tanto en el contenido que se representa (instalaciones, relieve) como en el resultado final (videos o mapas estáticos).</p>
+<p>A continuación comento sobre las distintas fuentes de datos de vectores y ráster, y los paquetes usados para acceder a los mismos.</p>
+<section id="vectores" class="level2">
+<h2 class="anchored" data-anchor-id="vectores">Vectores</h2>
 <ul>
-<li><a href="https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG">Instituto Geográfico Nacional</a>: Las capas SIG contienen vectores útiles.</li>
+<li><p>Instituto Geográfico Nacional: Las <a href="https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG">capas SIG</a> contienen muchos tipos de datos, que incluyen geodesia y demarcación, industria y servicios, hidrografía y oceanografía, entre muchos otros. Los vectores se pueden descargar en multiples formatos.</p></li>
+<li><p>OpenStree Map: Es posible <a href="https://download.geofabrik.de/south-america.html">descargar</a> todos los datos de Argentina y luego seleccionar los de interés.</p></li>
 </ul>
-<p>Los mapas se dividen en <a href="../argentina/animaciones/index.html">animados</a> e <a href="../argentina/instalaciones/index.html">instalaciones</a>.</p>
+</section>
+<section id="ráster" class="level2">
+<h2 class="anchored" data-anchor-id="ráster">Ráster</h2>
+<ul>
+<li><p>Instituto Geográfico Nacional: El modelo digital de elevación de <a href="https://www.ign.gob.ar/NuestrasActividades/Geodesia/ModeloDigitalElevaciones/Mapa">todo el país</a> están disponibles para descargar, a diferentes resoluciones.</p></li>
+<li><p><code>{elevatr}</code>: Este <a href="https://github.com/USEPA/elevatr">paquete</a> permite descargar datos de elevación en formato ráster para una región dada.</p></li>
+</ul>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Subir</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -678,7 +695,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 <p>Víctor Gauto</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/vhgauto/vhgauto.github.io/edit/main/argentina/index.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/vhgauto/vhgauto.github.io/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/vhgauto/vhgauto.github.io/edit/main/argentina/index.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/vhgauto/vhgauto.github.io/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

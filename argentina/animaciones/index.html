@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-67be89186a351f6f574bec0cd68a7468.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-e2d2ddd33dde11d533f5443475efa098.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-3bdea773806c21198b2b92b72130ef30.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -266,7 +266,14 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul>
+  <li><a href="#método-general" id="toc-método-general" class="nav-link active" data-scroll-target="#método-general">Método general</a></li>
+  <li><a href="#animaciones" id="toc-animaciones" class="nav-link" data-scroll-target="#animaciones">Animaciones</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/vhgauto/vhgauto.github.io/edit/main/argentina/animaciones/index.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/vhgauto/vhgauto.github.io/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></nav>
     <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9zZg==">geom_sf <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9zZl9wYXR0ZXJu">geom_sf_pattern <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -290,7 +297,21 @@ window.Quarto = {
 </header>
 
 
-<p>Animaciones de interés de Argentina.</p>
+<p>Breve descripción de la metodología básica para generar las animaciones de datos geográficos de Argentina <iconify-icon role="img" inline="" icon="emojione-v1:flag-for-argentina" aria-label="Icon flag-for-argentina from emojione-v1 Iconify.design set." title="Icon flag-for-argentina from emojione-v1 Iconify.design set."></iconify-icon>.</p>
+<section id="método-general" class="level2">
+<h2 class="anchored" data-anchor-id="método-general">Método general</h2>
+<p>Los scripts para las animaciones mostradas en esta sección tiene la misma estructura básica:</p>
+<ul>
+<li><p>Lectura de datos y procesamiento.</p></li>
+<li><p>Una función personalizada creada con <code>base::function()</code> que genera y almacena el mapa, correspondiente a un fotograma de la animación final. Todas las figuras se almacenan en orden en una carpeta específica.</p></li>
+<li><p>Iteración de la función usando <code>purrr::walk()</code>. Usualmente se itera respecto del tiempo (años, meses), o de distancias.</p></li>
+<li><p>La animación final se genera a partir de todas las imágenes individuales con la función <code>av::av_encode_video()</code> y la extensión del video es <code>.mp4</code>.</p></li>
+<li><p>Se elimina la carpeta con todas las figuras.</p></li>
+</ul>
+</section>
+<section id="animaciones" class="level2">
+<h2 class="anchored" data-anchor-id="animaciones">Animaciones</h2>
+<p><br> <br></p>
 <div id="listing-lista-anim" class="quarto-listing quarto-listing-container-default">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
@@ -318,7 +339,7 @@ window.Quarto = {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Z2VvbV9zZg==" data-listing-date-sort="1722643200000" data-listing-file-modified-sort="1739577107005" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="594">
+<div class="quarto-post image-right" data-index="0" data-categories="Z2VvbV9zZg==" data-listing-date-sort="1722643200000" data-listing-file-modified-sort="1739590030958" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="594">
 <div class="thumbnail">
 <p><a href="../../argentina/animaciones/crecimiento_rutas.html" class="no-external"></a></p><a href="../../argentina/animaciones/crecimiento_rutas.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" style="height: 200px;">&nbsp;</div>
@@ -351,7 +372,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Z2VvbV9zZiUyQ2dlb21fc2ZfcGF0dGVybg==" data-listing-date-sort="1708128000000" data-listing-file-modified-sort="1739577107007" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1193">
+<div class="quarto-post image-right" data-index="1" data-categories="Z2VvbV9zZiUyQ2dlb21fc2ZfcGF0dGVybg==" data-listing-date-sort="1708128000000" data-listing-file-modified-sort="1739590030961" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1193">
 <div class="thumbnail">
 <p><a href="../../argentina/animaciones/torres_celulares.html" class="no-external"></a></p><a href="../../argentina/animaciones/torres_celulares.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" style="height: 200px;">&nbsp;</div>
@@ -392,10 +413,10 @@ Víctor Gauto
 No hay resultados
 </div>
 </div>
-<p>Adiós.</p>
 
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Subir</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -840,7 +861,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 <p>Víctor Gauto</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/vhgauto/vhgauto.github.io/edit/main/argentina/animaciones/index.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/vhgauto/vhgauto.github.io/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/vhgauto/vhgauto.github.io/edit/main/argentina/animaciones/index.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/vhgauto/vhgauto.github.io/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

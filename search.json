@@ -25,7 +25,7 @@
     "href": "index.html#sudoku",
     "title": "Víctor Gauto ",
     "section": "Sudoku",
-    "text": "Sudoku\nDisfruto mucho resolver los sudokus de New York Times .\nLlevo registro de los tiempos que me lleva resolver los tres niveles de dificultad.  \n\n\n\n\n\n\n\n\n2025-02-14"
+    "text": "Sudoku\nDisfruto mucho resolver los sudokus de New York Times .\nLlevo registro de los tiempos que me lleva resolver los tres niveles de dificultad.  \n\n\n\n\n\n\n\n\n2025-02-15"
   },
   {
     "objectID": "tidytuesday/2023/semana_16.html",
@@ -887,7 +887,29 @@
     "href": "argentina/index.html",
     "title": "Mapas de Argentina",
     "section": "",
-    "text": "Mapas de interés de Argentina.\nLas fuentes de datos más frecuentes son:\n\nInstituto Geográfico Nacional: Las capas SIG contienen vectores útiles.\n\nLos mapas se dividen en animados e instalaciones.\n\n\n\n Subir",
+    "text": "En esta sección hay diferentes mapas de Argentina, tanto en el contenido que se representa (instalaciones, relieve) como en el resultado final (videos o mapas estáticos).\nA continuación comento sobre las distintas fuentes de datos de vectores y ráster, y los paquetes usados para acceder a los mismos.",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Mapas de Argentina"
+    ]
+  },
+  {
+    "objectID": "argentina/index.html#vectores",
+    "href": "argentina/index.html#vectores",
+    "title": "Mapas de Argentina",
+    "section": "Vectores",
+    "text": "Vectores\n\nInstituto Geográfico Nacional: Las capas SIG contienen muchos tipos de datos, que incluyen geodesia y demarcación, industria y servicios, hidrografía y oceanografía, entre muchos otros. Los vectores se pueden descargar en multiples formatos.\nOpenStree Map: Es posible descargar todos los datos de Argentina y luego seleccionar los de interés.",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Mapas de Argentina"
+    ]
+  },
+  {
+    "objectID": "argentina/index.html#ráster",
+    "href": "argentina/index.html#ráster",
+    "title": "Mapas de Argentina",
+    "section": "Ráster",
+    "text": "Ráster\n\nInstituto Geográfico Nacional: El modelo digital de elevación de todo el país están disponibles para descargar, a diferentes resoluciones.\n{elevatr}: Este paquete permite descargar datos de elevación en formato ráster para una región dada.",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
       "Mapas de Argentina"
@@ -970,7 +992,7 @@
     "href": "argentina/instalaciones/index.html",
     "title": "Instalaciones en Argentina",
     "section": "",
-    "text": "Animaciones de interés de Argentina.\n\n\n   \n     \n     \n       Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nPlantas potabilizadoras\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nAeropuertos\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nEstaciones meteorológicas\n\n\n\n\n\n\ngeom_sf\n\n\ngeom_sf_pattern\n\n\n\n\n\n\n\n\n\n2024-02-17\n\n\nVíctor Gauto\n\n\n\n\n\n\nNo hay resultados\n\n\nAdiós.\n\n\n\n\n Subir",
+    "text": "En esta sección se muestran mapas de Argentina  que incluyen instalaciones varias, como ser: plantas de tratamiento de agua, centrales generadoras de energía, rutas nacionales y provinciales, etc.\nPara darle diversidad a los mapas, cada uno cuenta con una paleta de colores diferente.\n \n\n\n   \n     \n     \n       Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nPlantas potabilizadoras\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nAeropuertos\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nEstaciones meteorológicas\n\n\n\n\n\n\ngeom_sf\n\n\ngeom_sf_pattern\n\n\n\n\n\n\n\n\n\n2024-02-17\n\n\nVíctor Gauto\n\n\n\n\n\n\nNo hay resultados\n\n\n\n\n\n\n Subir",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
       "Instalaciones"
@@ -1221,7 +1243,29 @@
     "href": "argentina/animaciones/index.html",
     "title": "Animaciones de mapas de Argentina",
     "section": "",
-    "text": "Animaciones de interés de Argentina.\n\n\n   \n     \n     \n       Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCrecimientos de rutas\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nTorres de telecomunicaciones\n\n\n\n\n\n\ngeom_sf\n\n\ngeom_sf_pattern\n\n\n\n\n\n\n\n\n\n2024-02-17\n\n\nVíctor Gauto\n\n\n\n\n\n\nNo hay resultados\n\n\nAdiós.\n\n\n\n\n Subir",
+    "text": "Breve descripción de la metodología básica para generar las animaciones de datos geográficos de Argentina .",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Animaciones"
+    ]
+  },
+  {
+    "objectID": "argentina/animaciones/index.html#método-general",
+    "href": "argentina/animaciones/index.html#método-general",
+    "title": "Animaciones de mapas de Argentina",
+    "section": "Método general",
+    "text": "Método general\nLos scripts para las animaciones mostradas en esta sección tiene la misma estructura básica:\n\nLectura de datos y procesamiento.\nUna función personalizada creada con base::function() que genera y almacena el mapa, correspondiente a un fotograma de la animación final. Todas las figuras se almacenan en orden en una carpeta específica.\nIteración de la función usando purrr::walk(). Usualmente se itera respecto del tiempo (años, meses), o de distancias.\nLa animación final se genera a partir de todas las imágenes individuales con la función av::av_encode_video() y la extensión del video es .mp4.\nSe elimina la carpeta con todas las figuras.",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Animaciones"
+    ]
+  },
+  {
+    "objectID": "argentina/animaciones/index.html#animaciones",
+    "href": "argentina/animaciones/index.html#animaciones",
+    "title": "Animaciones de mapas de Argentina",
+    "section": "Animaciones",
+    "text": "Animaciones\n \n\n\n   \n     \n     \n       Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCrecimientos de rutas\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nTorres de telecomunicaciones\n\n\n\n\n\n\ngeom_sf\n\n\ngeom_sf_pattern\n\n\n\n\n\n\n\n\n\n2024-02-17\n\n\nVíctor Gauto\n\n\n\n\n\n\nNo hay resultados",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
       "Animaciones"
