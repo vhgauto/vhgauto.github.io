@@ -12,9 +12,26 @@ listing:
   image-height: 200px
 ---
 
-Animaciones de interés de Argentina.
+Breve descripción de la metodología básica para generar las animaciones de datos geográficos de Argentina {{< iconify emojione-v1:flag-for-argentina >}}.
+
+## Método general
+
+Los scripts para las animaciones mostradas en esta sección tiene la misma estructura básica:
+
+* Lectura de datos y procesamiento.
+
+* Una función personalizada creada con `base::function()` que genera y almacena el mapa, correspondiente a un fotograma de la animación final. Todas las figuras se almacenan en orden en una carpeta específica.
+
+* Iteración de la función usando `purrr::walk()`. Usualmente se itera respecto del tiempo (años, meses), o de distancias.
+
+* La animación final se genera a partir de todas las imágenes individuales con la función `av::av_encode_video()` y la extensión del video es `.mp4`.
+
+* Se elimina la carpeta con todas las figuras.
+
+## Animaciones
+
+<br>
+<br>
 
 ::: {#lista-anim}
 :::
-
-Adiós.

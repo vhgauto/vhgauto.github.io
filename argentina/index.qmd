@@ -2,12 +2,18 @@
 title: "Mapas de Argentina"
 ---
 
-Mapas de interés de Argentina.
+En esta sección hay diferentes mapas de Argentina, tanto en el contenido que se representa (instalaciones, relieve) como en el resultado final (videos o mapas estáticos).
 
-Las fuentes de datos más frecuentes son:
+A continuación comento sobre las distintas fuentes de datos de vectores y ráster, y los paquetes usados para acceder a los mismos.
 
-* [Instituto Geográfico Nacional](https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG): Las capas SIG contienen vectores útiles.
+## Vectores
 
+* Instituto Geográfico Nacional: Las [capas SIG](https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG) contienen muchos tipos de datos, que incluyen geodesia y demarcación, industria y servicios, hidrografía y oceanografía, entre muchos otros. Los vectores se pueden descargar en multiples formatos.
 
+* OpenStree Map: Es posible [descargar](https://download.geofabrik.de/south-america.html) todos los datos de Argentina y luego seleccionar los de interés.
 
-Los mapas se dividen en [animados](animaciones/index.qmd) e [instalaciones](instalaciones/index.qmd).
+## Ráster
+
+* Instituto Geográfico Nacional: El modelo digital de elevación de [todo el país](https://www.ign.gob.ar/NuestrasActividades/Geodesia/ModeloDigitalElevaciones/Mapa) están disponibles para descargar, a diferentes resoluciones.
+
+* `{elevatr}`: Este [paquete](https://github.com/USEPA/elevatr) permite descargar datos de elevación en formato ráster para una región dada.

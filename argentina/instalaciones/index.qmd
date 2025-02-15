@@ -12,9 +12,12 @@ listing:
   image-height: 200px
 ---
 
-Animaciones de interés de Argentina.
+En esta sección se muestran mapas de Argentina {{< iconify emojione-v1:flag-for-argentina >}} que incluyen instalaciones varias, como ser: plantas de tratamiento de agua, centrales generadoras de energía, rutas nacionales y provinciales, etc.
+
+Para darle diversidad a los mapas, cada uno cuenta con una paleta de colores diferente.
+
+<br>
+<br>
 
 ::: {#lista-instal}
 :::
-
-Adiós.
