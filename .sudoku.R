@@ -187,8 +187,8 @@ g <- ggplot(
 
 h <- girafe(
   ggobj = g,
-  width_svg = 6,
-  height_svg = 2,
+  width_svg = 7,
+  height_svg = 3,
   bg = "transparent",
   options = list(
     opts_hover(css = girafe_css(
