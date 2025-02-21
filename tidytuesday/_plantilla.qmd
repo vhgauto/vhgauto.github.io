@@ -37,7 +37,7 @@ library(tidyverse)
 
 ## Estilos
 
-Colores
+Colores.
 
 ```{r}
 c1 <- "#000000"
@@ -45,7 +45,7 @@ c2 <- "#000000"
 c3 <- "#000000"
 ```
 
-Fuentes: Ubuntu y JetBrains Mono
+Fuentes: Ubuntu y JetBrains Mono.
 
 ```{r}
 font_add(
@@ -104,13 +104,13 @@ Me interesa...
 
 ## Figura
 
-Figura
+Figura.
 
 ```{r}
 g <- ggplot()
 ```
 
-Guardo
+Guardo.
 
 ```{r}
 ggsave(

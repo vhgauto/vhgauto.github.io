@@ -1,0 +1,163 @@
+---
+format:
+  html:
+    code-fold: show
+    code-summary: "Ocultar código"
+    code-line-numbers: false
+    code-annotations: false
+    code-link: true
+    code-tools:
+        source: true
+        toggle: true
+        caption: "Código"
+    code-overflow: scroll
+    page-layout: full
+editor_options:
+  chunk_output_type: console
+categories: ["geom_spatvector"]
+execute:
+  eval: false
+  echo: true
+  warning: false
+title: "Semana 07"
+date: 2025-02-18
+author: Víctor Gauto
+---
+
+Agencias de seguridad en Universidades de EE.UU.
+
+![Semana 07, 2025](semana_07.png)
+
+## Paquetes
+
+```{r}
+library(glue)
+library(ggtext)
+library(showtext)
+library(tidyverse)
+```
+
+## Estilos
+
+Colores.
+
+```{r}
+c1 <- "#005D67"
+c2 <- "#1B817F"
+c3 <- "#9FCEBA"
+c4 <- "#F9FFAF"
+c5 <- "white"
+```
+
+Fuente: Ubuntu.
+
+```{r}
+font_add(
+  family = "ubuntu",
+  regular = "././fuente/Ubuntu-Regular.ttf",
+  bold = "././fuente/Ubuntu-Bold.ttf",
+  italic = "././fuente/Ubuntu-Italic.ttf"
+)
+
+showtext_auto()
+showtext_opts(dpi = 300)
+```
+
+## Epígrafe
+
+```{r}
+fuente <- glue(
+  "Datos: <span style='color:{c4};'><span style='font-family:jet;'>",
+  "{{<b>tidytuesdayR</b>}}</span> semana 07, ",
+  "<b>FBI Crime Data API</b>.</span>"
+)
+
+autor <- glue("<span style='color:{c4};'>**Víctor Gauto**</span>")
+icon_twitter <- glue("<span style='font-family:jet;'>&#xf099;</span>")
+icon_instagram <- glue("<span style='font-family:jet;'>&#xf16d;</span>")
+icon_github <- glue("<span style='font-family:jet;'>&#xf09b;</span>")
+icon_mastodon <- glue("<span style='font-family:jet;'>&#xf0ad1;</span>")
+icon_bsky <- glue("<span style='font-family:jet;'>&#xe28e;</span>")
+usuario <- glue("<span style='color:{c4};'>**vhgauto**</span>")
+sep <- glue("**|**")
+
+mi_caption <- glue(
+  "{fuente}<br>{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} ",
+  "{icon_mastodon} {icon_bsky} {usuario}"
+)
+```
+
+## Datos
+
+```{r}
+tuesdata <- tidytuesdayR::tt_load(2025, 07)
+agencies <- tuesdata$agencies
+```
+
+## Procesamiento
+
+Me interesan las agencias de seguridad asociadas a universidades.
+
+```{r}
+v <- agencies |>
+  filter(agency_type == "University or College" & state != "Alaska") |>
+  drop_na(latitude, longitude) |>
+  terra::vect(geom = c("longitude", "latitude"), crs = "EPSG:4326") |>
+  terra::project("ESRI:102003")
+```
+
+## Figura
+
+Logo y subtítulo.
+
+```{r}
+link_logo <- "https://cde.ucr.cjis.gov/LATEST/webapp/assets/images/CDE-new-15shad.png"
+logo <- glue("<img src='{link_logo}' width=250 />")
+
+mi_subtitulo <- glue(
+  "En <b>EE.UU.</b> existen {nrow(v)} organismos de fuerzas de seguridad
+  con jurisdicción en <b style='color:{c4}'>Universidades</b>"
+)
+```
+
+Figura.
+
+```{r}
+g <- usmap::plot_usmap(
+    regions = "states", exclude = c("AK", "HI"), fill = c2, linewidth = 1,
+    color = c1
+  ) +
+  tidyterra::geom_spatvector(
+    data = v, size = 1, alpha = .8, color = c4
+  ) +
+  annotate(
+    geom = "richtext", x = I(.2), y = I(.06), label = logo, fill = NA,
+    label.color = NA
+  ) +
+  labs(
+    subtitle = mi_subtitulo, caption = mi_caption
+  ) +
+  theme(
+    plot.background = element_rect(fill = c1, color = NA),
+    plot.subtitle = element_markdown(
+      family = "ubuntu", size = 17, color = c5, hjust = .5,
+      margin = margin(t = 15)
+    ),
+    plot.caption = element_markdown(
+      family = "ubuntu", size = 10, color = c3, lineheight = 1.1,
+      margin = margin(b = 10, r = 10)
+    )
+  )
+```
+
+Guardo.
+
+```{r}
+ggsave(
+  plot = g,
+  filename = "tidytuesday/2025/semana_07.png",
+  width = 30,
+  height = 21,
+  units = "cm"
+)
+```
