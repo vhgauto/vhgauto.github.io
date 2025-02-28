@@ -1,9 +1,5 @@
 [
   {
-    "listing": "/publicaciones/index.html",
-    "items": []
-  },
-  {
     "listing": "/tidytuesday/2023/index.html",
     "items": [
       "/tidytuesday/2023/semana_52.html",
@@ -51,6 +47,18 @@
     ]
   },
   {
+    "listing": "/argentina/instalaciones/index.html",
+    "items": [
+      "/argentina/instalaciones/aeropuertos.html",
+      "/argentina/instalaciones/plantas_potabilizadoras.html",
+      "/argentina/instalaciones/estaciones_smn.html"
+    ]
+  },
+  {
+    "listing": "/publicaciones/index.html",
+    "items": []
+  },
+  {
     "listing": "/argentina/animaciones/index.html",
     "items": [
       "/argentina/animaciones/crecimiento_rutas.html",
@@ -58,11 +66,9 @@
     ]
   },
   {
-    "listing": "/argentina/instalaciones/index.html",
+    "listing": "/mapas.html",
     "items": [
-      "/argentina/instalaciones/plantas_potabilizadoras.html",
-      "/argentina/instalaciones/aeropuertos.html",
-      "/argentina/instalaciones/estaciones_smn.html"
+      "/mapas/mapa1.html"
     ]
   },
   {
@@ -125,18 +131,13 @@
   {
     "listing": "/tidytuesday/2025/index.html",
     "items": [
+      "/tidytuesday/2025/semana_08.html",
       "/tidytuesday/2025/semana_07.html",
       "/tidytuesday/2025/semana_06.html",
       "/tidytuesday/2025/semana_05.html",
       "/tidytuesday/2025/semana_04.html",
       "/tidytuesday/2025/semana_03.html",
       "/tidytuesday/2025/semana_02.html"
-    ]
-  },
-  {
-    "listing": "/mapas.html",
-    "items": [
-      "/mapas/mapa1.html"
     ]
   }
 ]
