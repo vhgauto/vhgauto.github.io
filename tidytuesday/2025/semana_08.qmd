@@ -1,0 +1,187 @@
+---
+format:
+  html:
+    code-fold: show
+    code-summary: "Ocultar código"
+    code-line-numbers: false
+    code-annotations: false
+    code-link: true
+    code-tools:
+        source: true
+        toggle: true
+        caption: "Código"
+    code-overflow: scroll
+    page-layout: full
+editor_options:
+  chunk_output_type: console
+categories: ["geom_text_wordcloud"]
+execute:
+  eval: false
+  echo: true
+  warning: false
+title: "Semana 08"
+date: 2025-02-25
+author: Víctor Gauto
+---
+
+Categorías raciales en papers de ginecología y obstetricia.
+
+![Semana 08, 2025](semana_08.png)
+
+## Paquetes
+
+```{r}
+library(glue)
+library(ggtext)
+library(showtext)
+library(ggwordcloud)
+library(tidyverse)
+```
+
+## Estilos
+
+Colores.
+
+```{r}
+c1 <- "#FDAD17"
+c2 <- "#52C890"
+c3 <- "#0D2D4C"
+c4 <- "#E99BB9"
+c5 <- "white"
+```
+
+Fuentes: Ubuntu y JetBrains Mono.
+
+```{r}
+font_add(
+  family = "ubuntu",
+  regular = "././fuente/Ubuntu-Regular.ttf",
+  bold = "././fuente/Ubuntu-Bold.ttf",
+  italic = "././fuente/Ubuntu-Italic.ttf"
+)
+
+font_add(
+  family = "jet",
+  regular = "././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf"
+)
+
+showtext_auto()
+showtext_opts(dpi = 300)
+```
+
+## Epígrafe
+
+```{r}
+fuente <- glue(
+    "Datos: <span style='color:{c1};'><span style='font-family:jet;'>",
+    "{{<b>tidytuesdayR</b>}}</span> semana 08<br>",
+    "<b>Racial and ethnic disparities in reproductive medicine in the United<br>
+     States: a narrative review of contemporary high-quality evidence</b><br>
+    Lewis, Ayodele G. et al.<br>
+    <i>American Journal of Obstetrics & Gynecology, Volume 232, Issue 1, 82 - 91.e44</i>.</span>"
+)
+
+autor <- glue("<span style='color:{c1};'>**Víctor Gauto**</span>")
+icon_twitter <- glue("<span style='font-family:jet;'>&#xf099;</span>")
+icon_instagram <- glue("<span style='font-family:jet;'>&#xf16d;</span>")
+icon_github <- glue("<span style='font-family:jet;'>&#xf09b;</span>")
+icon_mastodon <- glue("<span style='font-family:jet;'>&#xf0ad1;</span>")
+icon_bsky <- glue("<span style='font-family:jet;'>&#xe28e;</span>")
+usuario <- glue("<span style='color:{c1};'>**vhgauto**</span>")
+sep <- glue("**|**")
+
+mi_caption <- glue(
+    "{fuente}<br>{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} ",
+    "{icon_mastodon} {icon_bsky} {usuario}"
+)
+```
+
+## Datos
+
+```{r}
+tuesdata <- tidytuesdayR::tt_load(2025, 08)
+article_dat <- tuesdata$article_dat
+model_dat <- tuesdata$model_dat
+```
+
+## Procesamiento
+
+Me interesa la cantidad de categorías raciales y armar una nube de palabras.
+
+```{r}
+d <- article_dat |>
+  select(starts_with("race")) |>
+  select(!ends_with("_ss")) |>
+  pivot_longer(
+    cols = everything(),
+    values_to = "cat",
+    names_to = "col"
+  ) |>
+  drop_na() |>
+  mutate(
+    cat = tolower(cat)
+  ) |>
+  mutate(
+    cat = str_replace(cat, "alaskan", "alaska"),
+    cat = str_replace(cat, "whites", "white"),
+    cat = str_replace(cat, "blacks", "black"),
+    cat = str_replace(cat, "others", "other"),
+    cat = str_remove_all(cat, "-")
+  ) |>
+  mutate(
+    cat = if_else(
+      str_detect(cat, "unknown"),
+      "unknown",
+      cat
+    )
+  ) |>
+  count(cat, sort = TRUE) |>
+  filter(n > 1) %>%
+  mutate(
+    col = sample(c(c1, c2), replace = TRUE, size = nrow(.))
+  )
+```
+
+## Figura
+
+Subtítulo y nube de palabras.
+
+```{r}
+mi_subtitle <- glue(
+  "<b style='color: {c4}'>{nrow(d)}</b> categorías raciales presentes en
+  trabajos científicos de<br>
+  <b>obstetricia</b> y <b>ginecología</b> entre 2010 y 2023"
+)
+
+g <- ggplot(d, aes(label = cat, size = n, color = col)) +
+  geom_text_wordcloud(shape = "square") +
+  scale_size_area(max_size = 40) +
+  scale_color_identity() +
+  labs(
+    subtitle = mi_subtitle, caption = mi_caption
+  ) +
+  theme_minimal() +
+  theme(
+    plot.background = element_rect(fill = c3, color = NA),
+    plot.subtitle = element_markdown(
+      color = c5, family = "ubuntu", size = 30, hjust = .5,
+      lineheight = 1.1, margin = margin(t = 20)
+    ),
+    plot.caption = element_markdown(
+      color = c2, family = "ubuntu", size = 15, lineheight = 1.1,
+      margin = margin(b = 10, r = 10)
+    )
+  )
+```
+
+Guardo.
+
+```{r}
+ggsave(
+  plot = g,
+  filename = "tidytuesday/2025/semana_08.png",
+  width = 30,
+  height = 30,
+  units = "cm"
+)
+```
