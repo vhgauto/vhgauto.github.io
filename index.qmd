@@ -57,7 +57,7 @@ Disfruto mucho resolver los [sudokus](https://www.nytimes.com/puzzles/sudoku) de
 
 Llevo registro de los tiempos que me lleva resolver los tres niveles de dificultad. <br> <br>
 
-::: {..column-body-outset}
+::: {.column-body-outset}
 
 ```{r}
 #| eval: true
