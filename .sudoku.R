@@ -97,7 +97,7 @@ eje_x <- d2 |>
   ) |>
   mutate(
     dia_dbl = if_else(
-      day(fecha) == 1 | day(fecha) %% 5 == 0,
+      day(fecha) == 1 | day(fecha) %% 10 == 0,
       day(fecha),
       NA
     )
