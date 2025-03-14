@@ -95,7 +95,7 @@ nueva_semana <- function(semana_numero, año = 2025) {
 
   }
 
-  system(glue::glue("open {paste0(getwd(), '/', new_file)}"))
+  file.edit(paste0(getwd(), '/', new_file))
 
 }
 
