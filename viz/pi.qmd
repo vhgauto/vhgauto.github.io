@@ -19,16 +19,49 @@ execute:
   eval: false
   echo: true
   warning: false
-title: "Día pi"
+title: "Día π"
 date: 2025-03-14
 author: Víctor Gauto
 ---
 
+![Aproximación de {{< iconify hugeicons:pi >}} a partir de puntos aleatorios.](pi.png){#fig-pi}
+
 # {{< iconify hugeicons:pi >}}
 
-El 14 de marzo se celebra el día {{< iconify hugeicons:pi >}}.
+El 14 de marzo se celebra el [día de {{< iconify hugeicons:pi >}}](https://en.wikipedia.org/wiki/Pi_Day).
 
-Existen muchas formas de expresar este número.
+Una manera de aproximar su valor es mediante puntos ubicados aleatoriamente sobre un cuadrado, que posee un círculo inscrito, como se muestra a continuación:
+
+```{r}
+#| eval: true
+#| echo: false
+cuadrado <- terra::vect(
+  data.frame(x = c(0, 1, 1, 0, 0), y = c(0, 0, 1, 1, 0)),
+  geom = c("x", "y")
+) |>
+  terra::as.lines() |>
+  terra::as.polygons()
+
+p <- terra::vect(data.frame(x = .5, y = .5), geom = c("x", "y"))
+circulo <- terra::buffer(p, .5, quadsegs = 1000)
+
+par(mar = c(0, 0, 0, 0))
+par(oma = c(0, 0, 0, 0))
+
+terra::plot(cuadrado, axes = FALSE)
+terra::plot(circulo, add = TRUE)
+terra::plot(p, add = TRUE)
+```
+
+La proporción de puntos dentro del círculo respecto del total se acerca a la cuarta parte de {{< iconify hugeicons:pi >}}. La expresión matemática es la siguiente:
+
+$$
+\lim_{n \to \infty} \frac{t}{n} = \frac{\pi}{4}
+$$
+
+Siendo $n$ como la cantidad total de puntos y $t$ aquellos que se encuentran dentro del círculo.
+
+El script muestra como un aumento progresivo de $n$ resulta en un acercamiento al valor de {{< iconify hugeicons:pi >}}. La figura [-@fig-pi] muestra que con 1 millón de puntos el error porcentual es de 0,022%.
 
 ## Paquetes
 ```{r}
@@ -40,7 +73,7 @@ library(tidyverse)
 
 ## Función
 
-Función que genera un `tibble` a partir de la cantidad de puntos dada.
+Genera un `tibble` a partir de la cantidad de puntos dada ($n$).
 
 ```{r}
 f_pi <- function(z) {
@@ -59,8 +92,6 @@ f_pi <- function(z) {
 }
 ```
 
-<!-- # https://en.wikipedia.org/wiki/Pi#Monte_Carlo_methods -->
-
 ## Colores y fuentes
 
 ```{r}
@@ -68,11 +99,9 @@ c1 <- "#E88934"
 c2 <- "#1E466E"
 c3 <- "grey60"
 c4 <- "black"
-
 c5 <- "#637B31"
 c6 <- "#208CC0"
 c7 <- "#7528AF"
-
 c8 <- "grey90"
 ```
 
@@ -114,7 +143,6 @@ mi_caption <- glue(
 )
 ```
 
-
 ## Datos
 
 Símbolos útiles
@@ -124,7 +152,7 @@ punto_etq <- "&#xf444;"
 sep_etq <- glue(" <b style='color: {c3}'>|</b> ")
 ```
 
-Genero la base de datos.
+Genero una única base de datos, agrupados por la cantidad de puntos ($n$). Agrego el título de cada panel.
 
 ```{r}
 d <- map(c(1e3, 1e4, 1e5, 1e6), f_pi) |>
@@ -133,7 +161,6 @@ d <- map(c(1e3, 1e4, 1e5, 1e6), f_pi) |>
     grupo = fct_inorder(grupo)
   )
 
-# calculo el valor de pi, error y genero el título para cada panel
 titulo_tbl <- d |>
   reframe(
     pi_aprox = sum(estado == "in")/n()*4,
@@ -184,7 +211,7 @@ strip_titulo <- set_names(
 
 ## Figura
 
-Ecuación para el título utilizo una expresión en `LaTeX`.
+El título es una expresión en `LaTeX`.
 
 ```{r}
 eq <- latex2exp::TeX(r"($\lim_{n\to\infty} \frac{t}{n} = \frac{\pi}{4} $)")
