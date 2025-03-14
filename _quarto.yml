@@ -27,6 +27,8 @@ website:
         text: "{{< iconify carbon:document >}} Publicaciones"
       - href: "argentina/index.qmd"
         text: "{{< iconify hugeicons:maps >}} Mapas de Argentina"
+      - href: "viz/index.qmd"
+        text: "{{< iconify material-symbols-light:scatter-plot >}} Visualizaciones"
     tools:
       - icon: github
         href: "https://github.com/vhgauto"
@@ -72,6 +74,16 @@ website:
           contents: argentina/instalaciones/*.qmd
         - section: "Animaciones"
           contents: argentina/animaciones/*.qmd
+    - title: "Visualizaciones"
+      collapse-level: 1
+      style: "floating"
+      contents:
+        - href: viz/index.qmd
+          text: "Inicio"
+        - auto: "viz/*.qmd"
+        # - href: viz/index.qmd
+        #   text: "Inicio"
+        # - contents: viz/*
 
 format:
   html:
