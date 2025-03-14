@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Animaciones de mapas de Argentina – Víctor Gauto</title>
+<title>Visualizaciones – Víctor Gauto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,28 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../argentina/animaciones/crecimiento_rutas.html" rel="next">
-<link href="../../argentina/instalaciones/plantas_potabilizadoras.html" rel="prev">
-<link href="../../img/v.svg" rel="icon" type="image/svg+xml">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-c01499bb8f10c96451835cf86a349130.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-2f880a300bda380bbc0f23b9e598cf79.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
-<script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../viz/pi.html" rel="next">
+<link href="../img/v.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-c01499bb8f10c96451835cf86a349130.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-2f880a300bda380bbc0f23b9e598cf79.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,70 +69,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-lista-anim .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-lista-anim'] = new List('listing-lista-anim', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Animaciones de mapas de Argentina – Víctor Gauto">
+<meta property="og:title" content="Visualizaciones – Víctor Gauto">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Víctor Gauto">
-<meta name="twitter:title" content="Animaciones de mapas de Argentina – Víctor Gauto">
+<meta name="twitter:title" content="Visualizaciones – Víctor Gauto">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
@@ -147,10 +86,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../img/v.svg" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/v.svg" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Víctor Gauto</span>
     </a>
   </div>
@@ -161,19 +100,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../tidytuesday/index.html"> 
+    <a class="nav-link" href="../tidytuesday/index.html"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="fa6-brands:r-project" aria-label="Icon r-project from fa6-brands Iconify.design set." title="Icon r-project from fa6-brands Iconify.design set."></iconify-icon> Tidytuesday</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publicaciones/index.html"> 
+    <a class="nav-link" href="../publicaciones/index.html"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="carbon:document" aria-label="Icon document from carbon Iconify.design set." title="Icon document from carbon Iconify.design set."></iconify-icon> Publicaciones</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../argentina/index.html" aria-current="page"> 
+    <a class="nav-link" href="../argentina/index.html"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="hugeicons:maps" aria-label="Icon maps from hugeicons Iconify.design set." title="Icon maps from hugeicons Iconify.design set."></iconify-icon> Mapas de Argentina</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../viz/index.html"> 
+    <a class="nav-link active" href="../viz/index.html" aria-current="page"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="material-symbols-light:scatter-plot" aria-label="Icon scatter-plot from material-symbols-light Iconify.design set." title="Icon scatter-plot from material-symbols-light Iconify.design set."></iconify-icon> Visualizaciones</span></a>
   </li>  
 </ul>
@@ -191,7 +130,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../argentina/animaciones/index.html">Animaciones</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../viz/index.html">Inicio</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -208,62 +147,16 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../argentina/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Mapas de Argentina</span></a>
+  <a href="../viz/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Inicio</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../argentina/instalaciones/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Instalaciones</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../argentina/instalaciones/aeropuertos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Aeropuertos</span></a>
+  <a href="../viz/pi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Día pi</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../argentina/instalaciones/estaciones_smn.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Estaciones meteorológicas</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../argentina/instalaciones/plantas_potabilizadoras.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Plantas potabilizadoras</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../argentina/animaciones/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Animaciones</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../argentina/animaciones/crecimiento_rutas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Crecimientos de rutas</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../argentina/animaciones/torres_celulares.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Torres de telecomunicaciones</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -274,17 +167,16 @@ window.Quarto = {
     <h2 id="toc-title">Contenido</h2>
    
   <ul>
-  <li><a href="#método-general" id="toc-método-general" class="nav-link active" data-scroll-target="#método-general">Método general</a></li>
-  <li><a href="#animaciones" id="toc-animaciones" class="nav-link" data-scroll-target="#animaciones">Animaciones</a></li>
+  <li><a href="#mis-proyectos-de-figuras" id="toc-mis-proyectos-de-figuras" class="nav-link active" data-scroll-target="#mis-proyectos-de-figuras">Mis proyectos de figuras</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/vhgauto/vhgauto.github.io/edit/main/argentina/animaciones/index.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/vhgauto/vhgauto.github.io/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></nav>
-    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9zZg==">geom_sf <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9zZl9wYXR0ZXJu">geom_sf_pattern <span class="quarto-category-count">(1)</span></div></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/vhgauto/vhgauto.github.io/edit/main/viz/index.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/vhgauto/vhgauto.github.io/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Animaciones de mapas de Argentina</h1>
+<h1 class="title">Visualizaciones</h1>
 </div>
 
 
@@ -301,123 +193,9 @@ window.Quarto = {
 </header>
 
 
-<p>Breve descripción de la metodología básica para generar las animaciones de datos geográficos de Argentina <iconify-icon role="img" inline="" icon="emojione-v1:flag-for-argentina" aria-label="Icon flag-for-argentina from emojione-v1 Iconify.design set." title="Icon flag-for-argentina from emojione-v1 Iconify.design set."></iconify-icon>.</p>
-<section id="método-general" class="level2">
-<h2 class="anchored" data-anchor-id="método-general">Método general</h2>
-<p>Los scripts para las animaciones mostradas en esta sección tiene la misma estructura básica:</p>
-<ul>
-<li><p>Lectura de datos y procesamiento.</p></li>
-<li><p>Una función personalizada creada con <code>base::function()</code> que genera y almacena el mapa, correspondiente a un fotograma de la animación final. Todas las figuras se almacenan en orden en una carpeta específica.</p></li>
-<li><p>Iteración de la función usando <code>purrr::walk()</code>. Usualmente se itera respecto del tiempo (años, meses), o de distancias.</p></li>
-<li><p>La animación final se genera a partir de todas las imágenes individuales con la función <code>av::av_encode_video()</code> y la extensión del video es <code>.mp4</code>.</p></li>
-<li><p>Se elimina la carpeta con todas las figuras.</p></li>
-</ul>
-</section>
-<section id="animaciones" class="level2">
-<h2 class="anchored" data-anchor-id="animaciones">Animaciones</h2>
-<p><br> <br></p>
-<div id="listing-lista-anim" class="quarto-listing quarto-listing-container-default">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-lista-anim-sort" class="form-select" aria-label="Ordenar por" onchange="window['quarto-listings']['listing-lista-anim'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Ordenar por</option>
-       <option value="index" data-direction="asc">Por defecto</option>
-         <option value="listing-title" data-direction="asc">
-          Título
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Fecha - Menos reciente
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Fecha - Más reciente
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Autor/a
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filtro">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Z2VvbV9zZg==" data-listing-date-sort="1722643200000" data-listing-file-modified-sort="1741921295250" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="594">
-<div class="thumbnail">
-<p><a href="../../argentina/animaciones/crecimiento_rutas.html" class="no-external"></a></p><a href="../../argentina/animaciones/crecimiento_rutas.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" style="height: 200px;">&nbsp;</div>
-</a><p><a href="../../argentina/animaciones/crecimiento_rutas.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../argentina/animaciones/crecimiento_rutas.html" class="no-external">Crecimientos de rutas</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../argentina/animaciones/crecimiento_rutas.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Z2VvbV9zZg=='); return false;">
-geom_sf
-</div>
-</div>
-<div class="listing-description">
-<a href="../../argentina/animaciones/crecimiento_rutas.html" class="no-external">Animación de crecimiento de rutas nacionales y provinciales, con centro en el Obelisco de Ciudad Autónoma de Buenos Aires.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../../argentina/animaciones/crecimiento_rutas.html" class="no-external">
-<div class="listing-date">
-2024-08-03
-</div>
-<div class="listing-author">
-Víctor Gauto
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Z2VvbV9zZiUyQ2dlb21fc2ZfcGF0dGVybg==" data-listing-date-sort="1708128000000" data-listing-file-modified-sort="1741921295252" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1193">
-<div class="thumbnail">
-<p><a href="../../argentina/animaciones/torres_celulares.html" class="no-external"></a></p><a href="../../argentina/animaciones/torres_celulares.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" style="height: 200px;">&nbsp;</div>
-</a><p><a href="../../argentina/animaciones/torres_celulares.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../argentina/animaciones/torres_celulares.html" class="no-external">Torres de telecomunicaciones</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../../argentina/animaciones/torres_celulares.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Z2VvbV9zZg=='); return false;">
-geom_sf
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Z2VvbV9zZl9wYXR0ZXJu'); return false;">
-geom_sf_pattern
-</div>
-</div>
-<div class="listing-description">
-<a href="../../argentina/animaciones/torres_celulares.html" class="no-external">Animación del avance de las torres de telecomunicaciones en Argentina, entr 2009 y 2024, para redes GSM, UMTS y LTE.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../../argentina/animaciones/torres_celulares.html" class="no-external">
-<div class="listing-date">
-2024-02-17
-</div>
-<div class="listing-author">
-Víctor Gauto
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No hay resultados
-</div>
-</div>
-
+<section id="mis-proyectos-de-figuras" class="level1">
+<h1>Mis proyectos de figuras</h1>
+<p>Figuras que he creado utilizando <code>{ggplot2}</code>.</p>
 
 
 </section>
@@ -847,13 +625,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../argentina/instalaciones/plantas_potabilizadoras.html" class="pagination-link" aria-label="Plantas potabilizadoras">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Plantas potabilizadoras</span>
-      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../argentina/animaciones/crecimiento_rutas.html" class="pagination-link" aria-label="Crecimientos de rutas">
-        <span class="nav-page-text">Crecimientos de rutas</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../viz/pi.html" class="pagination-link" aria-label="Día pi">
+        <span class="nav-page-text">Día pi</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -865,7 +640,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 <p>Víctor Gauto</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/vhgauto/vhgauto.github.io/edit/main/argentina/animaciones/index.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/vhgauto/vhgauto.github.io/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/vhgauto/vhgauto.github.io/edit/main/viz/index.qmd" target="_blank" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/vhgauto/vhgauto.github.io/issues/new" target="_blank" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
