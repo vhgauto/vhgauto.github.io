@@ -858,78 +858,78 @@
   {
     "objectID": "viz/pi.html",
     "href": "viz/pi.html",
-    "title": "Día pi",
+    "title": "Día π",
     "section": "",
-    "text": "El 14 de marzo se celebra el día .\nExisten muchas formas de expresar este número.\n\n\n\n\nOcultar código\nlibrary(glue)\nlibrary(showtext)\nlibrary(ggtext)\nlibrary(tidyverse)\n\n\n\n\n\nFunción que genera un tibble a partir de la cantidad de puntos dada.\n\n\nOcultar código\nf_pi &lt;- function(z) {\n\n  set.seed(2025)\n\n  d &lt;- tibble(\n    x = runif(n = z, min = -1, max = 1),\n    y = runif(n = z, min = -1, max = 1),\n    r = sqrt(x^2 + y^2),\n    estado = if_else(r &lt;= 1, \"in\", \"out\"),\n    grupo = paste0(\"p\", format(z, scientific = FALSE))\n  )\n\n  return(d)\n}\n\n\n\n\n\n\n\n\nOcultar código\nc1 &lt;- \"#E88934\"\nc2 &lt;- \"#1E466E\"\nc3 &lt;- \"grey60\"\nc4 &lt;- \"black\"\n\nc5 &lt;- \"#637B31\"\nc6 &lt;- \"#208CC0\"\nc7 &lt;- \"#7528AF\"\n\nc8 &lt;- \"grey90\"\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"./fuente/Ubuntu-Regular.ttf\",\n  bold = \"./fuente/Ubuntu-Bold.ttf\",\n  italic = \"./fuente/Ubuntu-Italic.ttf\"\n)\n\n# monoespacio & íconos\nfont_add(\n  family = \"jet\",\n  regular = \"./fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)\n\n\n\n\n\n\n\nOcultar código\nautor &lt;- glue(\"&lt;span style='color:{c2};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c2};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)\n\n\n\n\n\nSímbolos útiles\n\n\nOcultar código\npi_etq &lt;- \"&#xe22c;\"\npunto_etq &lt;- \"&#xf444;\"\nsep_etq &lt;- glue(\" &lt;b style='color: {c3}'&gt;|&lt;/b&gt; \")\n\n\nGenero la base de datos.\n\n\nOcultar código\nd &lt;- map(c(1e3, 1e4, 1e5, 1e6), f_pi) |&gt;\n  list_rbind() |&gt;\n  mutate(\n    grupo = fct_inorder(grupo)\n  )\n\n# calculo el valor de pi, error y genero el título para cada panel\ntitulo_tbl &lt;- d |&gt;\n  reframe(\n    pi_aprox = sum(estado == \"in\")/n()*4,\n    .by = grupo\n  ) |&gt;\n  mutate(\n    prob = round(abs((pi_aprox - pi)/pi*100), 3),\n    .by = grupo\n  ) |&gt;\n  mutate(\n    p = as.numeric(sub(\"p\", \"\", grupo))\n  ) |&gt;\n  mutate(\n    etq1 = paste0(\n      format(\n        p, big.mark = \".\", decimal.mark = \",\", scientific = FALSE, trim = TRUE\n      ),\n      punto_etq),\n    etq2 = paste0(\n      pi_etq, \" ≈ \",\n      format(\n        round(pi_aprox, 5),\n        nsmall = 5, big.mark = \".\", decimal.mark = \",\", trim = TRUE\n      )\n    ),\n    etq3 = paste0(\n      format(\n        round(prob, 3),\n        nsmall = 3, big.mark = \"\", decimal.mark = \",\", trim = TRUE\n      ),\n      \"%\"\n    )\n  ) |&gt;\n  mutate(\n    etq1 = glue(\"&lt;span style='color: {c5}'&gt;{etq1}&lt;/span&gt;\"),\n    etq2 = glue(\"&lt;span style='color: {c6}'&gt;{etq2}&lt;/span&gt;\"),\n    etq3 = glue(\"&lt;span style='color: {c7}'&gt;{etq3}&lt;/span&gt;\")\n  ) |&gt;\n  mutate(\n    etq = glue(\"{etq1}{sep_etq}{etq2}{sep_etq}{etq3}\")\n  )\n\nstrip_titulo &lt;- set_names(\n  x = titulo_tbl$etq,\n  nm = titulo_tbl$grupo\n)\n\n\n\n\n\nEcuación para el título utilizo una expresión en LaTeX.\n\n\nOcultar código\neq &lt;- latex2exp::TeX(r\"($\\lim_{n\\to\\infty} \\frac{t}{n} = \\frac{\\pi}{4} $)\")\n\n\nSubtítulo y figura.\n\n\nOcultar código\nmi_subtitulo &lt;- glue(\n  \"*t* es el número de &lt;b style='color: {c1}'&gt;puntos dentro del círculo&lt;/b&gt; y\n  &lt;span style='color: {c5}'&gt;*n* es el total&lt;/span&gt;,\n  aleatoriamente ubicados.&lt;br&gt;\n  Para cada panel se indican &lt;b style='color: {c5}'&gt;n&lt;/b&gt;, el\n  &lt;b style='color: {c6}'&gt;valor aproximado de\n  &lt;span style='font-family: jet'&gt;{pi_etq}&lt;/span&gt;&lt;/b&gt;\n  y el &lt;b style='color: {c7}'&gt;error porcentual&lt;/b&gt;.\"\n)\n\ng &lt;- ggplot(d, aes(x, y, color = estado)) +\n  geom_point(\n    size = .1, alpha = .5, show.legend = FALSE\n  ) +\n  facet_wrap(vars(grupo), ncol = 2,\n             labeller = as_labeller(strip_titulo)\n             ) +\n  scale_color_manual(\n    breaks = c(\"in\", \"out\"),\n    values = c(c1, c2)\n  ) +\n  coord_equal(clip = \"off\", expand = FALSE) +\n  labs(\n    title = eq, subtitle = mi_subtitulo, caption = mi_caption\n  ) +\n  theme_void() +\n  theme(\n    plot.background = element_rect(fill = c8, color = NA),\n    plot.margin = margin(r = 15, l = 15),\n    plot.title = element_text(\n      family = \"sans serif\", size = 40, hjust = .5, margin = margin(t = 20),\n      color = c2\n    ),\n    plot.subtitle = element_markdown(\n      size = 22, hjust = .5, margin = margin(t = 15, b = 25), lineheight = 1.4\n    ),\n    plot.caption = element_markdown(\n      family = \"ubuntu\", color = c1, size = 15, margin = margin(t = 20, b = 15)\n    ),\n    panel.spacing.x = unit(1, \"cm\"),\n    strip.text = element_markdown(\n      family = \"jet\", size = 15, margin = margin(t = 10, b = 5), color = c4\n    )\n  )\n\n\nGuardo la figura creada.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = paste0(getwd(), \"/viz/pi.png\"),\n  width = 30,\n  height = 37,\n  units = \"cm\"\n)",
+    "text": "Figura 1: Aproximación de  a partir de puntos aleatorios.",
     "crumbs": [
       "{{< iconify material-symbols-light:scatter-plot >}} Visualizaciones",
-      "Día pi"
+      "Día π"
     ]
   },
   {
     "objectID": "viz/pi.html#paquetes",
     "href": "viz/pi.html#paquetes",
-    "title": "Día pi",
-    "section": "",
-    "text": "Ocultar código\nlibrary(glue)\nlibrary(showtext)\nlibrary(ggtext)\nlibrary(tidyverse)",
+    "title": "Día π",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(showtext)\nlibrary(ggtext)\nlibrary(tidyverse)",
     "crumbs": [
       "{{< iconify material-symbols-light:scatter-plot >}} Visualizaciones",
-      "Día pi"
+      "Día π"
     ]
   },
   {
     "objectID": "viz/pi.html#función",
     "href": "viz/pi.html#función",
-    "title": "Día pi",
-    "section": "",
-    "text": "Función que genera un tibble a partir de la cantidad de puntos dada.\n\n\nOcultar código\nf_pi &lt;- function(z) {\n\n  set.seed(2025)\n\n  d &lt;- tibble(\n    x = runif(n = z, min = -1, max = 1),\n    y = runif(n = z, min = -1, max = 1),\n    r = sqrt(x^2 + y^2),\n    estado = if_else(r &lt;= 1, \"in\", \"out\"),\n    grupo = paste0(\"p\", format(z, scientific = FALSE))\n  )\n\n  return(d)\n}",
+    "title": "Día π",
+    "section": "Función",
+    "text": "Función\nGenera un tibble a partir de la cantidad de puntos dada (\\(n\\)).\n\n\nOcultar código\nf_pi &lt;- function(z) {\n\n  set.seed(2025)\n\n  d &lt;- tibble(\n    x = runif(n = z, min = -1, max = 1),\n    y = runif(n = z, min = -1, max = 1),\n    r = sqrt(x^2 + y^2),\n    estado = if_else(r &lt;= 1, \"in\", \"out\"),\n    grupo = paste0(\"p\", format(z, scientific = FALSE))\n  )\n\n  return(d)\n}",
     "crumbs": [
       "{{< iconify material-symbols-light:scatter-plot >}} Visualizaciones",
-      "Día pi"
+      "Día π"
     ]
   },
   {
     "objectID": "viz/pi.html#colores-y-fuentes",
     "href": "viz/pi.html#colores-y-fuentes",
-    "title": "Día pi",
-    "section": "",
-    "text": "Ocultar código\nc1 &lt;- \"#E88934\"\nc2 &lt;- \"#1E466E\"\nc3 &lt;- \"grey60\"\nc4 &lt;- \"black\"\n\nc5 &lt;- \"#637B31\"\nc6 &lt;- \"#208CC0\"\nc7 &lt;- \"#7528AF\"\n\nc8 &lt;- \"grey90\"\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"./fuente/Ubuntu-Regular.ttf\",\n  bold = \"./fuente/Ubuntu-Bold.ttf\",\n  italic = \"./fuente/Ubuntu-Italic.ttf\"\n)\n\n# monoespacio & íconos\nfont_add(\n  family = \"jet\",\n  regular = \"./fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "title": "Día π",
+    "section": "Colores y fuentes",
+    "text": "Colores y fuentes\n\n\nOcultar código\nc1 &lt;- \"#E88934\"\nc2 &lt;- \"#1E466E\"\nc3 &lt;- \"grey60\"\nc4 &lt;- \"black\"\nc5 &lt;- \"#637B31\"\nc6 &lt;- \"#208CC0\"\nc7 &lt;- \"#7528AF\"\nc8 &lt;- \"grey90\"\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"./fuente/Ubuntu-Regular.ttf\",\n  bold = \"./fuente/Ubuntu-Bold.ttf\",\n  italic = \"./fuente/Ubuntu-Italic.ttf\"\n)\n\n# monoespacio & íconos\nfont_add(\n  family = \"jet\",\n  regular = \"./fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
       "{{< iconify material-symbols-light:scatter-plot >}} Visualizaciones",
-      "Día pi"
+      "Día π"
     ]
   },
   {
     "objectID": "viz/pi.html#epígrafe",
     "href": "viz/pi.html#epígrafe",
-    "title": "Día pi",
-    "section": "",
-    "text": "Ocultar código\nautor &lt;- glue(\"&lt;span style='color:{c2};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c2};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
+    "title": "Día π",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nautor &lt;- glue(\"&lt;span style='color:{c2};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c2};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
     "crumbs": [
       "{{< iconify material-symbols-light:scatter-plot >}} Visualizaciones",
-      "Día pi"
+      "Día π"
     ]
   },
   {
     "objectID": "viz/pi.html#datos",
     "href": "viz/pi.html#datos",
-    "title": "Día pi",
-    "section": "",
-    "text": "Símbolos útiles\n\n\nOcultar código\npi_etq &lt;- \"&#xe22c;\"\npunto_etq &lt;- \"&#xf444;\"\nsep_etq &lt;- glue(\" &lt;b style='color: {c3}'&gt;|&lt;/b&gt; \")\n\n\nGenero la base de datos.\n\n\nOcultar código\nd &lt;- map(c(1e3, 1e4, 1e5, 1e6), f_pi) |&gt;\n  list_rbind() |&gt;\n  mutate(\n    grupo = fct_inorder(grupo)\n  )\n\n# calculo el valor de pi, error y genero el título para cada panel\ntitulo_tbl &lt;- d |&gt;\n  reframe(\n    pi_aprox = sum(estado == \"in\")/n()*4,\n    .by = grupo\n  ) |&gt;\n  mutate(\n    prob = round(abs((pi_aprox - pi)/pi*100), 3),\n    .by = grupo\n  ) |&gt;\n  mutate(\n    p = as.numeric(sub(\"p\", \"\", grupo))\n  ) |&gt;\n  mutate(\n    etq1 = paste0(\n      format(\n        p, big.mark = \".\", decimal.mark = \",\", scientific = FALSE, trim = TRUE\n      ),\n      punto_etq),\n    etq2 = paste0(\n      pi_etq, \" ≈ \",\n      format(\n        round(pi_aprox, 5),\n        nsmall = 5, big.mark = \".\", decimal.mark = \",\", trim = TRUE\n      )\n    ),\n    etq3 = paste0(\n      format(\n        round(prob, 3),\n        nsmall = 3, big.mark = \"\", decimal.mark = \",\", trim = TRUE\n      ),\n      \"%\"\n    )\n  ) |&gt;\n  mutate(\n    etq1 = glue(\"&lt;span style='color: {c5}'&gt;{etq1}&lt;/span&gt;\"),\n    etq2 = glue(\"&lt;span style='color: {c6}'&gt;{etq2}&lt;/span&gt;\"),\n    etq3 = glue(\"&lt;span style='color: {c7}'&gt;{etq3}&lt;/span&gt;\")\n  ) |&gt;\n  mutate(\n    etq = glue(\"{etq1}{sep_etq}{etq2}{sep_etq}{etq3}\")\n  )\n\nstrip_titulo &lt;- set_names(\n  x = titulo_tbl$etq,\n  nm = titulo_tbl$grupo\n)",
+    "title": "Día π",
+    "section": "Datos",
+    "text": "Datos\nSímbolos útiles\n\n\nOcultar código\npi_etq &lt;- \"&#xe22c;\"\npunto_etq &lt;- \"&#xf444;\"\nsep_etq &lt;- glue(\" &lt;b style='color: {c3}'&gt;|&lt;/b&gt; \")\n\n\nGenero una única base de datos, agrupados por la cantidad de puntos (\\(n\\)). Agrego el título de cada panel.\n\n\nOcultar código\nd &lt;- map(c(1e3, 1e4, 1e5, 1e6), f_pi) |&gt;\n  list_rbind() |&gt;\n  mutate(\n    grupo = fct_inorder(grupo)\n  )\n\ntitulo_tbl &lt;- d |&gt;\n  reframe(\n    pi_aprox = sum(estado == \"in\")/n()*4,\n    .by = grupo\n  ) |&gt;\n  mutate(\n    prob = round(abs((pi_aprox - pi)/pi*100), 3),\n    .by = grupo\n  ) |&gt;\n  mutate(\n    p = as.numeric(sub(\"p\", \"\", grupo))\n  ) |&gt;\n  mutate(\n    etq1 = paste0(\n      format(\n        p, big.mark = \".\", decimal.mark = \",\", scientific = FALSE, trim = TRUE\n      ),\n      punto_etq),\n    etq2 = paste0(\n      pi_etq, \" ≈ \",\n      format(\n        round(pi_aprox, 5),\n        nsmall = 5, big.mark = \".\", decimal.mark = \",\", trim = TRUE\n      )\n    ),\n    etq3 = paste0(\n      format(\n        round(prob, 3),\n        nsmall = 3, big.mark = \"\", decimal.mark = \",\", trim = TRUE\n      ),\n      \"%\"\n    )\n  ) |&gt;\n  mutate(\n    etq1 = glue(\"&lt;span style='color: {c5}'&gt;{etq1}&lt;/span&gt;\"),\n    etq2 = glue(\"&lt;span style='color: {c6}'&gt;{etq2}&lt;/span&gt;\"),\n    etq3 = glue(\"&lt;span style='color: {c7}'&gt;{etq3}&lt;/span&gt;\")\n  ) |&gt;\n  mutate(\n    etq = glue(\"{etq1}{sep_etq}{etq2}{sep_etq}{etq3}\")\n  )\n\nstrip_titulo &lt;- set_names(\n  x = titulo_tbl$etq,\n  nm = titulo_tbl$grupo\n)",
     "crumbs": [
       "{{< iconify material-symbols-light:scatter-plot >}} Visualizaciones",
-      "Día pi"
+      "Día π"
     ]
   },
   {
     "objectID": "viz/pi.html#figura",
     "href": "viz/pi.html#figura",
-    "title": "Día pi",
-    "section": "",
-    "text": "Ecuación para el título utilizo una expresión en LaTeX.\n\n\nOcultar código\neq &lt;- latex2exp::TeX(r\"($\\lim_{n\\to\\infty} \\frac{t}{n} = \\frac{\\pi}{4} $)\")\n\n\nSubtítulo y figura.\n\n\nOcultar código\nmi_subtitulo &lt;- glue(\n  \"*t* es el número de &lt;b style='color: {c1}'&gt;puntos dentro del círculo&lt;/b&gt; y\n  &lt;span style='color: {c5}'&gt;*n* es el total&lt;/span&gt;,\n  aleatoriamente ubicados.&lt;br&gt;\n  Para cada panel se indican &lt;b style='color: {c5}'&gt;n&lt;/b&gt;, el\n  &lt;b style='color: {c6}'&gt;valor aproximado de\n  &lt;span style='font-family: jet'&gt;{pi_etq}&lt;/span&gt;&lt;/b&gt;\n  y el &lt;b style='color: {c7}'&gt;error porcentual&lt;/b&gt;.\"\n)\n\ng &lt;- ggplot(d, aes(x, y, color = estado)) +\n  geom_point(\n    size = .1, alpha = .5, show.legend = FALSE\n  ) +\n  facet_wrap(vars(grupo), ncol = 2,\n             labeller = as_labeller(strip_titulo)\n             ) +\n  scale_color_manual(\n    breaks = c(\"in\", \"out\"),\n    values = c(c1, c2)\n  ) +\n  coord_equal(clip = \"off\", expand = FALSE) +\n  labs(\n    title = eq, subtitle = mi_subtitulo, caption = mi_caption\n  ) +\n  theme_void() +\n  theme(\n    plot.background = element_rect(fill = c8, color = NA),\n    plot.margin = margin(r = 15, l = 15),\n    plot.title = element_text(\n      family = \"sans serif\", size = 40, hjust = .5, margin = margin(t = 20),\n      color = c2\n    ),\n    plot.subtitle = element_markdown(\n      size = 22, hjust = .5, margin = margin(t = 15, b = 25), lineheight = 1.4\n    ),\n    plot.caption = element_markdown(\n      family = \"ubuntu\", color = c1, size = 15, margin = margin(t = 20, b = 15)\n    ),\n    panel.spacing.x = unit(1, \"cm\"),\n    strip.text = element_markdown(\n      family = \"jet\", size = 15, margin = margin(t = 10, b = 5), color = c4\n    )\n  )\n\n\nGuardo la figura creada.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = paste0(getwd(), \"/viz/pi.png\"),\n  width = 30,\n  height = 37,\n  units = \"cm\"\n)",
+    "title": "Día π",
+    "section": "Figura",
+    "text": "Figura\nEl título es una expresión en LaTeX.\n\n\nOcultar código\neq &lt;- latex2exp::TeX(r\"($\\lim_{n\\to\\infty} \\frac{t}{n} = \\frac{\\pi}{4} $)\")\n\n\nSubtítulo y figura.\n\n\nOcultar código\nmi_subtitulo &lt;- glue(\n  \"*t* es el número de &lt;b style='color: {c1}'&gt;puntos dentro del círculo&lt;/b&gt; y\n  &lt;span style='color: {c5}'&gt;*n* es el total&lt;/span&gt;,\n  aleatoriamente ubicados.&lt;br&gt;\n  Para cada panel se indican &lt;b style='color: {c5}'&gt;n&lt;/b&gt;, el\n  &lt;b style='color: {c6}'&gt;valor aproximado de\n  &lt;span style='font-family: jet'&gt;{pi_etq}&lt;/span&gt;&lt;/b&gt;\n  y el &lt;b style='color: {c7}'&gt;error porcentual&lt;/b&gt;.\"\n)\n\ng &lt;- ggplot(d, aes(x, y, color = estado)) +\n  geom_point(\n    size = .1, alpha = .5, show.legend = FALSE\n  ) +\n  facet_wrap(vars(grupo), ncol = 2,\n             labeller = as_labeller(strip_titulo)\n             ) +\n  scale_color_manual(\n    breaks = c(\"in\", \"out\"),\n    values = c(c1, c2)\n  ) +\n  coord_equal(clip = \"off\", expand = FALSE) +\n  labs(\n    title = eq, subtitle = mi_subtitulo, caption = mi_caption\n  ) +\n  theme_void() +\n  theme(\n    plot.background = element_rect(fill = c8, color = NA),\n    plot.margin = margin(r = 15, l = 15),\n    plot.title = element_text(\n      family = \"sans serif\", size = 40, hjust = .5, margin = margin(t = 20),\n      color = c2\n    ),\n    plot.subtitle = element_markdown(\n      size = 22, hjust = .5, margin = margin(t = 15, b = 25), lineheight = 1.4\n    ),\n    plot.caption = element_markdown(\n      family = \"ubuntu\", color = c1, size = 15, margin = margin(t = 20, b = 15)\n    ),\n    panel.spacing.x = unit(1, \"cm\"),\n    strip.text = element_markdown(\n      family = \"jet\", size = 15, margin = margin(t = 10, b = 5), color = c4\n    )\n  )\n\n\nGuardo la figura creada.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = paste0(getwd(), \"/viz/pi.png\"),\n  width = 30,\n  height = 37,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify material-symbols-light:scatter-plot >}} Visualizaciones",
-      "Día pi"
+      "Día π"
     ]
   },
   {
