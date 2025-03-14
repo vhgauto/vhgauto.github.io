@@ -81,9 +81,6 @@ website:
         - href: viz/index.qmd
           text: "Inicio"
         - auto: "viz/*.qmd"
-        # - href: viz/index.qmd
-        #   text: "Inicio"
-        # - contents: viz/*
 
 format:
   html:
@@ -99,6 +96,7 @@ format:
         title-block-author-single: "Autor"
     link-external-newwindow: true
     link-external-filter: ^(?:http:|https:)\/\/www\.vhgauto\.github\.io
+    crossrefs-hover: false
 
 execute:
   freeze: auto
