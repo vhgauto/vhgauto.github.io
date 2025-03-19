@@ -99,6 +99,18 @@ nueva_semana <- function(semana_numero, año = 2025) {
 
 }
 
+l <- list.files("tidytuesday/2025/")
+m <- l[stringr::str_detect(l, "semana_(.+)qmd")] |>
+  stringr::str_extract(pattern = "semana_(.+)\\.qmd", group = 1) |>
+  as.numeric() |>
+  max()
+
+mensaje(
+  glue::glue(
+    "Última semana: {crayon::bold(m)}"
+  )
+)
+
 mensaje(
   glue::glue(
     "Usar {crayon::bold('nueva_semana()')} para iniciar el procesamiento"
