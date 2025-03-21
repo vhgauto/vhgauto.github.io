@@ -49,6 +49,7 @@
   {
     "listing": "/tidytuesday/2025/index.html",
     "items": [
+      "/tidytuesday/2025/semana_10.html",
       "/tidytuesday/2025/semana_09.html",
       "/tidytuesday/2025/semana_08.html",
       "/tidytuesday/2025/semana_07.html",
@@ -57,6 +58,31 @@
       "/tidytuesday/2025/semana_04.html",
       "/tidytuesday/2025/semana_03.html",
       "/tidytuesday/2025/semana_02.html"
+    ]
+  },
+  {
+    "listing": "/argentina/instalaciones/index.html",
+    "items": [
+      "/argentina/instalaciones/aeropuertos.html",
+      "/argentina/instalaciones/plantas_potabilizadoras.html",
+      "/argentina/instalaciones/estaciones_smn.html"
+    ]
+  },
+  {
+    "listing": "/publicaciones/index.html",
+    "items": []
+  },
+  {
+    "listing": "/argentina/animaciones/index.html",
+    "items": [
+      "/argentina/animaciones/crecimiento_rutas.html",
+      "/argentina/animaciones/torres_celulares.html"
+    ]
+  },
+  {
+    "listing": "/mapas.html",
+    "items": [
+      "/mapas/mapa1.html"
     ]
   },
   {
@@ -114,31 +140,6 @@
       "/tidytuesday/2024/semana_04.html",
       "/tidytuesday/2024/semana_03.html",
       "/tidytuesday/2024/semana_02.html"
-    ]
-  },
-  {
-    "listing": "/mapas.html",
-    "items": [
-      "/mapas/mapa1.html"
-    ]
-  },
-  {
-    "listing": "/argentina/animaciones/index.html",
-    "items": [
-      "/argentina/animaciones/crecimiento_rutas.html",
-      "/argentina/animaciones/torres_celulares.html"
-    ]
-  },
-  {
-    "listing": "/publicaciones/index.html",
-    "items": []
-  },
-  {
-    "listing": "/argentina/instalaciones/index.html",
-    "items": [
-      "/argentina/instalaciones/aeropuertos.html",
-      "/argentina/instalaciones/plantas_potabilizadoras.html",
-      "/argentina/instalaciones/estaciones_smn.html"
     ]
   }
 ]
