@@ -64,6 +64,23 @@ $t-trans: .7s;
 
 /*-- scss:rules --*/
 
+.tiempo {
+    color: $c-dorado;
+    font-weight: bold;
+    font-size: 2em;
+    font-family: "Rufina";
+    &:hover {
+        background-color: $c-dorado;
+        color: $body-bg;
+        border-radius: 5px;
+    }
+}
+
+icon-sudoku {
+    font-size: 5em;
+    color: $c-gris-claro
+}
+
 :root{
   --bs-code-color: #{$c-dorado};
 }
