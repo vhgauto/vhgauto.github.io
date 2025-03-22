@@ -208,3 +208,19 @@ h <- girafe(
     opts_hover_inv(css = "opacity:0.3;")
   )
 )
+
+# resumen ----------------------------------------------------------------
+
+horas <- d |>
+  mutate(
+    duracion = as.duration(tiempo)
+  ) |>
+  reframe(
+    s = sum(duracion)/60/60
+  ) |>
+  pull() |>
+  round()
+
+juegos <- d |>
+  distinct(fecha, dificultad) |>
+  nrow()
