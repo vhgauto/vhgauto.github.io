@@ -24,6 +24,10 @@ date: X_fecha
 author: Víctor Gauto
 ---
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXX DESCRIPCIÓN DE LA FIGURA XXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 ![Semana X_semana, X_año](semana_X_semana.png)
 
 ## Paquetes
@@ -120,4 +124,6 @@ ggsave(
   height = 30,
   units = "cm"
 )
+
+browseURL(paste0(getwd(), "/tidytuesday/X_año/semana_X_semana.png"))
 ```
