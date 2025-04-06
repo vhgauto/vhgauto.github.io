@@ -1250,7 +1250,7 @@
     "href": "argentina/instalaciones/plantas_potabilizadoras.html#figura",
     "title": "Plantas potabilizadoras",
     "section": "Figura",
-    "text": "Figura\nSubtítulo y posición.\n\n\nOcultar código\nx_sub &lt;- st_bbox(deptos)$xmax\ny_sub &lt;- st_bbox(deptos)$ymax\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {c1}'&gt;Argentina&lt;/b&gt; hay en\",\n  \"funcionamiento &lt;b style='color:#EF7923'&gt;{nrow(v)}&lt;/b&gt;\",\n  \"plantas de tratamiento\",\n  \"de agua.\",\n  .sep = \"&lt;br&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # provincias\n  geom_sf(\n    data = pcias, aes(fill = fill_pcias), linewidth = .4, color = c1,\n    show.legend = TRUE\n  ) +\n  # departamentos\n  geom_sf(\n    data = deptos, fill = NA, color = c1, linewidth = .1, linetype = \"55\"\n  ) +\n  # plantas potabilizadoras\n  geom_sf(\n    data = v, shape = 21, fill = col[4], size = 7, color = c2, alpha = .9\n  ) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = x_sub*.84, y = y_sub*.66, label = mi_subtitle,\n    fill = NA, label.color = NA, size = 12, color = col[4], hjust = 0,\n    family = \"ubuntu\"\n  ) +\n  scale_fill_identity() +\n  scale_shape_identity() +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 8, l = 8, t = 2),\n    plot.background = element_rect(\n      fill = col[5], color = col[2], linewidth = 3),\n    plot.caption = element_markdown(\n      family = \"jet\", color = c1, hjust = .5, size = 20,\n      margin = margin(b = 10))\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/plantas_potabilizadoras.png\",\n  width = 30,\n  height = 65,\n  units = \"cm\"\n)",
+    "text": "Figura\nSubtítulo y posición.\n\n\nOcultar código\nx_sub &lt;- st_bbox(deptos)$xmax\ny_sub &lt;- st_bbox(deptos)$ymax\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {c1}'&gt;Argentina&lt;/b&gt; hay en\",\n  \"funcionamiento &lt;b style='color:#EF7923'&gt;{nrow(v)}&lt;/b&gt;\",\n  \"plantas de tratamiento\",\n  \"de agua.\",\n  .sep = \"&lt;br&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # provincias\n  geom_sf(\n    data = pcias, aes(fill = fill_pcias), linewidth = .4, color = c1,\n    show.legend = TRUE\n  ) +\n  # departamentos\n  geom_sf(\n    data = deptos, fill = NA, color = c1, linewidth = .1, linetype = \"55\"\n  ) +\n  # plantas potabilizadoras\n  geom_sf(\n    data = v, shape = 21, fill = col[4], size = 7, color = c2, alpha = .9\n  ) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = x_sub*.84, y = y_sub*.66, label = mi_subtitle,\n    fill = NA, label.color = NA, size = 12, color = col[4], hjust = 0,\n    family = \"ubuntu\"\n  ) +\n  scale_fill_identity() +\n  scale_shape_identity() +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 8, l = 8, t = 2),\n    plot.background = element_rect(\n      fill = col[5], color = col[2], linewidth = 3),\n    plot.caption = element_markdown(\n      family = \"jet\", color = c1, hjust = .5, size = 20,\n      margin = margin(b = 10))\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/plantas_potabilizadoras.png\",\n  width = 30,\n  height = 65,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
       "Instalaciones",
@@ -1322,7 +1322,7 @@
     "href": "argentina/instalaciones/estaciones_smn.html#figura",
     "title": "Estaciones meteorológicas",
     "section": "Figura",
-    "text": "Figura\nLogo del SMN y subtítulo de la figura.\n\n\nOcultar código\nsmn &lt;- \"&lt;img src='https://upload.wikimedia.org/wikipedia/commons/7/72/SMN_Logo_Alta.png' width='200'&gt;&lt;/img&gt;\"\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {col[9]}'&gt;Argentina&lt;/b&gt; hay {nrow(p)}&lt;br&gt;estaciones meteorológicas.&lt;br&gt;\"\n)\n\n\nContorno del mapa y diseño de la figura compuesta.\n\n\nOcultar código\nbb &lt;- st_bbox(pcias_cont)\n\ndiseño &lt;- \"\nA#\nAB\n\"\n\n\nMapa del sector Antártico.\n\n\nOcultar código\ng_antart &lt;- ggplot() +\n  # departamentos\n  geom_sf(data = dptos_antart, fill = col[3], color = col[5]) +\n  # estaciones meteorológicas\n  geom_sf_pattern(\n    data = p_antart_buffer, color = NA, pattern = \"gradient\",\n    pattern_orientation = \"radial\",\n    pattern_fill = col[3], # centro\n    pattern_fill2 = col[8], # exterior\n    pattern_density = 1) +\n  scale_fill_viridis_d(option = \"turbo\") +\n  coord_sf(clip = \"off\", expand = TRUE) +\n  theme_void() +\n  theme(\n    plot.background = element_rect(color = NA, linewidth = 2, fill = col[2])\n  )\n\n\nMapa de Argentina continental.\n\n\nOcultar código\ng_cont &lt;- ggplot() +\n  # departamentos\n  geom_sf(data = dptos_cont, fill = col[2], color = col[5]) +\n  # provincias\n  geom_sf(data = pcias_cont, fill = NA, color = col[7], linewidth = .25) +\n  # estaciones meteorológicas\n  geom_sf_pattern(\n    data = p_cont_buffer, color = NA, pattern = \"gradient\",\n    pattern_orientation = \"radial\",\n    pattern_fill = col[3], # centro\n    pattern_fill2 = col[8], # exterior\n    pattern_density = 1) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = bb[\"xmax\"], y = bb[\"ymax\"], label = mi_subtitle,\n    fill = NA, label.color = NA, hjust = 0, size = 9, color = col[7],\n    family = \"ubuntu\", vjust = 1\n  ) +\n  # logo SMN\n  annotate(\n    geom = \"richtext\", x = bb[\"xmax\"], y = 5.5e6,\n    label.padding = unit(rep(1, 4), \"lines\"),\n    label.margin = unit(rep(4, 4), \"lines\"),\n    label = smn, fill = NA, label.color = NA, hjust = 0, vjust = 0\n  ) +\n  scale_fill_viridis_d(option = \"turbo\") +\n  coord_sf(clip = \"off\", expand = FALSE) +\n  theme_void()\n\n\nComposición final del mapa.\n\n\nOcultar código\ng &lt;- g_cont + g_antart +\n  plot_layout(widths = c(1, .6), design = diseño) +\n  plot_annotation(\n    caption = mi_caption,\n    theme = theme(\n      plot.margin = margin(t = 25, r = 25, b = 25, l = 25),\n      plot.background = element_rect(\n        fill = col[1], color = col[4], linewidth = 3),\n      plot.caption = element_markdown(\n        family = \"ubuntu\", size = 15, color = col[7], lineheight = 1.2)\n    )\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/estaciones_smn.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)",
+    "text": "Figura\nLogo del SMN y subtítulo de la figura.\n\n\nOcultar código\nsmn &lt;- \"&lt;img src='https://upload.wikimedia.org/wikipedia/commons/7/72/SMN_Logo_Alta.png' width='200'&gt;&lt;/img&gt;\"\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {col[9]}'&gt;Argentina&lt;/b&gt; hay {nrow(p)}&lt;br&gt;estaciones meteorológicas.&lt;br&gt;\"\n)\n\n\nContorno del mapa y diseño de la figura compuesta.\n\n\nOcultar código\nbb &lt;- st_bbox(pcias_cont)\n\ndiseño &lt;- \"\nA#\nAB\n\"\n\n\nMapa del sector Antártico.\n\n\nOcultar código\ng_antart &lt;- ggplot() +\n  # departamentos\n  geom_sf(data = dptos_antart, fill = col[3], color = col[5]) +\n  # estaciones meteorológicas\n  geom_sf_pattern(\n    data = p_antart_buffer, color = NA, pattern = \"gradient\",\n    pattern_orientation = \"radial\",\n    pattern_fill = col[3], # centro\n    pattern_fill2 = col[8], # exterior\n    pattern_density = 1) +\n  scale_fill_viridis_d(option = \"turbo\") +\n  coord_sf(clip = \"off\", expand = TRUE) +\n  theme_void() +\n  theme(\n    plot.background = element_rect(color = NA, linewidth = 2, fill = col[2])\n  )\n\n\nMapa de Argentina continental.\n\n\nOcultar código\ng_cont &lt;- ggplot() +\n  # departamentos\n  geom_sf(data = dptos_cont, fill = col[2], color = col[5]) +\n  # provincias\n  geom_sf(data = pcias_cont, fill = NA, color = col[7], linewidth = .25) +\n  # estaciones meteorológicas\n  geom_sf_pattern(\n    data = p_cont_buffer, color = NA, pattern = \"gradient\",\n    pattern_orientation = \"radial\",\n    pattern_fill = col[3], # centro\n    pattern_fill2 = col[8], # exterior\n    pattern_density = 1) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = bb[\"xmax\"], y = bb[\"ymax\"], label = mi_subtitle,\n    fill = NA, label.color = NA, hjust = 0, size = 9, color = col[7],\n    family = \"ubuntu\", vjust = 1\n  ) +\n  # logo SMN\n  annotate(\n    geom = \"richtext\", x = bb[\"xmax\"], y = 5.5e6,\n    label.padding = unit(rep(1, 4), \"lines\"),\n    label.margin = unit(rep(4, 4), \"lines\"),\n    label = smn, fill = NA, label.color = NA, hjust = 0, vjust = 0\n  ) +\n  scale_fill_viridis_d(option = \"turbo\") +\n  coord_sf(clip = \"off\", expand = FALSE) +\n  theme_void()\n\n\nComposición final del mapa.\n\n\nOcultar código\ng &lt;- g_cont + g_antart +\n  plot_layout(widths = c(1, .6), design = diseño) +\n  plot_annotation(\n    caption = mi_caption,\n    theme = theme(\n      plot.margin = margin(t = 25, r = 25, b = 25, l = 25),\n      plot.background = element_rect(\n        fill = col[1], color = col[4], linewidth = 3),\n      plot.caption = element_markdown(\n        family = \"ubuntu\", size = 15, color = col[7], lineheight = 1.2)\n    )\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/estaciones_smn.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
       "Instalaciones",
@@ -1330,193 +1330,14 @@
     ]
   },
   {
-    "objectID": "argentina/animaciones/crecimiento_rutas.html",
-    "href": "argentina/animaciones/crecimiento_rutas.html",
-    "title": "Crecimientos de rutas",
+    "objectID": "argentina/instalaciones/index.html",
+    "href": "argentina/instalaciones/index.html",
+    "title": "Instalaciones en Argentina",
     "section": "",
-    "text": "Animación de crecimiento de rutas nacionales y provinciales, con centro en el Obelisco de Ciudad Autónoma de Buenos Aires.",
+    "text": "En esta sección se muestran mapas de Argentina  que incluyen instalaciones varias, como ser: plantas de tratamiento de agua, centrales generadoras de energía, rutas nacionales y provinciales, etc.\nPara darle diversidad a los mapas, cada uno cuenta con una paleta de colores diferente.\n \n\n\n   \n     \n     \n       Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nFaros\n\n\n\n\n\n\ngeom_raster\n\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-04-06\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nAeropuertos\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nPlantas potabilizadoras\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nEstaciones meteorológicas\n\n\n\n\n\n\ngeom_sf\n\n\ngeom_sf_pattern\n\n\n\n\n\n\n\n\n\n2024-02-17\n\n\nVíctor Gauto\n\n\n\n\n\n\nNo hay resultados\n\n\n\n\n\n\n Subir",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Animaciones",
-      "Crecimientos de rutas"
-    ]
-  },
-  {
-    "objectID": "argentina/animaciones/crecimiento_rutas.html#paquetes",
-    "href": "argentina/animaciones/crecimiento_rutas.html#paquetes",
-    "title": "Crecimientos de rutas",
-    "section": "Paquetes",
-    "text": "Paquetes\n\n\nOcultar código\nlibrary(terra)\nlibrary(tidyterra)\nlibrary(magick)\nlibrary(showtext)\nlibrary(glue)\nlibrary(ggtext)\nlibrary(ggplot2)\nlibrary(purrr)",
-    "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Animaciones",
-      "Crecimientos de rutas"
-    ]
-  },
-  {
-    "objectID": "argentina/animaciones/crecimiento_rutas.html#estilos",
-    "href": "argentina/animaciones/crecimiento_rutas.html#estilos",
-    "title": "Crecimientos de rutas",
-    "section": "Estilos",
-    "text": "Estilos\nColores.\n\n\nOcultar código\nc1 &lt;- \"dodgerblue\"\nc2 &lt;- \"violetred\"\nc3 &lt;- \"grey95\"\nc4 &lt;- \"grey90\"\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"./fuente/Ubuntu-Regular.ttf\",\n  bold = \"./fuente/Ubuntu-Bold.ttf\",\n  italic = \"./fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"./fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
-    "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Animaciones",
-      "Crecimientos de rutas"
-    ]
-  },
-  {
-    "objectID": "argentina/animaciones/crecimiento_rutas.html#epígrafe",
-    "href": "argentina/animaciones/crecimiento_rutas.html#epígrafe",
-    "title": "Crecimientos de rutas",
-    "section": "Epígrafe",
-    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"Datos: &lt;b style='color: {c1};'&gt;Instituto Geográfico Nacional&lt;/b&gt;\"\n)\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
-    "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Animaciones",
-      "Crecimientos de rutas"
-    ]
-  },
-  {
-    "objectID": "argentina/animaciones/crecimiento_rutas.html#funciones",
-    "href": "argentina/animaciones/crecimiento_rutas.html#funciones",
-    "title": "Crecimientos de rutas",
-    "section": "Funciones",
-    "text": "Funciones\nLectura y transformación de sistema de coordenadas geográficas.\n\n\nOcultar código\nf_proj &lt;- function(v) {\n  project(vect(v), \"EPSG:5346\")\n}\n\n\nGeneración y almacenamiento de mapas.\n\n\nOcultar código\nf_gg &lt;- function(x) {\n\n  if (x &lt; 10) {\n    i &lt;- paste0(\"0\", x)\n  } else {\n    i &lt;- x\n  }\n\n  g &lt;- ggplot() +\n    geom_spatvector(data = arg, fill = c4, color = NA) +\n    geom_spatvector(\n      data = lista_crop_pro[[x]], aes(color = \"pro\"), linewidth = .1,\n      show.legend = TRUE, key_glyph = \"path\"\n    ) +\n    geom_spatvector(\n      data = lista_crop_nac[[x]], fill = NA, aes(color = \"nac\"), linewidth = .2,\n      show.legend = TRUE, key_glyph = \"path\"\n    ) +\n    scale_color_manual(\n      breaks = c(\"nac\", \"pro\"),\n      labels = c(\"Ruta Nacional\", \"Ruta Provincial\"),\n      values = c(c1, c2)\n    ) +\n    labs(color = NULL, caption = mi_caption) +\n    guides(\n      color = guide_legend(override.aes = list(linewidth = 1))\n    ) +\n    theme_void() +\n    theme(\n      plot.background = element_rect(fill = c3, color = NA),\n      plot.caption = element_markdown(\n        family = \"ubuntu\", size = 8, color = c2, lineheight = 1.2,\n        margin = margin(b = 5)\n      ),\n      legend.text = element_text(family = \"ubuntu\"),\n      legend.position = \"inside\",\n      legend.position.inside = c(.7, .3),\n      legend.key.width = unit(20, \"pt\")\n    )\n\n  ggsave(\n    plot = g,\n    filename = paste0(\"./argentina/animaciones/crecimiento_rutas/\", i, \".png\"),\n    width = 1000,\n    height = 2084,\n    units = \"px\"\n  )\n\n  print(glue::glue(\"\\n\\n--- Figura {i} generada ---\\n\\n\"))\n}",
-    "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Animaciones",
-      "Crecimientos de rutas"
-    ]
-  },
-  {
-    "objectID": "argentina/animaciones/crecimiento_rutas.html#datos",
-    "href": "argentina/animaciones/crecimiento_rutas.html#datos",
-    "title": "Crecimientos de rutas",
-    "section": "Datos",
-    "text": "Datos\nVector de Argentina, rutas nacionales y provinciales, y coordenadas del Obelisco.\n\n\nOcultar código\narg &lt;- f_proj(\"./argentina/vectores/arg_continental.gpkg\")\n\nr_nac &lt;- f_proj(\"./argentina/vectores/extras/LíneaRed vial nacional.json\")\nr_pro &lt;- f_proj(\"./argentina/vectores/extras/LíneaRed vial provincial.json\")\n\no &lt;- vect(\n  data.frame(x = -58.38162, y = -34.60376), geom = c(\"x\", \"y\"),\n  crs = \"EPSG:4326\"\n) |&gt;\n  project(\"EPSG:5346\")",
-    "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Animaciones",
-      "Crecimientos de rutas"
-    ]
-  },
-  {
-    "objectID": "argentina/animaciones/crecimiento_rutas.html#figura",
-    "href": "argentina/animaciones/crecimiento_rutas.html#figura",
-    "title": "Crecimientos de rutas",
-    "section": "Figura",
-    "text": "Figura\nLista de buffers alrededor del Obelisco, y los recortes de las rutas de cada uno.\n\n\nOcultar código\nlista_buffer_nac &lt;- map(seq(50, 2500, 25)*1e3, ~buffer(o, .x, quadsegs = 250))\nlista_crop_nac &lt;- map(lista_buffer_nac, ~terra::crop(r_nac, .x))\nlista_crop_pro &lt;- map(lista_buffer_nac, ~terra::crop(r_pro, .x))\n\n\nCreación de cada figura.\n\n\nOcultar código\nmap(1:length(lista_buffer_nac), f_gg)",
-    "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Animaciones",
-      "Crecimientos de rutas"
-    ]
-  },
-  {
-    "objectID": "argentina/animaciones/crecimiento_rutas.html#animación",
-    "href": "argentina/animaciones/crecimiento_rutas.html#animación",
-    "title": "Crecimientos de rutas",
-    "section": "Animación",
-    "text": "Animación\nGeneración de la animación a partir de todas las figuras. El archivo de salida está en formato .mp4.\n\n\nOcultar código\nav::av_encode_video(\n  input = list.files(\n    path = \"./argentina/animaciones/crecimiento_rutas/\",\n    full.names = TRUE, pattern = \".png\"\n  ),\n  output = \"./argentina/animaciones/crecimiento_rutas.mp4\"\n)\n\n\nElimino los mapas creados y la carpeta que los contiene.\n\n\nOcultar código\nunlink(\"./argentina/animaciones/crecimiento_rutas/\", recursive = TRUE)",
-    "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Animaciones",
-      "Crecimientos de rutas"
-    ]
-  },
-  {
-    "objectID": "argentina/animaciones/index.html",
-    "href": "argentina/animaciones/index.html",
-    "title": "Animaciones de mapas de Argentina",
-    "section": "",
-    "text": "Breve descripción de la metodología básica para generar las animaciones de datos geográficos de Argentina .",
-    "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Animaciones"
-    ]
-  },
-  {
-    "objectID": "argentina/animaciones/index.html#método-general",
-    "href": "argentina/animaciones/index.html#método-general",
-    "title": "Animaciones de mapas de Argentina",
-    "section": "Método general",
-    "text": "Método general\nLos scripts para las animaciones mostradas en esta sección tiene la misma estructura básica:\n\nLectura de datos y procesamiento.\nUna función personalizada creada con base::function() que genera y almacena el mapa, correspondiente a un fotograma de la animación final. Todas las figuras se almacenan en orden en una carpeta específica.\nIteración de la función usando purrr::walk(). Usualmente se itera respecto del tiempo (años, meses), o de distancias.\nLa animación final se genera a partir de todas las imágenes individuales con la función av::av_encode_video() y la extensión del video es .mp4.\nSe elimina la carpeta con todas las figuras.",
-    "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Animaciones"
-    ]
-  },
-  {
-    "objectID": "argentina/animaciones/index.html#animaciones",
-    "href": "argentina/animaciones/index.html#animaciones",
-    "title": "Animaciones de mapas de Argentina",
-    "section": "Animaciones",
-    "text": "Animaciones\n \n\n\n   \n     \n     \n       Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCrecimientos de rutas\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nTorres de telecomunicaciones\n\n\n\n\n\n\ngeom_sf\n\n\ngeom_sf_pattern\n\n\n\n\n\n\n\n\n\n2024-02-17\n\n\nVíctor Gauto\n\n\n\n\n\n\nNo hay resultados",
-    "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Animaciones"
-    ]
-  },
-  {
-    "objectID": "publicaciones/index.html",
-    "href": "publicaciones/index.html",
-    "title": " Publicaciones",
-    "section": "",
-    "text": "Lista de publicaciones y trabajos en los que he participado.  \n\n\n    Spatio-temporal characterization of precipitation in the Middle and Lower Paraguay Basin based on satellite products and weather station data\n\n    \n    \n        \n             Rossana Villalba \n        \n         | \n    \n        \n             Anabella Ferral \n        \n         | \n    \n        \n            Julián Baéz\n        \n         | \n    \n        \n             Jorge Kurita \n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n            Juan Carlos Bertoni\n        \n        \n    \n    \n\n    \n         10.5194/isprs-archives-XLVIII-2-W6-2024-65-2024\n    \n\n     2024\n\n    \n    \n         IMERG \n    \n         CHIRPS \n    \n         El Niño \n    \n         Validation \n    \n         Accumulated precipitation \n    \n         Anomalies \n    \n\n    \n\n    Comparison of water surface temperature retrieval methods from Landsat 9 satellite data\n\n    \n    \n        \n             Matias Bonansea \n        \n         | \n    \n        \n            Sofía Gutiérrez\n        \n         | \n    \n        \n            Mariana Correa\n        \n         | \n    \n        \n             Sofía Paná \n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Francisco Nemiña \n        \n         | \n    \n        \n             Alba Germán \n        \n         | \n    \n        \n             Giuliana Beltramone \n        \n         | \n    \n        \n             Lucio Pinotti \n        \n         | \n    \n        \n             Anabella Ferral \n        \n        \n    \n    \n\n    \n         10.5194/isprs-archives-XLVIII-2-W6-2024-1-2024\n    \n\n     2024\n\n    \n    \n         Landsat Collection 2 Level 2 products \n    \n         Single-Channel method \n    \n         Split-Window algorithm \n    \n         Surface temperature \n    \n\n    \n\n    Remote Sensing Regression Models to Estimate Water Quality Indicators in Continental Waters in North-East Argentina\n\n    \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Enid Marta Utgés \n        \n         | \n    \n        \n            Elsa Ivonne Hervot\n        \n         | \n    \n        \n             María Daniela Tenev \n        \n         | \n    \n        \n             Alejandro Farías \n        \n         | \n    \n        \n             Matías Bonansea \n        \n         | \n    \n        \n             Anabella Ferral \n        \n        \n    \n    \n\n    \n         10.1109/ARGENCON62399.2024.10735875\n    \n\n     2024\n\n    \n    \n         Remote sensing \n    \n         Water quality \n    \n         Empirical algorithm \n    \n         Chlorophyll-a \n    \n         Turbidity \n    \n         Sentinel-2 \n    \n\n    \n\n    Modelling of Phosphorus and Nitrogen Delivery in a Strategic River Basin\n\n    \n    \n        \n             Sofía Paná \n        \n         | \n    \n        \n             Matías Bonansea \n        \n         | \n    \n        \n            Vera Camacho Valdéz\n        \n         | \n    \n        \n            Inés del Valle Asís\n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Anabella Ferral \n        \n        \n    \n    \n\n    \n         10.1109/ARGENCON62399.2024.10735960\n    \n\n     2024\n\n    \n    \n         Water quality \n    \n         Ecosystem services \n    \n         Nutrients \n    \n         InVEST \n    \n\n    \n\n    Changes in Land Covers in Two River Basins in Central Argentina Region. Monitoring the SDG 15.3. 1 Indicator\n\n    \n    \n        \n             Sofía Paná \n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Mattia Terzaghi \n        \n         | \n    \n        \n             Anabella Ferral \n        \n         | \n    \n        \n             Fransisco Nemiña \n        \n         | \n    \n        \n            Inés del Valle Asís\n        \n         | \n    \n        \n             Matías Bonansea \n        \n        \n    \n    \n\n    \n         10.1109/RPIC59053.2023.10530795\n    \n\n     2023\n\n    \n    \n         Land degradation \n    \n         Urbanization \n    \n         Basin scale \n    \n         Riverine scale \n    \n\n    \n\n    Caracterización óptica de aguas superficiales a partir de imágenes satelitales multi e hiperespectrales en la región de Gran Resistencia, Chaco\n\n    \n    \n        \n             Víctor Hugo Gauto \n        \n        \n    \n    \n\n    \n\n     2023\n\n    \n    \n         Aguas interiores \n    \n         Sentinel-2 \n    \n         PRISMA \n    \n         Sensor hiperespectral \n    \n         Análisis cromático \n    \n\n    \n\n    Studies of Adsorption-Desorption of Methylene Blue in a Fixed-Bed Reactor Filled with Cotton and Tanine Industry Waste\n\n    \n    \n        \n             María Daniela Tenev \n        \n         | \n    \n        \n            Camila Torre\n        \n         | \n    \n        \n            Gimena Fontana\n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Mario Sergio Cleva \n        \n         | \n    \n        \n             Néstor Caracciolo \n        \n         | \n    \n        \n             Susana Boeykens \n        \n        \n    \n    \n\n    \n         10.18687/LACCEI2023.1.1.1594\n    \n\n     2023\n\n    \n    \n         Methylene blue \n    \n         fixed-bed reactor \n    \n         cotton husk \n    \n         quebracho chip \n    \n\n    \n\n    First results of PRISMA satellite data applied to water quality monitoring in Argentina\n\n    \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Anabella Ferral \n        \n         | \n    \n        \n             Matias Bonansea \n        \n         | \n    \n        \n             Alejandro Farías \n        \n         | \n    \n        \n             Marcelo Scavuzzo \n        \n         | \n    \n        \n             Osvaldo Cardozo \n        \n         | \n    \n        \n             Alba Germán \n        \n         | \n    \n        \n             Claudia Giardino \n        \n        \n    \n    \n\n    \n         10.1109/ARGENCON55245.2022.9939810\n    \n\n     2022\n\n    \n    \n         PRISMA \n    \n         Sentinel 2 \n    \n         Hyperspectral \n    \n         Turbid waters \n    \n         Atmospheric correction \n    \n         Cromaticity \n    \n         Spectral signature \n    \n\n    \n\n\nNo hay resultados\n\n\n\n\n\n\n Subir"
-  },
-  {
-    "objectID": "index.html#educación",
-    "href": "index.html#educación",
-    "title": "Víctor Gauto ",
-    "section": "Educación",
-    "text": "Educación\n\n\n\n\n\n\n\n\nDoctorado en Geomática y Sistemas Espaciales\n\n\n\n\n\n\n\n\n\n\n\nInstituto Gulich\n\n\n\n\n\n\n\n\n\n\n\nCórdoba, Argentina\n\n\n\n\n\n\n\n\n\n\n\nEn proceso\n\n\n\n\n\n\n\n\n\n\n\n\nMaestría en Aplicaciones de Imágenes Espaciales\n\n\n\n\n\n\n\n\n\n\n\nInstituto Gulich\n\n\n\n\n\n\n\n\n\n\n\nCórdoba, Argentina\n\n\n\n\n\n\n\n\n\n\n\n2023\n\n\n\n\n\n\n\n\n\n\n\n\nMS in Chemical and Biomolecular Engineering\n\n\n\n\n\n\n\n\n\n\n\nSogang University\n\n\n\n\n\n\n\n\n\n\n\nSeoul, Corea del Sur\n\n\n\n\n\n\n\n\n\n\n\n2019\n\n\n\n\n\n\n\n\n\n\n\n\nIngeniería Química\n\n\n\n\n\n\n\n\n\n\n\nUniversidad Tecnológica Nacional Facultad Regional Resistencia\n\n\n\n\n\n\n\n\n\n\n\nChaco, Argentina\n\n\n\n\n\n\n\n\n\n\n\n2014"
-  },
-  {
-    "objectID": "index.html#investigación",
-    "href": "index.html#investigación",
-    "title": "Víctor Gauto ",
-    "section": "Investigación",
-    "text": "Investigación\n\n\n\n\n\n\n\n\nGrupo de Investigación Sobre Temas Ambientales y Químicos\n\n\n\n\n\n\n\n\n\n\n\nChaco, Argentina\n\n\n\n\n\n\n\n\n\n\n\nActualmente\n\n\n\n\n\n\n\n\n\n\n\n\nEl Instituto de Detección Electromagnética del Medio Ambiente\n\n\n\n\n\n\n\n\n\n\n\nMilán, Italia\n\n\n\n\n\n\n\n\n\n\n\n2022\n\n\n\n\n\n\n\n\n\n\n\n\nLaboratorio de Catalizadores a Nanoescala e Ingeniería de Reacciones\n\n\n\n\n\n\n\n\n\n\n\nSeúl, Corea del Sur\n\n\n\n\n\n\n\n\n\n\n\n2019"
-  },
-  {
-    "objectID": "index.html#sudoku",
-    "href": "index.html#sudoku",
-    "title": "Víctor Gauto ",
-    "section": "Sudoku",
-    "text": "Sudoku\nDisfruto mucho resolver los sudokus de New York Times .\nLlevo registro de los tiempos que me lleva resolver los tres niveles de dificultad.  \n\n\n\n\n\n\n\n\n\n\n\n\n\n265 sudokus\n\n\n40 horas\n\n\n\n\n\n\n\n2025-03-31"
-  },
-  {
-    "objectID": "argentina/index.html",
-    "href": "argentina/index.html",
-    "title": "Mapas de Argentina",
-    "section": "",
-    "text": "En esta sección hay diferentes mapas de Argentina, tanto en el contenido que se representa (instalaciones, relieve) como en el resultado final (videos o mapas estáticos).\nA continuación comento sobre las distintas fuentes de datos de vectores y ráster, y los paquetes usados para acceder a los mismos.",
-    "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Mapas de Argentina"
-    ]
-  },
-  {
-    "objectID": "argentina/index.html#vectores",
-    "href": "argentina/index.html#vectores",
-    "title": "Mapas de Argentina",
-    "section": "Vectores",
-    "text": "Vectores\n\nInstituto Geográfico Nacional: Las capas SIG contienen muchos tipos de datos, que incluyen geodesia y demarcación, industria y servicios, hidrografía y oceanografía, entre muchos otros. Los vectores se pueden descargar en multiples formatos.\nOpenStree Map: Es posible descargar todos los datos de Argentina y luego seleccionar los de interés.",
-    "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Mapas de Argentina"
-    ]
-  },
-  {
-    "objectID": "argentina/index.html#ráster",
-    "href": "argentina/index.html#ráster",
-    "title": "Mapas de Argentina",
-    "section": "Ráster",
-    "text": "Ráster\n\nInstituto Geográfico Nacional: El modelo digital de elevación de todo el país están disponibles para descargar, a diferentes resoluciones.\n{elevatr}: Este paquete permite descargar datos de elevación en formato ráster para una región dada.",
-    "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Mapas de Argentina"
+      "Instalaciones"
     ]
   },
   {
@@ -1616,14 +1437,277 @@
     ]
   },
   {
-    "objectID": "argentina/instalaciones/index.html",
-    "href": "argentina/instalaciones/index.html",
-    "title": "Instalaciones en Argentina",
+    "objectID": "argentina/index.html",
+    "href": "argentina/index.html",
+    "title": "Mapas de Argentina",
     "section": "",
-    "text": "En esta sección se muestran mapas de Argentina  que incluyen instalaciones varias, como ser: plantas de tratamiento de agua, centrales generadoras de energía, rutas nacionales y provinciales, etc.\nPara darle diversidad a los mapas, cada uno cuenta con una paleta de colores diferente.\n \n\n\n   \n     \n     \n       Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nAeropuertos\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nPlantas potabilizadoras\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nEstaciones meteorológicas\n\n\n\n\n\n\ngeom_sf\n\n\ngeom_sf_pattern\n\n\n\n\n\n\n\n\n\n2024-02-17\n\n\nVíctor Gauto\n\n\n\n\n\n\nNo hay resultados\n\n\n\n\n\n\n Subir",
+    "text": "En esta sección hay diferentes mapas de Argentina, tanto en el contenido que se representa (instalaciones, relieve) como en el resultado final (videos o mapas estáticos).\nA continuación comento sobre las distintas fuentes de datos de vectores y ráster, y los paquetes usados para acceder a los mismos.",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Instalaciones"
+      "Mapas de Argentina"
+    ]
+  },
+  {
+    "objectID": "argentina/index.html#vectores",
+    "href": "argentina/index.html#vectores",
+    "title": "Mapas de Argentina",
+    "section": "Vectores",
+    "text": "Vectores\n\nInstituto Geográfico Nacional: Las capas SIG contienen muchos tipos de datos, que incluyen geodesia y demarcación, industria y servicios, hidrografía y oceanografía, entre muchos otros. Los vectores se pueden descargar en multiples formatos.\nOpenStree Map: Es posible descargar todos los datos de Argentina y luego seleccionar los de interés.",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Mapas de Argentina"
+    ]
+  },
+  {
+    "objectID": "argentina/index.html#ráster",
+    "href": "argentina/index.html#ráster",
+    "title": "Mapas de Argentina",
+    "section": "Ráster",
+    "text": "Ráster\n\nInstituto Geográfico Nacional: El modelo digital de elevación de todo el país están disponibles para descargar, a diferentes resoluciones.\n{elevatr}: Este paquete permite descargar datos de elevación en formato ráster para una región dada.",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Mapas de Argentina"
+    ]
+  },
+  {
+    "objectID": "index.html#educación",
+    "href": "index.html#educación",
+    "title": "Víctor Gauto ",
+    "section": "Educación",
+    "text": "Educación\n\n\n\n\n\n\n\n\nDoctorado en Geomática y Sistemas Espaciales\n\n\n\n\n\n\n\n\n\n\n\nInstituto Gulich\n\n\n\n\n\n\n\n\n\n\n\nCórdoba, Argentina\n\n\n\n\n\n\n\n\n\n\n\nEn proceso\n\n\n\n\n\n\n\n\n\n\n\n\nMaestría en Aplicaciones de Imágenes Espaciales\n\n\n\n\n\n\n\n\n\n\n\nInstituto Gulich\n\n\n\n\n\n\n\n\n\n\n\nCórdoba, Argentina\n\n\n\n\n\n\n\n\n\n\n\n2023\n\n\n\n\n\n\n\n\n\n\n\n\nMS in Chemical and Biomolecular Engineering\n\n\n\n\n\n\n\n\n\n\n\nSogang University\n\n\n\n\n\n\n\n\n\n\n\nSeoul, Corea del Sur\n\n\n\n\n\n\n\n\n\n\n\n2019\n\n\n\n\n\n\n\n\n\n\n\n\nIngeniería Química\n\n\n\n\n\n\n\n\n\n\n\nUniversidad Tecnológica Nacional Facultad Regional Resistencia\n\n\n\n\n\n\n\n\n\n\n\nChaco, Argentina\n\n\n\n\n\n\n\n\n\n\n\n2014"
+  },
+  {
+    "objectID": "index.html#investigación",
+    "href": "index.html#investigación",
+    "title": "Víctor Gauto ",
+    "section": "Investigación",
+    "text": "Investigación\n\n\n\n\n\n\n\n\nGrupo de Investigación Sobre Temas Ambientales y Químicos\n\n\n\n\n\n\n\n\n\n\n\nChaco, Argentina\n\n\n\n\n\n\n\n\n\n\n\nActualmente\n\n\n\n\n\n\n\n\n\n\n\n\nEl Instituto de Detección Electromagnética del Medio Ambiente\n\n\n\n\n\n\n\n\n\n\n\nMilán, Italia\n\n\n\n\n\n\n\n\n\n\n\n2022\n\n\n\n\n\n\n\n\n\n\n\n\nLaboratorio de Catalizadores a Nanoescala e Ingeniería de Reacciones\n\n\n\n\n\n\n\n\n\n\n\nSeúl, Corea del Sur\n\n\n\n\n\n\n\n\n\n\n\n2019"
+  },
+  {
+    "objectID": "index.html#sudoku",
+    "href": "index.html#sudoku",
+    "title": "Víctor Gauto ",
+    "section": "Sudoku",
+    "text": "Sudoku\nDisfruto mucho resolver los sudokus de New York Times .\nLlevo registro de los tiempos que me lleva resolver los tres niveles de dificultad.  \n\n\n\n\n\n\n\n\n\n\n\n\n\n279 sudokus\n\n\n42 horas\n\n\n\n\n\n\n\n2025-04-06"
+  },
+  {
+    "objectID": "publicaciones/index.html",
+    "href": "publicaciones/index.html",
+    "title": " Publicaciones",
+    "section": "",
+    "text": "Lista de publicaciones y trabajos en los que he participado.  \n\n\n    Spatio-temporal characterization of precipitation in the Middle and Lower Paraguay Basin based on satellite products and weather station data\n\n    \n    \n        \n             Rossana Villalba \n        \n         | \n    \n        \n             Anabella Ferral \n        \n         | \n    \n        \n            Julián Baéz\n        \n         | \n    \n        \n             Jorge Kurita \n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n            Juan Carlos Bertoni\n        \n        \n    \n    \n\n    \n         10.5194/isprs-archives-XLVIII-2-W6-2024-65-2024\n    \n\n     2024\n\n    \n    \n         IMERG \n    \n         CHIRPS \n    \n         El Niño \n    \n         Validation \n    \n         Accumulated precipitation \n    \n         Anomalies \n    \n\n    \n\n    Comparison of water surface temperature retrieval methods from Landsat 9 satellite data\n\n    \n    \n        \n             Matias Bonansea \n        \n         | \n    \n        \n            Sofía Gutiérrez\n        \n         | \n    \n        \n            Mariana Correa\n        \n         | \n    \n        \n             Sofía Paná \n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Francisco Nemiña \n        \n         | \n    \n        \n             Alba Germán \n        \n         | \n    \n        \n             Giuliana Beltramone \n        \n         | \n    \n        \n             Lucio Pinotti \n        \n         | \n    \n        \n             Anabella Ferral \n        \n        \n    \n    \n\n    \n         10.5194/isprs-archives-XLVIII-2-W6-2024-1-2024\n    \n\n     2024\n\n    \n    \n         Landsat Collection 2 Level 2 products \n    \n         Single-Channel method \n    \n         Split-Window algorithm \n    \n         Surface temperature \n    \n\n    \n\n    Remote Sensing Regression Models to Estimate Water Quality Indicators in Continental Waters in North-East Argentina\n\n    \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Enid Marta Utgés \n        \n         | \n    \n        \n            Elsa Ivonne Hervot\n        \n         | \n    \n        \n             María Daniela Tenev \n        \n         | \n    \n        \n             Alejandro Farías \n        \n         | \n    \n        \n             Matías Bonansea \n        \n         | \n    \n        \n             Anabella Ferral \n        \n        \n    \n    \n\n    \n         10.1109/ARGENCON62399.2024.10735875\n    \n\n     2024\n\n    \n    \n         Remote sensing \n    \n         Water quality \n    \n         Empirical algorithm \n    \n         Chlorophyll-a \n    \n         Turbidity \n    \n         Sentinel-2 \n    \n\n    \n\n    Modelling of Phosphorus and Nitrogen Delivery in a Strategic River Basin\n\n    \n    \n        \n             Sofía Paná \n        \n         | \n    \n        \n             Matías Bonansea \n        \n         | \n    \n        \n            Vera Camacho Valdéz\n        \n         | \n    \n        \n            Inés del Valle Asís\n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Anabella Ferral \n        \n        \n    \n    \n\n    \n         10.1109/ARGENCON62399.2024.10735960\n    \n\n     2024\n\n    \n    \n         Water quality \n    \n         Ecosystem services \n    \n         Nutrients \n    \n         InVEST \n    \n\n    \n\n    Changes in Land Covers in Two River Basins in Central Argentina Region. Monitoring the SDG 15.3. 1 Indicator\n\n    \n    \n        \n             Sofía Paná \n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Mattia Terzaghi \n        \n         | \n    \n        \n             Anabella Ferral \n        \n         | \n    \n        \n             Fransisco Nemiña \n        \n         | \n    \n        \n            Inés del Valle Asís\n        \n         | \n    \n        \n             Matías Bonansea \n        \n        \n    \n    \n\n    \n         10.1109/RPIC59053.2023.10530795\n    \n\n     2023\n\n    \n    \n         Land degradation \n    \n         Urbanization \n    \n         Basin scale \n    \n         Riverine scale \n    \n\n    \n\n    Caracterización óptica de aguas superficiales a partir de imágenes satelitales multi e hiperespectrales en la región de Gran Resistencia, Chaco\n\n    \n    \n        \n             Víctor Hugo Gauto \n        \n        \n    \n    \n\n    \n\n     2023\n\n    \n    \n         Aguas interiores \n    \n         Sentinel-2 \n    \n         PRISMA \n    \n         Sensor hiperespectral \n    \n         Análisis cromático \n    \n\n    \n\n    Studies of Adsorption-Desorption of Methylene Blue in a Fixed-Bed Reactor Filled with Cotton and Tanine Industry Waste\n\n    \n    \n        \n             María Daniela Tenev \n        \n         | \n    \n        \n            Camila Torre\n        \n         | \n    \n        \n            Gimena Fontana\n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Mario Sergio Cleva \n        \n         | \n    \n        \n             Néstor Caracciolo \n        \n         | \n    \n        \n             Susana Boeykens \n        \n        \n    \n    \n\n    \n         10.18687/LACCEI2023.1.1.1594\n    \n\n     2023\n\n    \n    \n         Methylene blue \n    \n         fixed-bed reactor \n    \n         cotton husk \n    \n         quebracho chip \n    \n\n    \n\n    First results of PRISMA satellite data applied to water quality monitoring in Argentina\n\n    \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Anabella Ferral \n        \n         | \n    \n        \n             Matias Bonansea \n        \n         | \n    \n        \n             Alejandro Farías \n        \n         | \n    \n        \n             Marcelo Scavuzzo \n        \n         | \n    \n        \n             Osvaldo Cardozo \n        \n         | \n    \n        \n             Alba Germán \n        \n         | \n    \n        \n             Claudia Giardino \n        \n        \n    \n    \n\n    \n         10.1109/ARGENCON55245.2022.9939810\n    \n\n     2022\n\n    \n    \n         PRISMA \n    \n         Sentinel 2 \n    \n         Hyperspectral \n    \n         Turbid waters \n    \n         Atmospheric correction \n    \n         Cromaticity \n    \n         Spectral signature \n    \n\n    \n\n\nNo hay resultados\n\n\n\n\n\n\n Subir"
+  },
+  {
+    "objectID": "argentina/animaciones/index.html",
+    "href": "argentina/animaciones/index.html",
+    "title": "Animaciones de mapas de Argentina",
+    "section": "",
+    "text": "Breve descripción de la metodología básica para generar las animaciones de datos geográficos de Argentina .",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Animaciones"
+    ]
+  },
+  {
+    "objectID": "argentina/animaciones/index.html#método-general",
+    "href": "argentina/animaciones/index.html#método-general",
+    "title": "Animaciones de mapas de Argentina",
+    "section": "Método general",
+    "text": "Método general\nLos scripts para las animaciones mostradas en esta sección tiene la misma estructura básica:\n\nLectura de datos y procesamiento.\nUna función personalizada creada con base::function() que genera y almacena el mapa, correspondiente a un fotograma de la animación final. Todas las figuras se almacenan en orden en una carpeta específica.\nIteración de la función usando purrr::walk(). Usualmente se itera respecto del tiempo (años, meses), o de distancias.\nLa animación final se genera a partir de todas las imágenes individuales con la función av::av_encode_video() y la extensión del video es .mp4.\nSe elimina la carpeta con todas las figuras.",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Animaciones"
+    ]
+  },
+  {
+    "objectID": "argentina/animaciones/index.html#animaciones",
+    "href": "argentina/animaciones/index.html#animaciones",
+    "title": "Animaciones de mapas de Argentina",
+    "section": "Animaciones",
+    "text": "Animaciones\n \n\n\n   \n     \n     \n       Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCrecimientos de rutas\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nTorres de telecomunicaciones\n\n\n\n\n\n\ngeom_sf\n\n\ngeom_sf_pattern\n\n\n\n\n\n\n\n\n\n2024-02-17\n\n\nVíctor Gauto\n\n\n\n\n\n\nNo hay resultados",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Animaciones"
+    ]
+  },
+  {
+    "objectID": "argentina/animaciones/crecimiento_rutas.html",
+    "href": "argentina/animaciones/crecimiento_rutas.html",
+    "title": "Crecimientos de rutas",
+    "section": "",
+    "text": "Animación de crecimiento de rutas nacionales y provinciales, con centro en el Obelisco de Ciudad Autónoma de Buenos Aires.",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Animaciones",
+      "Crecimientos de rutas"
+    ]
+  },
+  {
+    "objectID": "argentina/animaciones/crecimiento_rutas.html#paquetes",
+    "href": "argentina/animaciones/crecimiento_rutas.html#paquetes",
+    "title": "Crecimientos de rutas",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(terra)\nlibrary(tidyterra)\nlibrary(magick)\nlibrary(showtext)\nlibrary(glue)\nlibrary(ggtext)\nlibrary(ggplot2)\nlibrary(purrr)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Animaciones",
+      "Crecimientos de rutas"
+    ]
+  },
+  {
+    "objectID": "argentina/animaciones/crecimiento_rutas.html#estilos",
+    "href": "argentina/animaciones/crecimiento_rutas.html#estilos",
+    "title": "Crecimientos de rutas",
+    "section": "Estilos",
+    "text": "Estilos\nColores.\n\n\nOcultar código\nc1 &lt;- \"dodgerblue\"\nc2 &lt;- \"violetred\"\nc3 &lt;- \"grey95\"\nc4 &lt;- \"grey90\"\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"./fuente/Ubuntu-Regular.ttf\",\n  bold = \"./fuente/Ubuntu-Bold.ttf\",\n  italic = \"./fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"./fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Animaciones",
+      "Crecimientos de rutas"
+    ]
+  },
+  {
+    "objectID": "argentina/animaciones/crecimiento_rutas.html#epígrafe",
+    "href": "argentina/animaciones/crecimiento_rutas.html#epígrafe",
+    "title": "Crecimientos de rutas",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"Datos: &lt;b style='color: {c1};'&gt;Instituto Geográfico Nacional&lt;/b&gt;\"\n)\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Animaciones",
+      "Crecimientos de rutas"
+    ]
+  },
+  {
+    "objectID": "argentina/animaciones/crecimiento_rutas.html#funciones",
+    "href": "argentina/animaciones/crecimiento_rutas.html#funciones",
+    "title": "Crecimientos de rutas",
+    "section": "Funciones",
+    "text": "Funciones\nLectura y transformación de sistema de coordenadas geográficas.\n\n\nOcultar código\nf_proj &lt;- function(v) {\n  project(vect(v), \"EPSG:5346\")\n}\n\n\nGeneración y almacenamiento de mapas.\n\n\nOcultar código\nf_gg &lt;- function(x) {\n\n  if (x &lt; 10) {\n    i &lt;- paste0(\"0\", x)\n  } else {\n    i &lt;- x\n  }\n\n  g &lt;- ggplot() +\n    geom_spatvector(data = arg, fill = c4, color = NA) +\n    geom_spatvector(\n      data = lista_crop_pro[[x]], aes(color = \"pro\"), linewidth = .1,\n      show.legend = TRUE, key_glyph = \"path\"\n    ) +\n    geom_spatvector(\n      data = lista_crop_nac[[x]], fill = NA, aes(color = \"nac\"), linewidth = .2,\n      show.legend = TRUE, key_glyph = \"path\"\n    ) +\n    scale_color_manual(\n      breaks = c(\"nac\", \"pro\"),\n      labels = c(\"Ruta Nacional\", \"Ruta Provincial\"),\n      values = c(c1, c2)\n    ) +\n    labs(color = NULL, caption = mi_caption) +\n    guides(\n      color = guide_legend(override.aes = list(linewidth = 1))\n    ) +\n    theme_void() +\n    theme(\n      plot.background = element_rect(fill = c3, color = NA),\n      plot.caption = element_markdown(\n        family = \"ubuntu\", size = 8, color = c2, lineheight = 1.2,\n        margin = margin(b = 5)\n      ),\n      legend.text = element_text(family = \"ubuntu\"),\n      legend.position = \"inside\",\n      legend.position.inside = c(.7, .3),\n      legend.key.width = unit(20, \"pt\")\n    )\n\n  ggsave(\n    plot = g,\n    filename = paste0(\"./argentina/animaciones/crecimiento_rutas/\", i, \".png\"),\n    width = 1000,\n    height = 2084,\n    units = \"px\"\n  )\n\n  print(glue::glue(\"\\n\\n--- Figura {i} generada ---\\n\\n\"))\n}",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Animaciones",
+      "Crecimientos de rutas"
+    ]
+  },
+  {
+    "objectID": "argentina/animaciones/crecimiento_rutas.html#datos",
+    "href": "argentina/animaciones/crecimiento_rutas.html#datos",
+    "title": "Crecimientos de rutas",
+    "section": "Datos",
+    "text": "Datos\nVector de Argentina, rutas nacionales y provinciales, y coordenadas del Obelisco.\n\n\nOcultar código\narg &lt;- f_proj(\"./argentina/vectores/arg_continental.gpkg\")\n\nr_nac &lt;- f_proj(\"./argentina/vectores/extras/LíneaRed vial nacional.json\")\nr_pro &lt;- f_proj(\"./argentina/vectores/extras/LíneaRed vial provincial.json\")\n\no &lt;- vect(\n  data.frame(x = -58.38162, y = -34.60376), geom = c(\"x\", \"y\"),\n  crs = \"EPSG:4326\"\n) |&gt;\n  project(\"EPSG:5346\")",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Animaciones",
+      "Crecimientos de rutas"
+    ]
+  },
+  {
+    "objectID": "argentina/animaciones/crecimiento_rutas.html#figura",
+    "href": "argentina/animaciones/crecimiento_rutas.html#figura",
+    "title": "Crecimientos de rutas",
+    "section": "Figura",
+    "text": "Figura\nLista de buffers alrededor del Obelisco, y los recortes de las rutas de cada uno.\n\n\nOcultar código\nlista_buffer_nac &lt;- map(seq(50, 2500, 25)*1e3, ~buffer(o, .x, quadsegs = 250))\nlista_crop_nac &lt;- map(lista_buffer_nac, ~terra::crop(r_nac, .x))\nlista_crop_pro &lt;- map(lista_buffer_nac, ~terra::crop(r_pro, .x))\n\n\nCreación de cada figura.\n\n\nOcultar código\nmap(1:length(lista_buffer_nac), f_gg)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Animaciones",
+      "Crecimientos de rutas"
+    ]
+  },
+  {
+    "objectID": "argentina/animaciones/crecimiento_rutas.html#animación",
+    "href": "argentina/animaciones/crecimiento_rutas.html#animación",
+    "title": "Crecimientos de rutas",
+    "section": "Animación",
+    "text": "Animación\nGeneración de la animación a partir de todas las figuras. El archivo de salida está en formato .mp4.\n\n\nOcultar código\nav::av_encode_video(\n  input = list.files(\n    path = \"./argentina/animaciones/crecimiento_rutas/\",\n    full.names = TRUE, pattern = \".png\"\n  ),\n  output = \"./argentina/animaciones/crecimiento_rutas.mp4\"\n)\n\n\nElimino los mapas creados y la carpeta que los contiene.\n\n\nOcultar código\nunlink(\"./argentina/animaciones/crecimiento_rutas/\", recursive = TRUE)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Animaciones",
+      "Crecimientos de rutas"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/faros.html",
+    "href": "argentina/instalaciones/faros.html",
+    "title": "Faros",
+    "section": "",
+    "text": "Faros en las costas de Argentina, con topografía como mapa base.",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "Faros"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/faros.html#paquetes",
+    "href": "argentina/instalaciones/faros.html#paquetes",
+    "title": "Faros",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(terra)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(glue)\nlibrary(ggfx)\nlibrary(tidyverse)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "Faros"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/faros.html#estilos",
+    "href": "argentina/instalaciones/faros.html#estilos",
+    "title": "Faros",
+    "section": "Estilos",
+    "text": "Estilos\n\n\nOcultar código\nc_arriba &lt;- c(\"#131631\", \"#264775\")\nc_abajo &lt;- c(\"#100A2C\", \"#540056\")\n\nc1 &lt;- \"white\"\nc2 &lt;- \"gold\"\n\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "Faros"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/faros.html#epígrafe",
+    "href": "argentina/instalaciones/faros.html#epígrafe",
+    "title": "Faros",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos: &lt;/b&gt; &lt;span style='color:{c1};'&gt;IGN&lt;/span&gt;,\n  &lt;/b&gt; &lt;span style='color:{c1};'&gt;OpenTopography&lt;/span&gt;\"\n)\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\"\n)\nicon_instagram &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\"\n)\nicon_github &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\"\n)\nicon_mastodon &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\"\n)\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;{autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon}&lt;/b&gt; {usuario}\"\n)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "Faros"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/faros.html#datos",
+    "href": "argentina/instalaciones/faros.html#datos",
+    "title": "Faros",
+    "section": "Datos",
+    "text": "Datos\nVector de faros en las costas de Argentina, descargado del Instituto Geográfico Nacional (Hidrografía y oceanografía / Ayuda a la navegación / Punto / Faro).\n\n\nOcultar código\nfaro &lt;- vect(\n  \"argentina/vectores/ayuda_a_la_navegacion_BC050.json\"\n) |&gt;\n  project(\"EPSG:5346\")",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "Faros"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/faros.html#elevación",
+    "href": "argentina/instalaciones/faros.html#elevación",
+    "title": "Faros",
+    "section": "Elevación",
+    "text": "Elevación\nIncremento el contorno del vector de faros para la descarga del modelo digital de elevación.\n\n\nOcultar código\ne1 &lt;- ext(faro)$xmin\ne2 &lt;- ext(faro)$xmax\ne3 &lt;- ext(faro)$ymin\ne4 &lt;- ext(faro)$ymax\n\nfaro_bb_elev &lt;- vect(\n  ext(e1-8e5, e2+8e5, e3-1e5, e4+1e5), \"EPSG:5346\"\n)\nfaro_bb_elev_sf &lt;- faro_bb_elev |&gt;\n  sf::st_as_sf()\n\n\nDescarga de datos.\n\n\nOcultar código\nele_arg &lt;- elevatr::get_elev_raster(\n  locations = faro_bb_elev_sf,\n  z = 5,\n  clip = \"locations\"\n) |&gt;\n  rast() |&gt;\n  project(\"EPSG:5346\")\n\nnames(ele_arg) &lt;- \"altura\"\n\n\nDivido los datos por arriba y abajo del nivel de 0m, así aplico dos escalas de color.\n\n\nOcultar código\narriba &lt;- ele_arg\narriba[arriba&lt;0] &lt;- NA\n\n\nPaleta de colores\n\n\nOcultar código\nf_arriba &lt;- colorRampPalette(c_arriba)\npaleta_arriba &lt;- f_arriba(length(cells(arriba)))\n\n\nConvierto a tibble y agrego colores, de acuerdo a la altura\n\n\nOcultar código\narriba_tbl &lt;- arriba |&gt;\n  as.data.frame(xy = TRUE) |&gt;\n  tibble() |&gt;\n  arrange(altura) |&gt;\n  mutate(n = row_number()) |&gt;\n  mutate(color = paleta_arriba[n])\n\n\nAbajo, remuevo todo lo mayor a 0m\n\n\nOcultar código\nabajo &lt;- ele_arg\nabajo[abajo&gt;0] &lt;- NA\n\n\nPaleta de colores\n\n\nOcultar código\nf_abajo &lt;- colorRampPalette(c_abajo)\npaleta_abajo &lt;- f_abajo(length(cells(abajo)))\n\n\nConvierto a tibble y agrego colores, de acuerdo a la altura\n\n\nOcultar código\nabajo_tbl &lt;- abajo |&gt;\n  as.data.frame(xy = TRUE) |&gt;\n  tibble() |&gt;\n  arrange(altura) |&gt;\n  mutate(n = row_number()) |&gt;\n  mutate(color = paleta_abajo[n])\n\n\nObtengo las coordenadas de los faros\n\n\nOcultar código\nfaro_tbl &lt;- as.data.frame(faro, geom = \"XY\") |&gt;\n  tibble()",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "Faros"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/faros.html#figura",
+    "href": "argentina/instalaciones/faros.html#figura",
+    "title": "Faros",
+    "section": "Figura",
+    "text": "Figura\nRelación de aspecto del mapa\n\n\nOcultar código\next_bb &lt;- ext(faro_bb_elev)\nasp &lt;- (ext_bb$ymax - ext_bb$ymin)/(ext_bb$xmax - ext_bb$xmin)\n\n\nTamaño del mapa, en centímetros.\n\n\nOcultar código\nancho &lt;- 30\nalto &lt;- ancho*asp\n\n\nÍconos y subtítulo\n\n\nOcultar código\nfaro_icon &lt;- glue(\n  \"&lt;span style='font-family:jet;font-size:150px;'&gt;&#xf0a00;&lt;/span&gt;\"\n)\nequis_icon &lt;- \"&#xf467;\"\n\nmi_subtitle &lt;- glue(\n  \"{faro_icon}&lt;br&gt;\",\n  \"{equis_icon}{length(faro)}\"\n)\n\n\nFigura\n\n\nOcultar código\ng &lt;- ggplot() +\n  # abajo\n  geom_raster(data = abajo_tbl, aes(x, y, fill = color)) +\n  # arriba\n  geom_raster(data = arriba_tbl, aes(x, y, fill = color)) +\n  # faros\n  with_blur(\n    geom_point(\n      data = faro_tbl, aes(x, y), color = c2, size = 6, alpha = 1\n    ),\n    sigma = 20\n  ) +\n  geom_point(\n    data = faro_tbl, aes(x, y), color = c2, size = .5, alpha = 1\n  ) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = ext_bb$xmax*.98, y = ext_bb$ymin*1.8,\n    label = mi_subtitle, family = \"jet\", color = c2, fill = NA,\n    size = 10, label.color = NA, hjust = 1\n  ) +\n  # epígrafe\n  annotate(\n    geom = \"richtext\", x = ext_bb$xmin*1.01, y = ext_bb$ymin*1.02,\n    label = mi_caption, family = \"ubuntu\", color = c2, fill = NA,\n    size = 5, label.color = NA, hjust = 0, vjust = 0\n  ) +\n  # cuadro\n  annotate(\n    geom = \"rect\", xmin = ext_bb$xmin, xmax = ext_bb$xmax, ymin = ext_bb$ymin,\n    ymax = ext_bb$ymax, color = c_abajo[2], linewidth = 3, fill = NA\n  ) +\n  scale_fill_identity() +\n  coord_fixed(expand = FALSE) +\n  theme_void()\n\n\nGuardo figura.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/faros.png\",\n  width = ancho,\n  height = alto,\n  units = \"cm\"\n)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "Faros"
     ]
   },
   {
@@ -1691,7 +1775,7 @@
     "href": "argentina/instalaciones/aeropuertos.html#figura",
     "title": "Aeropuertos",
     "section": "Figura",
-    "text": "Figura\nÍconos de los aviones\n\n\nOcultar código\nicon1 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5b0;&lt;/span&gt; \")\nicon2 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf072;&lt;/span&gt; \")\nicon3 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5af;&lt;/span&gt; \")\nicon &lt;- glue(\"{icon1} {icon2} {icon3}\")\n\n\nSubtítulo y posición.\n\n\nOcultar código\nx_sub &lt;- ext(aer)$xmax\ny_sub &lt;- ext(aer)$ymax\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {c1}'&gt;Argentina&lt;/b&gt; hay en\",\n  \"funcionamiento &lt;b style='color:{c4}'&gt;{nrow(aer)}&lt;/b&gt;\",\n  \"aeropuertos.&lt;br&gt;\",\n  \"{icon}\",\n  .sep = \"&lt;br&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # departamentos\n  geom_sf(\n    data = dptos_pcias, aes(fill = provincia), color = c2, linewidth = .3,\n    linetype = \"22\"\n  ) +\n  # provincias\n  geom_sf(\n    data = pcias, fill = NA, color = c1, linewidth = .4\n  ) +\n  # aeropuertos\n  geom_sf(\n    data = aer, fill = c2, color = c1, size = 11, alpha = .8,\n    stroke = 1, shape = 21) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = x_sub*.84, y = y_sub*.66, label = mi_subtitle,\n    fill = NA, label.color = NA, size = 12, color = c1, hjust = 0,\n    family = \"ubuntu\"\n  ) +\n  scale_fill_manual(values = pp) +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 8, l = 8, t = 2),\n    plot.background = element_rect(\n      fill = c3, color = c4, linewidth = 3),\n    plot.caption = element_markdown(\n      family = \"jet\", color = c4, hjust = .5, size = 20,\n      margin = margin(b = 10)),\n    legend.position = \"none\"\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/aeropuertos.png\",\n  width = 30,\n  height = 65,\n  units = \"cm\"\n)",
+    "text": "Figura\nÍconos de los aviones\n\n\nOcultar código\nicon1 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5b0;&lt;/span&gt; \")\nicon2 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf072;&lt;/span&gt; \")\nicon3 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5af;&lt;/span&gt; \")\nicon &lt;- glue(\"{icon1} {icon2} {icon3}\")\n\n\nSubtítulo y posición.\n\n\nOcultar código\nx_sub &lt;- ext(aer)$xmax\ny_sub &lt;- ext(aer)$ymax\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {c1}'&gt;Argentina&lt;/b&gt; hay en\",\n  \"funcionamiento &lt;b style='color:{c4}'&gt;{nrow(aer)}&lt;/b&gt;\",\n  \"aeropuertos.&lt;br&gt;\",\n  \"{icon}\",\n  .sep = \"&lt;br&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # departamentos\n  geom_sf(\n    data = dptos_pcias, aes(fill = provincia), color = c2, linewidth = .3,\n    linetype = \"22\"\n  ) +\n  # provincias\n  geom_sf(\n    data = pcias, fill = NA, color = c1, linewidth = .4\n  ) +\n  # aeropuertos\n  geom_sf(\n    data = aer, fill = c2, color = c1, size = 11, alpha = .8,\n    stroke = 1, shape = 21) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = x_sub*.84, y = y_sub*.66, label = mi_subtitle,\n    fill = NA, label.color = NA, size = 12, color = c1, hjust = 0,\n    family = \"ubuntu\"\n  ) +\n  scale_fill_manual(values = pp) +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 8, l = 8, t = 2),\n    plot.background = element_rect(\n      fill = c3, color = c4, linewidth = 3),\n    plot.caption = element_markdown(\n      family = \"jet\", color = c4, hjust = .5, size = 20,\n      margin = margin(b = 10)),\n    legend.position = \"none\"\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/aeropuertos.png\",\n  width = 30,\n  height = 65,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
       "Instalaciones",

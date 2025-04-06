@@ -110,10 +110,12 @@
     ]
   },
   {
-    "listing": "/argentina/animaciones/index.html",
+    "listing": "/argentina/instalaciones/index.html",
     "items": [
-      "/argentina/animaciones/crecimiento_rutas.html",
-      "/argentina/animaciones/torres_celulares.html"
+      "/argentina/instalaciones/faros.html",
+      "/argentina/instalaciones/aeropuertos.html",
+      "/argentina/instalaciones/plantas_potabilizadoras.html",
+      "/argentina/instalaciones/estaciones_smn.html"
     ]
   },
   {
@@ -121,11 +123,10 @@
     "items": []
   },
   {
-    "listing": "/argentina/instalaciones/index.html",
+    "listing": "/argentina/animaciones/index.html",
     "items": [
-      "/argentina/instalaciones/aeropuertos.html",
-      "/argentina/instalaciones/plantas_potabilizadoras.html",
-      "/argentina/instalaciones/estaciones_smn.html"
+      "/argentina/animaciones/crecimiento_rutas.html",
+      "/argentina/animaciones/torres_celulares.html"
     ]
   },
   {
