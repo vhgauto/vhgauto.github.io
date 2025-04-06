@@ -181,7 +181,7 @@ Guardo.
 ```{r}
 ggsave(
   plot = g,
-  filename = "argentina/aeropuertos.png",
+  filename = "argentina/instalaciones/aeropuertos.png",
   width = 30,
   height = 65,
   units = "cm"

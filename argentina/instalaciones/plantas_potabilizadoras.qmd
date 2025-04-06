@@ -166,7 +166,7 @@ Guardo.
 ```{r}
 ggsave(
   plot = g,
-  filename = "argentina/plantas_potabilizadoras.png",
+  filename = "argentina/instalaciones/plantas_potabilizadoras.png",
   width = 30,
   height = 65,
   units = "cm"

@@ -219,7 +219,7 @@ Guardo.
 ```{r}
 ggsave(
   plot = g,
-  filename = "argentina/estaciones_smn.png",
+  filename = "argentina/instalaciones/estaciones_smn.png",
   width = 30,
   height = 40,
   units = "cm"
