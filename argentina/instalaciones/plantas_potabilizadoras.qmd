@@ -19,7 +19,7 @@ execute:
   eval: false
   echo: true
   warning: false
-title: "Plantas potabilizadoras"
+title: "🚰Plantas potabilizadoras"
 date: 2024-08-03
 author: Víctor Gauto
 ---

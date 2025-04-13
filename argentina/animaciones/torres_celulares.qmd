@@ -20,7 +20,7 @@ execute:
   eval: false
   echo: true
   warning: false
-title: "Torres de telecomunicaciones"
+title: "🗼Torres de telecomunicaciones"
 date: 2024-02-17
 author: Víctor Gauto
 ---
@@ -75,7 +75,7 @@ showtext_opts(dpi = 300)
 
 ```{r}
 fuente <- glue(
-  "Datos: <span style='color:{c2}; font-size: 8px'>**OpenCelliD Project** is 
+  "Datos: <span style='color:{c2}; font-size: 8px'>**OpenCelliD Project** is
   licensed under a Creative<br>Commons Attribution-ShareAlike 4.0 International
   License</span>")
 autor <- glue("<span style='color:{c2};'>**Víctor Gauto**</span>")
@@ -107,41 +107,41 @@ Generación y almacenamiento de cada mapa.
 
 ```{r}
 f_mapa <- function(año_mes) {
-  
+
   # contador para seguimiento en consola
   l <- length(v_año_mes)
   n <- which(v_año_mes == año_mes)
-  
+
   n <- case_when(
     n <= 9 ~ glue("00{n}"),
     n <= 99 ~ glue("0{n}"),
     .default = glue("{n}")
   )
-  
+
   print(glue("-- {n} de {l} --"))
-  
+
   # etiquetas de año y mes
   año_label <- year(año_mes)
   mes_label <- str_to_upper(format(año_mes, "%B"))
-  
+
   mi_title <- glue(
     "<span style='font-size:20px;'>{año_label}</span><br>",
     "<span style='font-size:10px;'>{mes_label}</span>")
-  
+
   # filtro los datos
-  e <- d |> 
+  e <- d |>
     filter(primero <= año_mes)
-  
+
   # color de la leyenda
-  label_tbl <- count(e, radio) |> 
-    mutate(color = paleta_radio[radio]) |> 
-    mutate(label = glue("{radio}<br><span style='color:{color}'>{n}</span>")) |> 
+  label_tbl <- count(e, radio) |>
+    mutate(color = paleta_radio[radio]) |>
+    mutate(label = glue("{radio}<br><span style='color:{color}'>{n}</span>")) |>
     arrange(radio)
-  
+
   scale_color_names <- pull(label_tbl, radio)
   scale_color_labels <- pull(label_tbl, label)
   scale_color_values <- pull(label_tbl, color)
-  
+
   # extensión
   d_l <- count(tibble(e), radio) |>
     arrange(radio) |>
@@ -152,7 +152,7 @@ f_mapa <- function(año_mes) {
     ) |>
     mutate(yend = y) |>
     mutate(color = paleta_radio[radio])
-  
+
   # figura
   g <- ggplot() +
     # Argentina
@@ -178,7 +178,7 @@ f_mapa <- function(año_mes) {
     scale_size_manual(values = c(.1, .4, .7)) +
     labs(color = NULL, caption = mi_caption) +
     coord_sf(
-      xlim = c(bb_sf$xmin, bb_sf$xmax), 
+      xlim = c(bb_sf$xmin, bb_sf$xmax),
       ylim = c(bb_sf$ymin, bb_sf$ymax),
       expand = FALSE) +
     guides(
@@ -199,7 +199,7 @@ f_mapa <- function(año_mes) {
       legend.justification.inside = c(0, 1),
       legend.text = element_markdown(family = "jet")
     )
-  
+
   # guardo
   ggsave(
     plot = g,
@@ -208,7 +208,7 @@ f_mapa <- function(año_mes) {
     height = 2140,
     units = "px"
   )
-  
+
 }
 ```
 
@@ -220,53 +220,53 @@ Los datos de las torres de celulares se encuentran en [OpenCellid](https://www.o
 d <- read_csv(
   "./argentina/vectores/722X.csv",
   col_names = 1:14,
-  col_select = c(1, 7, 8, 12, 13)) |> 
-  rename(radio = X1, lon = X7, lat = X8, primero = X12, ultimo = X13) |> 
-  mutate(primero = as_datetime(primero)) |> 
-  mutate(ultimo = as_datetime(ultimo)) |> 
-  mutate(primero = as.Date(primero)) |> 
-  mutate(ultimo = as.Date(ultimo)) |> 
-  mutate(año = year(primero), mes = month(primero)) |> 
-  mutate(radio = fct(radio, levels = c("GSM", "UMTS", "LTE"))) |> 
-  st_as_sf(coords = c("lon", "lat")) |> 
-  st_set_crs(value = 4326) |> 
+  col_select = c(1, 7, 8, 12, 13)) |>
+  rename(radio = X1, lon = X7, lat = X8, primero = X12, ultimo = X13) |>
+  mutate(primero = as_datetime(primero)) |>
+  mutate(ultimo = as_datetime(ultimo)) |>
+  mutate(primero = as.Date(primero)) |>
+  mutate(ultimo = as.Date(ultimo)) |>
+  mutate(año = year(primero), mes = month(primero)) |>
+  mutate(radio = fct(radio, levels = c("GSM", "UMTS", "LTE"))) |>
+  st_as_sf(coords = c("lon", "lat")) |>
+  st_set_crs(value = 4326) |>
   st_transform(crs = 5346)
 ```
 
 Vector de Argentina y contorno.
 
 ```{r}
-arg_sf <- st_read("./argentina/vectores/arg_continental.gpkg") |> 
+arg_sf <- st_read("./argentina/vectores/arg_continental.gpkg") |>
   st_transform(crs = 5346)
 
 # extensión de Argentina, para ampliar el mapa
 bb <- st_bbox(arg_sf)
 ext <- terra::vect(arg_sf) |> terra::ext()
-bb_sf <- terra::vect(ext*1.1, crs = "EPSG:5346") |> 
-  st_as_sf() |> 
+bb_sf <- terra::vect(ext*1.1, crs = "EPSG:5346") |>
+  st_as_sf() |>
   st_bbox()
 ```
 
 Extraigo los meses y años de la base de datos.
 
 ```{r}
-v_año_mes <- tibble(d) |> 
-  distinct(año, mes) |> 
-  mutate(dia = 1) |> 
-  mutate(fecha = make_date(year = año, month = mes, day = dia)) |> 
-  arrange(fecha) |> 
+v_año_mes <- tibble(d) |>
+  distinct(año, mes) |>
+  mutate(dia = 1) |>
+  mutate(fecha = make_date(year = año, month = mes, day = dia)) |>
+  arrange(fecha) |>
   pull(fecha)
 
 # máxima cantidad de torres de radio
-l_max <- count(tibble(d), radio, sort = TRUE) |> 
-  arrange(radio) |> 
-  pull(n) |> 
+l_max <- count(tibble(d), radio, sort = TRUE) |>
+  arrange(radio) |>
+  pull(n) |>
   max()
 ```
 
 ## Figura
 
-Paleta de colores por tipo de red. 
+Paleta de colores por tipo de red.
 
 ```{r}
 paleta_radio <- c(c1, c2, c3)

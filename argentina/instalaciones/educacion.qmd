@@ -19,7 +19,7 @@ execute:
   eval: false
   echo: true
   warning: false
-title: "Ciencia y educación"
+title: "🏫 Ciencia y educación"
 date: 2024-08-03
 author: Víctor Gauto
 ---

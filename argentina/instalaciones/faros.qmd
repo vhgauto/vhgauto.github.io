@@ -20,7 +20,7 @@ execute:
   eval: false
   echo: true
   warning: false
-title: "Faros"
+title: "🕯️Faros"
 date: 2025-04-06
 author: Víctor Gauto
 ---
