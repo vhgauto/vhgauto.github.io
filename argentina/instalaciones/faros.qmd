@@ -85,12 +85,15 @@ icon_github <- glue(
 icon_mastodon <- glue(
   "<span style='font-family:jet;'>&#xf0ad1;</span>"
 )
+icon_bluesky <- glue(
+  "<span style='font-family:jet;'>&#xe28e;</span>"
+)
 usuario <- glue("<span style='color:{c1};'>vhgauto</span>")
 sep <- glue("**|**")
 
 mi_caption <- glue(
   "{fuente}<br>{autor} {sep} <b>{icon_github} {icon_twitter} ",
-  "{icon_instagram} {icon_mastodon}</b> {usuario}"
+  "{icon_instagram} {icon_mastodon} {icon_bluesky}</b> {usuario}"
 )
 ```
 
@@ -122,7 +125,7 @@ faro_bb_elev_sf <- faro_bb_elev |>
   sf::st_as_sf()
 ```
 
-Descarga de datos.
+Descarga de datos de elevación.
 
 ```{r}
 ele_arg <- elevatr::get_elev_raster(
@@ -143,14 +146,14 @@ arriba <- ele_arg
 arriba[arriba<0] <- NA
 ```
 
-Paleta de colores
+Paleta de colores.
 
 ```{r}
 f_arriba <- colorRampPalette(c_arriba)
 paleta_arriba <- f_arriba(length(cells(arriba)))
 ```
 
-Convierto a `tibble` y agrego colores, de acuerdo a la altura
+Convierto a `tibble` y agrego colores, de acuerdo a la altura.
 
 ```{r}
 arriba_tbl <- arriba |>
@@ -161,21 +164,21 @@ arriba_tbl <- arriba |>
   mutate(color = paleta_arriba[n])
 ```
 
-Abajo, remuevo todo lo mayor a 0m
+Abajo, remuevo todo lo mayor a 0m.
 
 ```{r}
 abajo <- ele_arg
 abajo[abajo>0] <- NA
 ```
 
-Paleta de colores
+Paleta de colores.
 
 ```{r}
 f_abajo <- colorRampPalette(c_abajo)
 paleta_abajo <- f_abajo(length(cells(abajo)))
 ```
 
-Convierto a tibble y agrego colores, de acuerdo a la altura
+Convierto a `tibble` y agrego colores, de acuerdo a la altura.
 
 ```{r}
 abajo_tbl <- abajo |>
@@ -186,7 +189,7 @@ abajo_tbl <- abajo |>
   mutate(color = paleta_abajo[n])
 ```
 
-Obtengo las coordenadas de los faros
+Obtengo las coordenadas de los faros.
 
 ```{r}
 faro_tbl <- as.data.frame(faro, geom = "XY") |>
@@ -195,7 +198,7 @@ faro_tbl <- as.data.frame(faro, geom = "XY") |>
 
 ## Figura
 
-Relación de aspecto del mapa
+Relación de aspecto del mapa.
 
 ```{r}
 ext_bb <- ext(faro_bb_elev)
@@ -209,7 +212,7 @@ ancho <- 30
 alto <- ancho*asp
 ```
 
-Íconos y subtítulo
+Íconos y subtítulo.
 
 ```{r}
 faro_icon <- glue(
@@ -223,7 +226,7 @@ mi_subtitle <- glue(
 )
 ```
 
-Figura
+Figura.
 
 ```{r}
 g <- ggplot() +
@@ -263,7 +266,7 @@ g <- ggplot() +
   theme_void()
 ```
 
-Guardo figura.
+Guardo la figura.
 
 ```{r}
 ggsave(
