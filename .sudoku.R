@@ -85,33 +85,33 @@ d_label <- d |>
 
 # htmltools::html_print(htmltools::HTML(d_label$l[1]))
 
+fecha_100 <- d |>
+  distinct(fecha) |>
+  slice_max(order_by = fecha, n = 100) |>
+  pull(fecha)
+
 d2 <- inner_join(
   d, d_label,
   by = join_by(fecha)
-)
+) |>
+  filter(fecha %in% fecha_100)
 
 eje_x <- d2 |>
   distinct(fecha) |>
   mutate(
-    dia_chr = str_sub(toupper(weekdays(fecha)), 1, 1)
+    dia_chr = str_sub(toupper(weekdays(fecha)), 1, 2)
   ) |>
   mutate(
     dia_dbl = if_else(
-      day(fecha) == 1 | day(fecha) %% 10 == 0,
+      day(fecha) == 1 | day(fecha) == 15,
       day(fecha),
       NA
     )
   ) |>
-  mutate(
-    dia_dbl = if_else(
-      dia_dbl < 10,
-      paste0("0", dia_dbl),
-      paste0(dia_dbl)
-    )
-  ) |>
+  mutate(dia_dbl = as.character(dia_dbl)) |>
   mutate(
     mes = if_else(
-      dia_dbl == "01",
+      dia_dbl == "1",
       toupper(month(fecha, abbr = TRUE, label = TRUE)),
       NA
     )
@@ -125,6 +125,13 @@ eje_x <- d2 |>
   reframe(
     l = str_flatten(valor, "\n"),
     .by = fecha
+  ) |>
+  mutate(
+    l = if_else(
+      nchar(l) == 2,
+      "",
+      l
+    )
   ) |>
   pull(l)
 
@@ -159,7 +166,7 @@ g <- ggplot(
     breaks = c("FÁCIL", "MEDIO", "DIFÍCIL"),
     values = colores
   ) +
-  coord_cartesian(ylim = c(0, NA)) +
+  coord_cartesian(ylim = c(0, NA), clip = "off") +
   labs(x = NULL, y = NULL, color = NULL, shape = NULL) +
   guides(
     color = guide_legend(override.aes = list(size = 2))
