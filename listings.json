@@ -1,5 +1,35 @@
 [
   {
+    "listing": "/publicaciones/index.html",
+    "items": []
+  },
+  {
+    "listing": "/mapas.html",
+    "items": [
+      "/mapas/mapa1.html"
+    ]
+  },
+  {
+    "listing": "/tidytuesday/2025/index.html",
+    "items": [
+      "/tidytuesday/2025/semana_16.html",
+      "/tidytuesday/2025/semana_15.html",
+      "/tidytuesday/2025/semana_14.html",
+      "/tidytuesday/2025/semana_13.html",
+      "/tidytuesday/2025/semana_12.html",
+      "/tidytuesday/2025/semana_11.html",
+      "/tidytuesday/2025/semana_10.html",
+      "/tidytuesday/2025/semana_09.html",
+      "/tidytuesday/2025/semana_08.html",
+      "/tidytuesday/2025/semana_07.html",
+      "/tidytuesday/2025/semana_06.html",
+      "/tidytuesday/2025/semana_05.html",
+      "/tidytuesday/2025/semana_04.html",
+      "/tidytuesday/2025/semana_03.html",
+      "/tidytuesday/2025/semana_02.html"
+    ]
+  },
+  {
     "listing": "/tidytuesday/2023/index.html",
     "items": [
       "/tidytuesday/2023/semana_52.html",
@@ -104,12 +134,6 @@
     ]
   },
   {
-    "listing": "/mapas.html",
-    "items": [
-      "/mapas/mapa1.html"
-    ]
-  },
-  {
     "listing": "/argentina/animaciones/index.html",
     "items": [
       "/argentina/animaciones/crecimiento_rutas.html",
@@ -117,36 +141,13 @@
     ]
   },
   {
-    "listing": "/publicaciones/index.html",
-    "items": []
-  },
-  {
     "listing": "/argentina/instalaciones/index.html",
     "items": [
       "/argentina/instalaciones/faros.html",
-      "/argentina/instalaciones/aeropuertos.html",
       "/argentina/instalaciones/plantas_potabilizadoras.html",
+      "/argentina/instalaciones/aeropuertos.html",
       "/argentina/instalaciones/educacion.html",
       "/argentina/instalaciones/estaciones_smn.html"
-    ]
-  },
-  {
-    "listing": "/tidytuesday/2025/index.html",
-    "items": [
-      "/tidytuesday/2025/semana_15.html",
-      "/tidytuesday/2025/semana_14.html",
-      "/tidytuesday/2025/semana_13.html",
-      "/tidytuesday/2025/semana_12.html",
-      "/tidytuesday/2025/semana_11.html",
-      "/tidytuesday/2025/semana_10.html",
-      "/tidytuesday/2025/semana_09.html",
-      "/tidytuesday/2025/semana_08.html",
-      "/tidytuesday/2025/semana_07.html",
-      "/tidytuesday/2025/semana_06.html",
-      "/tidytuesday/2025/semana_05.html",
-      "/tidytuesday/2025/semana_04.html",
-      "/tidytuesday/2025/semana_03.html",
-      "/tidytuesday/2025/semana_02.html"
     ]
   }
 ]
