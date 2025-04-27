@@ -149,75 +149,86 @@
     ]
   },
   {
-    "objectID": "argentina/instalaciones/aeropuertos.html",
-    "href": "argentina/instalaciones/aeropuertos.html",
-    "title": "Aeropuertos",
+    "objectID": "argentina/instalaciones/index.html",
+    "href": "argentina/instalaciones/index.html",
+    "title": "Instalaciones en Argentina",
     "section": "",
-    "text": "Mapa de aeropuertos de Argentina.",
+    "text": "En esta sección se muestran mapas de Argentina  que incluyen instalaciones varias, como ser: plantas de tratamiento de agua, centrales generadoras de energía, rutas nacionales y provinciales, etc.\nPara darle diversidad a los mapas, cada uno cuenta con una paleta de colores diferente.\n \n\n\n   \n     \n     \n       Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n🕯️Faros\n\n\n\n\n\n\ngeom_raster\n\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-04-06\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🚰Plantas potabilizadoras\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n✈️ Aeropuertos\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🏫 Ciencia y educación\n\n\n\n\n\n\ngeom_sf\n\n\ngeom_point\n\n\ngeom_text\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n📮 Buzones\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-04-27\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🔌 Red eléctrica\n\n\n\n\n\n\ngeom_sf\n\n\ngeom_path\n\n\n\n\n\n\n\n\n\n2024-04-27\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🌦️Estaciones meteorológicas\n\n\n\n\n\n\ngeom_sf\n\n\ngeom_sf_pattern\n\n\n\n\n\n\n\n\n\n2024-02-17\n\n\nVíctor Gauto\n\n\n\n\n\n\nNo hay resultados\n\n\n\n\n\n\n Subir",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Instalaciones",
-      "✈️ Aeropuertos"
+      "Instalaciones"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/aeropuertos.html#paquetes",
-    "href": "argentina/instalaciones/aeropuertos.html#paquetes",
-    "title": "Aeropuertos",
+    "objectID": "argentina/instalaciones/buzones.html",
+    "href": "argentina/instalaciones/buzones.html",
+    "title": "📮 Buzones",
+    "section": "",
+    "text": "Mapa de buzones en Argentina, con detalle de la Provincia de Buenos Aires y Ciudad Autónoma de Buenos Aires.",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "📮 Buzones"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/buzones.html#paquetes",
+    "href": "argentina/instalaciones/buzones.html#paquetes",
+    "title": "📮 Buzones",
     "section": "Paquetes",
-    "text": "Paquetes\n\n\nOcultar código\nlibrary(terra)\nlibrary(tidyterra)\nlibrary(glue)\nlibrary(showtext)\nlibrary(ggtext)\nlibrary(tidyverse)",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(sf)\nlibrary(glue)\nlibrary(patchwork)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
       "Instalaciones",
-      "✈️ Aeropuertos"
+      "📮 Buzones"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/aeropuertos.html#estilos",
-    "href": "argentina/instalaciones/aeropuertos.html#estilos",
-    "title": "Aeropuertos",
+    "objectID": "argentina/instalaciones/buzones.html#estilos",
+    "href": "argentina/instalaciones/buzones.html#estilos",
+    "title": "📮 Buzones",
     "section": "Estilos",
-    "text": "Estilos\nColores aleatorios a partir de una gama de rosados.\n\n\nOcultar código\nset.seed(2024)\npp &lt;- PrettyCols::prettycols(palette = \"Pinks\", n = 24, type = \"continuous\") |&gt;\n  sample()\n\nc1 &lt;- \"black\"\nc2 &lt;- \"white\"\nc3 &lt;- \"#FCAADE\"\nc4 &lt;- \"#860A4D\"\n\n\nFuentes: Ubuntu, JetBrains Mono y fontawesome.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nfont_add(\n  family = \"fa\",\n  regular = \"././fuente/Font Awesome 6 Free-Solid-900.otf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "text": "Estilos\nColores.\n\n\nOcultar código\nc1 &lt;- \"#FFCE00\"\nc2 &lt;- \"white\"\nc3 &lt;- \"#152663\"\nc4 &lt;- \"#BE5660\"\n\n\nFuentes: Ubuntu, JetBrains Mono y Diphylleia.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nfont_add_google(name = \"Diphylleia\", family = \"diphylleia\", db_cache = FALSE)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
       "Instalaciones",
-      "✈️ Aeropuertos"
+      "📮 Buzones"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/aeropuertos.html#epígrafe",
-    "href": "argentina/instalaciones/aeropuertos.html#epígrafe",
-    "title": "Aeropuertos",
+    "objectID": "argentina/instalaciones/buzones.html#epígrafe",
+    "href": "argentina/instalaciones/buzones.html#epígrafe",
+    "title": "📮 Buzones",
     "section": "Epígrafe",
-    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{c1};'&gt;IGN&lt;/span&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bluesky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon} {icon_bluesky}&lt;/b&gt; {usuario}\"\n)",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{c1};'&gt;@matiasprofeta&lt;/span&gt;\n  &lt;span style='color:{c1};'&gt;@rescatandobuzones&lt;/span&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bluesky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon} {icon_bluesky}&lt;/b&gt; {usuario}\"\n)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
       "Instalaciones",
-      "✈️ Aeropuertos"
+      "📮 Buzones"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/aeropuertos.html#datos",
-    "href": "argentina/instalaciones/aeropuertos.html#datos",
-    "title": "Aeropuertos",
+    "objectID": "argentina/instalaciones/buzones.html#datos",
+    "href": "argentina/instalaciones/buzones.html#datos",
+    "title": "📮 Buzones",
     "section": "Datos",
-    "text": "Datos\nVectores de las provincias con sus departamentos. Obtengo el vector de aeropuertos del Instituto Geográfico Nacional, y conservo únicamente los que se encuentran en actividad.\n\n\nOcultar código\npcias &lt;- vect(\"argentina/vectores/pcias_continental.gpkg\") |&gt;\n  project(\"EPSG:5346\")\n\ndptos_pcias &lt;- vect(\"argentina/vectores/dptos_pcias_continental.gpkg\")\n\naer &lt;- vect(\"argentina/vectores/extras/puntos_de_transporte_aereo_GB005.json\") |&gt;\n  project(\"EPSG:5346\")\n\naer &lt;- aer[aer$fun == 6]",
+    "text": "Datos\nVectores de las provincias y sus departamentos, obtenidos del Instituto Geográfico Nacional.\n\n\nOcultar código\npcias &lt;- st_read(\"argentina/vectores/pcias_continental.gpkg\") |&gt;\n  select(provincia = NAM)\n\ndptos &lt;- st_read(\"argentina/vectores/dptos_continental.gpkg\") |&gt;\n  st_transform(crs = 5346) |&gt;\n  st_make_valid() |&gt;\n  st_crop(pcias) |&gt;\n  select(departamento = NAM)\n\n\nSelecciono la Provincia de Buenas y la Ciudad Autónoma de Buenos Aires para ver con mayor detalle. Incluyo los departamentos y comunas, respectivamente.\n\n\nOcultar código\nbsas &lt;- pcias |&gt;\n  filter(provincia == \"Buenos Aires\")\n\ncaba &lt;- pcias |&gt;\n  filter(provincia == \"Ciudad Autónoma de Buenos Aires\")\n\ndptos_bsas &lt;- terra::crop(terra::vect(dptos), terra::vect(bsas)) |&gt;\n  st_as_sf()\n\ndptos_caba &lt;- filter(dptos, str_detect(departamento, \"Comuna\"))\n\n\nLos buzones provienen de un mapa en Google Maps. Leo las capas del archivo .kml.\n\n\nOcultar código\nlayers &lt;- st_layers(\"argentina/vectores/buzones.kml\")\ncapas &lt;- layers$name\n\n\nDefino una función para la lectura de cada capa disponible y aplico.\n\n\nOcultar código\nf_kml &lt;- function(x) {\n  l &lt;- st_read(\n    dsn = \"argentina/vectores/buzones.kml\",\n    layer = x) |&gt;\n    st_transform(crs = 5346)\n\n  return(l)\n}\n\nbuzones &lt;- map(capas, f_kml) |&gt;\n  list_rbind() |&gt;\n  st_as_sf() |&gt;\n  st_geometry() |&gt;\n  st_sf() |&gt;\n  rename(geometry = 1) |&gt;\n  mutate(nro = row_number())\n\n\nExtraigo los buzones ubicados en Provincia de Buenos Aires y Ciudad Autónoma de Buenos Aires.\n\n\nOcultar código\nbuzones_bsas &lt;- st_intersection(bsas, buzones)\nbuzones_caba &lt;- st_intersection(caba, buzones)\n\n\nCuento la cantidad de buzones en Provincia de Buenos Aires y Ciudad Autónoma de Buenos Aires. Para ello cuento la cantidad existente en cada departamento, luego combino con los vectores de las regiones.\n\n\nOcultar código\ncentros_dptos &lt;- st_point_on_surface(dptos)\n\ncentros_pcias &lt;- st_join(centros_dptos, pcias)\n\npolig_dptos &lt;- st_join(dptos, centros_pcias) |&gt;\n  rename(departamento = departamento.x) |&gt;\n  select(-departamento.y)\n\nbuzones_dptos &lt;- st_join(polig_dptos, buzones)\n\n\nCantidad de buzones por región y porcentaje.\n\n\nOcultar código\nn_bsas &lt;- buzones_dptos |&gt;\n  filter(provincia == \"Buenos Aires\") |&gt;\n  drop_na() |&gt;\n  nrow()\n\nn_caba &lt;- buzones_dptos |&gt;\n  filter(provincia == \"Ciudad Autónoma de Buenos Aires\") |&gt;\n  drop_na() |&gt;\n  nrow()\n\nn_buzones &lt;- nrow(buzones)\n\nporcentaje_bsas &lt;- gt::vec_fmt_percent(x = n_bsas/n_buzones, decimals = 0)\nporcentaje_caba &lt;- gt::vec_fmt_percent(x = n_caba/n_buzones, decimals = 0)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
       "Instalaciones",
-      "✈️ Aeropuertos"
+      "📮 Buzones"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/aeropuertos.html#figura",
-    "href": "argentina/instalaciones/aeropuertos.html#figura",
-    "title": "Aeropuertos",
+    "objectID": "argentina/instalaciones/buzones.html#figura",
+    "href": "argentina/instalaciones/buzones.html#figura",
+    "title": "📮 Buzones",
     "section": "Figura",
-    "text": "Figura\nÍconos de los aviones\n\n\nOcultar código\nicon1 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5b0;&lt;/span&gt; \")\nicon2 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf072;&lt;/span&gt; \")\nicon3 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5af;&lt;/span&gt; \")\nicon &lt;- glue(\"{icon1} {icon2} {icon3}\")\n\n\nSubtítulo y posición.\n\n\nOcultar código\nx_sub &lt;- ext(aer)$xmax\ny_sub &lt;- ext(aer)$ymax\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {c1}'&gt;Argentina&lt;/b&gt; hay en\",\n  \"funcionamiento &lt;b style='color:{c4}'&gt;{nrow(aer)}&lt;/b&gt;\",\n  \"aeropuertos.&lt;br&gt;\",\n  \"{icon}\",\n  .sep = \"&lt;br&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # departamentos\n  geom_sf(\n    data = dptos_pcias, aes(fill = provincia), color = c2, linewidth = .3,\n    linetype = \"22\"\n  ) +\n  # provincias\n  geom_sf(\n    data = pcias, fill = NA, color = c1, linewidth = .4\n  ) +\n  # aeropuertos\n  geom_sf(\n    data = aer, fill = c2, color = c1, size = 11, alpha = .8,\n    stroke = 1, shape = 21) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = x_sub*.84, y = y_sub*.66, label = mi_subtitle,\n    fill = NA, label.color = NA, size = 12, color = c1, hjust = 0,\n    family = \"ubuntu\"\n  ) +\n  scale_fill_manual(values = pp) +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 8, l = 8, t = 2),\n    plot.background = element_rect(\n      fill = c3, color = c4, linewidth = 3),\n    plot.caption = element_markdown(\n      family = \"jet\", color = c4, hjust = .5, size = 20,\n      margin = margin(b = 10)),\n    legend.position = \"none\"\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/aeropuertos.png\",\n  width = 30,\n  height = 65,\n  units = \"cm\"\n)",
+    "text": "Figura\nTítulo y subtítulo\n\n\nOcultar código\nmi_title &lt;- \"Buzones Argentinos\"\n\nmi_subtitle &lt;- glue(\n  \"En **Argentina** hay {n_buzones} buzones. En Provincia de Buenos Aires&lt;br&gt;\",\n  \"se encuentra el {porcentaje_bsas}. Capital Federal posee el \",\n  \"{porcentaje_caba}.\")\n\n\nIncluyo la imagen de una estampilla dedicada a los buzones, emitida en 2011.\n\n\nOcultar código\nestampilla_label &lt;- glue(\n  \"Estampilla emitida por&lt;br&gt;\",\n  \"el **Correo Argentino**.&lt;br&gt;\",\n  \"América UPAEP-Buzones,&lt;br&gt;\",\n  \"2011.\")\n\n\nFigura de la estampilla.\n\n\nOcultar código\nestampilla &lt;- ggplot() +\n  annotate(\n    geom = \"richtext\", x = 0, y = 0, fill = NA, label.color = NA, hjust = 0,\n    label = glue(\n      \"&lt;img src='argentina/extras/buzones_estampilla.jpg' width='140'&gt;&lt;/img&gt;&lt;br&gt;\",\n      \"{estampilla_label}\"), family = \"ubuntu\", size = 5, color = c2) +\n  coord_cartesian(xlim = c(-.01, .01), ylim = c(-.01, .01), expand = FALSE) +\n  theme_void()\n\n\nLogo del Correo Argentino.\n\n\nOcultar código\nlogo &lt;- ggplot() +\n  annotate(\n    geom = \"richtext\", x = 0, y = 0, fill = NA, label.color = NA, hjust = 0,\n    label = glue(\n      \"&lt;img src='argentina/extras/buzones_logo.png' width='100'&gt;&lt;/img&gt;\")\n  ) +\n  coord_cartesian(xlim = c(-.01, .01), ylim = c(-.01, .01), expand = FALSE) +\n  theme_void()\n\n\nMapa de Argentina, Provincia de Buenos Aires y Ciudad Autónoma de Buenos Aires.\n\n\nOcultar código\ng1 &lt;- ggplot() +\n  geom_sf(data = pcias, fill = c1, color = c2, linewidth = .5) +\n  geom_sf(\n    data = buzones, color = c3, size = 2, alpha = .6, shape = 4, stroke = 1) +\n  coord_sf(clip = \"off\") +\n  theme_void()\n\ng2 &lt;- ggplot() +\n  geom_sf(data = dptos_bsas, fill = c1, color = c2, linewidth = .4) +\n  geom_sf(\n    data = buzones_bsas, color = c3, size = 2, alpha = .5, shape = 4,\n    stroke = 1) +\n  theme_void()\n\ng3 &lt;- ggplot() +\n  geom_sf(data = dptos_caba, fill = c1, color = c2, linewidth = .4) +\n  geom_sf(\n    data = buzones_caba, color = c3, size = 3, alpha = .6, shape = 4,\n    stroke = 1) +\n  theme_void()\n\n\nCombino los mapas de acuerdo con el diseño dado.\n\n\nOcultar código\ndiseño &lt;- \"\nAB\nAC\n\"\n\ng &lt;- g1 + g2 + g3 + plot_layout(design = diseño)\n\n\nCombino los mapas de las regiones con el logo de Correo Argentino y la estampilla de los buzones.\n\n\nOcultar código\ngg &lt;- g +\n  inset_element(estampilla, left = 1.2, bottom = 1.1, top = .3, right = -2.2) +\n  inset_element(logo, left = -3.25, bottom = -.95, top = .9, right = .9) +\n  plot_annotation(\n    title = mi_title,\n    subtitle = mi_subtitle,\n    caption = mi_caption,\n    theme = theme(\n      aspect.ratio = 1,\n      plot.background = element_rect(\n        fill = c4, color = c3, linewidth = 3\n      ),\n      plot.title.position = \"plot\",\n      plot.title = element_text(\n        family = \"diphylleia\", size = 80, color = c1,\n        hjust = .5, margin = margin(t = 5)\n      ),\n      plot.subtitle = element_markdown(\n        color = c2, family = \"ubuntu\", size = 20, hjust = .5,\n        lineheight = 1.3\n      ),\n      plot.caption = element_markdown(\n        color = c2, family = \"ubuntu\", size = 15,\n        margin = margin(b = 10, r = 10)\n      )\n    )\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = gg,\n  filename = \"argentina/instalaciones/buzones.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
       "Instalaciones",
-      "✈️ Aeropuertos"
+      "📮 Buzones"
     ]
   },
   {
@@ -3193,14 +3204,147 @@
     ]
   },
   {
-    "objectID": "argentina/instalaciones/index.html",
-    "href": "argentina/instalaciones/index.html",
-    "title": "Instalaciones en Argentina",
+    "objectID": "argentina/instalaciones/aeropuertos.html",
+    "href": "argentina/instalaciones/aeropuertos.html",
+    "title": "Aeropuertos",
     "section": "",
-    "text": "En esta sección se muestran mapas de Argentina  que incluyen instalaciones varias, como ser: plantas de tratamiento de agua, centrales generadoras de energía, rutas nacionales y provinciales, etc.\nPara darle diversidad a los mapas, cada uno cuenta con una paleta de colores diferente.\n \n\n\n   \n     \n     \n       Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n🕯️Faros\n\n\n\n\n\n\ngeom_raster\n\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-04-06\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🚰Plantas potabilizadoras\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n✈️ Aeropuertos\n\n\n\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🏫 Ciencia y educación\n\n\n\n\n\n\ngeom_sf\n\n\ngeom_point\n\n\ngeom_text\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🌦️Estaciones meteorológicas\n\n\n\n\n\n\ngeom_sf\n\n\ngeom_sf_pattern\n\n\n\n\n\n\n\n\n\n2024-02-17\n\n\nVíctor Gauto\n\n\n\n\n\n\nNo hay resultados\n\n\n\n\n\n\n Subir",
+    "text": "Mapa de aeropuertos de Argentina.",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina",
-      "Instalaciones"
+      "Instalaciones",
+      "✈️ Aeropuertos"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/aeropuertos.html#paquetes",
+    "href": "argentina/instalaciones/aeropuertos.html#paquetes",
+    "title": "Aeropuertos",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(terra)\nlibrary(tidyterra)\nlibrary(glue)\nlibrary(showtext)\nlibrary(ggtext)\nlibrary(tidyverse)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "✈️ Aeropuertos"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/aeropuertos.html#estilos",
+    "href": "argentina/instalaciones/aeropuertos.html#estilos",
+    "title": "Aeropuertos",
+    "section": "Estilos",
+    "text": "Estilos\nColores aleatorios a partir de una gama de rosados.\n\n\nOcultar código\nset.seed(2024)\npp &lt;- PrettyCols::prettycols(palette = \"Pinks\", n = 24, type = \"continuous\") |&gt;\n  sample()\n\nc1 &lt;- \"black\"\nc2 &lt;- \"white\"\nc3 &lt;- \"#FCAADE\"\nc4 &lt;- \"#860A4D\"\n\n\nFuentes: Ubuntu, JetBrains Mono y fontawesome.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nfont_add(\n  family = \"fa\",\n  regular = \"././fuente/Font Awesome 6 Free-Solid-900.otf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "✈️ Aeropuertos"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/aeropuertos.html#epígrafe",
+    "href": "argentina/instalaciones/aeropuertos.html#epígrafe",
+    "title": "Aeropuertos",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{c1};'&gt;IGN&lt;/span&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bluesky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon} {icon_bluesky}&lt;/b&gt; {usuario}\"\n)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "✈️ Aeropuertos"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/aeropuertos.html#datos",
+    "href": "argentina/instalaciones/aeropuertos.html#datos",
+    "title": "Aeropuertos",
+    "section": "Datos",
+    "text": "Datos\nVectores de las provincias con sus departamentos. Obtengo el vector de aeropuertos del Instituto Geográfico Nacional, y conservo únicamente los que se encuentran en actividad.\n\n\nOcultar código\npcias &lt;- vect(\"argentina/vectores/pcias_continental.gpkg\") |&gt;\n  project(\"EPSG:5346\")\n\ndptos_pcias &lt;- vect(\"argentina/vectores/dptos_pcias_continental.gpkg\")\n\naer &lt;- vect(\"argentina/vectores/extras/puntos_de_transporte_aereo_GB005.json\") |&gt;\n  project(\"EPSG:5346\")\n\naer &lt;- aer[aer$fun == 6]",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "✈️ Aeropuertos"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/aeropuertos.html#figura",
+    "href": "argentina/instalaciones/aeropuertos.html#figura",
+    "title": "Aeropuertos",
+    "section": "Figura",
+    "text": "Figura\nÍconos de los aviones\n\n\nOcultar código\nicon1 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5b0;&lt;/span&gt; \")\nicon2 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf072;&lt;/span&gt; \")\nicon3 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5af;&lt;/span&gt; \")\nicon &lt;- glue(\"{icon1} {icon2} {icon3}\")\n\n\nSubtítulo y posición.\n\n\nOcultar código\nx_sub &lt;- ext(aer)$xmax\ny_sub &lt;- ext(aer)$ymax\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {c1}'&gt;Argentina&lt;/b&gt; hay en\",\n  \"funcionamiento &lt;b style='color:{c4}'&gt;{nrow(aer)}&lt;/b&gt;\",\n  \"aeropuertos.&lt;br&gt;\",\n  \"{icon}\",\n  .sep = \"&lt;br&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # departamentos\n  geom_sf(\n    data = dptos_pcias, aes(fill = provincia), color = c2, linewidth = .3,\n    linetype = \"22\"\n  ) +\n  # provincias\n  geom_sf(\n    data = pcias, fill = NA, color = c1, linewidth = .4\n  ) +\n  # aeropuertos\n  geom_sf(\n    data = aer, fill = c2, color = c1, size = 11, alpha = .8,\n    stroke = 1, shape = 21) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = x_sub*.84, y = y_sub*.66, label = mi_subtitle,\n    fill = NA, label.color = NA, size = 12, color = c1, hjust = 0,\n    family = \"ubuntu\"\n  ) +\n  scale_fill_manual(values = pp) +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 8, l = 8, t = 2),\n    plot.background = element_rect(\n      fill = c3, color = c4, linewidth = 3),\n    plot.caption = element_markdown(\n      family = \"jet\", color = c4, hjust = .5, size = 20,\n      margin = margin(b = 10)),\n    legend.position = \"none\"\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/aeropuertos.png\",\n  width = 30,\n  height = 65,\n  units = \"cm\"\n)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "✈️ Aeropuertos"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/red_electrica.html",
+    "href": "argentina/instalaciones/red_electrica.html",
+    "title": "🔌 Red eléctrica",
+    "section": "",
+    "text": "Mapa de la red eléctrica en Argentina, mostrando líneas de alta tensión y plantas transformadoras.",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "🔌 Red eléctrica"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/red_electrica.html#paquetes",
+    "href": "argentina/instalaciones/red_electrica.html#paquetes",
+    "title": "🔌 Red eléctrica",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(sf)\nlibrary(tidyverse)\nlibrary(glue)\nlibrary(showtext)\nlibrary(ggtext)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "🔌 Red eléctrica"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/red_electrica.html#estilos",
+    "href": "argentina/instalaciones/red_electrica.html#estilos",
+    "title": "🔌 Red eléctrica",
+    "section": "Estilos",
+    "text": "Estilos\nColores de escalas de grises\n\n\nOcultar código\nl1 &lt;- \"grey10\"\nl2 &lt;- \"grey15\"\nl3 &lt;- \"grey20\"\nl4 &lt;- \"grey25\"\nl5 &lt;- \"grey90\"\np1 &lt;- \"#054544\"\np2 &lt;- \"#175F5D\"\np3 &lt;- \"#178F92\"\np4 &lt;- \"#4FB6CA\"\np5 &lt;- \"#EAF3FF\"\n\n\nFuentes: Ubuntu, JetBrains Mono y Voltage.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nfont_add(\n  family = \"voltage\",\n  regular = \"././fuente/Voltage-Regular.otf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "🔌 Red eléctrica"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/red_electrica.html#epígrafe",
+    "href": "argentina/instalaciones/red_electrica.html#epígrafe",
+    "title": "🔌 Red eléctrica",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{p4};'&gt;Instituto Geográfico Nacional&lt;/span&gt;\"\n)\nautor &lt;- glue(\"&lt;span style='color:{p4};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bluesky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{p4};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon} {icon_bluesky}&lt;/b&gt; {usuario}\"\n)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "🔌 Red eléctrica"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/red_electrica.html#datos",
+    "href": "argentina/instalaciones/red_electrica.html#datos",
+    "title": "🔌 Red eléctrica",
+    "section": "Datos",
+    "text": "Datos\nVector del contorno continental de Argentina, obtenido del Instituto Geográfico Nacional (IGN).\n\n\nOcultar código\np &lt;- st_read(\"argentina/vectores/arg_continental.gpkg\") |&gt;\n  st_transform(crs = \"EPSG:5346\")\n\n\nVector del tendido eléctrico de Argentina y plantas transformadoras.\n\n\nOcultar código\nlin_elec &lt;- st_read(\"argentina/vectores/extras/lineas_de_energia_AT030.json\") |&gt;\n  st_transform(crs = \"EPSG:5346\")\nplanta_transf &lt;- st_read(\n  \"argentina/vectores/extras/puntos_de_energia_AD030.json\"\n) |&gt;\nst_transform(crs = \"EPSG:5346\")\n\n\nMantengo únicamente las líneas de alta tensión y plantas transformadoras activas.\n\n\nOcultar código\nalta_tension &lt;- lin_elec |&gt;\n  filter(ten == 6) |&gt;\n  filter(fun == 6) |&gt;\n  st_union() |&gt;\n  st_line_merge() |&gt;\n  st_coordinates() |&gt;\n  as.data.frame()\n\nplanta_transf_act &lt;- planta_transf |&gt;\n  filter(fun == 6)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "🔌 Red eléctrica"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/red_electrica.html#figura",
+    "href": "argentina/instalaciones/red_electrica.html#figura",
+    "title": "🔌 Red eléctrica",
+    "section": "Figura",
+    "text": "Figura\nTítulo y subtítulo.\n\n\nOcultar código\nmi_titulo &lt;- \"RED ELECTRICA ARGENTINA\"\n\nmi_subtitulo &lt;- \"Las líneas representan la red de alta tensión y&lt;br&gt;\n  los puntos las plantas transformadoras.\"\n\n\n\n\nOcultar código\ng &lt;- ggplot() +\n  geom_sf(data = p, fill = \"black\", color = NA) +\n  geom_path(\n    data = alta_tension, aes(x = X, y = Y, group = L1),\n    color = l1, linewidth = 7, lineend = \"round\") +\n  geom_path(\n    data = alta_tension, aes(x = X, y = Y, group = L1),\n    color = l2, linewidth = 5, lineend = \"round\") +\n  geom_path(\n    data = alta_tension, aes(x = X, y = Y, group = L1),\n    color = l3, linewidth = 3, lineend = \"round\") +\n  geom_path(\n    data = alta_tension, aes(x = X, y = Y, group = L1),\n    color = l4, linewidth = 1, lineend = \"round\") +\n  geom_path(\n    data = alta_tension, aes(x = X, y = Y, group = L1),\n    color = l5, linewidth = .2, lineend = \"round\") +\n  geom_sf(data = planta_transf_act, size = 5, color = p1) +\n  geom_sf(data = planta_transf_act, size = 4, color = p2) +\n  geom_sf(data = planta_transf_act , size = 3, color = p3) +\n  geom_sf(data = planta_transf_act , size = 2, color = p4) +\n  geom_sf(data = planta_transf_act , size = .1, color = p5) +\n  labs(\n    title = mi_titulo,\n    subtitle = mi_subtitulo,\n    caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.background = element_rect(fill = \"grey5\", color = p4, linewidth = 3),\n    plot.margin = margin(15, 24, 15, 24),\n    plot.title.position = \"plot\",\n    plot.title = element_markdown(\n      color = p4, size = 100, family = \"voltage\", hjust = .5\n    ),\n    plot.subtitle = element_markdown(\n      color = p5, size = 25, hjust = .5, family = \"ubuntu\", lineheight = 1.3\n    ),\n    plot.caption.position = \"plot\",\n    plot.caption = element_markdown(\n      color = p5, family = \"ubuntu\", size = 23, margin = margin(10, 0, 5, 0),\n      hjust = .5\n    )\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/red_electrica.png\",\n  width = 30,\n  height = 69,\n  units = \"cm\",\n  dpi = 300\n)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina",
+      "Instalaciones",
+      "🔌 Red eléctrica"
     ]
   },
   {

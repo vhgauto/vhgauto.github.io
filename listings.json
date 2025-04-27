@@ -1,5 +1,17 @@
 [
   {
+    "listing": "/argentina/instalaciones/index.html",
+    "items": [
+      "/argentina/instalaciones/faros.html",
+      "/argentina/instalaciones/plantas_potabilizadoras.html",
+      "/argentina/instalaciones/aeropuertos.html",
+      "/argentina/instalaciones/educacion.html",
+      "/argentina/instalaciones/buzones.html",
+      "/argentina/instalaciones/red_electrica.html",
+      "/argentina/instalaciones/estaciones_smn.html"
+    ]
+  },
+  {
     "listing": "/publicaciones/index.html",
     "items": []
   },
@@ -138,16 +150,6 @@
     "items": [
       "/argentina/animaciones/crecimiento_rutas.html",
       "/argentina/animaciones/torres_celulares.html"
-    ]
-  },
-  {
-    "listing": "/argentina/instalaciones/index.html",
-    "items": [
-      "/argentina/instalaciones/faros.html",
-      "/argentina/instalaciones/plantas_potabilizadoras.html",
-      "/argentina/instalaciones/aeropuertos.html",
-      "/argentina/instalaciones/educacion.html",
-      "/argentina/instalaciones/estaciones_smn.html"
     ]
   }
 ]
