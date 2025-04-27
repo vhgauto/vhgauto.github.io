@@ -1,0 +1,206 @@
+---
+format:
+  html:
+    code-fold: show
+    code-summary: "Ocultar código"
+    code-line-numbers: false
+    code-annotations: false
+    code-link: true
+    code-tools:
+        source: true
+        toggle: true
+        caption: "Código"
+    code-overflow: scroll
+    page-layout: full
+editor_options:
+  chunk_output_type: console
+categories: ["geom_sf", "geom_path"]
+execute:
+  eval: false
+  echo: true
+  warning: false
+title: "🔌 Red eléctrica"
+date: 2024-04-27
+author: Víctor Gauto
+---
+
+Mapa de la red eléctrica en Argentina, mostrando líneas de alta tensión y plantas transformadoras.
+
+![Red eléctrica en Argentina.](red_electrica.png)
+
+## Paquetes
+
+```{r}
+library(sf)
+library(tidyverse)
+library(glue)
+library(showtext)
+library(ggtext)
+```
+
+## Estilos
+
+Colores de escalas de grises
+
+```{r}
+l1 <- "grey10"
+l2 <- "grey15"
+l3 <- "grey20"
+l4 <- "grey25"
+l5 <- "grey90"
+p1 <- "#054544"
+p2 <- "#175F5D"
+p3 <- "#178F92"
+p4 <- "#4FB6CA"
+p5 <- "#EAF3FF"
+```
+
+Fuentes: Ubuntu, JetBrains Mono y Voltage.
+
+```{r}
+font_add(
+  family = "ubuntu",
+  regular = "././fuente/Ubuntu-Regular.ttf",
+  bold = "././fuente/Ubuntu-Bold.ttf",
+  italic = "././fuente/Ubuntu-Italic.ttf"
+)
+
+font_add(
+  family = "jet",
+  regular = "././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf"
+)
+
+font_add(
+  family = "voltage",
+  regular = "././fuente/Voltage-Regular.otf"
+)
+
+showtext_auto()
+showtext_opts(dpi = 300)
+```
+
+## Epígrafe
+
+```{r}
+fuente <- glue(
+  "<b>Datos:</b> <span style='color:{p4};'>Instituto Geográfico Nacional</span>"
+)
+autor <- glue("<span style='color:{p4};'>Víctor Gauto</span>")
+icon_twitter <- glue("<span style='font-family:jet;'>&#xeb72;</span>")
+icon_instagram <- glue("<span style='font-family:jet;'>&#xf16d;</span>")
+icon_github <- glue("<span style='font-family:jet;'>&#xf09b;</span>")
+icon_mastodon <- glue("<span style='font-family:jet;'>&#xf0ad1;</span>")
+icon_bluesky <- glue("<span style='font-family:jet;'>&#xe28e;</span>")
+usuario <- glue("<span style='color:{p4};'>vhgauto</span>")
+sep <- glue("**|**")
+
+mi_caption <- glue(
+  "{fuente} {sep} {autor} {sep} <b>{icon_github} {icon_twitter} ",
+  "{icon_instagram} {icon_mastodon} {icon_bluesky}</b> {usuario}"
+)
+```
+
+## Datos
+
+Vector del contorno continental de Argentina, obtenido del [Instituto Geográfico Nacional](https://www.ign.gob.ar/NuestrasActividades/InformacionGeoespacial/CapasSIG) (IGN).
+
+```{r}
+p <- st_read("argentina/vectores/arg_continental.gpkg") |>
+  st_transform(crs = "EPSG:5346")
+```
+
+Vector del tendido eléctrico de Argentina y plantas transformadoras.
+
+```{r}
+lin_elec <- st_read("argentina/vectores/extras/lineas_de_energia_AT030.json") |>
+  st_transform(crs = "EPSG:5346")
+planta_transf <- st_read(
+  "argentina/vectores/extras/puntos_de_energia_AD030.json"
+) |>
+st_transform(crs = "EPSG:5346")
+```
+
+Mantengo únicamente las líneas de alta tensión y plantas transformadoras activas.
+
+```{r}
+alta_tension <- lin_elec |>
+  filter(ten == 6) |>
+  filter(fun == 6) |>
+  st_union() |>
+  st_line_merge() |>
+  st_coordinates() |>
+  as.data.frame()
+
+planta_transf_act <- planta_transf |>
+  filter(fun == 6)
+```
+
+## Figura
+
+Título y subtítulo.
+
+```{r}
+mi_titulo <- "RED ELECTRICA ARGENTINA"
+
+mi_subtitulo <- "Las líneas representan la red de alta tensión y<br>
+  los puntos las plantas transformadoras."
+```
+
+```{r}
+g <- ggplot() +
+  geom_sf(data = p, fill = "black", color = NA) +
+  geom_path(
+    data = alta_tension, aes(x = X, y = Y, group = L1),
+    color = l1, linewidth = 7, lineend = "round") +
+  geom_path(
+    data = alta_tension, aes(x = X, y = Y, group = L1),
+    color = l2, linewidth = 5, lineend = "round") +
+  geom_path(
+    data = alta_tension, aes(x = X, y = Y, group = L1),
+    color = l3, linewidth = 3, lineend = "round") +
+  geom_path(
+    data = alta_tension, aes(x = X, y = Y, group = L1),
+    color = l4, linewidth = 1, lineend = "round") +
+  geom_path(
+    data = alta_tension, aes(x = X, y = Y, group = L1),
+    color = l5, linewidth = .2, lineend = "round") +
+  geom_sf(data = planta_transf_act, size = 5, color = p1) +
+  geom_sf(data = planta_transf_act, size = 4, color = p2) +
+  geom_sf(data = planta_transf_act , size = 3, color = p3) +
+  geom_sf(data = planta_transf_act , size = 2, color = p4) +
+  geom_sf(data = planta_transf_act , size = .1, color = p5) +
+  labs(
+    title = mi_titulo,
+    subtitle = mi_subtitulo,
+    caption = mi_caption) +
+  theme_void() +
+  theme(
+    plot.background = element_rect(fill = "grey5", color = p4, linewidth = 3),
+    plot.margin = margin(15, 24, 15, 24),
+    plot.title.position = "plot",
+    plot.title = element_markdown(
+      color = p4, size = 100, family = "voltage", hjust = .5
+    ),
+    plot.subtitle = element_markdown(
+      color = p5, size = 25, hjust = .5, family = "ubuntu", lineheight = 1.3
+    ),
+    plot.caption.position = "plot",
+    plot.caption = element_markdown(
+      color = p5, family = "ubuntu", size = 23, margin = margin(10, 0, 5, 0),
+      hjust = .5
+    )
+  )
+```
+
+Guardo.
+
+```{r}
+ggsave(
+  plot = g,
+  filename = "argentina/instalaciones/red_electrica.png",
+  width = 30,
+  height = 69,
+  units = "cm",
+  dpi = 300
+)
+```
