@@ -118,6 +118,7 @@ d_m <- d |>
   )
 
 d_max <- slice_max(d_m, order_by = m, n = 1)
+d_min <- slice_min(d_m, order_by = m, n = 1)
 ```
 
 ## Figura
@@ -140,8 +141,8 @@ mi_titulo <- glue(
 )
 
 mi_subtitulo <- glue(
-  "Se destaca la <b style='color:{col[6]}'>mediana</b> diaria y el día 
-  con la máxima cantidad de accidentes en todo el rango."
+  "Se destaca la <b style='color:{col[6]}'>mediana</b> diaria y los días 
+  con la máxima y mínima cantidad de accidentes en todo el rango."
 )
 ```
 
@@ -158,9 +159,19 @@ g <- ggplot(d, aes(fecha, fatalities_count, group = year(date))) +
     aes(x = fecha, y = m, yend = .95*max(d$fatalities_count), xend = fecha),
     inherit.aes = FALSE, color = col[4], linewidth = 1, linetype = 2
   ) +
+  geom_segment(
+    data = d_min,
+    aes(x = fecha, y = m, yend = 1.25*min(d$fatalities_count), xend = fecha),
+    inherit.aes = FALSE, color = col[4], linewidth = 1, linetype = 2
+  ) +
   annotate(
     geom = "text", x = d_max$fecha, y = .952*max(d$fatalities_count),
     label = "4 de julio", hjust = 0, color = col[5], size = 15,
+    size.unit = "pt", vjust = -.3, family = "ubuntu"
+  ) +
+  annotate(
+    geom = "text", x = d_min$fecha-1, y = 1.2*min(d$fatalities_count),
+    label = "25 de diciembre", hjust = 1, color = col[5], size = 15,
     size.unit = "pt", vjust = -.3, family = "ubuntu"
   ) +
   geom_line(alpha = .5, color = col[2]) +
@@ -169,8 +180,8 @@ g <- ggplot(d, aes(fecha, fatalities_count, group = year(date))) +
     inherit.aes = FALSE
   ) +
   geom_point(
-    data = d_max, aes(fecha, m), size = 2, color = col[1], shape = 21, 
-    stroke = 1, fill = col[5], inherit.aes = FALSE
+    data = bind_rows(d_max, d_min), aes(fecha, m), size = 2, color = col[1],
+    shape = 21, stroke = 1, fill = col[5], inherit.aes = FALSE
   ) +
   coord_cartesian(clip = "off") +
   labs(title = mi_titulo, subtitle = mi_subtitulo, caption = mi_caption) +
