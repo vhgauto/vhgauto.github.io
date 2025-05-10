@@ -1,5 +1,6 @@
 /fuente
 .test.qmd
+.vscode
 
 # History files
 .Rhistory
