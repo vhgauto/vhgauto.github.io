@@ -14,7 +14,7 @@ format:
     page-layout: full
 editor_options:
   chunk_output_type: console
-categories: ["geom_spatvector"]
+categories: ["geom_spatvector", "plot_usmap"]
 execute:
   eval: false
   echo: true
