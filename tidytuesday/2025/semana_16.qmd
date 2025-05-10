@@ -140,7 +140,7 @@ mi_titulo <- glue(
 )
 
 mi_subtitulo <- glue(
-  "Se destaca la <b style='color:{col[6]}'>mediana</b> de cada dia y la fecha 
+  "Se destaca la <b style='color:{col[6]}'>mediana</b> diaria y el día 
   con la máxima cantidad de accidentes en todo el rango."
 )
 ```
