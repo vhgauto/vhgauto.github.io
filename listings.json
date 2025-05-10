@@ -70,6 +70,7 @@
     "listing": "/tidytuesday/2025/index.html",
     "items": [
       "/tidytuesday/2025/semana_19.html",
+      "/tidytuesday/2025/semana_18.html",
       "/tidytuesday/2025/semana_17.html",
       "/tidytuesday/2025/semana_16.html",
       "/tidytuesday/2025/semana_15.html",
@@ -89,6 +90,13 @@
     ]
   },
   {
+    "listing": "/argentina/animaciones/index.html",
+    "items": [
+      "/argentina/animaciones/crecimiento_rutas.html",
+      "/argentina/animaciones/torres_celulares.html"
+    ]
+  },
+  {
     "listing": "/argentina/instalaciones/index.html",
     "items": [
       "/argentina/instalaciones/faros.html",
@@ -98,13 +106,6 @@
       "/argentina/instalaciones/buzones.html",
       "/argentina/instalaciones/red_electrica.html",
       "/argentina/instalaciones/estaciones_smn.html"
-    ]
-  },
-  {
-    "listing": "/argentina/animaciones/index.html",
-    "items": [
-      "/argentina/animaciones/crecimiento_rutas.html",
-      "/argentina/animaciones/torres_celulares.html"
     ]
   },
   {
