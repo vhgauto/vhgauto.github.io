@@ -24,7 +24,7 @@ date: 2025-04-22
 author: Víctor Gauto
 ---
 
-Tendencias de accidentes fatales diarios en EE.UU, entre 1992 y 2016.
+Tendencias de accidentes fatales diarios en EE.UU, entre 1992 y 2016
 
 ![Semana 16, 2025](semana_16.png)
 
