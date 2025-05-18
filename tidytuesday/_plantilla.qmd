@@ -14,7 +14,10 @@ format:
     page-layout: full
 editor_options:
   chunk_output_type: console
-categories: ["---GEOM---"]
+categories:
+  - GEOM_AAA
+  - GEOM_BBB
+  - GEOM_CCC
 execute:
   eval: false
   echo: true
