@@ -56,6 +56,7 @@
   {
     "listing": "/argentina/instalaciones/index.html",
     "items": [
+      "/argentina/instalaciones/parques_nacionales.html",
       "/argentina/instalaciones/faros.html",
       "/argentina/instalaciones/aeropuertos.html",
       "/argentina/instalaciones/plantas_potabilizadoras.html",
@@ -66,14 +67,14 @@
     ]
   },
   {
-    "listing": "/publicaciones/index.html",
-    "items": []
-  },
-  {
     "listing": "/mapas.html",
     "items": [
       "/mapas/mapa1.html"
     ]
+  },
+  {
+    "listing": "/publicaciones/index.html",
+    "items": []
   },
   {
     "listing": "/tidytuesday/2025/index.html",

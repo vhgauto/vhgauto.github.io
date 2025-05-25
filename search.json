@@ -1698,97 +1698,187 @@
     "href": "argentina/instalaciones/index.html",
     "title": "Instalaciones en Argentina",
     "section": "",
-    "text": "En esta sección se muestran mapas de Argentina  que incluyen instalaciones varias, como ser: plantas de tratamiento de agua, centrales generadoras de energía, rutas nacionales y provinciales, etc.\nPara darle diversidad a los mapas, cada uno cuenta con una paleta de colores diferente.\n \n\n\n   \n    \n    \n      Ordenar por\n      Por defecto\n      \n        Título\n      \n      \n        Fecha - Menos reciente\n      \n      \n        Fecha - Más reciente\n      \n      \n        Autor/a\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n🕯️Faros\n\n\n\ngeom_raster\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-04-06\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n✈️ Aeropuertos\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🚰Plantas potabilizadoras\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🏫 Ciencia y educación\n\n\n\ngeom_sf\n\ngeom_point\n\ngeom_text\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🔌 Red eléctrica\n\n\n\ngeom_sf\n\ngeom_path\n\n\n\n\n\n\n\n\n\n2024-04-27\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n📮 Buzones\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-04-27\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🌦️Estaciones meteorológicas\n\n\n\ngeom_sf\n\ngeom_sf_pattern\n\n\n\n\n\n\n\n\n\n2024-02-17\n\n\nVíctor Gauto\n\n\n\n\n\nNo hay resultados\n\n\n\n\n\n Subir",
+    "text": "En esta sección se muestran mapas de Argentina  que incluyen instalaciones varias, como ser: plantas de tratamiento de agua, centrales generadoras de energía, rutas nacionales y provinciales, etc.\nPara darle diversidad a los mapas, cada uno cuenta con una paleta de colores diferente.\n \n\n\n   \n    \n    \n      Ordenar por\n      Por defecto\n      \n        Título\n      \n      \n        Fecha - Menos reciente\n      \n      \n        Fecha - Más reciente\n      \n      \n        Autor/a\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n🏞️ Parques Nacionales\n\n\n\ngeom_raster\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-05-25\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🕯️Faros\n\n\n\ngeom_raster\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-04-06\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n✈️ Aeropuertos\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🚰Plantas potabilizadoras\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🏫 Ciencia y educación\n\n\n\ngeom_sf\n\ngeom_point\n\ngeom_text\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🔌 Red eléctrica\n\n\n\ngeom_sf\n\ngeom_path\n\n\n\n\n\n\n\n\n\n2024-04-27\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n📮 Buzones\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-04-27\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🌦️Estaciones meteorológicas\n\n\n\ngeom_sf\n\ngeom_sf_pattern\n\n\n\n\n\n\n\n\n\n2024-02-17\n\n\nVíctor Gauto\n\n\n\n\n\nNo hay resultados\n\n\n\n\n\n Subir",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/aeropuertos.html",
-    "href": "argentina/instalaciones/aeropuertos.html",
-    "title": "Aeropuertos",
+    "objectID": "argentina/instalaciones/plantas_potabilizadoras.html",
+    "href": "argentina/instalaciones/plantas_potabilizadoras.html",
+    "title": "🚰Plantas potabilizadoras",
     "section": "",
-    "text": "Mapa de aeropuertos de Argentina.",
+    "text": "Mapa de plantas de tratamiento de agua de Argentina.",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "✈️ Aeropuertos"
+      "🚰Plantas potabilizadoras"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/aeropuertos.html#paquetes",
-    "href": "argentina/instalaciones/aeropuertos.html#paquetes",
-    "title": "Aeropuertos",
+    "objectID": "argentina/instalaciones/plantas_potabilizadoras.html#paquetes",
+    "href": "argentina/instalaciones/plantas_potabilizadoras.html#paquetes",
+    "title": "🚰Plantas potabilizadoras",
     "section": "Paquetes",
-    "text": "Paquetes\n\n\nOcultar código\nlibrary(terra)\nlibrary(tidyterra)\nlibrary(glue)\nlibrary(showtext)\nlibrary(ggtext)\nlibrary(tidyverse)",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(sf)\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "✈️ Aeropuertos"
+      "🚰Plantas potabilizadoras"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/aeropuertos.html#estilos",
-    "href": "argentina/instalaciones/aeropuertos.html#estilos",
-    "title": "Aeropuertos",
+    "objectID": "argentina/instalaciones/plantas_potabilizadoras.html#estilos",
+    "href": "argentina/instalaciones/plantas_potabilizadoras.html#estilos",
+    "title": "🚰Plantas potabilizadoras",
     "section": "Estilos",
-    "text": "Estilos\nColores aleatorios a partir de una gama de rosados.\n\n\nOcultar código\nset.seed(2024)\npp &lt;- PrettyCols::prettycols(palette = \"Pinks\", n = 24, type = \"continuous\") |&gt;\n  sample()\n\nc1 &lt;- \"black\"\nc2 &lt;- \"white\"\nc3 &lt;- \"#FCAADE\"\nc4 &lt;- \"#860A4D\"\n\n\nFuentes: Ubuntu, JetBrains Mono y fontawesome.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nfont_add(\n  family = \"fa\",\n  regular = \"././fuente/Font Awesome 6 Free-Solid-900.otf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "text": "Estilos\nPaleta de colores.\n\n\nOcultar código\ncol &lt;- MoMAColors::moma.colors(palette_name = \"Smith\")\nc1 &lt;- \"#FFFFFF\"\nc2 &lt;- \"#000000\"\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "✈️ Aeropuertos"
+      "🚰Plantas potabilizadoras"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/aeropuertos.html#epígrafe",
-    "href": "argentina/instalaciones/aeropuertos.html#epígrafe",
-    "title": "Aeropuertos",
+    "objectID": "argentina/instalaciones/plantas_potabilizadoras.html#epígrafe",
+    "href": "argentina/instalaciones/plantas_potabilizadoras.html#epígrafe",
+    "title": "🚰Plantas potabilizadoras",
     "section": "Epígrafe",
-    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{c1};'&gt;IGN&lt;/span&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bluesky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon} {icon_bluesky}&lt;/b&gt; {usuario}\"\n)",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{col[4]};'&gt;IGN&lt;/span&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{col[4]};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bluesky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{col[4]};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon} {icon_bluesky}&lt;/b&gt; {usuario}\"\n)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "✈️ Aeropuertos"
+      "🚰Plantas potabilizadoras"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/aeropuertos.html#datos",
-    "href": "argentina/instalaciones/aeropuertos.html#datos",
-    "title": "Aeropuertos",
+    "objectID": "argentina/instalaciones/plantas_potabilizadoras.html#datos",
+    "href": "argentina/instalaciones/plantas_potabilizadoras.html#datos",
+    "title": "🚰Plantas potabilizadoras",
     "section": "Datos",
-    "text": "Datos\nVectores de las provincias con sus departamentos. Obtengo el vector de aeropuertos del Instituto Geográfico Nacional, y conservo únicamente los que se encuentran en actividad.\n\n\nOcultar código\npcias &lt;- vect(\"argentina/vectores/pcias_continental.gpkg\") |&gt;\n  project(\"EPSG:5346\")\n\ndptos_pcias &lt;- vect(\"argentina/vectores/dptos_pcias_continental.gpkg\")\n\naer &lt;- vect(\"argentina/vectores/extras/puntos_de_transporte_aereo_GB005.json\") |&gt;\n  project(\"EPSG:5346\")\n\naer &lt;- aer[aer$fun == 6]",
+    "text": "Datos\nVectores de las provincias con sus departamentos. Obtengo el vector de plantas potabilizadoras del Instituto Geográfico Nacional, y conservo únicamente los que se encuentran en actividad. Asigno a cada provincia un color de la gama del azul.\n\n\nOcultar código\ndeptos &lt;- st_read(\"argentina/vectores/dptos_continental.gpkg\") |&gt;\n  st_transform(crs = 5346) |&gt;\n  st_geometry()\n\ncol_pcias &lt;- colorRampPalette(\n  c(col[5], scales::muted(col[5])), alpha = .6)(24)\n\npcias &lt;- st_read(\"argentina/vectores/pcias_continental.gpkg\") |&gt;\n  mutate(fill_pcias = col_pcias)\n\nv &lt;- st_read(\n  \"argentina/vectores/extras/puntos_de_fabricacion_y_procesamiento_BH220.json\") |&gt;\n  filter(fun == 6) |&gt;\n  st_transform(crs = 5346)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "✈️ Aeropuertos"
+      "🚰Plantas potabilizadoras"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/aeropuertos.html#figura",
-    "href": "argentina/instalaciones/aeropuertos.html#figura",
-    "title": "Aeropuertos",
+    "objectID": "argentina/instalaciones/plantas_potabilizadoras.html#figura",
+    "href": "argentina/instalaciones/plantas_potabilizadoras.html#figura",
+    "title": "🚰Plantas potabilizadoras",
     "section": "Figura",
-    "text": "Figura\nÍconos de los aviones\n\n\nOcultar código\nicon1 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5b0;&lt;/span&gt; \")\nicon2 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf072;&lt;/span&gt; \")\nicon3 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5af;&lt;/span&gt; \")\nicon &lt;- glue(\"{icon1} {icon2} {icon3}\")\n\n\nSubtítulo y posición.\n\n\nOcultar código\nx_sub &lt;- ext(aer)$xmax\ny_sub &lt;- ext(aer)$ymax\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {c1}'&gt;Argentina&lt;/b&gt; hay en\",\n  \"funcionamiento &lt;b style='color:{c4}'&gt;{nrow(aer)}&lt;/b&gt;\",\n  \"aeropuertos.&lt;br&gt;\",\n  \"{icon}\",\n  .sep = \"&lt;br&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # departamentos\n  geom_sf(\n    data = dptos_pcias, aes(fill = provincia), color = c2, linewidth = .3,\n    linetype = \"22\"\n  ) +\n  # provincias\n  geom_sf(\n    data = pcias, fill = NA, color = c1, linewidth = .4\n  ) +\n  # aeropuertos\n  geom_sf(\n    data = aer, fill = c2, color = c1, size = 11, alpha = .8,\n    stroke = 1, shape = 21) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = x_sub*.84, y = y_sub*.66, label = mi_subtitle,\n    fill = NA, label.color = NA, size = 12, color = c1, hjust = 0,\n    family = \"ubuntu\"\n  ) +\n  scale_fill_manual(values = pp) +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 8, l = 8, t = 2),\n    plot.background = element_rect(\n      fill = c3, color = c4, linewidth = 3),\n    plot.caption = element_markdown(\n      family = \"jet\", color = c4, hjust = .5, size = 20,\n      margin = margin(b = 10)),\n    legend.position = \"none\"\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/aeropuertos.png\",\n  width = 30,\n  height = 65,\n  units = \"cm\"\n)",
+    "text": "Figura\nSubtítulo y posición.\n\n\nOcultar código\nx_sub &lt;- st_bbox(deptos)$xmax\ny_sub &lt;- st_bbox(deptos)$ymax\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {c1}'&gt;Argentina&lt;/b&gt; hay en\",\n  \"funcionamiento &lt;b style='color:#EF7923'&gt;{nrow(v)}&lt;/b&gt;\",\n  \"plantas de tratamiento\",\n  \"de agua.\",\n  .sep = \"&lt;br&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # provincias\n  geom_sf(\n    data = pcias, aes(fill = fill_pcias), linewidth = .4, color = c1,\n    show.legend = TRUE\n  ) +\n  # departamentos\n  geom_sf(\n    data = deptos, fill = NA, color = c1, linewidth = .1, linetype = \"55\"\n  ) +\n  # plantas potabilizadoras\n  geom_sf(\n    data = v, shape = 21, fill = col[4], size = 7, color = c2, alpha = .9\n  ) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = x_sub*.84, y = y_sub*.66, label = mi_subtitle,\n    fill = NA, label.color = NA, size = 12, color = col[4], hjust = 0,\n    family = \"ubuntu\"\n  ) +\n  scale_fill_identity() +\n  scale_shape_identity() +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 8, l = 8, t = 2),\n    plot.background = element_rect(\n      fill = col[5], color = col[2], linewidth = 3),\n    plot.caption = element_markdown(\n      family = \"jet\", color = c1, hjust = .5, size = 20,\n      margin = margin(b = 10))\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/plantas_potabilizadoras.png\",\n  width = 30,\n  height = 65,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "✈️ Aeropuertos"
+      "🚰Plantas potabilizadoras"
     ]
   },
   {
-    "objectID": "publicaciones/index.html",
-    "href": "publicaciones/index.html",
-    "title": " Publicaciones",
+    "objectID": "argentina/instalaciones/estaciones_smn.html",
+    "href": "argentina/instalaciones/estaciones_smn.html",
+    "title": "🌦️Estaciones meteorológicas",
     "section": "",
-    "text": "Lista de publicaciones y trabajos en los que he participado.  \n\n\n    Spatio-temporal characterization of precipitation in the Middle and Lower Paraguay Basin based on satellite products and weather station data\n\n    \n    \n        \n             Rossana Villalba \n        \n         | \n    \n        \n             Anabella Ferral \n        \n         | \n    \n        \n            Julián Baéz\n        \n         | \n    \n        \n             Jorge Kurita \n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n            Juan Carlos Bertoni\n        \n        \n    \n    \n\n    \n         10.5194/isprs-archives-XLVIII-2-W6-2024-65-2024\n    \n\n     2024\n\n    \n    \n         IMERG \n    \n         CHIRPS \n    \n         El Niño \n    \n         Validation \n    \n         Accumulated precipitation \n    \n         Anomalies \n    \n\n    \n\n    Comparison of water surface temperature retrieval methods from Landsat 9 satellite data\n\n    \n    \n        \n             Matias Bonansea \n        \n         | \n    \n        \n            Sofía Gutiérrez\n        \n         | \n    \n        \n            Mariana Correa\n        \n         | \n    \n        \n             Sofía Paná \n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Francisco Nemiña \n        \n         | \n    \n        \n             Alba Germán \n        \n         | \n    \n        \n             Giuliana Beltramone \n        \n         | \n    \n        \n             Lucio Pinotti \n        \n         | \n    \n        \n             Anabella Ferral \n        \n        \n    \n    \n\n    \n         10.5194/isprs-archives-XLVIII-2-W6-2024-1-2024\n    \n\n     2024\n\n    \n    \n         Landsat Collection 2 Level 2 products \n    \n         Single-Channel method \n    \n         Split-Window algorithm \n    \n         Surface temperature \n    \n\n    \n\n    Remote Sensing Regression Models to Estimate Water Quality Indicators in Continental Waters in North-East Argentina\n\n    \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Enid Marta Utgés \n        \n         | \n    \n        \n            Elsa Ivonne Hervot\n        \n         | \n    \n        \n             María Daniela Tenev \n        \n         | \n    \n        \n             Alejandro Farías \n        \n         | \n    \n        \n             Matías Bonansea \n        \n         | \n    \n        \n             Anabella Ferral \n        \n        \n    \n    \n\n    \n         10.1109/ARGENCON62399.2024.10735875\n    \n\n     2024\n\n    \n    \n         Remote sensing \n    \n         Water quality \n    \n         Empirical algorithm \n    \n         Chlorophyll-a \n    \n         Turbidity \n    \n         Sentinel-2 \n    \n\n    \n\n    Modelling of Phosphorus and Nitrogen Delivery in a Strategic River Basin\n\n    \n    \n        \n             Sofía Paná \n        \n         | \n    \n        \n             Matías Bonansea \n        \n         | \n    \n        \n            Vera Camacho Valdéz\n        \n         | \n    \n        \n            Inés del Valle Asís\n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Anabella Ferral \n        \n        \n    \n    \n\n    \n         10.1109/ARGENCON62399.2024.10735960\n    \n\n     2024\n\n    \n    \n         Water quality \n    \n         Ecosystem services \n    \n         Nutrients \n    \n         InVEST \n    \n\n    \n\n    Changes in Land Covers in Two River Basins in Central Argentina Region. Monitoring the SDG 15.3. 1 Indicator\n\n    \n    \n        \n             Sofía Paná \n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Mattia Terzaghi \n        \n         | \n    \n        \n             Anabella Ferral \n        \n         | \n    \n        \n             Fransisco Nemiña \n        \n         | \n    \n        \n            Inés del Valle Asís\n        \n         | \n    \n        \n             Matías Bonansea \n        \n        \n    \n    \n\n    \n         10.1109/RPIC59053.2023.10530795\n    \n\n     2023\n\n    \n    \n         Land degradation \n    \n         Urbanization \n    \n         Basin scale \n    \n         Riverine scale \n    \n\n    \n\n    Caracterización óptica de aguas superficiales a partir de imágenes satelitales multi e hiperespectrales en la región de Gran Resistencia, Chaco\n\n    \n    \n        \n             Víctor Hugo Gauto \n        \n        \n    \n    \n\n    \n\n     2023\n\n    \n    \n         Aguas interiores \n    \n         Sentinel-2 \n    \n         PRISMA \n    \n         Sensor hiperespectral \n    \n         Análisis cromático \n    \n\n    \n\n    Studies of Adsorption-Desorption of Methylene Blue in a Fixed-Bed Reactor Filled with Cotton and Tanine Industry Waste\n\n    \n    \n        \n             María Daniela Tenev \n        \n         | \n    \n        \n            Camila Torre\n        \n         | \n    \n        \n            Gimena Fontana\n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Mario Sergio Cleva \n        \n         | \n    \n        \n             Néstor Caracciolo \n        \n         | \n    \n        \n             Susana Boeykens \n        \n        \n    \n    \n\n    \n         10.18687/LACCEI2023.1.1.1594\n    \n\n     2023\n\n    \n    \n         Methylene blue \n    \n         fixed-bed reactor \n    \n         cotton husk \n    \n         quebracho chip \n    \n\n    \n\n    First results of PRISMA satellite data applied to water quality monitoring in Argentina\n\n    \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Anabella Ferral \n        \n         | \n    \n        \n             Matias Bonansea \n        \n         | \n    \n        \n             Alejandro Farías \n        \n         | \n    \n        \n             Marcelo Scavuzzo \n        \n         | \n    \n        \n             Osvaldo Cardozo \n        \n         | \n    \n        \n             Alba Germán \n        \n         | \n    \n        \n             Claudia Giardino \n        \n        \n    \n    \n\n    \n         10.1109/ARGENCON55245.2022.9939810\n    \n\n     2022\n\n    \n    \n         PRISMA \n    \n         Sentinel 2 \n    \n         Hyperspectral \n    \n         Turbid waters \n    \n         Atmospheric correction \n    \n         Cromaticity \n    \n         Spectral signature \n    \n\n    \n\nNo hay resultados\n\n\n\n\n\n Subir"
+    "text": "Mapa de estaciones del Servicio Meteorológico Nacional de Argentina.",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "Instalaciones",
+      "🌦️Estaciones meteorológicas"
+    ]
   },
   {
-    "objectID": "mapas.html",
-    "href": "mapas.html",
-    "title": "Mis mapas",
+    "objectID": "argentina/instalaciones/estaciones_smn.html#paquetes",
+    "href": "argentina/instalaciones/estaciones_smn.html#paquetes",
+    "title": "🌦️Estaciones meteorológicas",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(sf)\nlibrary(patchwork)\nlibrary(ggpattern)\nlibrary(ggtext)\nlibrary(glue)\nlibrary(showtext)\nlibrary(tidyverse)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "Instalaciones",
+      "🌦️Estaciones meteorológicas"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/estaciones_smn.html#estilos",
+    "href": "argentina/instalaciones/estaciones_smn.html#estilos",
+    "title": "🌦️Estaciones meteorológicas",
+    "section": "Estilos",
+    "text": "Estilos\nColores aleatorios a partir de una gama de rosados.\n\n\nOcultar código\ncol &lt;- monochromeR::generate_palette(\n  color = \"#D485AA\",\n  modification = \"go_both_ways\",\n  n_colours = 9\n)\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "Instalaciones",
+      "🌦️Estaciones meteorológicas"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/estaciones_smn.html#epígrafe",
+    "href": "argentina/instalaciones/estaciones_smn.html#epígrafe",
+    "title": "🌦️Estaciones meteorológicas",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"Datos: &lt;b style='color:{col[9]};'&gt;IGN&lt;/b&gt;, &lt;b style='color:{col[9]};'&gt;SMN&lt;/b&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{col[9]};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{col[9]};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "Instalaciones",
+      "🌦️Estaciones meteorológicas"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/estaciones_smn.html#datos",
+    "href": "argentina/instalaciones/estaciones_smn.html#datos",
+    "title": "🌦️Estaciones meteorológicas",
+    "section": "Datos",
+    "text": "Datos\nVectores de las provincias con sus departamentos. Obtengo el vector de estaciones meteorológicas del Instituto Geográfico Nacional.\n\n\nOcultar código\np &lt;- st_read(\"argentina/vectores/extras/smn_estaciones_meteorologicas.json\") |&gt;\n  st_transform(crs = 5346) |&gt;\n  select(nombre)\n\npcias_cont &lt;- st_read(\"argentina/vectores/pcias_continental.gpkg\")\n\ndptos_cont &lt;- st_read(\"argentina/vectores/dptos_continental.gpkg\")\n\ndptos_antart &lt;- st_read(\"argentina/vectores/dptos_antartida.gpkg\")\n\np_cont &lt;- st_crop(p, dptos_cont)\np_antart &lt;- st_crop(p, dptos_antart)\n\n\nCreo buffer alrededor de los puntos de las estaciones. NO pueden ser puntos para el difuminado de los colores, tiene que ser un polígono.\nComo el mapa de Antártida es más pequeño, los polígonos tiene que ser más grandes.\n\n\nOcultar código\np_cont_buffer &lt;- st_buffer(p_cont, dist = 12000)\np_antart_buffer &lt;- st_buffer(p_antart, dist = 30000)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "Instalaciones",
+      "🌦️Estaciones meteorológicas"
+    ]
+  },
+  {
+    "objectID": "argentina/instalaciones/estaciones_smn.html#figura",
+    "href": "argentina/instalaciones/estaciones_smn.html#figura",
+    "title": "🌦️Estaciones meteorológicas",
+    "section": "Figura",
+    "text": "Figura\nLogo del SMN y subtítulo de la figura.\n\n\nOcultar código\nsmn &lt;- \"&lt;img src='https://upload.wikimedia.org/wikipedia/commons/7/72/SMN_Logo_Alta.png' width='200'&gt;&lt;/img&gt;\"\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {col[9]}'&gt;Argentina&lt;/b&gt; hay {nrow(p)}&lt;br&gt;estaciones meteorológicas.&lt;br&gt;\"\n)\n\n\nContorno del mapa y diseño de la figura compuesta.\n\n\nOcultar código\nbb &lt;- st_bbox(pcias_cont)\n\ndiseño &lt;- \"\nA#\nAB\n\"\n\n\nMapa del sector Antártico.\n\n\nOcultar código\ng_antart &lt;- ggplot() +\n  # departamentos\n  geom_sf(data = dptos_antart, fill = col[3], color = col[5]) +\n  # estaciones meteorológicas\n  geom_sf_pattern(\n    data = p_antart_buffer, color = NA, pattern = \"gradient\",\n    pattern_orientation = \"radial\",\n    pattern_fill = col[3], # centro\n    pattern_fill2 = col[8], # exterior\n    pattern_density = 1) +\n  scale_fill_viridis_d(option = \"turbo\") +\n  coord_sf(clip = \"off\", expand = TRUE) +\n  theme_void() +\n  theme(\n    plot.background = element_rect(color = NA, linewidth = 2, fill = col[2])\n  )\n\n\nMapa de Argentina continental.\n\n\nOcultar código\ng_cont &lt;- ggplot() +\n  # departamentos\n  geom_sf(data = dptos_cont, fill = col[2], color = col[5]) +\n  # provincias\n  geom_sf(data = pcias_cont, fill = NA, color = col[7], linewidth = .25) +\n  # estaciones meteorológicas\n  geom_sf_pattern(\n    data = p_cont_buffer, color = NA, pattern = \"gradient\",\n    pattern_orientation = \"radial\",\n    pattern_fill = col[3], # centro\n    pattern_fill2 = col[8], # exterior\n    pattern_density = 1) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = bb[\"xmax\"], y = bb[\"ymax\"], label = mi_subtitle,\n    fill = NA, label.color = NA, hjust = 0, size = 9, color = col[7],\n    family = \"ubuntu\", vjust = 1\n  ) +\n  # logo SMN\n  annotate(\n    geom = \"richtext\", x = bb[\"xmax\"], y = 5.5e6,\n    label.padding = unit(rep(1, 4), \"lines\"),\n    label.margin = unit(rep(4, 4), \"lines\"),\n    label = smn, fill = NA, label.color = NA, hjust = 0, vjust = 0\n  ) +\n  scale_fill_viridis_d(option = \"turbo\") +\n  coord_sf(clip = \"off\", expand = FALSE) +\n  theme_void()\n\n\nComposición final del mapa.\n\n\nOcultar código\ng &lt;- g_cont + g_antart +\n  plot_layout(widths = c(1, .6), design = diseño) +\n  plot_annotation(\n    caption = mi_caption,\n    theme = theme(\n      plot.margin = margin(t = 25, r = 25, b = 25, l = 25),\n      plot.background = element_rect(\n        fill = col[1], color = col[4], linewidth = 3),\n      plot.caption = element_markdown(\n        family = \"ubuntu\", size = 15, color = col[7], lineheight = 1.2)\n    )\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/estaciones_smn.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)",
+    "crumbs": [
+      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "Instalaciones",
+      "🌦️Estaciones meteorológicas"
+    ]
+  },
+  {
+    "objectID": "index.html#educación",
+    "href": "index.html#educación",
+    "title": "Víctor Gauto ",
+    "section": "Educación",
+    "text": "Educación\n\n\n\n\n\n\n\n\nDoctorado en Geomática y Sistemas Espaciales\n\n\n\n\n\n\n\n\n\n\n\nInstituto Gulich\n\n\n\n\n\n\n\n\n\n\n\nCórdoba, Argentina\n\n\n\n\n\n\n\n\n\n\n\nEn proceso\n\n\n\n\n\n\n\n\n\n\n\n\nMaestría en Aplicaciones de Imágenes Espaciales\n\n\n\n\n\n\n\n\n\n\n\nInstituto Gulich\n\n\n\n\n\n\n\n\n\n\n\nCórdoba, Argentina\n\n\n\n\n\n\n\n\n\n\n\n2023\n\n\n\n\n\n\n\n\n\n\n\n\nMS in Chemical and Biomolecular Engineering\n\n\n\n\n\n\n\n\n\n\n\nSogang University\n\n\n\n\n\n\n\n\n\n\n\nSeoul, Corea del Sur\n\n\n\n\n\n\n\n\n\n\n\n2019\n\n\n\n\n\n\n\n\n\n\n\n\nIngeniería Química\n\n\n\n\n\n\n\n\n\n\n\nUniversidad Tecnológica Nacional Facultad Regional Resistencia\n\n\n\n\n\n\n\n\n\n\n\nChaco, Argentina\n\n\n\n\n\n\n\n\n\n\n\n2014"
+  },
+  {
+    "objectID": "index.html#investigación",
+    "href": "index.html#investigación",
+    "title": "Víctor Gauto ",
+    "section": "Investigación",
+    "text": "Investigación\n\n\n\n\n\n\n\n\nGrupo de Investigación Sobre Temas Ambientales y Químicos\n\n\n\n\n\n\n\n\n\n\n\nChaco, Argentina\n\n\n\n\n\n\n\n\n\n\n\nActualmente\n\n\n\n\n\n\n\n\n\n\n\n\nEl Instituto de Detección Electromagnética del Medio Ambiente\n\n\n\n\n\n\n\n\n\n\n\nMilán, Italia\n\n\n\n\n\n\n\n\n\n\n\n2022\n\n\n\n\n\n\n\n\n\n\n\n\nLaboratorio de Catalizadores a Nanoescala e Ingeniería de Reacciones\n\n\n\n\n\n\n\n\n\n\n\nSeúl, Corea del Sur\n\n\n\n\n\n\n\n\n\n\n\n2019"
+  },
+  {
+    "objectID": "index.html#sudoku",
+    "href": "index.html#sudoku",
+    "title": "Víctor Gauto ",
+    "section": "Sudoku",
+    "text": "Sudoku\nDisfruto mucho resolver los sudokus de New York Times .\nLlevo registro de los tiempos que me lleva resolver los tres niveles de dificultad.  \n\n\n\n\n\n\n\n\n\n\n\n\n\n415 sudokus\n\n\n57 horas\n\n\n\n\n\n\n\n2025-05-25"
+  },
+  {
+    "objectID": "viz/index.html",
+    "href": "viz/index.html",
+    "title": "Visualizaciones",
     "section": "",
-    "text": "Mapas varios.\n\n\n\n\n\n\n\n\n\n\nmapa 1\n\n\nmapa semana 01\n\n\n\na\n\nb\n\n\n\ngeom_col()\n\n\n\n\n\n2025-01-01\n\n\nVHG\n\n\n\n\n\nNo hay resultados\n\nAdiós.\n\n\n\n\n Subir"
+    "text": "Mis proyectos de figuras\nFiguras que he creado utilizando {ggplot2}.\n\n\n\n\n Subir",
+    "crumbs": [
+      "{{< iconify material-symbols-light:scatter-plot >}} Visualizaciones",
+      "Inicio"
+    ]
   },
   {
     "objectID": "viz/pi.html",
@@ -1868,179 +1958,161 @@
     ]
   },
   {
-    "objectID": "viz/index.html",
-    "href": "viz/index.html",
-    "title": "Visualizaciones",
+    "objectID": "mapas.html",
+    "href": "mapas.html",
+    "title": "Mis mapas",
     "section": "",
-    "text": "Mis proyectos de figuras\nFiguras que he creado utilizando {ggplot2}.\n\n\n\n\n Subir",
-    "crumbs": [
-      "{{< iconify material-symbols-light:scatter-plot >}} Visualizaciones",
-      "Inicio"
-    ]
+    "text": "Mapas varios.\n\n\n\n\n\n\n\n\n\n\nmapa 1\n\n\nmapa semana 01\n\n\n\na\n\nb\n\n\n\ngeom_col()\n\n\n\n\n\n2025-01-01\n\n\nVHG\n\n\n\n\n\nNo hay resultados\n\nAdiós.\n\n\n\n\n Subir"
   },
   {
-    "objectID": "index.html#educación",
-    "href": "index.html#educación",
-    "title": "Víctor Gauto ",
-    "section": "Educación",
-    "text": "Educación\n\n\n\n\n\n\n\n\nDoctorado en Geomática y Sistemas Espaciales\n\n\n\n\n\n\n\n\n\n\n\nInstituto Gulich\n\n\n\n\n\n\n\n\n\n\n\nCórdoba, Argentina\n\n\n\n\n\n\n\n\n\n\n\nEn proceso\n\n\n\n\n\n\n\n\n\n\n\n\nMaestría en Aplicaciones de Imágenes Espaciales\n\n\n\n\n\n\n\n\n\n\n\nInstituto Gulich\n\n\n\n\n\n\n\n\n\n\n\nCórdoba, Argentina\n\n\n\n\n\n\n\n\n\n\n\n2023\n\n\n\n\n\n\n\n\n\n\n\n\nMS in Chemical and Biomolecular Engineering\n\n\n\n\n\n\n\n\n\n\n\nSogang University\n\n\n\n\n\n\n\n\n\n\n\nSeoul, Corea del Sur\n\n\n\n\n\n\n\n\n\n\n\n2019\n\n\n\n\n\n\n\n\n\n\n\n\nIngeniería Química\n\n\n\n\n\n\n\n\n\n\n\nUniversidad Tecnológica Nacional Facultad Regional Resistencia\n\n\n\n\n\n\n\n\n\n\n\nChaco, Argentina\n\n\n\n\n\n\n\n\n\n\n\n2014"
-  },
-  {
-    "objectID": "index.html#investigación",
-    "href": "index.html#investigación",
-    "title": "Víctor Gauto ",
-    "section": "Investigación",
-    "text": "Investigación\n\n\n\n\n\n\n\n\nGrupo de Investigación Sobre Temas Ambientales y Químicos\n\n\n\n\n\n\n\n\n\n\n\nChaco, Argentina\n\n\n\n\n\n\n\n\n\n\n\nActualmente\n\n\n\n\n\n\n\n\n\n\n\n\nEl Instituto de Detección Electromagnética del Medio Ambiente\n\n\n\n\n\n\n\n\n\n\n\nMilán, Italia\n\n\n\n\n\n\n\n\n\n\n\n2022\n\n\n\n\n\n\n\n\n\n\n\n\nLaboratorio de Catalizadores a Nanoescala e Ingeniería de Reacciones\n\n\n\n\n\n\n\n\n\n\n\nSeúl, Corea del Sur\n\n\n\n\n\n\n\n\n\n\n\n2019"
-  },
-  {
-    "objectID": "index.html#sudoku",
-    "href": "index.html#sudoku",
-    "title": "Víctor Gauto ",
-    "section": "Sudoku",
-    "text": "Sudoku\nDisfruto mucho resolver los sudokus de New York Times .\nLlevo registro de los tiempos que me lleva resolver los tres niveles de dificultad.  \n\n\n\n\n\n\n\n\n\n\n\n\n\n394 sudokus\n\n\n55 horas\n\n\n\n\n\n\n\n2025-05-18"
-  },
-  {
-    "objectID": "argentina/instalaciones/estaciones_smn.html",
-    "href": "argentina/instalaciones/estaciones_smn.html",
-    "title": "🌦️Estaciones meteorológicas",
+    "objectID": "publicaciones/index.html",
+    "href": "publicaciones/index.html",
+    "title": " Publicaciones",
     "section": "",
-    "text": "Mapa de estaciones del Servicio Meteorológico Nacional de Argentina.",
+    "text": "Lista de publicaciones y trabajos en los que he participado.  \n\n\n    Spatio-temporal characterization of precipitation in the Middle and Lower Paraguay Basin based on satellite products and weather station data\n\n    \n    \n        \n             Rossana Villalba \n        \n         | \n    \n        \n             Anabella Ferral \n        \n         | \n    \n        \n            Julián Baéz\n        \n         | \n    \n        \n             Jorge Kurita \n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n            Juan Carlos Bertoni\n        \n        \n    \n    \n\n    \n         10.5194/isprs-archives-XLVIII-2-W6-2024-65-2024\n    \n\n     2024\n\n    \n    \n         IMERG \n    \n         CHIRPS \n    \n         El Niño \n    \n         Validation \n    \n         Accumulated precipitation \n    \n         Anomalies \n    \n\n    \n\n    Comparison of water surface temperature retrieval methods from Landsat 9 satellite data\n\n    \n    \n        \n             Matias Bonansea \n        \n         | \n    \n        \n            Sofía Gutiérrez\n        \n         | \n    \n        \n            Mariana Correa\n        \n         | \n    \n        \n             Sofía Paná \n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Francisco Nemiña \n        \n         | \n    \n        \n             Alba Germán \n        \n         | \n    \n        \n             Giuliana Beltramone \n        \n         | \n    \n        \n             Lucio Pinotti \n        \n         | \n    \n        \n             Anabella Ferral \n        \n        \n    \n    \n\n    \n         10.5194/isprs-archives-XLVIII-2-W6-2024-1-2024\n    \n\n     2024\n\n    \n    \n         Landsat Collection 2 Level 2 products \n    \n         Single-Channel method \n    \n         Split-Window algorithm \n    \n         Surface temperature \n    \n\n    \n\n    Remote Sensing Regression Models to Estimate Water Quality Indicators in Continental Waters in North-East Argentina\n\n    \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Enid Marta Utgés \n        \n         | \n    \n        \n            Elsa Ivonne Hervot\n        \n         | \n    \n        \n             María Daniela Tenev \n        \n         | \n    \n        \n             Alejandro Farías \n        \n         | \n    \n        \n             Matías Bonansea \n        \n         | \n    \n        \n             Anabella Ferral \n        \n        \n    \n    \n\n    \n         10.1109/ARGENCON62399.2024.10735875\n    \n\n     2024\n\n    \n    \n         Remote sensing \n    \n         Water quality \n    \n         Empirical algorithm \n    \n         Chlorophyll-a \n    \n         Turbidity \n    \n         Sentinel-2 \n    \n\n    \n\n    Modelling of Phosphorus and Nitrogen Delivery in a Strategic River Basin\n\n    \n    \n        \n             Sofía Paná \n        \n         | \n    \n        \n             Matías Bonansea \n        \n         | \n    \n        \n            Vera Camacho Valdéz\n        \n         | \n    \n        \n            Inés del Valle Asís\n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Anabella Ferral \n        \n        \n    \n    \n\n    \n         10.1109/ARGENCON62399.2024.10735960\n    \n\n     2024\n\n    \n    \n         Water quality \n    \n         Ecosystem services \n    \n         Nutrients \n    \n         InVEST \n    \n\n    \n\n    Changes in Land Covers in Two River Basins in Central Argentina Region. Monitoring the SDG 15.3. 1 Indicator\n\n    \n    \n        \n             Sofía Paná \n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Mattia Terzaghi \n        \n         | \n    \n        \n             Anabella Ferral \n        \n         | \n    \n        \n             Fransisco Nemiña \n        \n         | \n    \n        \n            Inés del Valle Asís\n        \n         | \n    \n        \n             Matías Bonansea \n        \n        \n    \n    \n\n    \n         10.1109/RPIC59053.2023.10530795\n    \n\n     2023\n\n    \n    \n         Land degradation \n    \n         Urbanization \n    \n         Basin scale \n    \n         Riverine scale \n    \n\n    \n\n    Caracterización óptica de aguas superficiales a partir de imágenes satelitales multi e hiperespectrales en la región de Gran Resistencia, Chaco\n\n    \n    \n        \n             Víctor Hugo Gauto \n        \n        \n    \n    \n\n    \n\n     2023\n\n    \n    \n         Aguas interiores \n    \n         Sentinel-2 \n    \n         PRISMA \n    \n         Sensor hiperespectral \n    \n         Análisis cromático \n    \n\n    \n\n    Studies of Adsorption-Desorption of Methylene Blue in a Fixed-Bed Reactor Filled with Cotton and Tanine Industry Waste\n\n    \n    \n        \n             María Daniela Tenev \n        \n         | \n    \n        \n            Camila Torre\n        \n         | \n    \n        \n            Gimena Fontana\n        \n         | \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Mario Sergio Cleva \n        \n         | \n    \n        \n             Néstor Caracciolo \n        \n         | \n    \n        \n             Susana Boeykens \n        \n        \n    \n    \n\n    \n         10.18687/LACCEI2023.1.1.1594\n    \n\n     2023\n\n    \n    \n         Methylene blue \n    \n         fixed-bed reactor \n    \n         cotton husk \n    \n         quebracho chip \n    \n\n    \n\n    First results of PRISMA satellite data applied to water quality monitoring in Argentina\n\n    \n    \n        \n             Víctor Hugo Gauto \n        \n         | \n    \n        \n             Anabella Ferral \n        \n         | \n    \n        \n             Matias Bonansea \n        \n         | \n    \n        \n             Alejandro Farías \n        \n         | \n    \n        \n             Marcelo Scavuzzo \n        \n         | \n    \n        \n             Osvaldo Cardozo \n        \n         | \n    \n        \n             Alba Germán \n        \n         | \n    \n        \n             Claudia Giardino \n        \n        \n    \n    \n\n    \n         10.1109/ARGENCON55245.2022.9939810\n    \n\n     2022\n\n    \n    \n         PRISMA \n    \n         Sentinel 2 \n    \n         Hyperspectral \n    \n         Turbid waters \n    \n         Atmospheric correction \n    \n         Cromaticity \n    \n         Spectral signature \n    \n\n    \n\nNo hay resultados\n\n\n\n\n\n Subir"
+  },
+  {
+    "objectID": "argentina/instalaciones/aeropuertos.html",
+    "href": "argentina/instalaciones/aeropuertos.html",
+    "title": "Aeropuertos",
+    "section": "",
+    "text": "Mapa de aeropuertos de Argentina.",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "🌦️Estaciones meteorológicas"
+      "✈️ Aeropuertos"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/estaciones_smn.html#paquetes",
-    "href": "argentina/instalaciones/estaciones_smn.html#paquetes",
-    "title": "🌦️Estaciones meteorológicas",
+    "objectID": "argentina/instalaciones/aeropuertos.html#paquetes",
+    "href": "argentina/instalaciones/aeropuertos.html#paquetes",
+    "title": "Aeropuertos",
     "section": "Paquetes",
-    "text": "Paquetes\n\n\nOcultar código\nlibrary(sf)\nlibrary(patchwork)\nlibrary(ggpattern)\nlibrary(ggtext)\nlibrary(glue)\nlibrary(showtext)\nlibrary(tidyverse)",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(terra)\nlibrary(tidyterra)\nlibrary(glue)\nlibrary(showtext)\nlibrary(ggtext)\nlibrary(tidyverse)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "🌦️Estaciones meteorológicas"
+      "✈️ Aeropuertos"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/estaciones_smn.html#estilos",
-    "href": "argentina/instalaciones/estaciones_smn.html#estilos",
-    "title": "🌦️Estaciones meteorológicas",
+    "objectID": "argentina/instalaciones/aeropuertos.html#estilos",
+    "href": "argentina/instalaciones/aeropuertos.html#estilos",
+    "title": "Aeropuertos",
     "section": "Estilos",
-    "text": "Estilos\nColores aleatorios a partir de una gama de rosados.\n\n\nOcultar código\ncol &lt;- monochromeR::generate_palette(\n  color = \"#D485AA\",\n  modification = \"go_both_ways\",\n  n_colours = 9\n)\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "text": "Estilos\nColores aleatorios a partir de una gama de rosados.\n\n\nOcultar código\nset.seed(2024)\npp &lt;- PrettyCols::prettycols(palette = \"Pinks\", n = 24, type = \"continuous\") |&gt;\n  sample()\n\nc1 &lt;- \"black\"\nc2 &lt;- \"white\"\nc3 &lt;- \"#FCAADE\"\nc4 &lt;- \"#860A4D\"\n\n\nFuentes: Ubuntu, JetBrains Mono y fontawesome.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nfont_add(\n  family = \"fa\",\n  regular = \"././fuente/Font Awesome 6 Free-Solid-900.otf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "🌦️Estaciones meteorológicas"
+      "✈️ Aeropuertos"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/estaciones_smn.html#epígrafe",
-    "href": "argentina/instalaciones/estaciones_smn.html#epígrafe",
-    "title": "🌦️Estaciones meteorológicas",
+    "objectID": "argentina/instalaciones/aeropuertos.html#epígrafe",
+    "href": "argentina/instalaciones/aeropuertos.html#epígrafe",
+    "title": "Aeropuertos",
     "section": "Epígrafe",
-    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"Datos: &lt;b style='color:{col[9]};'&gt;IGN&lt;/b&gt;, &lt;b style='color:{col[9]};'&gt;SMN&lt;/b&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{col[9]};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{col[9]};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{c1};'&gt;IGN&lt;/span&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bluesky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon} {icon_bluesky}&lt;/b&gt; {usuario}\"\n)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "🌦️Estaciones meteorológicas"
+      "✈️ Aeropuertos"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/estaciones_smn.html#datos",
-    "href": "argentina/instalaciones/estaciones_smn.html#datos",
-    "title": "🌦️Estaciones meteorológicas",
+    "objectID": "argentina/instalaciones/aeropuertos.html#datos",
+    "href": "argentina/instalaciones/aeropuertos.html#datos",
+    "title": "Aeropuertos",
     "section": "Datos",
-    "text": "Datos\nVectores de las provincias con sus departamentos. Obtengo el vector de estaciones meteorológicas del Instituto Geográfico Nacional.\n\n\nOcultar código\np &lt;- st_read(\"argentina/vectores/extras/smn_estaciones_meteorologicas.json\") |&gt;\n  st_transform(crs = 5346) |&gt;\n  select(nombre)\n\npcias_cont &lt;- st_read(\"argentina/vectores/pcias_continental.gpkg\")\n\ndptos_cont &lt;- st_read(\"argentina/vectores/dptos_continental.gpkg\")\n\ndptos_antart &lt;- st_read(\"argentina/vectores/dptos_antartida.gpkg\")\n\np_cont &lt;- st_crop(p, dptos_cont)\np_antart &lt;- st_crop(p, dptos_antart)\n\n\nCreo buffer alrededor de los puntos de las estaciones. NO pueden ser puntos para el difuminado de los colores, tiene que ser un polígono.\nComo el mapa de Antártida es más pequeño, los polígonos tiene que ser más grandes.\n\n\nOcultar código\np_cont_buffer &lt;- st_buffer(p_cont, dist = 12000)\np_antart_buffer &lt;- st_buffer(p_antart, dist = 30000)",
+    "text": "Datos\nVectores de las provincias con sus departamentos. Obtengo el vector de aeropuertos del Instituto Geográfico Nacional, y conservo únicamente los que se encuentran en actividad.\n\n\nOcultar código\npcias &lt;- vect(\"argentina/vectores/pcias_continental.gpkg\") |&gt;\n  project(\"EPSG:5346\")\n\ndptos_pcias &lt;- vect(\"argentina/vectores/dptos_pcias_continental.gpkg\")\n\naer &lt;- vect(\"argentina/vectores/extras/puntos_de_transporte_aereo_GB005.json\") |&gt;\n  project(\"EPSG:5346\")\n\naer &lt;- aer[aer$fun == 6]",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "🌦️Estaciones meteorológicas"
+      "✈️ Aeropuertos"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/estaciones_smn.html#figura",
-    "href": "argentina/instalaciones/estaciones_smn.html#figura",
-    "title": "🌦️Estaciones meteorológicas",
+    "objectID": "argentina/instalaciones/aeropuertos.html#figura",
+    "href": "argentina/instalaciones/aeropuertos.html#figura",
+    "title": "Aeropuertos",
     "section": "Figura",
-    "text": "Figura\nLogo del SMN y subtítulo de la figura.\n\n\nOcultar código\nsmn &lt;- \"&lt;img src='https://upload.wikimedia.org/wikipedia/commons/7/72/SMN_Logo_Alta.png' width='200'&gt;&lt;/img&gt;\"\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {col[9]}'&gt;Argentina&lt;/b&gt; hay {nrow(p)}&lt;br&gt;estaciones meteorológicas.&lt;br&gt;\"\n)\n\n\nContorno del mapa y diseño de la figura compuesta.\n\n\nOcultar código\nbb &lt;- st_bbox(pcias_cont)\n\ndiseño &lt;- \"\nA#\nAB\n\"\n\n\nMapa del sector Antártico.\n\n\nOcultar código\ng_antart &lt;- ggplot() +\n  # departamentos\n  geom_sf(data = dptos_antart, fill = col[3], color = col[5]) +\n  # estaciones meteorológicas\n  geom_sf_pattern(\n    data = p_antart_buffer, color = NA, pattern = \"gradient\",\n    pattern_orientation = \"radial\",\n    pattern_fill = col[3], # centro\n    pattern_fill2 = col[8], # exterior\n    pattern_density = 1) +\n  scale_fill_viridis_d(option = \"turbo\") +\n  coord_sf(clip = \"off\", expand = TRUE) +\n  theme_void() +\n  theme(\n    plot.background = element_rect(color = NA, linewidth = 2, fill = col[2])\n  )\n\n\nMapa de Argentina continental.\n\n\nOcultar código\ng_cont &lt;- ggplot() +\n  # departamentos\n  geom_sf(data = dptos_cont, fill = col[2], color = col[5]) +\n  # provincias\n  geom_sf(data = pcias_cont, fill = NA, color = col[7], linewidth = .25) +\n  # estaciones meteorológicas\n  geom_sf_pattern(\n    data = p_cont_buffer, color = NA, pattern = \"gradient\",\n    pattern_orientation = \"radial\",\n    pattern_fill = col[3], # centro\n    pattern_fill2 = col[8], # exterior\n    pattern_density = 1) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = bb[\"xmax\"], y = bb[\"ymax\"], label = mi_subtitle,\n    fill = NA, label.color = NA, hjust = 0, size = 9, color = col[7],\n    family = \"ubuntu\", vjust = 1\n  ) +\n  # logo SMN\n  annotate(\n    geom = \"richtext\", x = bb[\"xmax\"], y = 5.5e6,\n    label.padding = unit(rep(1, 4), \"lines\"),\n    label.margin = unit(rep(4, 4), \"lines\"),\n    label = smn, fill = NA, label.color = NA, hjust = 0, vjust = 0\n  ) +\n  scale_fill_viridis_d(option = \"turbo\") +\n  coord_sf(clip = \"off\", expand = FALSE) +\n  theme_void()\n\n\nComposición final del mapa.\n\n\nOcultar código\ng &lt;- g_cont + g_antart +\n  plot_layout(widths = c(1, .6), design = diseño) +\n  plot_annotation(\n    caption = mi_caption,\n    theme = theme(\n      plot.margin = margin(t = 25, r = 25, b = 25, l = 25),\n      plot.background = element_rect(\n        fill = col[1], color = col[4], linewidth = 3),\n      plot.caption = element_markdown(\n        family = \"ubuntu\", size = 15, color = col[7], lineheight = 1.2)\n    )\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/estaciones_smn.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)",
+    "text": "Figura\nÍconos de los aviones\n\n\nOcultar código\nicon1 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5b0;&lt;/span&gt; \")\nicon2 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf072;&lt;/span&gt; \")\nicon3 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5af;&lt;/span&gt; \")\nicon &lt;- glue(\"{icon1} {icon2} {icon3}\")\n\n\nSubtítulo y posición.\n\n\nOcultar código\nx_sub &lt;- ext(aer)$xmax\ny_sub &lt;- ext(aer)$ymax\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {c1}'&gt;Argentina&lt;/b&gt; hay en\",\n  \"funcionamiento &lt;b style='color:{c4}'&gt;{nrow(aer)}&lt;/b&gt;\",\n  \"aeropuertos.&lt;br&gt;\",\n  \"{icon}\",\n  .sep = \"&lt;br&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # departamentos\n  geom_sf(\n    data = dptos_pcias, aes(fill = provincia), color = c2, linewidth = .3,\n    linetype = \"22\"\n  ) +\n  # provincias\n  geom_sf(\n    data = pcias, fill = NA, color = c1, linewidth = .4\n  ) +\n  # aeropuertos\n  geom_sf(\n    data = aer, fill = c2, color = c1, size = 11, alpha = .8,\n    stroke = 1, shape = 21) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = x_sub*.84, y = y_sub*.66, label = mi_subtitle,\n    fill = NA, label.color = NA, size = 12, color = c1, hjust = 0,\n    family = \"ubuntu\"\n  ) +\n  scale_fill_manual(values = pp) +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 8, l = 8, t = 2),\n    plot.background = element_rect(\n      fill = c3, color = c4, linewidth = 3),\n    plot.caption = element_markdown(\n      family = \"jet\", color = c4, hjust = .5, size = 20,\n      margin = margin(b = 10)),\n    legend.position = \"none\"\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/aeropuertos.png\",\n  width = 30,\n  height = 65,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "🌦️Estaciones meteorológicas"
+      "✈️ Aeropuertos"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/plantas_potabilizadoras.html",
-    "href": "argentina/instalaciones/plantas_potabilizadoras.html",
-    "title": "🚰Plantas potabilizadoras",
+    "objectID": "argentina/instalaciones/parques_nacionales.html",
+    "href": "argentina/instalaciones/parques_nacionales.html",
+    "title": "🏞️ Parques Nacionales",
     "section": "",
-    "text": "Mapa de plantas de tratamiento de agua de Argentina.",
+    "text": "Parques Nacionales y su extensión.",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "🚰Plantas potabilizadoras"
+      "🏞️ Parques Nacionales"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/plantas_potabilizadoras.html#paquetes",
-    "href": "argentina/instalaciones/plantas_potabilizadoras.html#paquetes",
-    "title": "🚰Plantas potabilizadoras",
+    "objectID": "argentina/instalaciones/parques_nacionales.html#paquetes",
+    "href": "argentina/instalaciones/parques_nacionales.html#paquetes",
+    "title": "🏞️ Parques Nacionales",
     "section": "Paquetes",
-    "text": "Paquetes\n\n\nOcultar código\nlibrary(sf)\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(sf)\nlibrary(ggrepel)\nlibrary(patchwork)\nlibrary(showtext)\nlibrary(ggtext)\nlibrary(glue)\nlibrary(tidyverse)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "🚰Plantas potabilizadoras"
+      "🏞️ Parques Nacionales"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/plantas_potabilizadoras.html#estilos",
-    "href": "argentina/instalaciones/plantas_potabilizadoras.html#estilos",
-    "title": "🚰Plantas potabilizadoras",
+    "objectID": "argentina/instalaciones/parques_nacionales.html#estilos",
+    "href": "argentina/instalaciones/parques_nacionales.html#estilos",
+    "title": "🏞️ Parques Nacionales",
     "section": "Estilos",
-    "text": "Estilos\nPaleta de colores.\n\n\nOcultar código\ncol &lt;- MoMAColors::moma.colors(palette_name = \"Smith\")\nc1 &lt;- \"#FFFFFF\"\nc2 &lt;- \"#000000\"\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "text": "Estilos\nColores.\n\n\nOcultar código\nMetBrewer::met.brewer(name = \"Moreau\")\nc1 &lt;- \"#421600\"\nc2 &lt;- \"#792503\"\nc3 &lt;- \"white\"\nc4 &lt;- \"#BC7524\"\nc5 &lt;- \"#8DADCA\"\nc6 &lt;- \"#527BAA\"\nc7 &lt;- \"#082844\"\n\n\nFuentes de texto.\n\n\nOcultar código\nfont_add(\n  family = \"bebas\",\n  regular = \"././fuente/BebasNeue-Regular.ttf\"\n)\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "🚰Plantas potabilizadoras"
+      "🏞️ Parques Nacionales"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/plantas_potabilizadoras.html#epígrafe",
-    "href": "argentina/instalaciones/plantas_potabilizadoras.html#epígrafe",
-    "title": "🚰Plantas potabilizadoras",
+    "objectID": "argentina/instalaciones/parques_nacionales.html#epígrafe",
+    "href": "argentina/instalaciones/parques_nacionales.html#epígrafe",
+    "title": "🏞️ Parques Nacionales",
     "section": "Epígrafe",
-    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{col[4]};'&gt;IGN&lt;/span&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{col[4]};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bluesky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{col[4]};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon} {icon_bluesky}&lt;/b&gt; {usuario}\"\n)",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos: &lt;/b&gt; &lt;span style='color:{c3};'&gt;IGN&lt;/span&gt;,\n  &lt;/b&gt; &lt;span style='color:{c3};'&gt;Instituto Geográfico Nacional&lt;/span&gt;\"\n)\nautor &lt;- glue(\"&lt;span style='color:{c3};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\"\n)\nicon_instagram &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\"\n)\nicon_github &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\"\n)\nicon_mastodon &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\"\n)\nicon_bluesky &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\"\n)\nusuario &lt;- glue(\"&lt;span style='color:{c3};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;{autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon} {icon_bluesky}&lt;/b&gt; {usuario}\"\n)",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "🚰Plantas potabilizadoras"
+      "🏞️ Parques Nacionales"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/plantas_potabilizadoras.html#datos",
-    "href": "argentina/instalaciones/plantas_potabilizadoras.html#datos",
-    "title": "🚰Plantas potabilizadoras",
+    "objectID": "argentina/instalaciones/parques_nacionales.html#datos",
+    "href": "argentina/instalaciones/parques_nacionales.html#datos",
+    "title": "🏞️ Parques Nacionales",
     "section": "Datos",
-    "text": "Datos\nVectores de las provincias con sus departamentos. Obtengo el vector de plantas potabilizadoras del Instituto Geográfico Nacional, y conservo únicamente los que se encuentran en actividad. Asigno a cada provincia un color de la gama del azul.\n\n\nOcultar código\ndeptos &lt;- st_read(\"argentina/vectores/dptos_continental.gpkg\") |&gt;\n  st_transform(crs = 5346) |&gt;\n  st_geometry()\n\ncol_pcias &lt;- colorRampPalette(\n  c(col[5], scales::muted(col[5])), alpha = .6)(24)\n\npcias &lt;- st_read(\"argentina/vectores/pcias_continental.gpkg\") |&gt;\n  mutate(fill_pcias = col_pcias)\n\nv &lt;- st_read(\n  \"argentina/vectores/extras/puntos_de_fabricacion_y_procesamiento_BH220.json\") |&gt;\n  filter(fun == 6) |&gt;\n  st_transform(crs = 5346)",
+    "text": "Datos\nVector de polígonos de Áreas Protegidas de Argentina, descargado del Instituto Geográfico Nacional (Geodesia y demarcación / Límites / Polígono / Área protegida).\n\n\nOcultar código\nap &lt;- st_read(\"argentina/vectores/extras/area_protegida.json\") |&gt;\n  st_transform(\"EPSG:5346\")\n\n\nConservo únicamente los Parques Nacionales. Unifico el Parque Nacional Iberá, que está dividido en varias partes.\n\n\nOcultar código\npn &lt;- ap |&gt;\n  filter(gna == \"Parque Nacional\") |&gt;\n  mutate(nam = if_else(str_detect(nam, \"Iberá\"), \"Iberá\", nam))\n\n\nCombino los polígonos, calculo el áreas y recorto los nombres de los Parques Nacionales.\n\n\nOcultar código\npn &lt;- pn |&gt;\n  summarise(geometry = st_union(geometry), .by = nam) |&gt;\n  mutate(a = st_area(geometry)) |&gt;\n  mutate(a = as.numeric(a)) |&gt;\n  mutate(a = a * 1e-6) |&gt;\n  mutate(nam_corto = str_wrap(nam, width = 15)) |&gt;\n  mutate(nam = fct_reorder(nam, a)) |&gt;\n  mutate(nam_corto = fct_reorder(nam_corto, a)) |&gt;\n  arrange(nam) |&gt;\n  mutate(fila = row_number())\n\n\nVector de Argentina continental.\n\n\nOcultar código\narg &lt;- st_read(\"argentina/vectores/arg_continental.gpkg\") |&gt;\n  st_transform(\"EPSG:5346\")",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "🚰Plantas potabilizadoras"
+      "🏞️ Parques Nacionales"
     ]
   },
   {
-    "objectID": "argentina/instalaciones/plantas_potabilizadoras.html#figura",
-    "href": "argentina/instalaciones/plantas_potabilizadoras.html#figura",
-    "title": "🚰Plantas potabilizadoras",
+    "objectID": "argentina/instalaciones/parques_nacionales.html#figura",
+    "href": "argentina/instalaciones/parques_nacionales.html#figura",
+    "title": "🏞️ Parques Nacionales",
     "section": "Figura",
-    "text": "Figura\nSubtítulo y posición.\n\n\nOcultar código\nx_sub &lt;- st_bbox(deptos)$xmax\ny_sub &lt;- st_bbox(deptos)$ymax\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {c1}'&gt;Argentina&lt;/b&gt; hay en\",\n  \"funcionamiento &lt;b style='color:#EF7923'&gt;{nrow(v)}&lt;/b&gt;\",\n  \"plantas de tratamiento\",\n  \"de agua.\",\n  .sep = \"&lt;br&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # provincias\n  geom_sf(\n    data = pcias, aes(fill = fill_pcias), linewidth = .4, color = c1,\n    show.legend = TRUE\n  ) +\n  # departamentos\n  geom_sf(\n    data = deptos, fill = NA, color = c1, linewidth = .1, linetype = \"55\"\n  ) +\n  # plantas potabilizadoras\n  geom_sf(\n    data = v, shape = 21, fill = col[4], size = 7, color = c2, alpha = .9\n  ) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = x_sub*.84, y = y_sub*.66, label = mi_subtitle,\n    fill = NA, label.color = NA, size = 12, color = col[4], hjust = 0,\n    family = \"ubuntu\"\n  ) +\n  scale_fill_identity() +\n  scale_shape_identity() +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 8, l = 8, t = 2),\n    plot.background = element_rect(\n      fill = col[5], color = col[2], linewidth = 3),\n    plot.caption = element_markdown(\n      family = \"jet\", color = c1, hjust = .5, size = 20,\n      margin = margin(b = 10))\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/plantas_potabilizadoras.png\",\n  width = 30,\n  height = 65,\n  units = \"cm\"\n)",
+    "text": "Figura\nLa figura está compuesta por dos gráficos: un mapa con las ubicaciones de los Parques Nacionales y un gráfico de puntos indicando la extensión de cada uno.\n\nÁrea de los Parques Nacionales\nLos ejes y sus títulos.\n\n\nOcultar código\neje_x &lt;- tibble(\n  x = seq(0, 6000, 1000),\n  y = 0,\n  label = seq(0, 6000, 1000)\n) |&gt;\n  mutate(label = format(label, big.mark = \".\", decimal.mark = \",\"))\n\ntit_eje_x &lt;- tibble(\n  x = 3000,\n  y = -.5,\n  label = \"Área (km&lt;sup&gt;2&lt;/sup&gt;)\"\n)\n\nverticales &lt;- tibble(\n  x = seq(0, 6000, 1000),\n  xend = x,\n  y = .5,\n  yend = nrow(pn) + .5\n)\n\n\nFigura de puntos.\n\n\nOcultar código\ng1 &lt;- pn |&gt;\n  ggplot(aes(x = a, y = fila)) +\n  geom_segment(\n    data = verticales,\n    aes(x = x, xend = xend, y = y, yend = yend),\n    color = c2,\n    linewidth = .1\n  ) +\n  geom_segment(aes(x = 0, xend = a, yend = fila), color = c4, linewidth = .25) +\n  geom_point(color = c5, fill = c7, size = 4, shape = 23) +\n  geom_point(shape = 16, color = c5, size = .6) +\n  geom_text(\n    aes(label = nam),\n    nudge_x = 150,\n    hjust = 0,\n    color = c3,\n    family = \"ubuntu\",\n    size = 4.5\n  ) +\n  scale_x_continuous(\n    breaks = seq(0, 6000, 1000),\n    expand = c(0, 0),\n    labels = scales::label_number(big.mark = \".\", decimal.mark = \",\")\n  ) +\n  scale_y_continuous(\n    labels = c(nrow(pn):10, glue(\"0{9:1}\")),\n    breaks = 1:nrow(pn)\n  ) +\n  labs(y = NULL, x = \"Área (km&lt;sup&gt;2&lt;/sup&gt;)\") +\n  coord_cartesian(clip = \"off\", expand = FALSE) +\n  theme_void(base_size = 13) +\n  theme(\n    aspect.ratio = 2,\n    plot.margin = margin(10, 70, 10, 10),\n    axis.title.x = element_markdown(\n      family = \"ubuntu\",\n      color = c5,\n      size = rel(1.3),\n      hjust = 1,\n      margin = margin(t = 5)\n    ),\n    axis.text.x = element_text(\n      family = \"jet\",\n      color = c5,\n      margin = margin(t = 3)\n    ),\n    axis.text.y = element_text(\n      color = c5,\n      family = \"jet\",\n      hjust = 0,\n      margin = margin(0, 10, 0, 0)\n    ),\n    axis.ticks.y = element_blank()\n  )\n\n\n\n\nMapa de Parques Nacionales\nCalculo los centroides de cada Parque Nacional.\n\n\nOcultar código\ncen &lt;- pn |&gt;\n  st_centroid() |&gt;\n  st_geometry()\n\n\nMapa de los Parque Nacionales, indicando sus ubicaciones centrales. Los nombres se colocaron evitando que se superpongan mediante el paquete {ggrepel}.\n\n\nOcultar código\ng2 &lt;- ggplot() +\n  geom_sf(data = arg, fill = c2, color = c4, linewidth = .1) +\n  geom_sf(data = cen, shape = 23, color = c5, fill = c7, size = 4) +\n  geom_sf(data = cen, shape = 16, color = c5, size = .6) +\n  geom_label_repel(\n    data = pn,\n    aes(label = nam_corto, geometry = geometry),\n    stat = \"sf_coordinates\",\n    size = 4.5,\n    point.padding = 20,\n    hjust = 0,\n    family = \"ubuntu\",\n    seed = 2025,\n    fill = NA,\n    color = c3,\n    label.size = unit(0, \"line\"),\n    label.padding = unit(.1, \"line\")\n  ) +\n  coord_sf(clip = \"off\", expand = FALSE) +\n  theme_void()\n\n\n\n\nComposición final\nSe combinan ambas figuras (g_col y g_sf) mediante {patchwork}.\nDefino el diseño de la composición de figuras.\n\n\nOcultar código\ndiseño &lt;- \"\n  A#B\n  A#B\n\"\n\n\nDefino el título de la figura.\n\n\nOcultar código\nargentina &lt;- glue(\n  \"&lt;span style='color:{c6};'&gt;Ar&lt;/span&gt;ge&lt;span style='color:gold;'&gt;n&lt;/span&gt;ti&lt;span style='color:{c6};'&gt;na&lt;/span&gt;\"\n)\n\nmi_titulo &lt;- glue(\"Parques Nacionales de {argentina}\")\n\n\nFigura compuesta.\n\n\nOcultar código\ng &lt;- g2 +\n  g1 +\n  plot_layout(design = diseño, widths = c(1, .1, 1)) +\n  plot_annotation(\n    title = mi_titulo,\n    caption = mi_caption,\n    theme = theme(\n      plot.background = element_rect(\n        fill = c1,\n        color = c2,\n        linewidth = 3\n      ),\n      plot.margin = margin(10, 10, 10, 10),\n      plot.title.position = \"plot\",\n      plot.title = element_markdown(\n        hjust = .5,\n        size = 65,\n        family = \"bebas\",\n        color = \"white\",\n        margin = margin(r = -75)\n      ),\n      plot.caption.position = \"plot\",\n      plot.caption = element_markdown(\n        hjust = .5,\n        lineheight = 1.3,\n        color = c5,\n        size = 14,\n        family = \"jet\",\n        margin = margin(t = 10, r = -75)\n      )\n    )\n  )\n\n\nGuardo la figura.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/parques_nacionales.png\",\n  width = 35,\n  height = 35,\n  units = \"cm\"\n)\n\nbrowseURL(paste0(getwd(), \"/argentina/instalaciones/parques_nacionales.png\"))",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones",
-      "🚰Plantas potabilizadoras"
+      "🏞️ Parques Nacionales"
     ]
   },
   {
@@ -2681,7 +2753,7 @@
     "href": "tidytuesday/2025/index.html",
     "title": "Introducción",
     "section": "",
-    "text": "2025\n\n\n   \n    \n    \n      Ordenar por\n      Por defecto\n      \n        Título\n      \n      \n        Fecha - Menos reciente\n      \n      \n        Fecha - Más reciente\n      \n      \n        Autor/a\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSemana 19\n\n\n\ngeom_spatraster\n\ngeom_spatvector\n\n\n\n\n\n\n\n\n\n2025-05-18\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 18\n\n\n\nplot_usmap\n\n\n\n\n\n\n\n\n\n2025-05-18\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 20\n\n\n\ngeom_spatvector\n\ngeom_spatvector_text\n\ngeom_spatraster\n\ngeom_richtext\n\n\n\n\n\n\n\n\n\n2025-05-18\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 17\n\n\n\ngeom_marquee\n\n\n\n\n\n\n\n\n\n2025-04-29\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 16\n\n\n\ngeom_segment\n\ngeom_line\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-04-22\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 15\n\n\n\ngeom_spatraster\n\ngeom_spatvector\n\ngeom_spatvector_label\n\n\n\n\n\n\n\n\n\n2025-04-15\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 14\n\n\n\ngeom_vline\n\ngeom_point\n\ngeom_segment\n\ngeom_label\n\n\n\n\n\n\n\n\n\n2025-04-08\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 13\n\n\n\ngeom_richtext\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-04-01\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 12\n\n\n\ngeom_line\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-03-25\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 11\n\n\n\ngeom_smooth\n\ngeom_abline\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-03-18\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 10\n\n\n\ngeom_point\n\ngeom_richtext\n\n\n\n\n\n\n\n\n\n2025-03-11\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 09\n\n\n\ngeom_richtext\n\n\n\n\n\n\n\n\n\n2025-03-04\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 08\n\n\n\ngeom_text_wordcloud\n\n\n\n\n\n\n\n\n\n2025-02-25\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 07\n\n\n\ngeom_spatvector\n\nplot_usmap\n\n\n\n\n\n\n\n\n\n2025-02-18\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 06\n\n\n\ngeom_treemap\n\ngeom_from_path\n\n\n\n\n\n\n\n\n\n2025-02-11\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 05\n\n\n\ngeom_segment\n\ngeom_label\n\ngeom_richtext\n\n\n\n\n\n\n\n\n\n2025-02-04\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 04\n\n\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-01-28\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 03\n\n\n\ngeom_area\n\n\n\n\n\n\n\n\n\n2025-01-21\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 02\n\n\n\ngeom_col\n\ngeom_text\n\n\n\n\n\n\n\n\n\n2025-01-14\n\n\nVíctor Gauto\n\n\n\n\n\nNo hay resultados\n\nAdiós.\n\n\n\n\n Subir",
+    "text": "2025\n\n\n   \n    \n    \n      Ordenar por\n      Por defecto\n      \n        Título\n      \n      \n        Fecha - Menos reciente\n      \n      \n        Fecha - Más reciente\n      \n      \n        Autor/a\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSemana 19\n\n\n\ngeom_spatraster\n\ngeom_spatvector\n\n\n\n\n\n\n\n\n\n2025-05-25\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 18\n\n\n\nplot_usmap\n\n\n\n\n\n\n\n\n\n2025-05-25\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 20\n\n\n\ngeom_spatvector\n\ngeom_spatvector_text\n\ngeom_spatraster\n\ngeom_richtext\n\n\n\n\n\n\n\n\n\n2025-05-25\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 17\n\n\n\ngeom_marquee\n\n\n\n\n\n\n\n\n\n2025-04-29\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 16\n\n\n\ngeom_segment\n\ngeom_line\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-04-22\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 15\n\n\n\ngeom_spatraster\n\ngeom_spatvector\n\ngeom_spatvector_label\n\n\n\n\n\n\n\n\n\n2025-04-15\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 14\n\n\n\ngeom_vline\n\ngeom_point\n\ngeom_segment\n\ngeom_label\n\n\n\n\n\n\n\n\n\n2025-04-08\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 13\n\n\n\ngeom_richtext\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-04-01\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 12\n\n\n\ngeom_line\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-03-25\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 11\n\n\n\ngeom_smooth\n\ngeom_abline\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-03-18\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 10\n\n\n\ngeom_point\n\ngeom_richtext\n\n\n\n\n\n\n\n\n\n2025-03-11\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 09\n\n\n\ngeom_richtext\n\n\n\n\n\n\n\n\n\n2025-03-04\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 08\n\n\n\ngeom_text_wordcloud\n\n\n\n\n\n\n\n\n\n2025-02-25\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 07\n\n\n\ngeom_spatvector\n\nplot_usmap\n\n\n\n\n\n\n\n\n\n2025-02-18\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 06\n\n\n\ngeom_treemap\n\ngeom_from_path\n\n\n\n\n\n\n\n\n\n2025-02-11\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 05\n\n\n\ngeom_segment\n\ngeom_label\n\ngeom_richtext\n\n\n\n\n\n\n\n\n\n2025-02-04\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 04\n\n\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-01-28\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 03\n\n\n\ngeom_area\n\n\n\n\n\n\n\n\n\n2025-01-21\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 02\n\n\n\ngeom_col\n\ngeom_text\n\n\n\n\n\n\n\n\n\n2025-01-14\n\n\nVíctor Gauto\n\n\n\n\n\nNo hay resultados\n\nAdiós.\n\n\n\n\n Subir",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025"
