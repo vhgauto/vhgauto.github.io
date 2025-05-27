@@ -1,0 +1,355 @@
+---
+format:
+  html:
+    code-fold: show
+    code-summary: "Ocultar código"
+    code-line-numbers: false
+    code-annotations: false
+    code-link: true
+    code-tools:
+        source: true
+        toggle: true
+        caption: "Código"
+    code-overflow: scroll
+    page-layout: full
+editor_options:
+  chunk_output_type: console
+categories:
+  - geom_text
+  - geom_rect
+  - geom_point
+  - geom_smooth
+execute:
+  eval: false
+  echo: true
+  warning: false
+title: "Semana 21"
+date: 2025-05-27
+author: Víctor Gauto
+---
+
+Tendencia entre tamaño de monstruos y sus propiedades.
+
+![Semana 21, 2025](semana_21.png)
+
+## Paquetes
+
+```{r}
+library(patchwork)
+library(glue)
+library(ggtext)
+library(showtext)
+library(tidyverse)
+```
+
+## Estilos
+
+Colores.
+
+```{r}
+c1 <- "#A41400"
+c2 <- "#007E2E"
+c3 <- "#00B7A7"
+```
+
+Fuentes: Ubuntu y JetBrains Mono.
+
+```{r}
+font_add(
+  family = "ubuntu",
+  regular = "././fuente/Ubuntu-Regular.ttf",
+  bold = "././fuente/Ubuntu-Bold.ttf",
+  italic = "././fuente/Ubuntu-Italic.ttf"
+)
+
+font_add(
+  family = "jet",
+  regular = "././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf"
+)
+
+showtext_auto()
+showtext_opts(dpi = 300)
+```
+
+## Epígrafe
+
+```{r}
+fuente <- glue(
+  "Datos: <span style='color:{c1};'><span style='font-family:jet;'>",
+  "{{<b>tidytuesdayR</b>}}</span> semana 21, ",
+  "<b>Dungeons & Dragons System Reference Document</b>.</span>"
+)
+
+autor <- glue("<span style='color:{c1};'>**Víctor Gauto**</span>")
+icon_twitter <- glue("<span style='font-family:jet;'>&#xf099;</span>")
+icon_instagram <- glue("<span style='font-family:jet;'>&#xf16d;</span>")
+icon_github <- glue("<span style='font-family:jet;'>&#xf09b;</span>")
+icon_mastodon <- glue("<span style='font-family:jet;'>&#xf0ad1;</span>")
+icon_bsky <- glue("<span style='font-family:jet;'>&#xe28e;</span>")
+usuario <- glue("<span style='color:{c1};'>**vhgauto**</span>")
+sep <- glue("**|**")
+
+mi_caption <- glue(
+  "{fuente}<br>{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} ",
+  "{icon_mastodon} {icon_bsky} {usuario}"
+)
+```
+
+## Datos
+
+```{r}
+tuesdata <- tidytuesdayR::tt_load(2025, 21)
+monsters <- tuesdata$monsters
+```
+
+## Procesamiento
+
+Me interesa la relación entre el tamaño de los monstruos y el puntaje de las propiedades.
+
+Traducciones y orden correcto de tamaños y propiedades.
+
+```{r}
+tamaños_v <- unique(monsters$size)
+tamaños_trad <- c(
+  "Grande",
+  "Medio",
+  "Pequeño",
+  "Medio/Pequeño",
+  "Enorme",
+  "Gigantesco",
+  "Diminuto"
+)
+
+tamaños_v <- set_names(tamaños_trad, tamaños_v)
+tamaños_orden <- c(
+  "Diminuto",
+  "Pequeño",
+  "Medio/Pequeño",
+  "Medio",
+  "Grande",
+  "Enorme",
+  "Gigantesco"
+)
+
+prop_v <- c("str", "dex", "con", "int", "wis", "cha")
+prop_trad <- c(
+  "Fuerza",
+  "Destreza",
+  "Constitución",
+  "Inteligencia",
+  "Sabiduría",
+  "Carisma"
+)
+prop_v <- set_names(prop_trad, prop_v)
+```
+
+Selecciono columnas de interés e incorporo traducciones.
+
+```{r}
+d <- monsters |>
+  select(size, str, dex, con, int, wis, cha) |>
+  pivot_longer(
+    cols = -size,
+    names_to = "param",
+    values_to = "valor"
+  ) |>
+  mutate(
+    tamaño = tamaños_v[size]
+  ) |>
+  mutate(
+    tamaño = fct(tamaño, tamaños_orden)
+  ) |>
+  mutate(
+    parametro = prop_v[param]
+  )
+```
+
+## Figura
+
+La figura final está compuesta de los paneles de puntos para cada propiedad, y la leyenda indicando el tamaño de los monstruos. Ambas figuras está combinadas con `{patchwork}`.
+
+### Figura leyenda de tamaños
+
+Creo un tibble con las posiciones y etiquetas de texto para la leyenda de tamaños.
+
+```{r}
+abrev_v <- c("DI", "PE", "MP", "ME", "GR", "EN", "GI")
+abrev_tbl <- tibble(
+  abr = abrev_v,
+  ext = tamaños_orden
+) |>
+  mutate(
+    x = 1:length(tamaños_orden),
+    y = 1
+  )
+```
+
+Figura mostrando la leyenda.
+
+```{r}
+g_legend <- ggplot(abrev_tbl, aes(x, y)) +
+  geom_text(aes(label = abr), size = 4, family = "jet", color = c1) +
+  geom_text(aes(y = .4, label = ext), size = 4, family = "ubuntu", color = c2) +
+  coord_cartesian(
+    clip = "off",
+    expand = FALSE,
+    ylim = c(0, 1),
+    xlim = c(1.25, 7)
+  ) +
+  theme_void() +
+  theme(
+    aspect.ratio = .05,
+    plot.margin = margin(t = 16),
+    plot.background = element_rect(color = NA, fill = "grey90")
+  )
+```
+
+### Figura de puntos
+
+Cada panel corresponde a una propiedad y tiene un color de fondo específico.
+
+```{r}
+cuadro_tbl <- distinct(d, parametro) |>
+  mutate(
+    xmin = 0,
+    xmax = 7.5,
+    ymin = 0,
+    ymax = 30.5
+  )
+```
+
+Figura de puntos por panel.
+
+```{r}
+g_points <- ggplot(d, aes(as.numeric(tamaño), valor, color = parametro)) +
+  geom_rect(
+    data = cuadro_tbl,
+    aes(
+      xmin = xmin,
+      xmax = xmax,
+      ymin = ymin,
+      ymax = ymax,
+      fill = parametro
+    ),
+    inherit.aes = FALSE,
+    show.legend = FALSE
+  ) +
+  geom_rect(
+    data = cuadro_tbl,
+    aes(
+      xmin = xmin,
+      xmax = xmax,
+      ymin = ymin,
+      ymax = ymax
+    ),
+    inherit.aes = FALSE,
+    fill = alpha("white", .9)
+  ) +
+  geom_point(
+    alpha = 1 / 4,
+    show.legend = FALSE,
+    position = position_jitter(
+      seed = 2025,
+      width = .1
+    )
+  ) +
+  geom_smooth(
+    se = FALSE,
+    method = "lm",
+    formula = y ~ x,
+    show.legend = FALSE,
+    linewidth = 2,
+    lineend = "round"
+  ) +
+  geom_smooth(
+    se = FALSE,
+    method = "lm",
+    formula = y ~ x,
+    show.legend = FALSE,
+    color = "white",
+    linewidth = .6,
+    lineend = "round"
+  ) +
+  facet_wrap(vars(parametro), nrow = 2, scales = "free") +
+  scale_x_continuous(
+    breaks = 1:length(tamaños_orden),
+    labels = abrev_v
+  ) +
+  scale_y_continuous(breaks = scales::breaks_width(5)) +
+  MetBrewer::scale_fill_met_d(
+    name = "Austria"
+  ) +
+  MetBrewer::scale_color_met_d(
+    name = "Austria"
+  ) +
+  coord_cartesian(ylim = c(0, 30), xlim = c(.5, 7.5), expand = FALSE) +
+  labs(x = NULL, y = NULL) +
+  ggthemes::theme_par(base_size = 15, base_family = "ubuntu") +
+  theme(
+    aspect.ratio = 1,
+    plot.margin = margin(),
+    plot.background = element_blank(),
+    panel.background = element_rect(fill = "grey95"),
+    panel.spacing = unit(1, "cm"),
+    axis.text = element_text(size = rel(.8), family = "jet"),
+    axis.ticks.length = unit(3, "pt"),
+    axis.ticks = element_line(linewidth = .3),
+    strip.text = element_text(face = "bold"),
+    strip.background = element_blank(),
+    strip.clip = "off"
+  )
+```
+
+### Composición final
+
+Defino el logo de **Dungeons & Dragons** como título y agrego subtítulo.
+
+```{r}
+link <- "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Dungeons_%26_Dragons_5th_Edition_logo.svg/1280px-Dungeons_%26_Dragons_5th_Edition_logo.svg.png"
+
+logo <- glue("<img src='{link}' width=120 />")
+
+mi_subtitulo <- "Características de los monstruos de acuerdo al tamaño."
+```
+
+Combino ambas figuras y agrego los elementos restantes.
+
+```{r}
+g <- g_points /
+  g_legend +
+  plot_layout(heights = c(20, 1)) +
+  plot_annotation(
+    title = logo,
+    subtitle = mi_subtitulo,
+    caption = mi_caption,
+    theme = theme(
+      text = element_text(family = "ubuntu"),
+      plot.margin = margin(t = 10),
+      plot.background = element_rect(fill = "grey95"),
+      plot.title = element_markdown(margin = margin(b = 15, l = 30)),
+      plot.subtitle = element_text(
+        margin = margin(t = -50, b = 25),
+        hjust = .5,
+        size = 20
+      ),
+      plot.caption = element_markdown(
+        color = c3,
+        size = 10,
+        lineheight = 1.3,
+        margin = margin(t = 10, b = 10, r = 10)
+      )
+    )
+  )
+```
+
+Guardo.
+
+```{r}
+ggsave(
+  plot = g,
+  filename = "tidytuesday/2025/semana_21.png",
+  width = 30,
+  height = 25,
+  units = "cm"
+)
+```
