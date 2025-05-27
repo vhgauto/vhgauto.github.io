@@ -47,41 +47,12 @@
     ]
   },
   {
-    "listing": "/argentina/animaciones/index.html",
-    "items": [
-      "/argentina/animaciones/crecimiento_rutas.html",
-      "/argentina/animaciones/torres_celulares.html"
-    ]
-  },
-  {
-    "listing": "/argentina/instalaciones/index.html",
-    "items": [
-      "/argentina/instalaciones/parques_nacionales.html",
-      "/argentina/instalaciones/faros.html",
-      "/argentina/instalaciones/aeropuertos.html",
-      "/argentina/instalaciones/plantas_potabilizadoras.html",
-      "/argentina/instalaciones/educacion.html",
-      "/argentina/instalaciones/red_electrica.html",
-      "/argentina/instalaciones/buzones.html",
-      "/argentina/instalaciones/estaciones_smn.html"
-    ]
-  },
-  {
-    "listing": "/mapas.html",
-    "items": [
-      "/mapas/mapa1.html"
-    ]
-  },
-  {
-    "listing": "/publicaciones/index.html",
-    "items": []
-  },
-  {
     "listing": "/tidytuesday/2025/index.html",
     "items": [
       "/tidytuesday/2025/semana_19.html",
       "/tidytuesday/2025/semana_18.html",
       "/tidytuesday/2025/semana_20.html",
+      "/tidytuesday/2025/semana_21.html",
       "/tidytuesday/2025/semana_17.html",
       "/tidytuesday/2025/semana_16.html",
       "/tidytuesday/2025/semana_15.html",
@@ -98,6 +69,36 @@
       "/tidytuesday/2025/semana_04.html",
       "/tidytuesday/2025/semana_03.html",
       "/tidytuesday/2025/semana_02.html"
+    ]
+  },
+  {
+    "listing": "/publicaciones/index.html",
+    "items": []
+  },
+  {
+    "listing": "/mapas.html",
+    "items": [
+      "/mapas/mapa1.html"
+    ]
+  },
+  {
+    "listing": "/argentina/instalaciones/index.html",
+    "items": [
+      "/argentina/instalaciones/parques_nacionales.html",
+      "/argentina/instalaciones/faros.html",
+      "/argentina/instalaciones/aeropuertos.html",
+      "/argentina/instalaciones/plantas_potabilizadoras.html",
+      "/argentina/instalaciones/educacion.html",
+      "/argentina/instalaciones/red_electrica.html",
+      "/argentina/instalaciones/buzones.html",
+      "/argentina/instalaciones/estaciones_smn.html"
+    ]
+  },
+  {
+    "listing": "/argentina/animaciones/index.html",
+    "items": [
+      "/argentina/animaciones/crecimiento_rutas.html",
+      "/argentina/animaciones/torres_celulares.html"
     ]
   },
   {
