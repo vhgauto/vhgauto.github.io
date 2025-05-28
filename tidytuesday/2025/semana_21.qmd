@@ -28,7 +28,7 @@ date: 2025-05-27
 author: Víctor Gauto
 ---
 
-Tendencia entre tamaño de monstruos y sus propiedades.
+Tendencia entre tamaño de monstruos y sus propiedades en **Dungeons & Dragons**.
 
 ![Semana 21, 2025](semana_21.png)
 
@@ -50,9 +50,10 @@ Colores.
 c1 <- "#A41400"
 c2 <- "#007E2E"
 c3 <- "#00B7A7"
+c4 <- "#E50712"
 ```
 
-Fuentes: Ubuntu y JetBrains Mono.
+Fuentes: Ubuntu, JetBrains Mono y Uncial Antiqua.
 
 ```{r}
 font_add(
@@ -65,6 +66,11 @@ font_add(
 font_add(
   family = "jet",
   regular = "././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf"
+)
+
+font_add_google(
+  name = "Uncial Antiqua",
+  family = "uncial"
 )
 
 showtext_auto()
@@ -112,9 +118,9 @@ Traducciones y orden correcto de tamaños y propiedades.
 tamaños_v <- unique(monsters$size)
 tamaños_trad <- c(
   "Grande",
-  "Medio",
+  "Mediano",
   "Pequeño",
-  "Medio/Pequeño",
+  "Mediano/Pequeño",
   "Enorme",
   "Gigantesco",
   "Diminuto"
@@ -124,8 +130,8 @@ tamaños_v <- set_names(tamaños_trad, tamaños_v)
 tamaños_orden <- c(
   "Diminuto",
   "Pequeño",
-  "Medio/Pequeño",
-  "Medio",
+  "Mediano/Pequeño",
+  "Mediano",
   "Grande",
   "Enorme",
   "Gigantesco"
@@ -139,7 +145,8 @@ prop_trad <- c(
   "Inteligencia",
   "Sabiduría",
   "Carisma"
-)
+) |>
+  toupper()
 prop_v <- set_names(prop_trad, prop_v)
 ```
 
@@ -294,7 +301,11 @@ g_points <- ggplot(d, aes(as.numeric(tamaño), valor, color = parametro)) +
     axis.text = element_text(size = rel(.8), family = "jet"),
     axis.ticks.length = unit(3, "pt"),
     axis.ticks = element_line(linewidth = .3),
-    strip.text = element_text(face = "bold"),
+    strip.text = element_text(
+      face = "bold",
+      family = "uncial",
+      size = rel(1.3)
+    ),
     strip.background = element_blank(),
     strip.clip = "off"
   )
@@ -309,7 +320,10 @@ link <- "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Dungeons_%26_Drago
 
 logo <- glue("<img src='{link}' width=120 />")
 
-mi_subtitulo <- "Características de los monstruos de acuerdo al tamaño."
+mi_subtitulo <- glue(
+  "Características de los <b style='color: {c4}'>monstruos</b> de acuerdo al 
+  tamaño."
+)
 ```
 
 Combino ambas figuras y agrego los elementos restantes.
@@ -327,19 +341,28 @@ g <- g_points /
       plot.margin = margin(t = 10),
       plot.background = element_rect(fill = "grey95"),
       plot.title = element_markdown(margin = margin(b = 15, l = 30)),
-      plot.subtitle = element_text(
+      plot.subtitle = element_markdown(
         margin = margin(t = -50, b = 25),
         hjust = .5,
         size = 20
       ),
       plot.caption = element_markdown(
         color = c3,
-        size = 10,
+        hjust = .5,
+        size = 11,
         lineheight = 1.3,
-        margin = margin(t = 10, b = 10, r = 10)
+        margin = margin(t = 10, b = 10)
       )
     )
   )
+
+ggsave(
+  plot = g,
+  filename = "tidytuesday/2025/semana_21.png",
+  width = 30,
+  height = 25,
+  units = "cm"
+)
 ```
 
 Guardo.
