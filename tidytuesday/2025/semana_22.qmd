@@ -15,9 +15,9 @@ format:
 editor_options:
   chunk_output_type: console
 categories:
-  - GEOM_AAA
-  - GEOM_BBB
-  - GEOM_CCC
+  - geom_segment
+  - geom_point
+  - geom_marquee
 execute:
   eval: false
   echo: true
@@ -27,9 +27,7 @@ date: 2025-06-03
 author: Víctor Gauto
 ---
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXX DESCRIPCIÓN DE LA FIGURA XXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Autores en lengua española con mayor cantidad de obras en el Proyecto Gutenberg.
 
 ![Semana 22, 2025](semana_22.png)
 
@@ -38,18 +36,18 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```{r}
 library(glue)
 library(ggtext)
+library(marquee)
 library(showtext)
 library(tidyverse)
 ```
 
 ## Estilos
 
-Colores.
+Colores. Remplazo el color rojo con el del [logo de Gutenberg](https://files.mastodon.social/accounts/avatars/110/441/535/131/897/219/original/0ddf9d4dd12a5dee.png).
 
 ```{r}
-c1 <- "#000000"
-c2 <- "#000000"
-c3 <- "#000000"
+col <- PrettyCols::prettycols("Beach", 5)
+col[4] <- "#9E211A"
 ```
 
 Fuentes: Ubuntu y JetBrains Mono.
@@ -75,18 +73,18 @@ showtext_opts(dpi = 300)
 
 ```{r}
 fuente <- glue(
-  "Datos: <span style='color:{c1};'><span style='font-family:jet;'>",
+  "Datos: <span style='color:{col[1]};'><span style='font-family:jet;'>",
   "{{<b>tidytuesdayR</b>}}</span> semana 22, ",
-  "<b>---FUENTE---</b>.</span>"
+  "<b>{{gutenbergr}}</b>.</span>"
 )
 
-autor <- glue("<span style='color:{c1};'>**Víctor Gauto**</span>")
+autor <- glue("<span style='color:{col[1]};'>**Víctor Gauto**</span>")
 icon_twitter <- glue("<span style='font-family:jet;'>&#xf099;</span>")
 icon_instagram <- glue("<span style='font-family:jet;'>&#xf16d;</span>")
 icon_github <- glue("<span style='font-family:jet;'>&#xf09b;</span>")
 icon_mastodon <- glue("<span style='font-family:jet;'>&#xf0ad1;</span>")
 icon_bsky <- glue("<span style='font-family:jet;'>&#xe28e;</span>")
-usuario <- glue("<span style='color:{c1};'>**vhgauto**</span>")
+usuario <- glue("<span style='color:{col[1]};'>**vhgauto**</span>")
 sep <- glue("**|**")
 
 mi_caption <- glue(
@@ -100,101 +98,144 @@ mi_caption <- glue(
 ```{r}
 tuesdata <- tidytuesdayR::tt_load(2025, 22)
 gutenberg_authors <- tuesdata$gutenberg_authors
-gutenberg_languages <- tuesdata$gutenberg_languages
 gutenberg_metadata <- tuesdata$gutenberg_metadata
-gutenberg_subjects <- tuesdata$gutenberg_subjects
 ```
 
 ## Procesamiento
 
-Me interesa...
+Me interesan los autores que escriben en español, los años en los que vivieron y la cantidad de obras que publicaron.
+
+Obtengo los autores con mayor cantidad de obras en español.
 
 ```{r}
-top_lang <- inner_join(
-  gutenberg_languages,
-  gutenberg_authors,
-  by = join_by(gutenberg_id == gutenberg_author_id)
-) |>
-  select(birthdate, language) |>
+top_autores <- gutenberg_metadata |>
+  filter(language == "es") |>
+  count(author, sort = TRUE) |>
   drop_na() |>
-  filter(between(birthdate, 1900, 2000)) |>
-  count(language) |>
-  slice_max(order_by = n, n = 6, with_ties = FALSE) |>
-  mutate(language = fct_reorder(language, n)) |>
-  pull(language)
-
-top_lang_trad <- c(
-  "Español",
-  "Italiano",
-  "Alemán",
-  "Francés",
-  "Finlandés",
-  "Español"
-)
-
-top_lang_trad <- set_names(top_lang_trad, top_lang)
-
-inner_join(
-  gutenberg_languages,
-  gutenberg_authors,
-  by = join_by(gutenberg_id == gutenberg_author_id)
-) |>
-  select(language, birthdate) |>
-  drop_na() |>
-  filter(language %in% top_lang) |>
-  count(language, birthdate) |>
-  filter(between(birthdate, 1900, 2000)) |>
-  mutate(language = factor(language, levels(top_lang))) |>
-  ggplot(aes(birthdate, n, fill = language)) +
-  geom_col(position = position_stack(), color = "white", linewidth = 1) +
-  MetBrewer::scale_fill_met_d(
-    name = "Juarez",
-    breaks = top_lang,
-    labels = top_lang_trad
-  ) +
-  guides(
-    fill = guide_legend(reverse = TRUE)
-  ) +
-  theme_bw(base_size = 4) +
-  theme(
-    aspect.ratio = 1,
-    legend.position = "inside",
-    legend.position.inside = c(.9, .9),
-    legend.justification.inside = c(1, 1)
-  )
+  filter(author != "Anonymous") |>
+  slice_head(n = 22)
 ```
 
+Uno el nombre con el apellido, calculo la cantidad de obras (`n`) y agrego logo de [lapicera](https://api.iconify.design/system-uicons:write.svg).
+
 ```{r}
-inner_join(
-  gutenberg_languages,
+lapicera <- glue(
+  "https://api.iconify.design/system-uicons:write.svg"
+)
+
+d <- inner_join(
   gutenberg_authors,
-  by = join_by(gutenberg_id == gutenberg_author_id)
+  top_autores,
+  by = join_by(author)
 ) |>
-  select(author, language) |>
-  count(author, language, sort = TRUE) |>
-  slice_max(order_by = n, n = 10, by = language, with_ties = FALSE) |>
-  filter(language %in% top_lang) |>
-  print(n = 100)
+  select(
+    autor = author,
+    nacimiento = birthdate,
+    muerte = deathdate,
+    n
+  ) |>
+  filter(nacimiento > 0) |>
+  drop_na() |>
+  arrange(n, nacimiento) |>
+  mutate(puesto = row_number()) |>
+  separate_wider_delim(
+    cols = autor,
+    delim = ", ",
+    names = c("apellido", "nombre"),
+    too_many = "merge"
+  ) |>
+  mutate(
+    autor = glue(
+      "{nombre} **{apellido}** ![]({lapicera}) {{.{col[5]} {n}}} "
+    )
+  ) |> 
+  mutate(x = (muerte + nacimiento)/2)
 ```
 
 ## Figura
 
+Logo del proyecto Gutenberg, título de la figura y estilo de texto para las etiquetas.
+
+```{r}
+gutenberg_link <- "https://files.mastodon.social/accounts/avatars/110/441/535/131/897/219/original/0ddf9d4dd12a5dee.png"
+gutenberg_logo <- glue("<img src='{gutenberg_link}' width=100></img>")
+
+mi_titulo <- glue(
+  "El <b style='color: {col[4]}'>Proyecto Gutenberg</b> es una biblioteca con 
+  **79000** libros disponibles.<br>
+  Se muestran los autores en <b style='color: {col[1]}'>español</b> más 
+  populares, indicando la cantidad<br>
+  de obras y sus años de nacimiento y muerte."
+)
+
+label_style <- modify_style(
+  classic_style(),
+  "body",
+  family = "ubuntu",
+  color = col[1],
+  size = 17
+)
+```
+
 Figura.
 
 ```{r}
-g <- ggplot()
+g <- ggplot(d, aes(x = nacimiento, xend = muerte, y = puesto, yend = puesto)) +
+  geom_segment(
+    arrow = arrow(angle = 20, length = unit(5, "pt"), type = "closed"),
+    color = col[4], linewidth = 1
+  ) +
+  geom_point(aes(nacimiento), shape = 19, size = 2, color = col[4]) +
+  geom_point(aes(nacimiento), shape = 19, size = .3, color = col[3]) +
+  geom_marquee(aes(x, y = puesto + .25, label = autor), style = label_style) +
+  annotate(
+    geom = "richtext",
+    x = I(1),
+    y = I(1.01),
+    hjust = 1,
+    vjust = 1,
+    label = gutenberg_logo,
+    fill = col[1],
+    label.r = unit(0, "mm"),
+    label.padding = unit(c(.2, .2, 0, .2), "lines"),
+    label.color = NA
+  ) +
+  scale_x_continuous(breaks = scales::breaks_width(20)) +
+  coord_cartesian(
+    xlim = c(1800, 1980), ylim = c(0, 21), expand = FALSE, clip = "off"
+  ) +
+  labs(
+    x = NULL, y = NULL, title = mi_titulo, caption = mi_caption
+  ) +
+  theme_classic(base_size = 15, base_family = "ubuntu") +
+  theme(
+    aspect.ratio = 1,
+    plot.margin = margin(r = 30, l = 30, t = 10, b = 10),
+    plot.background = element_rect(fill = col[3], color = NA),
+    plot.title = element_markdown(
+      lineheight = 1.2, size = rel(1.5), color = col[5], margin = margin(b = 15)
+    ),
+    plot.caption = element_markdown(
+      color = col[5], lineheight = 1.2, size = rel(1), margin = margin(t = 20),
+      hjust = .5
+    ),
+    panel.background = element_blank(),
+    panel.grid.major.x = element_line(color = col[2], linewidth = .1),
+    axis.ticks = element_blank(),
+    axis.line = element_blank(),
+    axis.text.y = element_blank(),
+    axis.text.x = element_text(family = "jet", color = col[2], size = rel(1.3))
+  )
 ```
 
-Guardo.
+Guardo
 
 ```{r}
 ggsave(
   plot = g,
   filename = "tidytuesday/2025/semana_22.png",
   width = 30,
-  height = 30,
+  height = 33,
   units = "cm"
 )
-
-browseURL(paste0(getwd(), "/tidytuesday/2025/semana_22.png"))
 ```
