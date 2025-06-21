@@ -15,9 +15,8 @@ format:
 editor_options:
   chunk_output_type: console
 categories:
-  - GEOM_AAA
-  - GEOM_BBB
-  - GEOM_CCC
+  - geom_rect
+  - geom_point
 execute:
   eval: false
   echo: true
