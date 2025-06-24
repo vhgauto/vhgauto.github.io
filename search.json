@@ -221,7 +221,7 @@
     "href": "argentina/instalaciones/index.html",
     "title": "Instalaciones en Argentina",
     "section": "",
-    "text": "En esta sección se muestran mapas de Argentina  que incluyen instalaciones varias, como ser: plantas de tratamiento de agua, centrales generadoras de energía, rutas nacionales y provinciales, etc.\nPara darle diversidad a los mapas, cada uno cuenta con una paleta de colores diferente.\n \n\n\n   \n    \n    \n      Ordenar por\n      Por defecto\n      \n        Título\n      \n      \n        Fecha - Menos reciente\n      \n      \n        Fecha - Más reciente\n      \n      \n        Autor/a\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n🏞️ Parques Nacionales\n\n\n\ngeom_raster\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-06-21\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🕯️Faros\n\n\n\ngeom_raster\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-04-06\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🚰Plantas potabilizadoras\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n✈️ Aeropuertos\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🏫 Ciencia y educación\n\n\n\ngeom_sf\n\ngeom_point\n\ngeom_text\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🔌 Red eléctrica\n\n\n\ngeom_sf\n\ngeom_path\n\n\n\n\n\n\n\n\n\n2024-04-27\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n📮 Buzones\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-04-27\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🌦️Estaciones meteorológicas\n\n\n\ngeom_sf\n\ngeom_sf_pattern\n\n\n\n\n\n\n\n\n\n2024-02-17\n\n\nVíctor Gauto\n\n\n\n\n\nNo hay resultados\n\n\n\n\n\n Subir",
+    "text": "En esta sección se muestran mapas de Argentina  que incluyen instalaciones varias, como ser: plantas de tratamiento de agua, centrales generadoras de energía, rutas nacionales y provinciales, etc.\nPara darle diversidad a los mapas, cada uno cuenta con una paleta de colores diferente.\n \n\n\n   \n    \n    \n      Ordenar por\n      Por defecto\n      \n        Título\n      \n      \n        Fecha - Menos reciente\n      \n      \n        Fecha - Más reciente\n      \n      \n        Autor/a\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n🏞️ Parques Nacionales\n\n\n\ngeom_raster\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-06-24\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🕯️Faros\n\n\n\ngeom_raster\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-04-06\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🚰Plantas potabilizadoras\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n✈️ Aeropuertos\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🏫 Ciencia y educación\n\n\n\ngeom_sf\n\ngeom_point\n\ngeom_text\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🔌 Red eléctrica\n\n\n\ngeom_sf\n\ngeom_path\n\n\n\n\n\n\n\n\n\n2024-04-27\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n📮 Buzones\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-04-27\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🌦️Estaciones meteorológicas\n\n\n\ngeom_sf\n\ngeom_sf_pattern\n\n\n\n\n\n\n\n\n\n2024-02-17\n\n\nVíctor Gauto\n\n\n\n\n\nNo hay resultados\n\n\n\n\n\n Subir",
     "crumbs": [
       "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
       "Instalaciones"
@@ -1113,7 +1113,7 @@
     "href": "tidytuesday/2025/index.html",
     "title": "Introducción",
     "section": "",
-    "text": "2025\n\n\n   \n    \n    \n      Ordenar por\n      Por defecto\n      \n        Título\n      \n      \n        Fecha - Menos reciente\n      \n      \n        Fecha - Más reciente\n      \n      \n        Autor/a\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSemana 23\n\n\n\ngeom_rect\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-06-10\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 22\n\n\n\ngeom_segment\n\ngeom_point\n\ngeom_marquee\n\n\n\n\n\n\n\n\n\n2025-06-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 21\n\n\n\ngeom_text\n\ngeom_rect\n\ngeom_point\n\ngeom_smooth\n\n\n\n\n\n\n\n\n\n2025-05-27\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 20\n\n\n\ngeom_spatvector\n\ngeom_spatvector_text\n\ngeom_spatraster\n\ngeom_richtext\n\n\n\n\n\n\n\n\n\n2025-06-21\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 19\n\n\n\ngeom_spatraster\n\ngeom_spatvector\n\n\n\n\n\n\n\n\n\n2025-06-21\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 18\n\n\n\nplot_usmap\n\n\n\n\n\n\n\n\n\n2025-06-21\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 17\n\n\n\ngeom_marquee\n\n\n\n\n\n\n\n\n\n2025-04-29\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 16\n\n\n\ngeom_segment\n\ngeom_line\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-04-22\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 15\n\n\n\ngeom_spatraster\n\ngeom_spatvector\n\ngeom_spatvector_label\n\n\n\n\n\n\n\n\n\n2025-04-15\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 14\n\n\n\ngeom_vline\n\ngeom_point\n\ngeom_segment\n\ngeom_label\n\n\n\n\n\n\n\n\n\n2025-04-08\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 13\n\n\n\ngeom_richtext\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-04-01\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 12\n\n\n\ngeom_line\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-03-25\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 11\n\n\n\ngeom_smooth\n\ngeom_abline\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-03-18\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 10\n\n\n\ngeom_point\n\ngeom_richtext\n\n\n\n\n\n\n\n\n\n2025-03-11\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 09\n\n\n\ngeom_richtext\n\n\n\n\n\n\n\n\n\n2025-03-04\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 08\n\n\n\ngeom_text_wordcloud\n\n\n\n\n\n\n\n\n\n2025-02-25\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 07\n\n\n\ngeom_spatvector\n\nplot_usmap\n\n\n\n\n\n\n\n\n\n2025-02-18\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 06\n\n\n\ngeom_treemap\n\ngeom_from_path\n\n\n\n\n\n\n\n\n\n2025-02-11\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 05\n\n\n\ngeom_segment\n\ngeom_label\n\ngeom_richtext\n\n\n\n\n\n\n\n\n\n2025-02-04\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 04\n\n\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-01-28\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 03\n\n\n\ngeom_area\n\n\n\n\n\n\n\n\n\n2025-01-21\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 02\n\n\n\ngeom_col\n\ngeom_text\n\n\n\n\n\n\n\n\n\n2025-01-14\n\n\nVíctor Gauto\n\n\n\n\n\nNo hay resultados\n\nAdiós.\n\n\n\n\n Subir",
+    "text": "2025\n\n\n   \n    \n    \n      Ordenar por\n      Por defecto\n      \n        Título\n      \n      \n        Fecha - Menos reciente\n      \n      \n        Fecha - Más reciente\n      \n      \n        Autor/a\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSemana 24\n\n\n\nGEOM_AAA\n\nGEOM_BBB\n\nGEOM_CCC\n\n\n\n\n\n\n\n\n\n2025-06-17\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 23\n\n\n\ngeom_rect\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-06-10\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 22\n\n\n\ngeom_segment\n\ngeom_point\n\ngeom_marquee\n\n\n\n\n\n\n\n\n\n2025-06-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 21\n\n\n\ngeom_text\n\ngeom_rect\n\ngeom_point\n\ngeom_smooth\n\n\n\n\n\n\n\n\n\n2025-05-27\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 20\n\n\n\ngeom_spatvector\n\ngeom_spatvector_text\n\ngeom_spatraster\n\ngeom_richtext\n\n\n\n\n\n\n\n\n\n2025-06-24\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 19\n\n\n\ngeom_spatraster\n\ngeom_spatvector\n\n\n\n\n\n\n\n\n\n2025-06-24\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 18\n\n\n\nplot_usmap\n\n\n\n\n\n\n\n\n\n2025-06-24\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 17\n\n\n\ngeom_marquee\n\n\n\n\n\n\n\n\n\n2025-04-29\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 16\n\n\n\ngeom_segment\n\ngeom_line\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-04-22\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 15\n\n\n\ngeom_spatraster\n\ngeom_spatvector\n\ngeom_spatvector_label\n\n\n\n\n\n\n\n\n\n2025-04-15\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 14\n\n\n\ngeom_vline\n\ngeom_point\n\ngeom_segment\n\ngeom_label\n\n\n\n\n\n\n\n\n\n2025-04-08\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 13\n\n\n\ngeom_richtext\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-04-01\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 12\n\n\n\ngeom_line\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-03-25\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 11\n\n\n\ngeom_smooth\n\ngeom_abline\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-03-18\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 10\n\n\n\ngeom_point\n\ngeom_richtext\n\n\n\n\n\n\n\n\n\n2025-03-11\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 09\n\n\n\ngeom_richtext\n\n\n\n\n\n\n\n\n\n2025-03-04\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 08\n\n\n\ngeom_text_wordcloud\n\n\n\n\n\n\n\n\n\n2025-02-25\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 07\n\n\n\ngeom_spatvector\n\nplot_usmap\n\n\n\n\n\n\n\n\n\n2025-02-18\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 06\n\n\n\ngeom_treemap\n\ngeom_from_path\n\n\n\n\n\n\n\n\n\n2025-02-11\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 05\n\n\n\ngeom_segment\n\ngeom_label\n\ngeom_richtext\n\n\n\n\n\n\n\n\n\n2025-02-04\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 04\n\n\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-01-28\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 03\n\n\n\ngeom_area\n\n\n\n\n\n\n\n\n\n2025-01-21\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\nSemana 02\n\n\n\ngeom_col\n\ngeom_text\n\n\n\n\n\n\n\n\n\n2025-01-14\n\n\nVíctor Gauto\n\n\n\n\n\nNo hay resultados\n\nAdiós.\n\n\n\n\n Subir",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025"
@@ -1732,171 +1732,255 @@
     ]
   },
   {
-    "objectID": "tidytuesday/2025/semana_11.html",
-    "href": "tidytuesday/2025/semana_11.html",
-    "title": "Semana 11",
+    "objectID": "tidytuesday/2025/semana_24.html",
+    "href": "tidytuesday/2025/semana_24.html",
+    "title": "Semana 24",
     "section": "",
-    "text": "Relación entre el ancho y el alto de cocos, según su forma.",
+    "text": "Cantidad de APIs por categoría.",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
-      "Semana 11"
+      "Semana 24"
     ]
   },
   {
-    "objectID": "tidytuesday/2025/semana_11.html#paquetes",
-    "href": "tidytuesday/2025/semana_11.html#paquetes",
-    "title": "Semana 11",
-    "section": "Paquetes",
-    "text": "Paquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(ggh4x)\nlibrary(tidyverse)",
-    "crumbs": [
-      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
-      "2025",
-      "Semana 11"
-    ]
-  },
-  {
-    "objectID": "tidytuesday/2025/semana_11.html#estilos",
-    "href": "tidytuesday/2025/semana_11.html#estilos",
-    "title": "Semana 11",
-    "section": "Estilos",
-    "text": "Estilos\nColores.\n\n\nOcultar código\ncol &lt;- MoMAColors::moma.colors(palette_name = \"Koons\")\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
-    "crumbs": [
-      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
-      "2025",
-      "Semana 11"
-    ]
-  },
-  {
-    "objectID": "tidytuesday/2025/semana_11.html#epígrafe",
-    "href": "tidytuesday/2025/semana_11.html#epígrafe",
-    "title": "Semana 11",
-    "section": "Epígrafe",
-    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n    \"Datos: &lt;span style='color:{col[5]};'&gt;&lt;span style='font-family:jet;'&gt;\",\n    \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 11,&lt;br&gt;\",\n    \"&lt;b&gt;{{palmtrees}}&lt;/b&gt;&lt;/span&gt;, Emil Hvitfeldt.\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{col[5]};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{col[5]};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
-    "crumbs": [
-      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
-      "2025",
-      "Semana 11"
-    ]
-  },
-  {
-    "objectID": "tidytuesday/2025/semana_11.html#datos",
-    "href": "tidytuesday/2025/semana_11.html#datos",
-    "title": "Semana 11",
-    "section": "Datos",
-    "text": "Datos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 11)\npalmtrees &lt;- tuesdata$palmtrees",
-    "crumbs": [
-      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
-      "2025",
-      "Semana 11"
-    ]
-  },
-  {
-    "objectID": "tidytuesday/2025/semana_11.html#procesamiento",
-    "href": "tidytuesday/2025/semana_11.html#procesamiento",
-    "title": "Semana 11",
-    "section": "Procesamiento",
-    "text": "Procesamiento\nMe interesa la relación entre el ancho y el largo de los cocos según su forma.\nRemuevo formas con poca cantidad de datos y obtengo el máximo valor entre largo y ancho.\n\n\nOcultar código\nd &lt;- palmtrees |&gt;\n  drop_na(average_fruit_width_cm, average_fruit_length_cm, fruit_shape) |&gt;\n  filter(!fruit_shape %in% c(\"rounded\", \"fusiform\"))\n\nd_max &lt;- d |&gt;\n  reframe(\n    largo = max(average_fruit_length_cm),\n    ancho = max(average_fruit_width_cm),\n    .by = fruit_shape\n  ) |&gt;\n  mutate(l = if_else(largo &gt; ancho, largo, ancho)) |&gt;\n  arrange(fruit_shape) |&gt;\n  pull(l)\n\n\nModifico los límites convenientemente y genero los ejes (vertical y horizontal) de los paneles.\n\n\nOcultar código\nd_max[2] &lt;- 10\nd_max[4] &lt;- 15\n\neje_y &lt;- list(\n  scale_y_continuous(\n    limits = c(0, d_max[1])\n  ),\n  scale_y_continuous(\n    limits = c(0, d_max[2]),\n    breaks = seq(0, d_max[2], 2)\n  ),\n  scale_y_continuous(\n    limits = c(0, d_max[3])\n  ),\n  scale_y_continuous(\n    limits = c(0, d_max[4])\n  ),\n  scale_y_continuous(\n    limits = c(0, d_max[5])\n  )\n)\n\neje_x &lt;- list(\n  scale_x_continuous(\n    limits = c(0, d_max[1])\n  ),\n  scale_x_continuous(\n    limits = c(0, d_max[2]),\n    breaks = seq(0, d_max[2], 2)\n  ),\n  scale_x_continuous(\n    limits = c(0, d_max[3])\n  ),\n  scale_x_continuous(\n    limits = c(0, d_max[4])\n  ),\n  scale_x_continuous(\n    limits = c(0, d_max[5])\n  )\n)\n\n\nAgrego las traducciones de las formas\n\n\nOcultar código\nformas &lt;- sort(unique(d$fruit_shape))\nformas_trad &lt;- c(\"Elipsoide\", \"Elongado\", \"Globosa\", \"Ovoide\", \"Piramidal\")\nformas_trad &lt;- set_names(formas_trad, formas)",
-    "crumbs": [
-      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
-      "2025",
-      "Semana 11"
-    ]
-  },
-  {
-    "objectID": "tidytuesday/2025/semana_11.html#figura",
-    "href": "tidytuesday/2025/semana_11.html#figura",
-    "title": "Semana 11",
-    "section": "Figura",
-    "text": "Figura\nLogo del paquete {palmtrees} y título.\n\n\nOcultar código\nlink &lt;- \"https://raw.githubusercontent.com/EmilHvitfeldt/palmtrees/refs/heads/main/man/figures/logo.png\"\nlogo &lt;- glue(\"&lt;img src='{link}' width=100 /&gt;\")\n\nmi_titulo &lt;- glue(\n  \"Relación entre ancho y alto de &lt;b style='color: {col[4]}'&gt;cocos&lt;/b&gt; según\n  su forma\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot(\n  d, aes(\n    average_fruit_width_cm, average_fruit_length_cm, fill = fruit_shape,\n    shape = fruit_shape, color = fruit_shape\n  )\n) +\n  geom_smooth(method = \"lm\", se = FALSE, formula = y ~ x) +\n  geom_abline(linetype = 2, color = \"grey10\", linewidth = 1) +\n  geom_point(size = 7, color = \"grey20\", alpha = .8) +\n  facet_wrap(\n    vars(fruit_shape), nrow = 3, scales = \"free\", labeller = as_labeller(formas_trad)\n  ) +\n  facetted_pos_scales(x = eje_x, y = eje_y) +\n  scale_color_manual(\n    breaks = formas,\n    labels = formas_trad,\n    values = col\n  ) +\n  scale_fill_manual(\n    breaks = formas,\n    labels = formas_trad,\n    values = col\n  ) +\n  scale_shape_manual(\n    breaks = formas,\n    labels = formas_trad,\n    values = c(21, 24, 23, 21, 24, 23, 21)\n  ) +\n  coord_cartesian(clip = \"off\") +\n  labs(\n    title = mi_titulo,\n    tag = logo,\n    caption = mi_caption,\n    x = \"Ancho promedio de la fruta (cm)\",\n    y = \"Largo promedio de la fruta (cm)\"\n  ) +\n  theme_minimal(base_size = 20, base_family = \"ubuntu\") +\n  theme(\n    text = element_text(family = \"ubuntu\"),\n    aspect.ratio = 1,\n    plot.margin = margin(t = 50),\n    plot.background = element_rect(fill = \"grey90\", color = NA),\n    plot.title = element_markdown(\n      margin = margin(l = 60, b = 45), hjust = 0, color = col[1], face = \"bold\",\n      lineheight = 1.3, size = 26\n    ),\n    plot.tag = element_markdown(),\n    plot.tag.location = \"plot\",\n    plot.tag.position = c(.07, .99),\n    plot.caption = element_markdown(\n      color = col[4], face = \"bold\", lineheight = 1.3, size = 20,\n      margin = margin(t = -160, b = 80, r = -10)\n    ),\n    legend.position = \"none\",\n    panel.grid.major = element_line(color = \"grey80\"),\n    panel.grid.minor = element_blank(),\n    panel.spacing.y = unit(40, \"pt\"),\n    panel.spacing.x = unit(60, \"pt\"),\n    axis.text = element_text(family = \"jet\", color = \"black\"),\n    axis.title.y = element_text(hjust = 1),\n    axis.title.x = element_text(hjust = 0, margin = margin(t = 20)),\n    strip.text = element_text(face = \"bold\", hjust = 0, size = 21)\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_11.png\",\n  width = 30,\n  height = 47,\n  units = \"cm\"\n)",
-    "crumbs": [
-      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
-      "2025",
-      "Semana 11"
-    ]
-  },
-  {
-    "objectID": "tidytuesday/2025/semana_02.html",
-    "href": "tidytuesday/2025/semana_02.html",
-    "title": "Semana 02",
-    "section": "",
-    "text": "Conferencias asociadas a quarto en posit::conf entre 2023 y 2024.",
-    "crumbs": [
-      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
-      "2025",
-      "Semana 02"
-    ]
-  },
-  {
-    "objectID": "tidytuesday/2025/semana_02.html#paquetes",
-    "href": "tidytuesday/2025/semana_02.html#paquetes",
-    "title": "Semana 02",
+    "objectID": "tidytuesday/2025/semana_24.html#paquetes",
+    "href": "tidytuesday/2025/semana_24.html#paquetes",
+    "title": "Semana 24",
     "section": "Paquetes",
     "text": "Paquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
-      "Semana 02"
+      "Semana 24"
     ]
   },
   {
-    "objectID": "tidytuesday/2025/semana_02.html#estilos",
-    "href": "tidytuesday/2025/semana_02.html#estilos",
-    "title": "Semana 02",
+    "objectID": "tidytuesday/2025/semana_24.html#estilos",
+    "href": "tidytuesday/2025/semana_24.html#estilos",
+    "title": "Semana 24",
     "section": "Estilos",
-    "text": "Estilos\nColores\n\n\nOcultar código\nc1 &lt;- \"#447099\"\nc2 &lt;- \"#75AADB\"\nc3 &lt;- \"#F0F5F9\"\nc4 &lt;- \"black\"\n\n\nFuentes: Ubuntu y JetBrains Mono\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "text": "Estilos\nColores.\n\n\nOcultar código\nc1 &lt;- \"#082844\"\nc2 &lt;- \"#8DADCA\"\nc3 &lt;- \"white\"\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
-      "Semana 02"
+      "Semana 24"
     ]
   },
   {
-    "objectID": "tidytuesday/2025/semana_02.html#epígrafe",
-    "href": "tidytuesday/2025/semana_02.html#epígrafe",
-    "title": "Semana 02",
+    "objectID": "tidytuesday/2025/semana_24.html#epígrafe",
+    "href": "tidytuesday/2025/semana_24.html#epígrafe",
+    "title": "Semana 24",
     "section": "Epígrafe",
-    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n    \"Datos: &lt;span style='color:{c1};'&gt;&lt;span style='font-family:jet;'&gt;\",\n    \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 2, \",\n    \"&lt;b&gt;&lt;span style='font-family:jet'&gt;posit::conf&lt;/jet&gt;&lt;/b&gt;.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n    \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n    \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"Datos: &lt;span style='color:{c1};'&gt;&lt;span style='font-family:jet;'&gt;\",\n  \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 24, \",\n  \"&lt;b&gt;APIs.guru&lt;/b&gt;.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
-      "Semana 02"
+      "Semana 24"
     ]
   },
   {
-    "objectID": "tidytuesday/2025/semana_02.html#datos",
-    "href": "tidytuesday/2025/semana_02.html#datos",
-    "title": "Semana 02",
+    "objectID": "tidytuesday/2025/semana_24.html#datos",
+    "href": "tidytuesday/2025/semana_24.html#datos",
+    "title": "Semana 24",
     "section": "Datos",
-    "text": "Datos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 2)\nconf2023 &lt;- tuesdata$conf2023\nconf2024 &lt;- tuesdata$conf2024",
+    "text": "Datos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 24)\napi_categories &lt;- tuesdata$api_categories",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
-      "Semana 02"
+      "Semana 24"
     ]
   },
   {
-    "objectID": "tidytuesday/2025/semana_02.html#procesamiento",
-    "href": "tidytuesday/2025/semana_02.html#procesamiento",
-    "title": "Semana 02",
+    "objectID": "tidytuesday/2025/semana_24.html#procesamiento",
+    "href": "tidytuesday/2025/semana_24.html#procesamiento",
+    "title": "Semana 24",
     "section": "Procesamiento",
-    "text": "Procesamiento\nMe interesa la cantidad de conferencias que hablan de QUARTO entre 2023 y 2024\n\n\nOcultar código\nn2023 &lt;- conf2023 |&gt;\n  mutate(quarto = str_detect(session_abstract, \"quarto|Quarto\")) |&gt;\n  dplyr::filter(quarto) |&gt;\n  nrow()\n\nn2024 &lt;- conf2024 |&gt;\n  mutate(quarto = str_detect(description, \"quarto|Quarto\")) |&gt;\n  dplyr::filter(quarto) |&gt;\n  nrow()\n\nd &lt;- tibble(\n  año = c(2023, 2024),\n  n = c(n2023, n2024)\n) |&gt;\n  mutate(\n    año = paste0(\"posit::conf\\n\", año)\n  )",
+    "text": "Procesamiento\nMe interesan las categorías de las API.\n\n\nOcultar código\nd &lt;- count(api_categories, apisguru_category, sort = TRUE) |&gt;\n  filter(n &gt;= 10) |&gt;\n  mutate(\n    categoria = str_replace_all(apisguru_category, \"_\", \" \") |&gt; toupper()\n  ) |&gt;\n  mutate(\n    categoria = fct_reorder(categoria, n)\n  ) |&gt;\n  mutate(hjust = if_else(n &gt; 10, 1.05, -.05)) |&gt;\n  mutate(color = if_else(n &gt; 10, c1, c2))",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
-      "Semana 02"
+      "Semana 24"
     ]
   },
   {
-    "objectID": "tidytuesday/2025/semana_02.html#figura",
-    "href": "tidytuesday/2025/semana_02.html#figura",
-    "title": "Semana 02",
+    "objectID": "tidytuesday/2025/semana_24.html#figura",
+    "href": "tidytuesday/2025/semana_24.html#figura",
+    "title": "Semana 24",
     "section": "Figura",
-    "text": "Figura\nLogo y subtítulo\n\n\nOcultar código\nlogo &lt;- \"https://quarto.org/quarto.png\"\nlogo_img &lt;- glue(\n  \"&lt;img src='{logo}' width=250 /&gt;\"\n)\n\nmi_subitulo &lt;- glue(\n  \"La cantidad de conferencias&lt;br&gt;que incluyen\n  &lt;span style='font-family:jet; color:{c1}'&gt;quarto&lt;/span&gt; &lt;br&gt;\n  amentaron en las ediciones&lt;br&gt;\n  2023 y 2024 de &lt;span style='font-family:jet; color:{c1}'&gt;posit::conf&lt;/span&gt;\"\n)\n\n\nFigura\n\n\nOcultar código\ng &lt;- ggplot(d, aes(año, n, label = n)) +\n  geom_col(fill = c1) +\n  geom_text(vjust = -.2, family = \"jet\", size = 9, color = c2) +\n  annotate(\n    geom = \"richtext\", x = 2.12, y = 25, label = logo_img, fill = NA,\n    vjust = -1.2, label.color = NA\n  ) +\n  scale_y_continuous(limits = c(0, 25)) +\n  coord_cartesian(expand = FALSE, xlim = c(.5, 2.5), clip = \"off\") +\n  labs(caption = mi_caption, subtitle = mi_subitulo) +\n  theme_void(base_size = 22, base_family = \"ubuntu\") +\n  theme(\n    aspect.ratio = 1,\n    plot.margin = margin(25, 5, 5, 5),\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.subtitle = element_markdown(\n      color = c4, size = 30, lineheight = 1.3, margin = margin(b = 30, l = 20)\n    ),\n    plot.caption = element_markdown(\n      color = c2, lineheight = 1.2, margin = margin(b = 5, t = 20)\n    ),\n    axis.text.x = element_text(margin = margin(t = 5), family = \"jet\"),\n  )\n\n\nGuardo\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_02.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)",
+    "text": "Figura\nTítulo y figura.\n\n\nOcultar código\nmi_titulo &lt;- glue(\n  \"A partir de {nrow(api_categories)} **API**s, estas son las categorías \n  principales.\"\n)\n\ng &lt;- ggplot(d, aes(n, categoria)) +\n  geom_col(fill = c2, color = NA) +\n  geom_text(\n    aes(label = categoria, hjust = hjust, color = color),\n    family = \"jet\",\n    size = 8\n  ) +\n  scale_x_log10() +\n  scale_color_identity() +\n  coord_cartesian(\n    ylim = c(0, nrow(d) + 1),\n    xlim = c(.9, 1200),\n    expand = FALSE\n  ) +\n  labs(x = NULL, y = NULL, title = mi_titulo, caption = mi_caption) +\n  ggthemes::theme_par(base_size = 15, base_family = \"jet\") +\n  theme(\n    aspect.ratio = 1,\n    plot.background = element_rect(fill = c2, color = NA),\n    plot.title = element_markdown(\n      family = \"ubuntu\",\n      color = c1,\n      hjust = 0,\n      face = \"plain\"\n    ),\n    plot.caption = element_markdown(\n      family = \"ubuntu\",\n      color = c3,\n      margin = margin(t = 20),\n      lineheight = 1.2,\n      size = 15\n    ),\n    panel.background = element_rect(fill = c1, color = NA),\n    axis.line = element_blank(),\n    axis.ticks = element_blank(),\n    axis.text.x = element_text(color = c1),\n    axis.text.y = element_blank()\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_24.png\",\n  width = 30,\n  height = 30,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
-      "Semana 02"
+      "Semana 24"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_07.html",
+    "href": "tidytuesday/2025/semana_07.html",
+    "title": "Semana 07",
+    "section": "",
+    "text": "Agencias de seguridad en Universidades de EE.UU.",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 07"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_07.html#paquetes",
+    "href": "tidytuesday/2025/semana_07.html#paquetes",
+    "title": "Semana 07",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 07"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_07.html#estilos",
+    "href": "tidytuesday/2025/semana_07.html#estilos",
+    "title": "Semana 07",
+    "section": "Estilos",
+    "text": "Estilos\nColores.\n\n\nOcultar código\nc1 &lt;- \"#005D67\"\nc2 &lt;- \"#1B817F\"\nc3 &lt;- \"#9FCEBA\"\nc4 &lt;- \"#F9FFAF\"\nc5 &lt;- \"white\"\n\n\nFuente: Ubuntu.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 07"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_07.html#epígrafe",
+    "href": "tidytuesday/2025/semana_07.html#epígrafe",
+    "title": "Semana 07",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"Datos: &lt;span style='color:{c4};'&gt;&lt;span style='font-family:jet;'&gt;\",\n  \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 07, \",\n  \"&lt;b&gt;FBI Crime Data API&lt;/b&gt;.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c4};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c4};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 07"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_07.html#datos",
+    "href": "tidytuesday/2025/semana_07.html#datos",
+    "title": "Semana 07",
+    "section": "Datos",
+    "text": "Datos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 07)\nagencies &lt;- tuesdata$agencies",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 07"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_07.html#procesamiento",
+    "href": "tidytuesday/2025/semana_07.html#procesamiento",
+    "title": "Semana 07",
+    "section": "Procesamiento",
+    "text": "Procesamiento\nMe interesan las agencias de seguridad asociadas a universidades.\n\n\nOcultar código\nv &lt;- agencies |&gt;\n  filter(agency_type == \"University or College\" & state != \"Alaska\") |&gt;\n  drop_na(latitude, longitude) |&gt;\n  terra::vect(geom = c(\"longitude\", \"latitude\"), crs = \"EPSG:4326\") |&gt;\n  terra::project(\"ESRI:102003\")",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 07"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_07.html#figura",
+    "href": "tidytuesday/2025/semana_07.html#figura",
+    "title": "Semana 07",
+    "section": "Figura",
+    "text": "Figura\nLogo y subtítulo.\n\n\nOcultar código\nlink_logo &lt;- \"https://cde.ucr.cjis.gov/LATEST/webapp/assets/images/CDE-new-15shad.png\"\nlogo &lt;- glue(\"&lt;img src='{link_logo}' width=250 /&gt;\")\n\nmi_subtitulo &lt;- glue(\n  \"En &lt;b&gt;EE.UU.&lt;/b&gt; existen {nrow(v)} organismos de fuerzas de seguridad\n  con jurisdicción en &lt;b style='color:{c4}'&gt;Universidades&lt;/b&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- usmap::plot_usmap(\n    regions = \"states\", exclude = c(\"AK\", \"HI\"), fill = c2, linewidth = 1,\n    color = c1\n  ) +\n  tidyterra::geom_spatvector(\n    data = v, size = 1, alpha = .8, color = c4\n  ) +\n  annotate(\n    geom = \"richtext\", x = I(.2), y = I(.06), label = logo, fill = NA,\n    label.color = NA\n  ) +\n  labs(\n    subtitle = mi_subtitulo, caption = mi_caption\n  ) +\n  theme(\n    plot.background = element_rect(fill = c1, color = NA),\n    plot.subtitle = element_markdown(\n      family = \"ubuntu\", size = 17, color = c5, hjust = .5,\n      margin = margin(t = 15)\n    ),\n    plot.caption = element_markdown(\n      family = \"ubuntu\", size = 10, color = c3, lineheight = 1.1,\n      margin = margin(b = 10, r = 10)\n    )\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_07.png\",\n  width = 30,\n  height = 21,\n  units = \"cm\"\n)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 07"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_08.html",
+    "href": "tidytuesday/2025/semana_08.html",
+    "title": "Semana 08",
+    "section": "",
+    "text": "Categorías raciales en papers de ginecología y obstetricia.",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 08"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_08.html#paquetes",
+    "href": "tidytuesday/2025/semana_08.html#paquetes",
+    "title": "Semana 08",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(ggwordcloud)\nlibrary(tidyverse)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 08"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_08.html#estilos",
+    "href": "tidytuesday/2025/semana_08.html#estilos",
+    "title": "Semana 08",
+    "section": "Estilos",
+    "text": "Estilos\nColores.\n\n\nOcultar código\nc1 &lt;- \"#FDAD17\"\nc2 &lt;- \"#52C890\"\nc3 &lt;- \"#0D2D4C\"\nc4 &lt;- \"#E99BB9\"\nc5 &lt;- \"white\"\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 08"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_08.html#epígrafe",
+    "href": "tidytuesday/2025/semana_08.html#epígrafe",
+    "title": "Semana 08",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n    \"Datos: &lt;span style='color:{c1};'&gt;&lt;span style='font-family:jet;'&gt;\",\n    \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 08&lt;br&gt;\",\n    \"&lt;b&gt;Racial and ethnic disparities in reproductive medicine in the United&lt;br&gt;\n     States: a narrative review of contemporary high-quality evidence&lt;/b&gt;&lt;br&gt;\n    Lewis, Ayodele G. et al.&lt;br&gt;\n    &lt;i&gt;American Journal of Obstetrics & Gynecology, Volume 232, Issue 1, 82 - 91.e44&lt;/i&gt;.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n    \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n    \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 08"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_08.html#datos",
+    "href": "tidytuesday/2025/semana_08.html#datos",
+    "title": "Semana 08",
+    "section": "Datos",
+    "text": "Datos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 08)\narticle_dat &lt;- tuesdata$article_dat\nmodel_dat &lt;- tuesdata$model_dat",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 08"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_08.html#procesamiento",
+    "href": "tidytuesday/2025/semana_08.html#procesamiento",
+    "title": "Semana 08",
+    "section": "Procesamiento",
+    "text": "Procesamiento\nMe interesa la cantidad de categorías raciales y armar una nube de palabras.\n\n\nOcultar código\nd &lt;- article_dat |&gt;\n  select(starts_with(\"race\")) |&gt;\n  select(!ends_with(\"_ss\")) |&gt;\n  pivot_longer(\n    cols = everything(),\n    values_to = \"cat\",\n    names_to = \"col\"\n  ) |&gt;\n  drop_na() |&gt;\n  mutate(\n    cat = tolower(cat)\n  ) |&gt;\n  mutate(\n    cat = str_replace(cat, \"alaskan\", \"alaska\"),\n    cat = str_replace(cat, \"whites\", \"white\"),\n    cat = str_replace(cat, \"blacks\", \"black\"),\n    cat = str_replace(cat, \"others\", \"other\"),\n    cat = str_remove_all(cat, \"-\")\n  ) |&gt;\n  mutate(\n    cat = if_else(\n      str_detect(cat, \"unknown\"),\n      \"unknown\",\n      cat\n    )\n  ) |&gt;\n  count(cat, sort = TRUE) |&gt;\n  filter(n &gt; 1) %&gt;%\n  mutate(\n    col = sample(c(c1, c2), replace = TRUE, size = nrow(.))\n  )",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 08"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_08.html#figura",
+    "href": "tidytuesday/2025/semana_08.html#figura",
+    "title": "Semana 08",
+    "section": "Figura",
+    "text": "Figura\nSubtítulo y nube de palabras.\n\n\nOcultar código\nmi_subtitle &lt;- glue(\n  \"&lt;b style='color: {c4}'&gt;{nrow(d)}&lt;/b&gt; categorías raciales presentes en\n  trabajos científicos de&lt;br&gt;\n  &lt;b&gt;obstetricia&lt;/b&gt; y &lt;b&gt;ginecología&lt;/b&gt; entre 2010 y 2023\"\n)\n\ng &lt;- ggplot(d, aes(label = cat, size = n, color = col)) +\n  geom_text_wordcloud(shape = \"square\") +\n  scale_size_area(max_size = 40) +\n  scale_color_identity() +\n  labs(\n    subtitle = mi_subtitle, caption = mi_caption\n  ) +\n  theme_minimal() +\n  theme(\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.subtitle = element_markdown(\n      color = c5, family = \"ubuntu\", size = 30, hjust = .5,\n      lineheight = 1.1, margin = margin(t = 20)\n    ),\n    plot.caption = element_markdown(\n      color = c2, family = \"ubuntu\", size = 15, lineheight = 1.1,\n      margin = margin(b = 10, r = 10)\n    )\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_08.png\",\n  width = 30,\n  height = 30,\n  units = \"cm\"\n)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 08"
     ]
   },
   {
@@ -1996,171 +2080,171 @@
     ]
   },
   {
-    "objectID": "tidytuesday/2025/semana_08.html",
-    "href": "tidytuesday/2025/semana_08.html",
-    "title": "Semana 08",
+    "objectID": "tidytuesday/2025/semana_02.html",
+    "href": "tidytuesday/2025/semana_02.html",
+    "title": "Semana 02",
     "section": "",
-    "text": "Categorías raciales en papers de ginecología y obstetricia.",
+    "text": "Conferencias asociadas a quarto en posit::conf entre 2023 y 2024.",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
-      "Semana 08"
+      "Semana 02"
     ]
   },
   {
-    "objectID": "tidytuesday/2025/semana_08.html#paquetes",
-    "href": "tidytuesday/2025/semana_08.html#paquetes",
-    "title": "Semana 08",
-    "section": "Paquetes",
-    "text": "Paquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(ggwordcloud)\nlibrary(tidyverse)",
-    "crumbs": [
-      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
-      "2025",
-      "Semana 08"
-    ]
-  },
-  {
-    "objectID": "tidytuesday/2025/semana_08.html#estilos",
-    "href": "tidytuesday/2025/semana_08.html#estilos",
-    "title": "Semana 08",
-    "section": "Estilos",
-    "text": "Estilos\nColores.\n\n\nOcultar código\nc1 &lt;- \"#FDAD17\"\nc2 &lt;- \"#52C890\"\nc3 &lt;- \"#0D2D4C\"\nc4 &lt;- \"#E99BB9\"\nc5 &lt;- \"white\"\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
-    "crumbs": [
-      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
-      "2025",
-      "Semana 08"
-    ]
-  },
-  {
-    "objectID": "tidytuesday/2025/semana_08.html#epígrafe",
-    "href": "tidytuesday/2025/semana_08.html#epígrafe",
-    "title": "Semana 08",
-    "section": "Epígrafe",
-    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n    \"Datos: &lt;span style='color:{c1};'&gt;&lt;span style='font-family:jet;'&gt;\",\n    \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 08&lt;br&gt;\",\n    \"&lt;b&gt;Racial and ethnic disparities in reproductive medicine in the United&lt;br&gt;\n     States: a narrative review of contemporary high-quality evidence&lt;/b&gt;&lt;br&gt;\n    Lewis, Ayodele G. et al.&lt;br&gt;\n    &lt;i&gt;American Journal of Obstetrics & Gynecology, Volume 232, Issue 1, 82 - 91.e44&lt;/i&gt;.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n    \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n    \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
-    "crumbs": [
-      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
-      "2025",
-      "Semana 08"
-    ]
-  },
-  {
-    "objectID": "tidytuesday/2025/semana_08.html#datos",
-    "href": "tidytuesday/2025/semana_08.html#datos",
-    "title": "Semana 08",
-    "section": "Datos",
-    "text": "Datos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 08)\narticle_dat &lt;- tuesdata$article_dat\nmodel_dat &lt;- tuesdata$model_dat",
-    "crumbs": [
-      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
-      "2025",
-      "Semana 08"
-    ]
-  },
-  {
-    "objectID": "tidytuesday/2025/semana_08.html#procesamiento",
-    "href": "tidytuesday/2025/semana_08.html#procesamiento",
-    "title": "Semana 08",
-    "section": "Procesamiento",
-    "text": "Procesamiento\nMe interesa la cantidad de categorías raciales y armar una nube de palabras.\n\n\nOcultar código\nd &lt;- article_dat |&gt;\n  select(starts_with(\"race\")) |&gt;\n  select(!ends_with(\"_ss\")) |&gt;\n  pivot_longer(\n    cols = everything(),\n    values_to = \"cat\",\n    names_to = \"col\"\n  ) |&gt;\n  drop_na() |&gt;\n  mutate(\n    cat = tolower(cat)\n  ) |&gt;\n  mutate(\n    cat = str_replace(cat, \"alaskan\", \"alaska\"),\n    cat = str_replace(cat, \"whites\", \"white\"),\n    cat = str_replace(cat, \"blacks\", \"black\"),\n    cat = str_replace(cat, \"others\", \"other\"),\n    cat = str_remove_all(cat, \"-\")\n  ) |&gt;\n  mutate(\n    cat = if_else(\n      str_detect(cat, \"unknown\"),\n      \"unknown\",\n      cat\n    )\n  ) |&gt;\n  count(cat, sort = TRUE) |&gt;\n  filter(n &gt; 1) %&gt;%\n  mutate(\n    col = sample(c(c1, c2), replace = TRUE, size = nrow(.))\n  )",
-    "crumbs": [
-      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
-      "2025",
-      "Semana 08"
-    ]
-  },
-  {
-    "objectID": "tidytuesday/2025/semana_08.html#figura",
-    "href": "tidytuesday/2025/semana_08.html#figura",
-    "title": "Semana 08",
-    "section": "Figura",
-    "text": "Figura\nSubtítulo y nube de palabras.\n\n\nOcultar código\nmi_subtitle &lt;- glue(\n  \"&lt;b style='color: {c4}'&gt;{nrow(d)}&lt;/b&gt; categorías raciales presentes en\n  trabajos científicos de&lt;br&gt;\n  &lt;b&gt;obstetricia&lt;/b&gt; y &lt;b&gt;ginecología&lt;/b&gt; entre 2010 y 2023\"\n)\n\ng &lt;- ggplot(d, aes(label = cat, size = n, color = col)) +\n  geom_text_wordcloud(shape = \"square\") +\n  scale_size_area(max_size = 40) +\n  scale_color_identity() +\n  labs(\n    subtitle = mi_subtitle, caption = mi_caption\n  ) +\n  theme_minimal() +\n  theme(\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.subtitle = element_markdown(\n      color = c5, family = \"ubuntu\", size = 30, hjust = .5,\n      lineheight = 1.1, margin = margin(t = 20)\n    ),\n    plot.caption = element_markdown(\n      color = c2, family = \"ubuntu\", size = 15, lineheight = 1.1,\n      margin = margin(b = 10, r = 10)\n    )\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_08.png\",\n  width = 30,\n  height = 30,\n  units = \"cm\"\n)",
-    "crumbs": [
-      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
-      "2025",
-      "Semana 08"
-    ]
-  },
-  {
-    "objectID": "tidytuesday/2025/semana_07.html",
-    "href": "tidytuesday/2025/semana_07.html",
-    "title": "Semana 07",
-    "section": "",
-    "text": "Agencias de seguridad en Universidades de EE.UU.",
-    "crumbs": [
-      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
-      "2025",
-      "Semana 07"
-    ]
-  },
-  {
-    "objectID": "tidytuesday/2025/semana_07.html#paquetes",
-    "href": "tidytuesday/2025/semana_07.html#paquetes",
-    "title": "Semana 07",
+    "objectID": "tidytuesday/2025/semana_02.html#paquetes",
+    "href": "tidytuesday/2025/semana_02.html#paquetes",
+    "title": "Semana 02",
     "section": "Paquetes",
     "text": "Paquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
-      "Semana 07"
+      "Semana 02"
     ]
   },
   {
-    "objectID": "tidytuesday/2025/semana_07.html#estilos",
-    "href": "tidytuesday/2025/semana_07.html#estilos",
-    "title": "Semana 07",
+    "objectID": "tidytuesday/2025/semana_02.html#estilos",
+    "href": "tidytuesday/2025/semana_02.html#estilos",
+    "title": "Semana 02",
     "section": "Estilos",
-    "text": "Estilos\nColores.\n\n\nOcultar código\nc1 &lt;- \"#005D67\"\nc2 &lt;- \"#1B817F\"\nc3 &lt;- \"#9FCEBA\"\nc4 &lt;- \"#F9FFAF\"\nc5 &lt;- \"white\"\n\n\nFuente: Ubuntu.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "text": "Estilos\nColores\n\n\nOcultar código\nc1 &lt;- \"#447099\"\nc2 &lt;- \"#75AADB\"\nc3 &lt;- \"#F0F5F9\"\nc4 &lt;- \"black\"\n\n\nFuentes: Ubuntu y JetBrains Mono\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
-      "Semana 07"
+      "Semana 02"
     ]
   },
   {
-    "objectID": "tidytuesday/2025/semana_07.html#epígrafe",
-    "href": "tidytuesday/2025/semana_07.html#epígrafe",
-    "title": "Semana 07",
+    "objectID": "tidytuesday/2025/semana_02.html#epígrafe",
+    "href": "tidytuesday/2025/semana_02.html#epígrafe",
+    "title": "Semana 02",
     "section": "Epígrafe",
-    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"Datos: &lt;span style='color:{c4};'&gt;&lt;span style='font-family:jet;'&gt;\",\n  \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 07, \",\n  \"&lt;b&gt;FBI Crime Data API&lt;/b&gt;.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c4};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c4};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n    \"Datos: &lt;span style='color:{c1};'&gt;&lt;span style='font-family:jet;'&gt;\",\n    \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 2, \",\n    \"&lt;b&gt;&lt;span style='font-family:jet'&gt;posit::conf&lt;/jet&gt;&lt;/b&gt;.&lt;/span&gt;\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n    \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n    \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
-      "Semana 07"
+      "Semana 02"
     ]
   },
   {
-    "objectID": "tidytuesday/2025/semana_07.html#datos",
-    "href": "tidytuesday/2025/semana_07.html#datos",
-    "title": "Semana 07",
+    "objectID": "tidytuesday/2025/semana_02.html#datos",
+    "href": "tidytuesday/2025/semana_02.html#datos",
+    "title": "Semana 02",
     "section": "Datos",
-    "text": "Datos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 07)\nagencies &lt;- tuesdata$agencies",
+    "text": "Datos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 2)\nconf2023 &lt;- tuesdata$conf2023\nconf2024 &lt;- tuesdata$conf2024",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
-      "Semana 07"
+      "Semana 02"
     ]
   },
   {
-    "objectID": "tidytuesday/2025/semana_07.html#procesamiento",
-    "href": "tidytuesday/2025/semana_07.html#procesamiento",
-    "title": "Semana 07",
+    "objectID": "tidytuesday/2025/semana_02.html#procesamiento",
+    "href": "tidytuesday/2025/semana_02.html#procesamiento",
+    "title": "Semana 02",
     "section": "Procesamiento",
-    "text": "Procesamiento\nMe interesan las agencias de seguridad asociadas a universidades.\n\n\nOcultar código\nv &lt;- agencies |&gt;\n  filter(agency_type == \"University or College\" & state != \"Alaska\") |&gt;\n  drop_na(latitude, longitude) |&gt;\n  terra::vect(geom = c(\"longitude\", \"latitude\"), crs = \"EPSG:4326\") |&gt;\n  terra::project(\"ESRI:102003\")",
+    "text": "Procesamiento\nMe interesa la cantidad de conferencias que hablan de QUARTO entre 2023 y 2024\n\n\nOcultar código\nn2023 &lt;- conf2023 |&gt;\n  mutate(quarto = str_detect(session_abstract, \"quarto|Quarto\")) |&gt;\n  dplyr::filter(quarto) |&gt;\n  nrow()\n\nn2024 &lt;- conf2024 |&gt;\n  mutate(quarto = str_detect(description, \"quarto|Quarto\")) |&gt;\n  dplyr::filter(quarto) |&gt;\n  nrow()\n\nd &lt;- tibble(\n  año = c(2023, 2024),\n  n = c(n2023, n2024)\n) |&gt;\n  mutate(\n    año = paste0(\"posit::conf\\n\", año)\n  )",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
-      "Semana 07"
+      "Semana 02"
     ]
   },
   {
-    "objectID": "tidytuesday/2025/semana_07.html#figura",
-    "href": "tidytuesday/2025/semana_07.html#figura",
-    "title": "Semana 07",
+    "objectID": "tidytuesday/2025/semana_02.html#figura",
+    "href": "tidytuesday/2025/semana_02.html#figura",
+    "title": "Semana 02",
     "section": "Figura",
-    "text": "Figura\nLogo y subtítulo.\n\n\nOcultar código\nlink_logo &lt;- \"https://cde.ucr.cjis.gov/LATEST/webapp/assets/images/CDE-new-15shad.png\"\nlogo &lt;- glue(\"&lt;img src='{link_logo}' width=250 /&gt;\")\n\nmi_subtitulo &lt;- glue(\n  \"En &lt;b&gt;EE.UU.&lt;/b&gt; existen {nrow(v)} organismos de fuerzas de seguridad\n  con jurisdicción en &lt;b style='color:{c4}'&gt;Universidades&lt;/b&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- usmap::plot_usmap(\n    regions = \"states\", exclude = c(\"AK\", \"HI\"), fill = c2, linewidth = 1,\n    color = c1\n  ) +\n  tidyterra::geom_spatvector(\n    data = v, size = 1, alpha = .8, color = c4\n  ) +\n  annotate(\n    geom = \"richtext\", x = I(.2), y = I(.06), label = logo, fill = NA,\n    label.color = NA\n  ) +\n  labs(\n    subtitle = mi_subtitulo, caption = mi_caption\n  ) +\n  theme(\n    plot.background = element_rect(fill = c1, color = NA),\n    plot.subtitle = element_markdown(\n      family = \"ubuntu\", size = 17, color = c5, hjust = .5,\n      margin = margin(t = 15)\n    ),\n    plot.caption = element_markdown(\n      family = \"ubuntu\", size = 10, color = c3, lineheight = 1.1,\n      margin = margin(b = 10, r = 10)\n    )\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_07.png\",\n  width = 30,\n  height = 21,\n  units = \"cm\"\n)",
+    "text": "Figura\nLogo y subtítulo\n\n\nOcultar código\nlogo &lt;- \"https://quarto.org/quarto.png\"\nlogo_img &lt;- glue(\n  \"&lt;img src='{logo}' width=250 /&gt;\"\n)\n\nmi_subitulo &lt;- glue(\n  \"La cantidad de conferencias&lt;br&gt;que incluyen\n  &lt;span style='font-family:jet; color:{c1}'&gt;quarto&lt;/span&gt; &lt;br&gt;\n  amentaron en las ediciones&lt;br&gt;\n  2023 y 2024 de &lt;span style='font-family:jet; color:{c1}'&gt;posit::conf&lt;/span&gt;\"\n)\n\n\nFigura\n\n\nOcultar código\ng &lt;- ggplot(d, aes(año, n, label = n)) +\n  geom_col(fill = c1) +\n  geom_text(vjust = -.2, family = \"jet\", size = 9, color = c2) +\n  annotate(\n    geom = \"richtext\", x = 2.12, y = 25, label = logo_img, fill = NA,\n    vjust = -1.2, label.color = NA\n  ) +\n  scale_y_continuous(limits = c(0, 25)) +\n  coord_cartesian(expand = FALSE, xlim = c(.5, 2.5), clip = \"off\") +\n  labs(caption = mi_caption, subtitle = mi_subitulo) +\n  theme_void(base_size = 22, base_family = \"ubuntu\") +\n  theme(\n    aspect.ratio = 1,\n    plot.margin = margin(25, 5, 5, 5),\n    plot.background = element_rect(fill = c3, color = NA),\n    plot.subtitle = element_markdown(\n      color = c4, size = 30, lineheight = 1.3, margin = margin(b = 30, l = 20)\n    ),\n    plot.caption = element_markdown(\n      color = c2, lineheight = 1.2, margin = margin(b = 5, t = 20)\n    ),\n    axis.text.x = element_text(margin = margin(t = 5), family = \"jet\"),\n  )\n\n\nGuardo\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_02.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)",
     "crumbs": [
       "{{< iconify fa6-brands:r-project >}} Tidytuesday",
       "2025",
-      "Semana 07"
+      "Semana 02"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_11.html",
+    "href": "tidytuesday/2025/semana_11.html",
+    "title": "Semana 11",
+    "section": "",
+    "text": "Relación entre el ancho y el alto de cocos, según su forma.",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 11"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_11.html#paquetes",
+    "href": "tidytuesday/2025/semana_11.html#paquetes",
+    "title": "Semana 11",
+    "section": "Paquetes",
+    "text": "Paquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(ggh4x)\nlibrary(tidyverse)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 11"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_11.html#estilos",
+    "href": "tidytuesday/2025/semana_11.html#estilos",
+    "title": "Semana 11",
+    "section": "Estilos",
+    "text": "Estilos\nColores.\n\n\nOcultar código\ncol &lt;- MoMAColors::moma.colors(palette_name = \"Koons\")\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 11"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_11.html#epígrafe",
+    "href": "tidytuesday/2025/semana_11.html#epígrafe",
+    "title": "Semana 11",
+    "section": "Epígrafe",
+    "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n    \"Datos: &lt;span style='color:{col[5]};'&gt;&lt;span style='font-family:jet;'&gt;\",\n    \"{{&lt;b&gt;tidytuesdayR&lt;/b&gt;}}&lt;/span&gt; semana 11,&lt;br&gt;\",\n    \"&lt;b&gt;{{palmtrees}}&lt;/b&gt;&lt;/span&gt;, Emil Hvitfeldt.\"\n)\n\nautor &lt;- glue(\"&lt;span style='color:{col[5]};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{col[5]};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 11"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_11.html#datos",
+    "href": "tidytuesday/2025/semana_11.html#datos",
+    "title": "Semana 11",
+    "section": "Datos",
+    "text": "Datos\n\n\nOcultar código\ntuesdata &lt;- tidytuesdayR::tt_load(2025, 11)\npalmtrees &lt;- tuesdata$palmtrees",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 11"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_11.html#procesamiento",
+    "href": "tidytuesday/2025/semana_11.html#procesamiento",
+    "title": "Semana 11",
+    "section": "Procesamiento",
+    "text": "Procesamiento\nMe interesa la relación entre el ancho y el largo de los cocos según su forma.\nRemuevo formas con poca cantidad de datos y obtengo el máximo valor entre largo y ancho.\n\n\nOcultar código\nd &lt;- palmtrees |&gt;\n  drop_na(average_fruit_width_cm, average_fruit_length_cm, fruit_shape) |&gt;\n  filter(!fruit_shape %in% c(\"rounded\", \"fusiform\"))\n\nd_max &lt;- d |&gt;\n  reframe(\n    largo = max(average_fruit_length_cm),\n    ancho = max(average_fruit_width_cm),\n    .by = fruit_shape\n  ) |&gt;\n  mutate(l = if_else(largo &gt; ancho, largo, ancho)) |&gt;\n  arrange(fruit_shape) |&gt;\n  pull(l)\n\n\nModifico los límites convenientemente y genero los ejes (vertical y horizontal) de los paneles.\n\n\nOcultar código\nd_max[2] &lt;- 10\nd_max[4] &lt;- 15\n\neje_y &lt;- list(\n  scale_y_continuous(\n    limits = c(0, d_max[1])\n  ),\n  scale_y_continuous(\n    limits = c(0, d_max[2]),\n    breaks = seq(0, d_max[2], 2)\n  ),\n  scale_y_continuous(\n    limits = c(0, d_max[3])\n  ),\n  scale_y_continuous(\n    limits = c(0, d_max[4])\n  ),\n  scale_y_continuous(\n    limits = c(0, d_max[5])\n  )\n)\n\neje_x &lt;- list(\n  scale_x_continuous(\n    limits = c(0, d_max[1])\n  ),\n  scale_x_continuous(\n    limits = c(0, d_max[2]),\n    breaks = seq(0, d_max[2], 2)\n  ),\n  scale_x_continuous(\n    limits = c(0, d_max[3])\n  ),\n  scale_x_continuous(\n    limits = c(0, d_max[4])\n  ),\n  scale_x_continuous(\n    limits = c(0, d_max[5])\n  )\n)\n\n\nAgrego las traducciones de las formas\n\n\nOcultar código\nformas &lt;- sort(unique(d$fruit_shape))\nformas_trad &lt;- c(\"Elipsoide\", \"Elongado\", \"Globosa\", \"Ovoide\", \"Piramidal\")\nformas_trad &lt;- set_names(formas_trad, formas)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 11"
+    ]
+  },
+  {
+    "objectID": "tidytuesday/2025/semana_11.html#figura",
+    "href": "tidytuesday/2025/semana_11.html#figura",
+    "title": "Semana 11",
+    "section": "Figura",
+    "text": "Figura\nLogo del paquete {palmtrees} y título.\n\n\nOcultar código\nlink &lt;- \"https://raw.githubusercontent.com/EmilHvitfeldt/palmtrees/refs/heads/main/man/figures/logo.png\"\nlogo &lt;- glue(\"&lt;img src='{link}' width=100 /&gt;\")\n\nmi_titulo &lt;- glue(\n  \"Relación entre ancho y alto de &lt;b style='color: {col[4]}'&gt;cocos&lt;/b&gt; según\n  su forma\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot(\n  d, aes(\n    average_fruit_width_cm, average_fruit_length_cm, fill = fruit_shape,\n    shape = fruit_shape, color = fruit_shape\n  )\n) +\n  geom_smooth(method = \"lm\", se = FALSE, formula = y ~ x) +\n  geom_abline(linetype = 2, color = \"grey10\", linewidth = 1) +\n  geom_point(size = 7, color = \"grey20\", alpha = .8) +\n  facet_wrap(\n    vars(fruit_shape), nrow = 3, scales = \"free\", labeller = as_labeller(formas_trad)\n  ) +\n  facetted_pos_scales(x = eje_x, y = eje_y) +\n  scale_color_manual(\n    breaks = formas,\n    labels = formas_trad,\n    values = col\n  ) +\n  scale_fill_manual(\n    breaks = formas,\n    labels = formas_trad,\n    values = col\n  ) +\n  scale_shape_manual(\n    breaks = formas,\n    labels = formas_trad,\n    values = c(21, 24, 23, 21, 24, 23, 21)\n  ) +\n  coord_cartesian(clip = \"off\") +\n  labs(\n    title = mi_titulo,\n    tag = logo,\n    caption = mi_caption,\n    x = \"Ancho promedio de la fruta (cm)\",\n    y = \"Largo promedio de la fruta (cm)\"\n  ) +\n  theme_minimal(base_size = 20, base_family = \"ubuntu\") +\n  theme(\n    text = element_text(family = \"ubuntu\"),\n    aspect.ratio = 1,\n    plot.margin = margin(t = 50),\n    plot.background = element_rect(fill = \"grey90\", color = NA),\n    plot.title = element_markdown(\n      margin = margin(l = 60, b = 45), hjust = 0, color = col[1], face = \"bold\",\n      lineheight = 1.3, size = 26\n    ),\n    plot.tag = element_markdown(),\n    plot.tag.location = \"plot\",\n    plot.tag.position = c(.07, .99),\n    plot.caption = element_markdown(\n      color = col[4], face = \"bold\", lineheight = 1.3, size = 20,\n      margin = margin(t = -160, b = 80, r = -10)\n    ),\n    legend.position = \"none\",\n    panel.grid.major = element_line(color = \"grey80\"),\n    panel.grid.minor = element_blank(),\n    panel.spacing.y = unit(40, \"pt\"),\n    panel.spacing.x = unit(60, \"pt\"),\n    axis.text = element_text(family = \"jet\", color = \"black\"),\n    axis.title.y = element_text(hjust = 1),\n    axis.title.x = element_text(hjust = 0, margin = margin(t = 20)),\n    strip.text = element_text(face = \"bold\", hjust = 0, size = 21)\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"tidytuesday/2025/semana_11.png\",\n  width = 30,\n  height = 47,\n  units = \"cm\"\n)",
+    "crumbs": [
+      "{{< iconify fa6-brands:r-project >}} Tidytuesday",
+      "2025",
+      "Semana 11"
     ]
   },
   {
@@ -3963,7 +4047,7 @@
     "href": "index.html#sudoku",
     "title": "Víctor Gauto ",
     "section": "Sudoku",
-    "text": "Sudoku\nDisfruto mucho resolver los sudokus de New York Times .\nLlevo registro de los tiempos que me lleva resolver los tres niveles de dificultad.  \n\n\n\n\n\n\n\n\n\n\n\n\n\n484 sudokus\n\n\n64 horas\n\n\n\n\n\n\n\n2025-06-18"
+    "text": "Sudoku\nDisfruto mucho resolver los sudokus de New York Times .\nLlevo registro de los tiempos que me lleva resolver los tres niveles de dificultad.  \n\n\n\n\n\n\n\n\n\n\n\n\n\n502 sudokus\n\n\n66 horas\n\n\n\n\n\n\n\n2025-06-24"
   },
   {
     "objectID": "viz/pi.html",
