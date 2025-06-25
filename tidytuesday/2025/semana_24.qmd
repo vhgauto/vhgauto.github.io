@@ -15,9 +15,9 @@ format:
 editor_options:
   chunk_output_type: console
 categories:
-  - GEOM_AAA
-  - GEOM_BBB
-  - GEOM_CCC
+  - geom_col
+  - geom_text
+  - geom_point_svg
 execute:
   eval: false
   echo: true
@@ -119,7 +119,7 @@ d <- count(api_categories, apisguru_category, sort = TRUE) |>
 
 ## Figura
 
-Título y figura.
+Logo y título.
 
 ```{r}
 mi_titulo <- glue(
@@ -127,6 +127,13 @@ mi_titulo <- glue(
   principales."
 )
 
+logo_link <- "https://apis.guru/assets/images/logo.svg"
+logo_svg <- paste(readLines(logo_link), collapse = "\n")
+```
+
+Figura.
+
+```{r}
 g <- ggplot(d, aes(n, categoria)) +
   geom_col(fill = c2, color = NA) +
   geom_text(
@@ -134,12 +141,20 @@ g <- ggplot(d, aes(n, categoria)) +
     family = "jet",
     size = 8
   ) +
+  ggsvg::geom_point_svg(
+    x = I(.985),
+    y = I(25.7),
+    svg = logo_svg,
+    size = 10,
+    inherit.aes = FALSE
+  ) +
   scale_x_log10() +
   scale_color_identity() +
   coord_cartesian(
     ylim = c(0, nrow(d) + 1),
     xlim = c(.9, 1200),
-    expand = FALSE
+    expand = FALSE,
+    clip = "off"
   ) +
   labs(x = NULL, y = NULL, title = mi_titulo, caption = mi_caption) +
   ggthemes::theme_par(base_size = 15, base_family = "jet") +
