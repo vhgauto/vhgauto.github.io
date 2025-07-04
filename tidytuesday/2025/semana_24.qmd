@@ -123,8 +123,7 @@ Logo y título.
 
 ```{r}
 mi_titulo <- glue(
-  "A partir de {nrow(api_categories)} **API**s, estas son las categorías 
-  principales."
+  "Categorías principales a partir de {nrow(api_categories)} **API**s."
 )
 
 logo_link <- "https://apis.guru/assets/images/logo.svg"
