@@ -57,6 +57,36 @@
     ]
   },
   {
+    "listing": "/mapas.html",
+    "items": [
+      "/mapas/mapa1.html"
+    ]
+  },
+  {
+    "listing": "/argentina/instalaciones/index.html",
+    "items": [
+      "/argentina/instalaciones/parques_nacionales.html",
+      "/argentina/instalaciones/faros.html",
+      "/argentina/instalaciones/aeropuertos.html",
+      "/argentina/instalaciones/educacion.html",
+      "/argentina/instalaciones/plantas_potabilizadoras.html",
+      "/argentina/instalaciones/red_electrica.html",
+      "/argentina/instalaciones/buzones.html",
+      "/argentina/instalaciones/estaciones_smn.html"
+    ]
+  },
+  {
+    "listing": "/publicaciones/index.html",
+    "items": []
+  },
+  {
+    "listing": "/argentina/animaciones/index.html",
+    "items": [
+      "/argentina/animaciones/crecimiento_rutas.html",
+      "/argentina/animaciones/torres_celulares.html"
+    ]
+  },
+  {
     "listing": "/tidytuesday/2023/index.html",
     "items": [
       "/tidytuesday/2023/semana_52.html",
@@ -104,38 +134,9 @@
     ]
   },
   {
-    "listing": "/argentina/animaciones/index.html",
-    "items": [
-      "/argentina/animaciones/crecimiento_rutas.html",
-      "/argentina/animaciones/torres_celulares.html"
-    ]
-  },
-  {
-    "listing": "/publicaciones/index.html",
-    "items": []
-  },
-  {
-    "listing": "/argentina/instalaciones/index.html",
-    "items": [
-      "/argentina/instalaciones/parques_nacionales.html",
-      "/argentina/instalaciones/faros.html",
-      "/argentina/instalaciones/aeropuertos.html",
-      "/argentina/instalaciones/educacion.html",
-      "/argentina/instalaciones/plantas_potabilizadoras.html",
-      "/argentina/instalaciones/red_electrica.html",
-      "/argentina/instalaciones/buzones.html",
-      "/argentina/instalaciones/estaciones_smn.html"
-    ]
-  },
-  {
-    "listing": "/mapas.html",
-    "items": [
-      "/mapas/mapa1.html"
-    ]
-  },
-  {
     "listing": "/tidytuesday/2025/index.html",
     "items": [
+      "/tidytuesday/2025/semana_26.html",
       "/tidytuesday/2025/semana_25.html",
       "/tidytuesday/2025/semana_24.html",
       "/tidytuesday/2025/semana_23.html",
