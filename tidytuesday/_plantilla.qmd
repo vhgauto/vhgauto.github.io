@@ -23,7 +23,7 @@ execute:
   echo: true
   warning: false
 title: "Semana X_semana"
-date: X_fecha
+date: last-modified
 author: Víctor Gauto
 ---
 
