@@ -131,7 +131,14 @@ d <- cases_year |>
     values_to = "cantidad"
   ) |> 
   mutate(reg = region_etq[region]) |> 
-  mutate(reg = fct_reorder(reg, cantidad))
+  mutate(reg = fct_reorder(reg, cantidad)) |> 
+  mutate(
+    caso = if_else(
+      caso == "Sarampión",
+      glue("<b style='color:{c1}'>Sarampión</b>"),
+      glue("<b style='color:{c2}'>Rubeola</b>")
+    )
+  )
 ```
 
 ## Figura
@@ -175,7 +182,9 @@ g <- ggplot(d, aes(year, cantidad, color = caso)) +
     panel.grid.major = element_line(color = c5, linewidth = .3),
     panel.spacing = unit(1, "line"),
     strip.background = element_rect(fill = c3, color = c4),
-    strip.text = element_text(face = "bold", color = c4)
+    strip.background.y = element_blank(),
+    strip.text = element_markdown(face = "bold", color = c4),
+    strip.text.y = element_markdown(size = rel(1.6))
   )
 ```
 
