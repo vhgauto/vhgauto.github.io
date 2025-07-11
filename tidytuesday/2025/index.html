@@ -84,7 +84,8 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
@@ -370,6 +371,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../../tidytuesday/2025/semana_26.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Semana 26</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tidytuesday/2025/semana_27.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Semana 27</span></a>
   </div>
 </li>
       </ul>
@@ -967,7 +974,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(25)</span></div><div class="category" data-category="Z2VvbV9hYmxpbmU=">geom_abline <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV9hcmVh">geom_area <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV9jb2w=">geom_col <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9mcm9tX3BhdGg=">geom_from_path <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV9sYWJlbA==">geom_label <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9saW5l">geom_line <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Z2VvbV9tYXJxdWVl">geom_marquee <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9wb2ludA==">geom_point <span class="quarto-category-count">(11)</span></div><div class="category" data-category="Z2VvbV9wb2ludF9zdmc=">geom_point_svg <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV9yZWN0">geom_rect <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9yaWNodGV4dA==">geom_richtext <span class="quarto-category-count">(6)</span></div><div class="category" data-category="Z2VvbV9zZWdtZW50">geom_segment <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Z2VvbV9zbW9vdGg=">geom_smooth <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9zcGF0cmFzdGVy">geom_spatraster <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Z2VvbV9zcGF0dmVjdG9y">geom_spatvector <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Z2VvbV9zcGF0dmVjdG9yX2xhYmVs">geom_spatvector_label <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV9zcGF0dmVjdG9yX3RleHQ=">geom_spatvector_text <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV90ZXh0">geom_text <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Z2VvbV90ZXh0X3dvcmRjbG91ZA==">geom_text_wordcloud <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV90cmVlbWFw">geom_treemap <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV92bGluZQ==">geom_vline <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGxvdF91c21hcA==">plot_usmap <span class="quarto-category-count">(2)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(26)</span></div><div class="category" data-category="Z2VvbV9hYmxpbmU=">geom_abline <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV9hcmVh">geom_area <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV9jb2w=">geom_col <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9mcm9tX3BhdGg=">geom_from_path <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV9sYWJlbA==">geom_label <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9saW5l">geom_line <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Z2VvbV9tYXJxdWVl">geom_marquee <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9wb2ludA==">geom_point <span class="quarto-category-count">(11)</span></div><div class="category" data-category="Z2VvbV9wb2ludF9zdmc=">geom_point_svg <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV9yZWN0">geom_rect <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9yaWNodGV4dA==">geom_richtext <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Z2VvbV9zZWdtZW50">geom_segment <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Z2VvbV9zbW9vdGg=">geom_smooth <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbV9zcGF0cmFzdGVy">geom_spatraster <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Z2VvbV9zcGF0dmVjdG9y">geom_spatvector <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Z2VvbV9zcGF0dmVjdG9yX2xhYmVs">geom_spatvector_label <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV9zcGF0dmVjdG9yX3RleHQ=">geom_spatvector_text <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV90ZXh0">geom_text <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Z2VvbV90ZXh0X3dvcmRjbG91ZA==">geom_text_wordcloud <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV90aWxl">geom_tile <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV90cmVlbWFw">geom_treemap <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VvbV92bGluZQ==">geom_vline <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGxvdF91c21hcA==">plot_usmap <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -1018,7 +1025,41 @@ window.Quarto = {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Z2VvbV9saW5lJTJDZ2VvbV9yaWNodGV4dA==" data-listing-date-sort="1752154570000" data-listing-file-modified-sort="1752154570568" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="793">
+<div class="quarto-post image-right" data-index="0" data-categories="Z2VvbV90aWxlJTJDZ2VvbV90ZXh0JTJDZ2VvbV9yaWNodGV4dA==" data-listing-date-sort="1752239895000" data-listing-file-modified-sort="1752239895408" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="662">
+<div class="thumbnail"><a href="../../tidytuesday/2025/semana_27.html" class="no-external">
+
+<p class="card-img-top"><img src="semana_27.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../tidytuesday/2025/semana_27.html" class="no-external">Semana 27</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Z2VvbV90aWxl'); return false;">geom_tile</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Z2VvbV90ZXh0'); return false;">geom_text</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Z2VvbV9yaWNodGV4dA=='); return false;">geom_richtext</div>
+
+</div>
+<div class="delink listing-description"><a href="../../tidytuesday/2025/semana_27.html" class="no-external">
+Nombres de colores.
+</a></div>
+</div>
+<div class="metadata">
+<a href="../../tidytuesday/2025/semana_27.html" class="no-external">
+<div class="listing-date">
+2025-07-11
+</div>
+<div class="listing-author">
+Víctor Gauto
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Z2VvbV9saW5lJTJDZ2VvbV9yaWNodGV4dA==" data-listing-date-sort="1752239895000" data-listing-file-modified-sort="1752239895399" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="793">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_26.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_26.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1042,7 +1083,7 @@ Relación entre la gasolina regular respecto de la premium.
 <div class="metadata">
 <a href="../../tidytuesday/2025/semana_26.html" class="no-external">
 <div class="listing-date">
-2025-07-10
+2025-07-11
 </div>
 <div class="listing-author">
 Víctor Gauto
@@ -1050,7 +1091,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Z2VvbV9saW5lJTJDZ2VvbV9wb2ludA==" data-listing-date-sort="NaN" data-listing-file-modified-sort="1752154570563" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="585">
+<div class="quarto-post image-right" data-index="2" data-categories="Z2VvbV9saW5lJTJDZ2VvbV9wb2ludA==" data-listing-date-sort="NaN" data-listing-file-modified-sort="1752239895394" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="585">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_25.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_25.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1082,7 +1123,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Z2VvbV9jb2wlMkNnZW9tX3RleHQlMkNnZW9tX3BvaW50X3N2Zw==" data-listing-date-sort="1750118400000" data-listing-file-modified-sort="1752154570561" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="496">
+<div class="quarto-post image-right" data-index="3" data-categories="Z2VvbV9jb2wlMkNnZW9tX3RleHQlMkNnZW9tX3BvaW50X3N2Zw==" data-listing-date-sort="1750118400000" data-listing-file-modified-sort="1752239895392" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="496">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_24.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_24.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1116,7 +1157,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="Z2VvbV9yZWN0JTJDZ2VvbV9wb2ludA==" data-listing-date-sort="1749513600000" data-listing-file-modified-sort="1752154570560" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="811">
+<div class="quarto-post image-right" data-index="4" data-categories="Z2VvbV9yZWN0JTJDZ2VvbV9wb2ludA==" data-listing-date-sort="1749513600000" data-listing-file-modified-sort="1752239895391" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="811">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_23.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_23.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1148,7 +1189,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="Z2VvbV9zZWdtZW50JTJDZ2VvbV9wb2ludCUyQ2dlb21fbWFycXVlZQ==" data-listing-date-sort="1748908800000" data-listing-file-modified-sort="1752154570555" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="401">
+<div class="quarto-post image-right" data-index="5" data-categories="Z2VvbV9zZWdtZW50JTJDZ2VvbV9wb2ludCUyQ2dlb21fbWFycXVlZQ==" data-listing-date-sort="1748908800000" data-listing-file-modified-sort="1752239895386" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="401">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_22.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_22.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1182,7 +1223,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="Z2VvbV90ZXh0JTJDZ2VvbV9yZWN0JTJDZ2VvbV9wb2ludCUyQ2dlb21fc21vb3Ro" data-listing-date-sort="1748304000000" data-listing-file-modified-sort="1752154570528" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1282">
+<div class="quarto-post image-right" data-index="6" data-categories="Z2VvbV90ZXh0JTJDZ2VvbV9yZWN0JTJDZ2VvbV9wb2ludCUyQ2dlb21fc21vb3Ro" data-listing-date-sort="1748304000000" data-listing-file-modified-sort="1752239895359" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1282">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_21.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_21.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1218,7 +1259,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="Z2VvbV9zcGF0dmVjdG9yJTJDZ2VvbV9zcGF0dmVjdG9yX3RleHQlMkNnZW9tX3NwYXRyYXN0ZXIlMkNnZW9tX3JpY2h0ZXh0" data-listing-date-sort="1752154570000" data-listing-file-modified-sort="1752154570524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="906">
+<div class="quarto-post image-right" data-index="7" data-categories="Z2VvbV9zcGF0dmVjdG9yJTJDZ2VvbV9zcGF0dmVjdG9yX3RleHQlMkNnZW9tX3NwYXRyYXN0ZXIlMkNnZW9tX3JpY2h0ZXh0" data-listing-date-sort="1752239895000" data-listing-file-modified-sort="1752239895355" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="906">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_20.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_20.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1246,7 +1287,7 @@ Playas en Sydney, Australia, indicando la región a la que pertenecen.
 <div class="metadata">
 <a href="../../tidytuesday/2025/semana_20.html" class="no-external">
 <div class="listing-date">
-2025-07-10
+2025-07-11
 </div>
 <div class="listing-author">
 Víctor Gauto
@@ -1254,7 +1295,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="Z2VvbV9zcGF0cmFzdGVyJTJDZ2VvbV9zcGF0dmVjdG9y" data-listing-date-sort="1752154570000" data-listing-file-modified-sort="1752154570499" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="693">
+<div class="quarto-post image-right" data-index="8" data-categories="Z2VvbV9zcGF0cmFzdGVyJTJDZ2VvbV9zcGF0dmVjdG9y" data-listing-date-sort="1752239895000" data-listing-file-modified-sort="1752239895330" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="693">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_19.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_19.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1278,7 +1319,7 @@ Eventos sísmicos en el Monte Vesubio.
 <div class="metadata">
 <a href="../../tidytuesday/2025/semana_19.html" class="no-external">
 <div class="listing-date">
-2025-07-10
+2025-07-11
 </div>
 <div class="listing-author">
 Víctor Gauto
@@ -1286,7 +1327,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="cGxvdF91c21hcA==" data-listing-date-sort="1752154570000" data-listing-file-modified-sort="1752154570489" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="456">
+<div class="quarto-post image-right" data-index="9" data-categories="cGxvdF91c21hcA==" data-listing-date-sort="1752239895000" data-listing-file-modified-sort="1752239895320" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="456">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_18.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_18.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1308,7 +1349,7 @@ Cantidad de proyectos de investigación finalizados por estado en EE.UU.
 <div class="metadata">
 <a href="../../tidytuesday/2025/semana_18.html" class="no-external">
 <div class="listing-date">
-2025-07-10
+2025-07-11
 </div>
 <div class="listing-author">
 Víctor Gauto
@@ -1316,7 +1357,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="Z2VvbV9tYXJxdWVl" data-listing-date-sort="1745884800000" data-listing-file-modified-sort="1752154570486" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="742">
+<div class="quarto-post image-right" data-index="10" data-categories="Z2VvbV9tYXJxdWVl" data-listing-date-sort="1745884800000" data-listing-file-modified-sort="1752239895317" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="742">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_17.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_17.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1346,7 +1387,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="Z2VvbV9zZWdtZW50JTJDZ2VvbV9saW5lJTJDZ2VvbV9wb2ludA==" data-listing-date-sort="1745280000000" data-listing-file-modified-sort="1752154570484" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="747">
+<div class="quarto-post image-right" data-index="11" data-categories="Z2VvbV9zZWdtZW50JTJDZ2VvbV9saW5lJTJDZ2VvbV9wb2ludA==" data-listing-date-sort="1745280000000" data-listing-file-modified-sort="1752239895315" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="747">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_16.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_16.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1380,7 +1421,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="Z2VvbV9zcGF0cmFzdGVyJTJDZ2VvbV9zcGF0dmVjdG9yJTJDZ2VvbV9zcGF0dmVjdG9yX2xhYmVs" data-listing-date-sort="1744675200000" data-listing-file-modified-sort="1752154570480" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="625">
+<div class="quarto-post image-right" data-index="12" data-categories="Z2VvbV9zcGF0cmFzdGVyJTJDZ2VvbV9zcGF0dmVjdG9yJTJDZ2VvbV9zcGF0dmVjdG9yX2xhYmVs" data-listing-date-sort="1744675200000" data-listing-file-modified-sort="1752239895311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="625">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_15.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_15.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1414,7 +1455,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="Z2VvbV92bGluZSUyQ2dlb21fcG9pbnQlMkNnZW9tX3NlZ21lbnQlMkNnZW9tX2xhYmVs" data-listing-date-sort="1744070400000" data-listing-file-modified-sort="1752154570469" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="624">
+<div class="quarto-post image-right" data-index="13" data-categories="Z2VvbV92bGluZSUyQ2dlb21fcG9pbnQlMkNnZW9tX3NlZ21lbnQlMkNnZW9tX2xhYmVs" data-listing-date-sort="1744070400000" data-listing-file-modified-sort="1752239895301" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="624">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_14.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_14.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1450,7 +1491,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="Z2VvbV9yaWNodGV4dCUyQ2dlb21fcG9pbnQ=" data-listing-date-sort="1743465600000" data-listing-file-modified-sort="1752154570467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="728">
+<div class="quarto-post image-right" data-index="14" data-categories="Z2VvbV9yaWNodGV4dCUyQ2dlb21fcG9pbnQ=" data-listing-date-sort="1743465600000" data-listing-file-modified-sort="1752239895299" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="728">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_13.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_13.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1482,7 +1523,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="Z2VvbV9saW5lJTJDZ2VvbV9wb2ludA==" data-listing-date-sort="1742860800000" data-listing-file-modified-sort="1752154570460" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="524">
+<div class="quarto-post image-right" data-index="15" data-categories="Z2VvbV9saW5lJTJDZ2VvbV9wb2ludA==" data-listing-date-sort="1742860800000" data-listing-file-modified-sort="1752239895292" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="524">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_12.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_12.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1514,7 +1555,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="Z2VvbV9zbW9vdGglMkNnZW9tX2FibGluZSUyQ2dlb21fcG9pbnQ=" data-listing-date-sort="1742256000000" data-listing-file-modified-sort="1752154570458" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="851">
+<div class="quarto-post image-right" data-index="16" data-categories="Z2VvbV9zbW9vdGglMkNnZW9tX2FibGluZSUyQ2dlb21fcG9pbnQ=" data-listing-date-sort="1742256000000" data-listing-file-modified-sort="1752239895291" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="851">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_11.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_11.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1548,7 +1589,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="Z2VvbV9wb2ludCUyQ2dlb21fcmljaHRleHQ=" data-listing-date-sort="1741651200000" data-listing-file-modified-sort="1752154570453" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="868">
+<div class="quarto-post image-right" data-index="17" data-categories="Z2VvbV9wb2ludCUyQ2dlb21fcmljaHRleHQ=" data-listing-date-sort="1741651200000" data-listing-file-modified-sort="1752239895286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="868">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_10.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_10.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1580,7 +1621,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-categories="Z2VvbV9yaWNodGV4dA==" data-listing-date-sort="1741046400000" data-listing-file-modified-sort="1752154570451" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="629">
+<div class="quarto-post image-right" data-index="18" data-categories="Z2VvbV9yaWNodGV4dA==" data-listing-date-sort="1741046400000" data-listing-file-modified-sort="1752239895283" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="629">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_09.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_09.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1610,7 +1651,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-categories="Z2VvbV90ZXh0X3dvcmRjbG91ZA==" data-listing-date-sort="1740441600000" data-listing-file-modified-sort="1752154570449" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="514">
+<div class="quarto-post image-right" data-index="19" data-categories="Z2VvbV90ZXh0X3dvcmRjbG91ZA==" data-listing-date-sort="1740441600000" data-listing-file-modified-sort="1752239895282" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="514">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_08.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_08.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1640,7 +1681,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="19" data-categories="Z2VvbV9zcGF0dmVjdG9yJTJDcGxvdF91c21hcA==" data-listing-date-sort="1739836800000" data-listing-file-modified-sort="1752154570445" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="368">
+<div class="quarto-post image-right" data-index="20" data-categories="Z2VvbV9zcGF0dmVjdG9yJTJDcGxvdF91c21hcA==" data-listing-date-sort="1739836800000" data-listing-file-modified-sort="1752239895277" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="368">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_07.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_07.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1672,7 +1713,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="20" data-categories="Z2VvbV90cmVlbWFwJTJDZ2VvbV9mcm9tX3BhdGg=" data-listing-date-sort="1739232000000" data-listing-file-modified-sort="1752154570441" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="685">
+<div class="quarto-post image-right" data-index="21" data-categories="Z2VvbV90cmVlbWFwJTJDZ2VvbV9mcm9tX3BhdGg=" data-listing-date-sort="1739232000000" data-listing-file-modified-sort="1752239895272" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="685">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_06.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_06.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1704,7 +1745,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="21" data-categories="Z2VvbV9zZWdtZW50JTJDZ2VvbV9sYWJlbCUyQ2dlb21fcmljaHRleHQ=" data-listing-date-sort="1738627200000" data-listing-file-modified-sort="1752154570438" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1242">
+<div class="quarto-post image-right" data-index="22" data-categories="Z2VvbV9zZWdtZW50JTJDZ2VvbV9sYWJlbCUyQ2dlb21fcmljaHRleHQ=" data-listing-date-sort="1738627200000" data-listing-file-modified-sort="1752239895270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1242">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_05.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_05.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1738,7 +1779,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="22" data-categories="Z2VvbV9wb2ludA==" data-listing-date-sort="1738022400000" data-listing-file-modified-sort="1752154570435" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="621">
+<div class="quarto-post image-right" data-index="23" data-categories="Z2VvbV9wb2ludA==" data-listing-date-sort="1738022400000" data-listing-file-modified-sort="1752239895267" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="621">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_04.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_04.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1768,7 +1809,7 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="23" data-categories="Z2VvbV9hcmVh" data-listing-date-sort="1737417600000" data-listing-file-modified-sort="1752154570390" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="602">
+<div class="quarto-post image-right" data-index="24" data-categories="Z2VvbV9hcmVh" data-listing-date-sort="1737417600000" data-listing-file-modified-sort="1752239895221" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="602">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_03.html" class="no-external">
 
 <p class="card-img-top"><img src="semana_03.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
@@ -1798,10 +1839,10 @@ Víctor Gauto
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="24" data-categories="Z2VvbV9jb2wlMkNnZW9tX3RleHQ=" data-listing-date-sort="1736812800000" data-listing-file-modified-sort="1752154570388" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="443">
+<div class="quarto-post image-right" data-index="25" data-categories="Z2VvbV9jb2wlMkNnZW9tX3RleHQ=" data-listing-date-sort="1736812800000" data-listing-file-modified-sort="1752239895220" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="443">
 <div class="thumbnail"><a href="../../tidytuesday/2025/semana_02.html" class="no-external">
 
-<p class="card-img-top"><img src="semana_02.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img data-src="semana_02.png" style="height: 200px;"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
@@ -1832,6 +1873,9 @@ Víctor Gauto
 </div>
 </div>
 <div class="listing-no-matching d-none">No hay resultados</div>
+<nav id="lista-tidytuesday-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div>
 <p>Adiós.</p>
 
