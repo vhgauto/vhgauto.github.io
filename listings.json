@@ -1,5 +1,31 @@
 [
   {
+    "listing": "/argentina/instalaciones/index.html",
+    "items": [
+      "/argentina/instalaciones/parques_nacionales.html",
+      "/argentina/instalaciones/faros.html",
+      "/argentina/instalaciones/plantas_potabilizadoras.html",
+      "/argentina/instalaciones/aeropuertos.html",
+      "/argentina/instalaciones/educacion.html",
+      "/argentina/instalaciones/buzones.html",
+      "/argentina/instalaciones/red_electrica.html",
+      "/argentina/instalaciones/estaciones_smn.html"
+    ]
+  },
+  {
+    "listing": "/argentina/animaciones/index.html",
+    "items": [
+      "/argentina/animaciones/crecimiento_rutas.html",
+      "/argentina/animaciones/torres_celulares.html"
+    ]
+  },
+  {
+    "listing": "/mapas.html",
+    "items": [
+      "/mapas/mapa1.html"
+    ]
+  },
+  {
     "listing": "/tidytuesday/2024/index.html",
     "items": [
       "/tidytuesday/2024/semana_53.html",
@@ -135,33 +161,7 @@
     ]
   },
   {
-    "listing": "/argentina/animaciones/index.html",
-    "items": [
-      "/argentina/animaciones/crecimiento_rutas.html",
-      "/argentina/animaciones/torres_celulares.html"
-    ]
-  },
-  {
     "listing": "/publicaciones/index.html",
     "items": []
-  },
-  {
-    "listing": "/argentina/instalaciones/index.html",
-    "items": [
-      "/argentina/instalaciones/parques_nacionales.html",
-      "/argentina/instalaciones/faros.html",
-      "/argentina/instalaciones/aeropuertos.html",
-      "/argentina/instalaciones/educacion.html",
-      "/argentina/instalaciones/plantas_potabilizadoras.html",
-      "/argentina/instalaciones/red_electrica.html",
-      "/argentina/instalaciones/buzones.html",
-      "/argentina/instalaciones/estaciones_smn.html"
-    ]
-  },
-  {
-    "listing": "/mapas.html",
-    "items": [
-      "/mapas/mapa1.html"
-    ]
   }
 ]
