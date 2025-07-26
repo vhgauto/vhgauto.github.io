@@ -1,0 +1,168 @@
+---
+format:
+  html:
+    code-fold: show
+    code-summary: "Ocultar código"
+    code-line-numbers: false
+    code-annotations: false
+    code-link: true
+    code-tools:
+        source: true
+        toggle: true
+        caption: "Código"
+    code-overflow: scroll
+    page-layout: full
+auto-play-media: true
+editor_options:
+  chunk_output_type: console
+categories:
+  - video
+execute:
+  eval: false
+  echo: true
+  warning: false
+title: "Semana 29"
+date: last-modified
+author: Víctor Gauto
+---
+
+Animación con las obras de arte del [Metropolitan Transportation Authority](https://www.mta.info/agency/arts-design) de Nueva York.
+
+![Semana 29, 2025](semana_29.mp4){loop="true"}
+
+<!-- {{< video semana_29.mp4 loop="true" title="Semana 29, 2025" >}} -->
+
+## Paquetes
+
+```{r}
+library(magick)
+library(rvest)
+library(tidyverse)
+```
+
+## Estilos
+
+Colores.
+
+```{r}
+c1 <- "#FDE333"
+c2 <- "#8B0069"
+```
+
+## Datos
+
+```{r}
+tuesdata <- tidytuesdayR::tt_load(2025, 29)
+mta_art <- tuesdata$mta_art
+```
+
+## Procesamiento
+
+Me interesa las imágenes de las obras y generar un video mostrándolas.
+
+Función para leer los sitios web y extraer un link de la imagen.
+
+```{r}
+f_img <- function(x) {
+  l <- read_html(x) |> 
+    html_elements("img") |> 
+    html_attr("src")
+  
+  l[1]
+}
+```
+
+Función para recortar la imagen, agregar el nombre de la estación y autor, y descargar el archivo.
+
+```{r}
+f_jpg <- function(A, B, C) {
+  prop <- image_read(B) |> 
+    image_info()
+
+  pos_x <- round(prop$width/2)
+  pos_y <- round(prop$height/2)
+
+  image_read(B) |> 
+    image_crop(
+      geometry = geometry_area(
+        width = tamaño,
+        height = tamaño,
+        x_off = pos_x-tamaño/2,
+        y_off = pos_y-tamaño/2
+      )
+    ) |> 
+    image_annotate(
+      text = A,
+      gravity = "northwest",
+      location = "+5+5",
+      size = 23,
+      font = "Times New Roman",
+      color = c1,
+      boxcolor = c2
+    ) |> 
+    image_annotate(
+      text = "@vhgauto",
+      gravity = "southeast",
+      location = "+5+5",
+      size = 23,
+      font = "Monotype Corsiva",
+      weight = 800,
+      color = c1,
+      boxcolor = c2
+    ) |> 
+    image_write(
+      paste0("tidytuesday/2025/.mta/", C, ".jpg")
+    )
+}
+```
+
+Selecciono los enlaces y nombres de las estaciones.
+
+```{r}
+d <- mta_art |> 
+  select(station_name, art_image_link) |> 
+  drop_na() |> 
+  filter(!str_detect(art_image_link, "http://web")) |> 
+  mutate(img = map(art_image_link, f_img)) |> 
+  unnest(img) |> 
+  distinct(img, .keep_all = TRUE) |> 
+  arrange(station_name) |> 
+  mutate(nombre = paste0(row_number(), "-", station_name)) |> 
+  mutate(nombre = str_replace_all(nombre, "/", ""))
+```
+
+Defino el tamaño de las imágenes y proceso las imágenes.
+
+```{r}
+tamaño <- 600
+
+pmap(
+  list(
+    d$station_name,
+    d$img,
+    d$nombre
+  ),
+  f_jpg
+)
+```
+
+## Animación
+
+Se leen todas las imágenes y se genera una animación.
+
+```{r}
+av::av_encode_video(
+  input = list.files(
+    path = "tidytuesday/2025/.mta/",
+    full.names = TRUE, pattern = ".jpg"
+  ),
+  framerate = 3,
+  output = "tidytuesday/2025/semana_29.mp4"
+)
+```
+
+Elimino las imágenes descargadas.
+
+```{r}
+unlink("tidytuesday/2025/.mta/", recursive = TRUE)
+```
