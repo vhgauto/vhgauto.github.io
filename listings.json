@@ -26,38 +26,6 @@
     ]
   },
   {
-    "listing": "/tidytuesday/2025/index.html",
-    "items": [
-      "/tidytuesday/2025/semana_28.html",
-      "/tidytuesday/2025/semana_27.html",
-      "/tidytuesday/2025/semana_26.html",
-      "/tidytuesday/2025/semana_25.html",
-      "/tidytuesday/2025/semana_24.html",
-      "/tidytuesday/2025/semana_23.html",
-      "/tidytuesday/2025/semana_22.html",
-      "/tidytuesday/2025/semana_21.html",
-      "/tidytuesday/2025/semana_20.html",
-      "/tidytuesday/2025/semana_19.html",
-      "/tidytuesday/2025/semana_18.html",
-      "/tidytuesday/2025/semana_17.html",
-      "/tidytuesday/2025/semana_16.html",
-      "/tidytuesday/2025/semana_15.html",
-      "/tidytuesday/2025/semana_14.html",
-      "/tidytuesday/2025/semana_13.html",
-      "/tidytuesday/2025/semana_12.html",
-      "/tidytuesday/2025/semana_11.html",
-      "/tidytuesday/2025/semana_10.html",
-      "/tidytuesday/2025/semana_09.html",
-      "/tidytuesday/2025/semana_08.html",
-      "/tidytuesday/2025/semana_07.html",
-      "/tidytuesday/2025/semana_06.html",
-      "/tidytuesday/2025/semana_05.html",
-      "/tidytuesday/2025/semana_04.html",
-      "/tidytuesday/2025/semana_03.html",
-      "/tidytuesday/2025/semana_02.html"
-    ]
-  },
-  {
     "listing": "/tidytuesday/2024/index.html",
     "items": [
       "/tidytuesday/2024/semana_53.html",
@@ -112,6 +80,39 @@
       "/tidytuesday/2024/semana_04.html",
       "/tidytuesday/2024/semana_03.html",
       "/tidytuesday/2024/semana_02.html"
+    ]
+  },
+  {
+    "listing": "/tidytuesday/2025/index.html",
+    "items": [
+      "/tidytuesday/2025/semana_29.html",
+      "/tidytuesday/2025/semana_28.html",
+      "/tidytuesday/2025/semana_27.html",
+      "/tidytuesday/2025/semana_26.html",
+      "/tidytuesday/2025/semana_25.html",
+      "/tidytuesday/2025/semana_24.html",
+      "/tidytuesday/2025/semana_23.html",
+      "/tidytuesday/2025/semana_22.html",
+      "/tidytuesday/2025/semana_21.html",
+      "/tidytuesday/2025/semana_20.html",
+      "/tidytuesday/2025/semana_19.html",
+      "/tidytuesday/2025/semana_18.html",
+      "/tidytuesday/2025/semana_17.html",
+      "/tidytuesday/2025/semana_16.html",
+      "/tidytuesday/2025/semana_15.html",
+      "/tidytuesday/2025/semana_14.html",
+      "/tidytuesday/2025/semana_13.html",
+      "/tidytuesday/2025/semana_12.html",
+      "/tidytuesday/2025/semana_11.html",
+      "/tidytuesday/2025/semana_10.html",
+      "/tidytuesday/2025/semana_09.html",
+      "/tidytuesday/2025/semana_08.html",
+      "/tidytuesday/2025/semana_07.html",
+      "/tidytuesday/2025/semana_06.html",
+      "/tidytuesday/2025/semana_05.html",
+      "/tidytuesday/2025/semana_04.html",
+      "/tidytuesday/2025/semana_03.html",
+      "/tidytuesday/2025/semana_02.html"
     ]
   },
   {
