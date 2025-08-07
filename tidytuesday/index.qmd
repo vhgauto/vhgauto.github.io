@@ -13,7 +13,7 @@ Todas las semanas en el repositorio de [GitHub](https://github.com/rfordatascien
 
 Para facilitar el acceso a los datos existe el paquete [tidytuesdayR](https://dslc-io.github.io/tidytuesdayR/).
 
-![](https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/static/tt_logo.png)
+![](https://raw.githubusercontent.com/rfordatascience/tidytuesday/refs/heads/main/static/tt_logo.png)
 
 # Motivación
 
