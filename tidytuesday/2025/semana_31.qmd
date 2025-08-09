@@ -1,0 +1,184 @@
+---
+format:
+  html:
+    code-fold: show
+    code-summary: "Ocultar código"
+    code-line-numbers: false
+    code-annotations: false
+    code-link: true
+    code-tools:
+        source: true
+        toggle: true
+        caption: "Código"
+    code-overflow: scroll
+    page-layout: full
+editor_options:
+  chunk_output_type: console
+categories:
+  - geom_label
+  - geom_line
+  - geom_point
+execute:
+  eval: false
+  echo: true
+  warning: false
+title: "Semana 31"
+date: last-modified
+author: Víctor Gauto
+---
+
+Evaluación del **Índice Gini** para una selección de países.
+
+![Semana 31, 2025](semana_31.mp4){loop="true"}
+
+## Paquetes
+
+```{r}
+library(glue)
+library(ggtext)
+library(showtext)
+library(gganimate)
+library(tidyverse)
+```
+
+## Estilos
+
+Colores.
+
+```{r}
+c1 <- "#134130"
+c2 <- "#E6AB02"
+c3 <- "black"
+c4 <- "white"
+
+col <- RColorBrewer::brewer.pal(name = "Dark2", n = 8)
+```
+
+Fuentes: Ubuntu y JetBrains Mono.
+
+```{r}
+font_add(
+  family = "ubuntu",
+  regular = "././fuente/Ubuntu-Regular.ttf",
+  bold = "././fuente/Ubuntu-Bold.ttf",
+  italic = "././fuente/Ubuntu-Italic.ttf"
+)
+
+font_add(
+  family = "jet",
+  regular = "././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf"
+)
+
+showtext_auto()
+showtext_opts(dpi = 300)
+```
+
+## Epígrafe
+
+```{r}
+n <- "<span style='color: white'> . </span>"
+fuente <- glue("Our{n}World{n}in{n}Data")
+autor <- glue("<span style='color:{c2};'>**Víctor{n}Gauto**</span>")
+icon_twitter <- glue("<span style='font-family:jet;'>&#xf099;</span>")
+icon_instagram <- glue("<span style='font-family:jet;'>&#xf16d;</span>")
+icon_github <- glue("<span style='font-family:jet;'>&#xf09b;</span>")
+icon_mastodon <- glue("<span style='font-family:jet;'>&#xf0ad1;</span>")
+icon_bsky <- glue("<span style='font-family:jet;'>&#xe28e;</span>")
+usuario <- glue("<span style='color:{c2};'>**vhgauto**</span>")
+sep <- glue("**|**")
+
+mi_caption <- glue("{fuente}<br>{autor}{n}{sep}{n}{usuario}")
+```
+
+## Datos
+
+```{r}
+tuesdata <- tidytuesdayR::tt_load(2025, 31)
+inequality_processed <- tuesdata$income_inequality_processed
+```
+
+## Procesamiento
+
+Me interesa la evolución del [Índice Gini](https://es.wikipedia.org/wiki/Coeficiente_de_Gini) en los países con mayor registro.
+
+```{r}
+top_pais <- inequality_processed |> 
+  count(Entity, sort = TRUE) |> 
+  filter(n >= 30) |> 
+  filter(Entity != "Brazil") |> 
+  pull(Entity)
+
+top_paise_trad <- c(
+  "EE.UU.", "Reino Unido", "Canadá", "Alemania", "Luxemburgo",
+  "Francia", "España"
+)
+
+top_paise_trad <- set_names(top_paise_trad, top_pais)
+
+d <- inequality_processed |> 
+  filter(Entity %in% top_pais) |> 
+  mutate(pais = top_paise_trad[Entity])
+```
+
+## Figura
+
+Título y figura.
+
+```{r}
+mi_titulo <- glue(
+  "El **Índice Gini** indica{n}la desigualdad{n}del{n}país.<br>
+  Cuanto{n}más bajo, 
+  más igualitaria{n}es la sociedad."
+)
+
+g <- ggplot(d, aes(Year, gini_dhi_eq, color = pais, fill = pais, group = pais)) +
+  geom_label(
+    aes(label = pais), hjust = 0, size = 4, size.unit = "pt", nudge_x = .5,
+    color = c3, family = "ubuntu", label.size = 0
+  ) +
+  geom_line(linewidth = .8, lineend = "round") +
+  geom_point(size = 1, shape = 21, color = c4) +
+  scale_x_continuous(breaks = scales::breaks_width(10)) +
+  scale_y_continuous(limits = c(.2, .4), expand = c(0, 0)) +
+  scale_color_manual(values = alpha(col, .5)) +
+  scale_fill_manual(values = alpha(col, .5)) +
+  coord_cartesian(clip = "off") +
+  labs(
+    x = NULL,
+    y = "Índice Gini, luego de impuestos",
+    title = mi_titulo,
+    caption = mi_caption
+  ) +
+  theme_classic(base_size = 5, base_family = "ubuntu") +
+  theme(
+    aspect.ratio = 1,
+    plot.margin = margin(r = 22, l = 5),
+    plot.background = element_blank(),
+    plot.title = element_markdown(color = c1, size = rel(1.2)),
+    plot.caption = element_markdown(),
+    axis.text = element_text(color = c1, family = "jet"),
+    axis.text.y = element_text(vjust = 0),
+    axis.title = element_text(color = c1),
+    axis.ticks = element_blank(),
+    axis.line = element_blank(),
+    panel.background = element_blank(),
+    panel.grid.major = element_line(
+      color = c1, linewidth = .1, linetype = "FF"
+    ),
+    legend.position = "none"
+  ) +
+  transition_reveal(Year) +
+  enter_fade() +
+  exit_shrink() +
+  ease_aes('sine-in-out')
+```
+
+Genero la animación y almaceno.
+
+```{r}
+p <- animate(
+  plot = g, renderer = av_renderer(), width = 1000, height = 1000, res = 300
+)
+
+anim_save(filename = "tidytuesday/2025/semana_31.mp4", animation = p)
+```
