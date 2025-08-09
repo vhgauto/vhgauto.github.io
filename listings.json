@@ -1,31 +1,5 @@
 [
   {
-    "listing": "/argentina/instalaciones/index.html",
-    "items": [
-      "/argentina/instalaciones/parques_nacionales.html",
-      "/argentina/instalaciones/faros.html",
-      "/argentina/instalaciones/plantas_potabilizadoras.html",
-      "/argentina/instalaciones/aeropuertos.html",
-      "/argentina/instalaciones/educacion.html",
-      "/argentina/instalaciones/buzones.html",
-      "/argentina/instalaciones/red_electrica.html",
-      "/argentina/instalaciones/estaciones_smn.html"
-    ]
-  },
-  {
-    "listing": "/argentina/animaciones/index.html",
-    "items": [
-      "/argentina/animaciones/crecimiento_rutas.html",
-      "/argentina/animaciones/torres_celulares.html"
-    ]
-  },
-  {
-    "listing": "/mapas.html",
-    "items": [
-      "/mapas/mapa1.html"
-    ]
-  },
-  {
     "listing": "/tidytuesday/2024/index.html",
     "items": [
       "/tidytuesday/2024/semana_53.html",
@@ -83,40 +57,6 @@
     ]
   },
   {
-    "listing": "/tidytuesday/2025/index.html",
-    "items": [
-      "/tidytuesday/2025/semana_30.html",
-      "/tidytuesday/2025/semana_29.html",
-      "/tidytuesday/2025/semana_28.html",
-      "/tidytuesday/2025/semana_27.html",
-      "/tidytuesday/2025/semana_26.html",
-      "/tidytuesday/2025/semana_25.html",
-      "/tidytuesday/2025/semana_24.html",
-      "/tidytuesday/2025/semana_23.html",
-      "/tidytuesday/2025/semana_22.html",
-      "/tidytuesday/2025/semana_21.html",
-      "/tidytuesday/2025/semana_20.html",
-      "/tidytuesday/2025/semana_19.html",
-      "/tidytuesday/2025/semana_18.html",
-      "/tidytuesday/2025/semana_17.html",
-      "/tidytuesday/2025/semana_16.html",
-      "/tidytuesday/2025/semana_15.html",
-      "/tidytuesday/2025/semana_14.html",
-      "/tidytuesday/2025/semana_13.html",
-      "/tidytuesday/2025/semana_12.html",
-      "/tidytuesday/2025/semana_11.html",
-      "/tidytuesday/2025/semana_10.html",
-      "/tidytuesday/2025/semana_09.html",
-      "/tidytuesday/2025/semana_08.html",
-      "/tidytuesday/2025/semana_07.html",
-      "/tidytuesday/2025/semana_06.html",
-      "/tidytuesday/2025/semana_05.html",
-      "/tidytuesday/2025/semana_04.html",
-      "/tidytuesday/2025/semana_03.html",
-      "/tidytuesday/2025/semana_02.html"
-    ]
-  },
-  {
     "listing": "/tidytuesday/2023/index.html",
     "items": [
       "/tidytuesday/2023/semana_52.html",
@@ -164,7 +104,68 @@
     ]
   },
   {
+    "listing": "/tidytuesday/2025/index.html",
+    "items": [
+      "/tidytuesday/2025/semana_31.html",
+      "/tidytuesday/2025/semana_30.html",
+      "/tidytuesday/2025/semana_29.html",
+      "/tidytuesday/2025/semana_28.html",
+      "/tidytuesday/2025/semana_27.html",
+      "/tidytuesday/2025/semana_26.html",
+      "/tidytuesday/2025/semana_25.html",
+      "/tidytuesday/2025/semana_24.html",
+      "/tidytuesday/2025/semana_23.html",
+      "/tidytuesday/2025/semana_22.html",
+      "/tidytuesday/2025/semana_21.html",
+      "/tidytuesday/2025/semana_20.html",
+      "/tidytuesday/2025/semana_19.html",
+      "/tidytuesday/2025/semana_18.html",
+      "/tidytuesday/2025/semana_17.html",
+      "/tidytuesday/2025/semana_16.html",
+      "/tidytuesday/2025/semana_15.html",
+      "/tidytuesday/2025/semana_14.html",
+      "/tidytuesday/2025/semana_13.html",
+      "/tidytuesday/2025/semana_12.html",
+      "/tidytuesday/2025/semana_11.html",
+      "/tidytuesday/2025/semana_10.html",
+      "/tidytuesday/2025/semana_09.html",
+      "/tidytuesday/2025/semana_08.html",
+      "/tidytuesday/2025/semana_07.html",
+      "/tidytuesday/2025/semana_06.html",
+      "/tidytuesday/2025/semana_05.html",
+      "/tidytuesday/2025/semana_04.html",
+      "/tidytuesday/2025/semana_03.html",
+      "/tidytuesday/2025/semana_02.html"
+    ]
+  },
+  {
+    "listing": "/argentina/animaciones/index.html",
+    "items": [
+      "/argentina/animaciones/crecimiento_rutas.html",
+      "/argentina/animaciones/torres_celulares.html"
+    ]
+  },
+  {
+    "listing": "/argentina/instalaciones/index.html",
+    "items": [
+      "/argentina/instalaciones/parques_nacionales.html",
+      "/argentina/instalaciones/faros.html",
+      "/argentina/instalaciones/aeropuertos.html",
+      "/argentina/instalaciones/educacion.html",
+      "/argentina/instalaciones/plantas_potabilizadoras.html",
+      "/argentina/instalaciones/buzones.html",
+      "/argentina/instalaciones/red_electrica.html",
+      "/argentina/instalaciones/estaciones_smn.html"
+    ]
+  },
+  {
     "listing": "/publicaciones/index.html",
     "items": []
+  },
+  {
+    "listing": "/mapas.html",
+    "items": [
+      "/mapas/mapa1.html"
+    ]
   }
 ]
