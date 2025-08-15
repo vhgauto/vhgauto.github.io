@@ -31,7 +31,11 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXX DESCRIPCIÓN DE LA FIGURA XXXXX
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+::: {.column-page-right}
+
 ![Semana X_semana, X_año](semana_X_semana.png)
+
+:::
 
 ## Paquetes
 
@@ -75,9 +79,9 @@ showtext_opts(dpi = 300)
 
 ```{r}
 fuente <- glue(
-    "Datos: <span style='color:{c1};'><span style='font-family:jet;'>",
-    "{{<b>tidytuesdayR</b>}}</span> semana X_semana, ",
-    "<b>---FUENTE---</b>.</span>"
+  "Datos: <span style='color:{c1};'><span style='font-family:jet;'>",
+  "{{<b>tidytuesdayR</b>}}</span> semana X_semana, ",
+  "<b>---FUENTE---</b>.</span>"
 )
 
 autor <- glue("<span style='color:{c1};'>**Víctor Gauto**</span>")
@@ -90,8 +94,8 @@ usuario <- glue("<span style='color:{c1};'>**vhgauto**</span>")
 sep <- glue("**|**")
 
 mi_caption <- glue(
-    "{fuente}<br>{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} ",
-    "{icon_mastodon} {icon_bsky} {usuario}"
+  "{fuente}<br>{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} ",
+  "{icon_mastodon} {icon_bsky} {usuario}"
 )
 ```
 
