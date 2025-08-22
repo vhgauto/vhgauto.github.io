@@ -106,6 +106,7 @@
   {
     "listing": "/tidytuesday/2025/index.html",
     "items": [
+      "/tidytuesday/2025/semana_33.html",
       "/tidytuesday/2025/semana_32.html",
       "/tidytuesday/2025/semana_31.html",
       "/tidytuesday/2025/semana_30.html",
@@ -140,14 +141,11 @@
     ]
   },
   {
-    "listing": "/mapas.html",
+    "listing": "/argentina/animaciones/index.html",
     "items": [
-      "/mapas/mapa1.html"
+      "/argentina/animaciones/crecimiento_rutas.html",
+      "/argentina/animaciones/torres_celulares.html"
     ]
-  },
-  {
-    "listing": "/publicaciones/index.html",
-    "items": []
   },
   {
     "listing": "/argentina/instalaciones/index.html",
@@ -163,10 +161,13 @@
     ]
   },
   {
-    "listing": "/argentina/animaciones/index.html",
+    "listing": "/publicaciones/index.html",
+    "items": []
+  },
+  {
+    "listing": "/mapas.html",
     "items": [
-      "/argentina/animaciones/crecimiento_rutas.html",
-      "/argentina/animaciones/torres_celulares.html"
+      "/mapas/mapa1.html"
     ]
   }
 ]
