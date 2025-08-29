@@ -1,5 +1,25 @@
 [
   {
+    "listing": "/argentina/animaciones/index.html",
+    "items": [
+      "/argentina/animaciones/crecimiento_rutas.html",
+      "/argentina/animaciones/torres_celulares.html"
+    ]
+  },
+  {
+    "listing": "/argentina/instalaciones/index.html",
+    "items": [
+      "/argentina/instalaciones/parques_nacionales.html",
+      "/argentina/instalaciones/faros.html",
+      "/argentina/instalaciones/plantas_potabilizadoras.html",
+      "/argentina/instalaciones/educacion.html",
+      "/argentina/instalaciones/aeropuertos.html",
+      "/argentina/instalaciones/buzones.html",
+      "/argentina/instalaciones/red_electrica.html",
+      "/argentina/instalaciones/estaciones_smn.html"
+    ]
+  },
+  {
     "listing": "/tidytuesday/2024/index.html",
     "items": [
       "/tidytuesday/2024/semana_53.html",
@@ -104,8 +124,13 @@
     ]
   },
   {
+    "listing": "/publicaciones/index.html",
+    "items": []
+  },
+  {
     "listing": "/tidytuesday/2025/index.html",
     "items": [
+      "/tidytuesday/2025/semana_34.html",
       "/tidytuesday/2025/semana_33.html",
       "/tidytuesday/2025/semana_32.html",
       "/tidytuesday/2025/semana_31.html",
@@ -139,30 +164,6 @@
       "/tidytuesday/2025/semana_03.html",
       "/tidytuesday/2025/semana_02.html"
     ]
-  },
-  {
-    "listing": "/argentina/animaciones/index.html",
-    "items": [
-      "/argentina/animaciones/crecimiento_rutas.html",
-      "/argentina/animaciones/torres_celulares.html"
-    ]
-  },
-  {
-    "listing": "/argentina/instalaciones/index.html",
-    "items": [
-      "/argentina/instalaciones/parques_nacionales.html",
-      "/argentina/instalaciones/faros.html",
-      "/argentina/instalaciones/aeropuertos.html",
-      "/argentina/instalaciones/educacion.html",
-      "/argentina/instalaciones/plantas_potabilizadoras.html",
-      "/argentina/instalaciones/buzones.html",
-      "/argentina/instalaciones/red_electrica.html",
-      "/argentina/instalaciones/estaciones_smn.html"
-    ]
-  },
-  {
-    "listing": "/publicaciones/index.html",
-    "items": []
   },
   {
     "listing": "/mapas.html",
