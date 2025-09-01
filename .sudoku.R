@@ -1,4 +1,3 @@
-
 # paquetes ----------------------------------------------------------------
 
 library(glue)
@@ -21,7 +20,7 @@ colores <- c(
 # datos -------------------------------------------------------------------
 
 d <- read_tsv(
-  file = "datos/tiempos.tsv",
+  file = "datos/sudoku.tsv",
   col_types = "cccc"
 ) |>
   mutate(fecha = dmy(fecha)) |>
@@ -41,9 +40,14 @@ d <- read_tsv(
     dificultad = toupper(dificultad)
   ) |>
   mutate(
-    dificultad = factor(dificultad, levels = c(
-      "FÁCIL", "MEDIO", "DIFÍCIL"
-    ))
+    dificultad = factor(
+      dificultad,
+      levels = c(
+        "FÁCIL",
+        "MEDIO",
+        "DIFÍCIL"
+      )
+    )
   ) |>
   mutate(
     minutos = minute(tiempo),
@@ -83,93 +87,36 @@ d_label <- d |>
     l = str_remove(l, " \\| $")
   )
 
-# htmltools::html_print(htmltools::HTML(d_label$l[1]))
-
-fecha_100 <- d |>
-  distinct(fecha) |>
-  slice_max(order_by = fecha, n = 100) |>
-  pull(fecha)
-
 d2 <- inner_join(
-  d, d_label,
+  d,
+  d_label,
   by = join_by(fecha)
 ) |>
-  filter(fecha %in% fecha_100)
+  mutate(
+    color = colores[dificultad]
+  ) |>
+  mutate(
+    dificultad_label = glue("<b style='color: {color};'>{dificultad}</b>")
+  ) |>
+  mutate(dificultad_label = fct_reorder(dificultad_label, as.numeric(tiempo)))
 
-eje_x <- d2 |>
-  distinct(fecha) |>
-  mutate(
-    dia_chr = str_sub(toupper(weekdays(fecha)), 1, 2)
-  ) |>
-  mutate(
-    dia_dbl = if_else(
-      day(fecha) == 1 | day(fecha) == 15,
-      day(fecha),
-      NA
-    )
-  ) |>
-  mutate(dia_dbl = as.character(dia_dbl)) |>
-  mutate(
-    mes = if_else(
-      dia_dbl == "1",
-      toupper(month(fecha, abbr = TRUE, label = TRUE)),
-      NA
-    )
-  ) |>
-  pivot_longer(
-    cols = -fecha,
-    names_to = "periodo",
-    values_to = "valor",
-    values_drop_na = TRUE
-  ) |>
-  reframe(
-    l = str_flatten(valor, "\n"),
-    .by = fecha
-  ) |>
-  mutate(
-    l = if_else(
-      nchar(l) == 2,
-      "",
-      l
-    )
-  ) |>
-  pull(l)
-
-g <- ggplot(
-  d2, aes(
-    fecha, tiempo, fill = dificultad, shape = dificultad, color = dificultad,
-    group = dificultad
-  )
-) +
-  geom_line_interactive(
-    aes(data_id = interaction(fecha)), linewidth = .4, hover_nearest = TRUE
-  ) +
+g <- ggplot(d2, aes(as.numeric(tiempo), dificultad_label, fill = dificultad)) +
   geom_point_interactive(
-    aes(tooltip = l, data_id = interaction(fecha)), shape = 21, stroke = .6,
-    color = c4, hover_nearest = TRUE
+    aes(tooltip = l, data_id = interaction(fecha)),
+    position = position_jitter(seed = 2025, height = .2),
+    shape = 21,
+    stroke = .6,
+    color = c4,
+    hover_nearest = TRUE,
+    show.legend = FALSE
   ) +
-  scale_x_date(
-    breaks = unique(d2$fecha),
-    labels = eje_x,
-    expand = c(0, .3)
-  ) +
-  scale_y_time(
-    labels = scales::label_time("%Mm"),
-    breaks = scales::breaks_width("10 min"),
-    expand = expansion(mult = c(0, .05), add = c(0, 0))
-  ) +
-  scale_color_manual(
-    breaks = c("FÁCIL", "MEDIO", "DIFÍCIL"),
-    values = colores
-  ) +
-  scale_fill_manual(
-    breaks = c("FÁCIL", "MEDIO", "DIFÍCIL"),
-    values = colores
-  ) +
-  coord_cartesian(ylim = c(0, NA), clip = "off") +
   labs(x = NULL, y = NULL, color = NULL, shape = NULL) +
-  guides(
-    color = guide_legend(override.aes = list(size = 2))
+  scale_fill_manual(
+    values = colores
+  ) +
+  scale_x_continuous(
+    breaks = scales::breaks_width(120),
+    labels = \(x) paste0(x / 60, "m")
   ) +
   theme_classic(base_family = "Ubuntu") +
   theme(
@@ -177,18 +124,23 @@ g <- ggplot(
     plot.background = element_rect(fill = NA, color = NA),
     panel.background = element_blank(),
     panel.grid.major = element_line(
-      color = c3, linetype = 1, linewidth = .1
+      color = c3,
+      linetype = 1,
+      linewidth = .1
     ),
     panel.spacing.y = unit(1, "line"),
     axis.ticks = element_blank(),
     axis.text = element_text(color = c2, family = "JetBrains Mono"),
-    axis.text.y = element_text(vjust = 0),
+    axis.text.y = ggtext::element_markdown(vjust = 0),
     axis.line = element_blank(),
     legend.position = "none",
     strip.background = element_blank(),
     strip.clip = "off",
     strip.text = element_text(
-      hjust = 0, margin = margin(l = 0, b = 2), face = "bold", color = c1
+      hjust = 0,
+      margin = margin(l = 0, b = 2),
+      face = "bold",
+      color = c1
     )
   )
 
@@ -198,9 +150,12 @@ h <- girafe(
   height_svg = 3,
   bg = "transparent",
   options = list(
-    opts_hover(css = girafe_css(
-      css = glue("")
-    )),
+    opts_hover(
+      css = girafe_css(
+        css = glue(""),
+        point = "r: 3;"
+      )
+    ),
     opts_tooltip(
       opacity = 1,
       css = glue(
@@ -209,10 +164,11 @@ h <- girafe(
       ),
       use_cursor_pos = FALSE,
       offx = 50,
-      offy = -20),
+      offy = -20
+    ),
     opts_sizing(width = 1, rescale = TRUE),
     opts_toolbar = opts_toolbar(saveaspng = FALSE),
-    opts_hover_inv(css = "opacity:0.3;")
+    opts_hover_inv(css = "opacity:0.2;")
   )
 )
 
@@ -223,7 +179,7 @@ horas <- d |>
     duracion = as.duration(tiempo)
   ) |>
   reframe(
-    s = sum(duracion)/60/60
+    s = sum(duracion) / 60 / 60
   ) |>
   pull() |>
   round()
