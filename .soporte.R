@@ -1,4 +1,3 @@
-
 sep <- "<b style='color:red;'>|</b>"
 i_link <- "<span class='nf nf-cod-link_external nf-lista'></span>"
 i_titulo <- "<span class='nf nf-fa-user_graduate nf-lista'></span>"
@@ -46,7 +45,8 @@ f_edu <- function(titulo, institucion, ubicacion, calendario) {
 f_inv <- function(institucion, ubicacion, calendario) {
   paste0(
     f_div(
-      i_institucion, paste0("<b style='font-size:1.2em'>", institucion, "</b>")
+      i_institucion,
+      paste0("<b style='font-size:1.2em'>", institucion, "</b>")
     ),
     f_div(i_ubicacion, ubicacion),
     f_div(i_calendario, calendario)
