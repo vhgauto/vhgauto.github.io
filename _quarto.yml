@@ -26,9 +26,11 @@ website:
       - href: "publicaciones/index.qmd"
         text: "{{< iconify carbon:document >}} Publicaciones"
       - href: "argentina/index.qmd"
-        text: "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}"
+        text: "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina"
       - href: "viz/index.qmd"
         text: "{{< iconify material-symbols-light:scatter-plot >}} Visualizaciones"
+      - href: "https://vhgauto.github.io/cv/"
+        text: "{{< iconify pepicons-pencil:cv >}} Mi CV"
     tools:
       - icon: github
         href: "https://github.com/vhgauto"
