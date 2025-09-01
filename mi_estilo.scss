@@ -65,12 +65,12 @@ $t-trans: .7s;
 /*-- scss:rules --*/
 
 .tiempo {
-    color: $c-dorado;
+    color: $c-blanco;
     font-weight: bold;
     font-size: 2em;
     font-family: "Rufina";
     &:hover {
-        background-color: $c-dorado;
+        background-color: $c-blanco;
         color: $body-bg;
         border-radius: 5px;
     }
