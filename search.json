@@ -6,7 +6,7 @@
     "section": "",
     "text": "Breve descripción de la metodología básica para generar las animaciones de datos geográficos de Argentina .",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones"
     ]
   },
@@ -17,7 +17,7 @@
     "section": "Método general",
     "text": "Método general\nLos scripts para las animaciones mostradas en esta sección tiene la misma estructura básica:\n\nLectura de datos y procesamiento.\nUna función personalizada creada con base::function() que genera y almacena el mapa, correspondiente a un fotograma de la animación final. Todas las figuras se almacenan en orden en una carpeta específica.\nIteración de la función usando purrr::walk(). Usualmente se itera respecto del tiempo (años, meses), o de distancias.\nLa animación final se genera a partir de todas las imágenes individuales con la función av::av_encode_video() y la extensión del video es .mp4.\nSe elimina la carpeta con todas las figuras.",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones"
     ]
   },
@@ -28,7 +28,7 @@
     "section": "Animaciones",
     "text": "Animaciones\n \n\n\n   \n    \n    \n      Ordenar por\n      Por defecto\n      \n        Título\n      \n      \n        Fecha - Menos reciente\n      \n      \n        Fecha - Más reciente\n      \n      \n        Autor/a\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n🚌Crecimiento de rutas\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🗼Torres de telecomunicaciones\n\n\n\ngeom_sf\n\ngeom_sf_pattern\n\n\n\n\n\n\n\n\n\n2024-02-17\n\n\nVíctor Gauto\n\n\n\n\n\nNo hay resultados",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones"
     ]
   },
@@ -39,7 +39,7 @@
     "section": "",
     "text": "Animación de crecimiento de rutas nacionales y provinciales, con centro en el Obelisco de Ciudad Autónoma de Buenos Aires.",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones",
       "🚌Crecimiento de rutas"
     ]
@@ -51,7 +51,7 @@
     "section": "Paquetes",
     "text": "Paquetes\n\n\nOcultar código\nlibrary(terra)\nlibrary(tidyterra)\nlibrary(magick)\nlibrary(showtext)\nlibrary(glue)\nlibrary(ggtext)\nlibrary(ggplot2)\nlibrary(purrr)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones",
       "🚌Crecimiento de rutas"
     ]
@@ -63,7 +63,7 @@
     "section": "Estilos",
     "text": "Estilos\nColores.\n\n\nOcultar código\nc1 &lt;- \"dodgerblue\"\nc2 &lt;- \"violetred\"\nc3 &lt;- \"grey95\"\nc4 &lt;- \"grey90\"\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"./fuente/Ubuntu-Regular.ttf\",\n  bold = \"./fuente/Ubuntu-Bold.ttf\",\n  italic = \"./fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"./fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones",
       "🚌Crecimiento de rutas"
     ]
@@ -75,7 +75,7 @@
     "section": "Epígrafe",
     "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"Datos: &lt;b style='color: {c1};'&gt;Instituto Geográfico Nacional&lt;/b&gt;\"\n)\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones",
       "🚌Crecimiento de rutas"
     ]
@@ -87,7 +87,7 @@
     "section": "Funciones",
     "text": "Funciones\nLectura y transformación de sistema de coordenadas geográficas.\n\n\nOcultar código\nf_proj &lt;- function(v) {\n  project(vect(v), \"EPSG:5346\")\n}\n\n\nGeneración y almacenamiento de mapas.\n\n\nOcultar código\nf_gg &lt;- function(x) {\n\n  if (x &lt; 10) {\n    i &lt;- paste0(\"0\", x)\n  } else {\n    i &lt;- x\n  }\n\n  g &lt;- ggplot() +\n    geom_spatvector(data = arg, fill = c4, color = NA) +\n    geom_spatvector(\n      data = lista_crop_pro[[x]], aes(color = \"pro\"), linewidth = .1,\n      show.legend = TRUE, key_glyph = \"path\"\n    ) +\n    geom_spatvector(\n      data = lista_crop_nac[[x]], fill = NA, aes(color = \"nac\"), linewidth = .2,\n      show.legend = TRUE, key_glyph = \"path\"\n    ) +\n    scale_color_manual(\n      breaks = c(\"nac\", \"pro\"),\n      labels = c(\"Ruta Nacional\", \"Ruta Provincial\"),\n      values = c(c1, c2)\n    ) +\n    labs(color = NULL, caption = mi_caption) +\n    guides(\n      color = guide_legend(override.aes = list(linewidth = 1))\n    ) +\n    theme_void() +\n    theme(\n      plot.background = element_rect(fill = c3, color = NA),\n      plot.caption = element_markdown(\n        family = \"ubuntu\", size = 8, color = c2, lineheight = 1.2,\n        margin = margin(b = 5)\n      ),\n      legend.text = element_text(family = \"ubuntu\"),\n      legend.position = \"inside\",\n      legend.position.inside = c(.7, .3),\n      legend.key.width = unit(20, \"pt\")\n    )\n\n  ggsave(\n    plot = g,\n    filename = paste0(\"./argentina/animaciones/crecimiento_rutas/\", i, \".png\"),\n    width = 1000,\n    height = 2084,\n    units = \"px\"\n  )\n\n  print(glue::glue(\"\\n\\n--- Figura {i} generada ---\\n\\n\"))\n}",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones",
       "🚌Crecimiento de rutas"
     ]
@@ -99,7 +99,7 @@
     "section": "Datos",
     "text": "Datos\nVector de Argentina, rutas nacionales y provinciales, y coordenadas del Obelisco.\n\n\nOcultar código\narg &lt;- f_proj(\"./argentina/vectores/arg_continental.gpkg\")\n\nr_nac &lt;- f_proj(\"./argentina/vectores/extras/LíneaRed vial nacional.json\")\nr_pro &lt;- f_proj(\"./argentina/vectores/extras/LíneaRed vial provincial.json\")\n\no &lt;- vect(\n  data.frame(x = -58.38162, y = -34.60376), geom = c(\"x\", \"y\"),\n  crs = \"EPSG:4326\"\n) |&gt;\n  project(\"EPSG:5346\")",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones",
       "🚌Crecimiento de rutas"
     ]
@@ -111,7 +111,7 @@
     "section": "Figura",
     "text": "Figura\nLista de buffers alrededor del Obelisco, y los recortes de las rutas de cada uno.\n\n\nOcultar código\nlista_buffer_nac &lt;- map(seq(50, 2500, 25)*1e3, ~buffer(o, .x, quadsegs = 250))\nlista_crop_nac &lt;- map(lista_buffer_nac, ~terra::crop(r_nac, .x))\nlista_crop_pro &lt;- map(lista_buffer_nac, ~terra::crop(r_pro, .x))\n\n\nCreación de cada figura.\n\n\nOcultar código\nmap(1:length(lista_buffer_nac), f_gg)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones",
       "🚌Crecimiento de rutas"
     ]
@@ -123,7 +123,7 @@
     "section": "Animación",
     "text": "Animación\nGeneración de la animación a partir de todas las figuras. El archivo de salida está en formato .mp4.\n\n\nOcultar código\nav::av_encode_video(\n  input = list.files(\n    path = \"./argentina/animaciones/crecimiento_rutas/\",\n    full.names = TRUE, pattern = \".png\"\n  ),\n  output = \"./argentina/animaciones/crecimiento_rutas.mp4\"\n)\n\n\nElimino los mapas creados y la carpeta que los contiene.\n\n\nOcultar código\nunlink(\"./argentina/animaciones/crecimiento_rutas/\", recursive = TRUE)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones",
       "🚌Crecimiento de rutas"
     ]
@@ -135,7 +135,7 @@
     "section": "",
     "text": "Mapa de estaciones del Servicio Meteorológico Nacional de Argentina.",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🌦️Estaciones meteorológicas"
     ]
@@ -147,7 +147,7 @@
     "section": "Paquetes",
     "text": "Paquetes\n\n\nOcultar código\nlibrary(sf)\nlibrary(patchwork)\nlibrary(ggpattern)\nlibrary(ggtext)\nlibrary(glue)\nlibrary(showtext)\nlibrary(tidyverse)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🌦️Estaciones meteorológicas"
     ]
@@ -159,7 +159,7 @@
     "section": "Estilos",
     "text": "Estilos\nColores aleatorios a partir de una gama de rosados.\n\n\nOcultar código\ncol &lt;- monochromeR::generate_palette(\n  color = \"#D485AA\",\n  modification = \"go_both_ways\",\n  n_colours = 9\n)\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🌦️Estaciones meteorológicas"
     ]
@@ -171,7 +171,7 @@
     "section": "Epígrafe",
     "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"Datos: &lt;b style='color:{col[9]};'&gt;IGN&lt;/b&gt;, &lt;b style='color:{col[9]};'&gt;SMN&lt;/b&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{col[9]};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{col[9]};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🌦️Estaciones meteorológicas"
     ]
@@ -183,7 +183,7 @@
     "section": "Datos",
     "text": "Datos\nVectores de las provincias con sus departamentos. Obtengo el vector de estaciones meteorológicas del Instituto Geográfico Nacional.\n\n\nOcultar código\np &lt;- st_read(\"argentina/vectores/extras/smn_estaciones_meteorologicas.json\") |&gt;\n  st_transform(crs = 5346) |&gt;\n  select(nombre)\n\npcias_cont &lt;- st_read(\"argentina/vectores/pcias_continental.gpkg\")\n\ndptos_cont &lt;- st_read(\"argentina/vectores/dptos_continental.gpkg\")\n\ndptos_antart &lt;- st_read(\"argentina/vectores/dptos_antartida.gpkg\")\n\np_cont &lt;- st_crop(p, dptos_cont)\np_antart &lt;- st_crop(p, dptos_antart)\n\n\nCreo buffer alrededor de los puntos de las estaciones. NO pueden ser puntos para el difuminado de los colores, tiene que ser un polígono.\nComo el mapa de Antártida es más pequeño, los polígonos tiene que ser más grandes.\n\n\nOcultar código\np_cont_buffer &lt;- st_buffer(p_cont, dist = 12000)\np_antart_buffer &lt;- st_buffer(p_antart, dist = 30000)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🌦️Estaciones meteorológicas"
     ]
@@ -195,7 +195,7 @@
     "section": "Figura",
     "text": "Figura\nLogo del SMN y subtítulo de la figura.\n\n\nOcultar código\nsmn &lt;- \"&lt;img src='https://upload.wikimedia.org/wikipedia/commons/7/72/SMN_Logo_Alta.png' width='200'&gt;&lt;/img&gt;\"\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {col[9]}'&gt;Argentina&lt;/b&gt; hay {nrow(p)}&lt;br&gt;estaciones meteorológicas.&lt;br&gt;\"\n)\n\n\nContorno del mapa y diseño de la figura compuesta.\n\n\nOcultar código\nbb &lt;- st_bbox(pcias_cont)\n\ndiseño &lt;- \"\nA#\nAB\n\"\n\n\nMapa del sector Antártico.\n\n\nOcultar código\ng_antart &lt;- ggplot() +\n  # departamentos\n  geom_sf(data = dptos_antart, fill = col[3], color = col[5]) +\n  # estaciones meteorológicas\n  geom_sf_pattern(\n    data = p_antart_buffer, color = NA, pattern = \"gradient\",\n    pattern_orientation = \"radial\",\n    pattern_fill = col[3], # centro\n    pattern_fill2 = col[8], # exterior\n    pattern_density = 1) +\n  scale_fill_viridis_d(option = \"turbo\") +\n  coord_sf(clip = \"off\", expand = TRUE) +\n  theme_void() +\n  theme(\n    plot.background = element_rect(color = NA, linewidth = 2, fill = col[2])\n  )\n\n\nMapa de Argentina continental.\n\n\nOcultar código\ng_cont &lt;- ggplot() +\n  # departamentos\n  geom_sf(data = dptos_cont, fill = col[2], color = col[5]) +\n  # provincias\n  geom_sf(data = pcias_cont, fill = NA, color = col[7], linewidth = .25) +\n  # estaciones meteorológicas\n  geom_sf_pattern(\n    data = p_cont_buffer, color = NA, pattern = \"gradient\",\n    pattern_orientation = \"radial\",\n    pattern_fill = col[3], # centro\n    pattern_fill2 = col[8], # exterior\n    pattern_density = 1) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = bb[\"xmax\"], y = bb[\"ymax\"], label = mi_subtitle,\n    fill = NA, label.color = NA, hjust = 0, size = 9, color = col[7],\n    family = \"ubuntu\", vjust = 1\n  ) +\n  # logo SMN\n  annotate(\n    geom = \"richtext\", x = bb[\"xmax\"], y = 5.5e6,\n    label.padding = unit(rep(1, 4), \"lines\"),\n    label.margin = unit(rep(4, 4), \"lines\"),\n    label = smn, fill = NA, label.color = NA, hjust = 0, vjust = 0\n  ) +\n  scale_fill_viridis_d(option = \"turbo\") +\n  coord_sf(clip = \"off\", expand = FALSE) +\n  theme_void()\n\n\nComposición final del mapa.\n\n\nOcultar código\ng &lt;- g_cont + g_antart +\n  plot_layout(widths = c(1, .6), design = diseño) +\n  plot_annotation(\n    caption = mi_caption,\n    theme = theme(\n      plot.margin = margin(t = 25, r = 25, b = 25, l = 25),\n      plot.background = element_rect(\n        fill = col[1], color = col[4], linewidth = 3),\n      plot.caption = element_markdown(\n        family = \"ubuntu\", size = 15, color = col[7], lineheight = 1.2)\n    )\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/estaciones_smn.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🌦️Estaciones meteorológicas"
     ]
@@ -207,7 +207,7 @@
     "section": "",
     "text": "En esta sección se muestran mapas de Argentina  que incluyen instalaciones varias, como ser: plantas de tratamiento de agua, centrales generadoras de energía, rutas nacionales y provinciales, etc.\nPara darle diversidad a los mapas, cada uno cuenta con una paleta de colores diferente.\n \n\n\n   \n    \n    \n      Ordenar por\n      Por defecto\n      \n        Título\n      \n      \n        Fecha - Menos reciente\n      \n      \n        Fecha - Más reciente\n      \n      \n        Autor/a\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n🏞️ Parques Nacionales\n\n\n\ngeom_raster\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-09-01\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🕯️Faros\n\n\n\ngeom_raster\n\ngeom_point\n\n\n\n\n\n\n\n\n\n2025-04-06\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🚰Plantas potabilizadoras\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🏫 Ciencia y educación\n\n\n\ngeom_sf\n\ngeom_point\n\ngeom_text\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n✈️ Aeropuertos\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-08-03\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n📮 Buzones\n\n\n\ngeom_sf\n\n\n\n\n\n\n\n\n\n2024-04-27\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🔌 Red eléctrica\n\n\n\ngeom_sf\n\ngeom_path\n\n\n\n\n\n\n\n\n\n2024-04-27\n\n\nVíctor Gauto\n\n\n\n\n\n\n\n\n\n\n\n\n🌦️Estaciones meteorológicas\n\n\n\ngeom_sf\n\ngeom_sf_pattern\n\n\n\n\n\n\n\n\n\n2024-02-17\n\n\nVíctor Gauto\n\n\n\n\n\nNo hay resultados\n\n\n\n\n\n Subir",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones"
     ]
   },
@@ -218,7 +218,7 @@
     "section": "",
     "text": "Mapa de buzones en Argentina, con detalle de la Provincia de Buenos Aires y Ciudad Autónoma de Buenos Aires.",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "📮 Buzones"
     ]
@@ -230,7 +230,7 @@
     "section": "Paquetes",
     "text": "Paquetes\n\n\nOcultar código\nlibrary(sf)\nlibrary(glue)\nlibrary(patchwork)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "📮 Buzones"
     ]
@@ -242,7 +242,7 @@
     "section": "Estilos",
     "text": "Estilos\nColores.\n\n\nOcultar código\nc1 &lt;- \"#FFCE00\"\nc2 &lt;- \"white\"\nc3 &lt;- \"#152663\"\nc4 &lt;- \"#BE5660\"\n\n\nFuentes: Ubuntu, JetBrains Mono y Diphylleia.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nfont_add_google(name = \"Diphylleia\", family = \"diphylleia\", db_cache = FALSE)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "📮 Buzones"
     ]
@@ -254,7 +254,7 @@
     "section": "Epígrafe",
     "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{c1};'&gt;@matiasprofeta&lt;/span&gt;\n  &lt;span style='color:{c1};'&gt;@rescatandobuzones&lt;/span&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bluesky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon} {icon_bluesky}&lt;/b&gt; {usuario}\"\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "📮 Buzones"
     ]
@@ -266,7 +266,7 @@
     "section": "Datos",
     "text": "Datos\nVectores de las provincias y sus departamentos, obtenidos del Instituto Geográfico Nacional.\n\n\nOcultar código\npcias &lt;- st_read(\"argentina/vectores/pcias_continental.gpkg\") |&gt;\n  select(provincia = NAM)\n\ndptos &lt;- st_read(\"argentina/vectores/dptos_continental.gpkg\") |&gt;\n  st_transform(crs = 5346) |&gt;\n  st_make_valid() |&gt;\n  st_crop(pcias) |&gt;\n  select(departamento = NAM)\n\n\nSelecciono la Provincia de Buenas y la Ciudad Autónoma de Buenos Aires para ver con mayor detalle. Incluyo los departamentos y comunas, respectivamente.\n\n\nOcultar código\nbsas &lt;- pcias |&gt;\n  filter(provincia == \"Buenos Aires\")\n\ncaba &lt;- pcias |&gt;\n  filter(provincia == \"Ciudad Autónoma de Buenos Aires\")\n\ndptos_bsas &lt;- terra::crop(terra::vect(dptos), terra::vect(bsas)) |&gt;\n  st_as_sf()\n\ndptos_caba &lt;- filter(dptos, str_detect(departamento, \"Comuna\"))\n\n\nLos buzones provienen de un mapa en Google Maps. Leo las capas del archivo .kml.\n\n\nOcultar código\nlayers &lt;- st_layers(\"argentina/vectores/buzones.kml\")\ncapas &lt;- layers$name\n\n\nDefino una función para la lectura de cada capa disponible y aplico.\n\n\nOcultar código\nf_kml &lt;- function(x) {\n  l &lt;- st_read(\n    dsn = \"argentina/vectores/buzones.kml\",\n    layer = x) |&gt;\n    st_transform(crs = 5346)\n\n  return(l)\n}\n\nbuzones &lt;- map(capas, f_kml) |&gt;\n  list_rbind() |&gt;\n  st_as_sf() |&gt;\n  st_geometry() |&gt;\n  st_sf() |&gt;\n  rename(geometry = 1) |&gt;\n  mutate(nro = row_number())\n\n\nExtraigo los buzones ubicados en Provincia de Buenos Aires y Ciudad Autónoma de Buenos Aires.\n\n\nOcultar código\nbuzones_bsas &lt;- st_intersection(bsas, buzones)\nbuzones_caba &lt;- st_intersection(caba, buzones)\n\n\nCuento la cantidad de buzones en Provincia de Buenos Aires y Ciudad Autónoma de Buenos Aires. Para ello cuento la cantidad existente en cada departamento, luego combino con los vectores de las regiones.\n\n\nOcultar código\ncentros_dptos &lt;- st_point_on_surface(dptos)\n\ncentros_pcias &lt;- st_join(centros_dptos, pcias)\n\npolig_dptos &lt;- st_join(dptos, centros_pcias) |&gt;\n  rename(departamento = departamento.x) |&gt;\n  select(-departamento.y)\n\nbuzones_dptos &lt;- st_join(polig_dptos, buzones)\n\n\nCantidad de buzones por región y porcentaje.\n\n\nOcultar código\nn_bsas &lt;- buzones_dptos |&gt;\n  filter(provincia == \"Buenos Aires\") |&gt;\n  drop_na() |&gt;\n  nrow()\n\nn_caba &lt;- buzones_dptos |&gt;\n  filter(provincia == \"Ciudad Autónoma de Buenos Aires\") |&gt;\n  drop_na() |&gt;\n  nrow()\n\nn_buzones &lt;- nrow(buzones)\n\nporcentaje_bsas &lt;- gt::vec_fmt_percent(x = n_bsas/n_buzones, decimals = 0)\nporcentaje_caba &lt;- gt::vec_fmt_percent(x = n_caba/n_buzones, decimals = 0)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "📮 Buzones"
     ]
@@ -278,7 +278,7 @@
     "section": "Figura",
     "text": "Figura\nTítulo y subtítulo\n\n\nOcultar código\nmi_title &lt;- \"Buzones Argentinos\"\n\nmi_subtitle &lt;- glue(\n  \"En **Argentina** hay {n_buzones} buzones. En Provincia de Buenos Aires&lt;br&gt;\",\n  \"se encuentra el {porcentaje_bsas}. Capital Federal posee el \",\n  \"{porcentaje_caba}.\")\n\n\nIncluyo la imagen de una estampilla dedicada a los buzones, emitida en 2011.\n\n\nOcultar código\nestampilla_label &lt;- glue(\n  \"Estampilla emitida por&lt;br&gt;\",\n  \"el **Correo Argentino**.&lt;br&gt;\",\n  \"América UPAEP-Buzones,&lt;br&gt;\",\n  \"2011.\")\n\n\nFigura de la estampilla.\n\n\nOcultar código\nestampilla &lt;- ggplot() +\n  annotate(\n    geom = \"richtext\", x = 0, y = 0, fill = NA, label.color = NA, hjust = 0,\n    label = glue(\n      \"&lt;img src='argentina/extras/buzones_estampilla.jpg' width='140'&gt;&lt;/img&gt;&lt;br&gt;\",\n      \"{estampilla_label}\"), family = \"ubuntu\", size = 5, color = c2) +\n  coord_cartesian(xlim = c(-.01, .01), ylim = c(-.01, .01), expand = FALSE) +\n  theme_void()\n\n\nLogo del Correo Argentino.\n\n\nOcultar código\nlogo &lt;- ggplot() +\n  annotate(\n    geom = \"richtext\", x = 0, y = 0, fill = NA, label.color = NA, hjust = 0,\n    label = glue(\n      \"&lt;img src='argentina/extras/buzones_logo.png' width='100'&gt;&lt;/img&gt;\")\n  ) +\n  coord_cartesian(xlim = c(-.01, .01), ylim = c(-.01, .01), expand = FALSE) +\n  theme_void()\n\n\nMapa de Argentina, Provincia de Buenos Aires y Ciudad Autónoma de Buenos Aires.\n\n\nOcultar código\ng1 &lt;- ggplot() +\n  geom_sf(data = pcias, fill = c1, color = c2, linewidth = .5) +\n  geom_sf(\n    data = buzones, color = c3, size = 2, alpha = .6, shape = 4, stroke = 1) +\n  coord_sf(clip = \"off\") +\n  theme_void()\n\ng2 &lt;- ggplot() +\n  geom_sf(data = dptos_bsas, fill = c1, color = c2, linewidth = .4) +\n  geom_sf(\n    data = buzones_bsas, color = c3, size = 2, alpha = .5, shape = 4,\n    stroke = 1) +\n  theme_void()\n\ng3 &lt;- ggplot() +\n  geom_sf(data = dptos_caba, fill = c1, color = c2, linewidth = .4) +\n  geom_sf(\n    data = buzones_caba, color = c3, size = 3, alpha = .6, shape = 4,\n    stroke = 1) +\n  theme_void()\n\n\nCombino los mapas de acuerdo con el diseño dado.\n\n\nOcultar código\ndiseño &lt;- \"\nAB\nAC\n\"\n\ng &lt;- g1 + g2 + g3 + plot_layout(design = diseño)\n\n\nCombino los mapas de las regiones con el logo de Correo Argentino y la estampilla de los buzones.\n\n\nOcultar código\ngg &lt;- g +\n  inset_element(estampilla, left = 1.2, bottom = 1.1, top = .3, right = -2.2) +\n  inset_element(logo, left = -3.25, bottom = -.95, top = .9, right = .9) +\n  plot_annotation(\n    title = mi_title,\n    subtitle = mi_subtitle,\n    caption = mi_caption,\n    theme = theme(\n      aspect.ratio = 1,\n      plot.background = element_rect(\n        fill = c4, color = c3, linewidth = 3\n      ),\n      plot.title.position = \"plot\",\n      plot.title = element_text(\n        family = \"diphylleia\", size = 80, color = c1,\n        hjust = .5, margin = margin(t = 5)\n      ),\n      plot.subtitle = element_markdown(\n        color = c2, family = \"ubuntu\", size = 20, hjust = .5,\n        lineheight = 1.3\n      ),\n      plot.caption = element_markdown(\n        color = c2, family = \"ubuntu\", size = 15,\n        margin = margin(b = 10, r = 10)\n      )\n    )\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = gg,\n  filename = \"argentina/instalaciones/buzones.png\",\n  width = 30,\n  height = 40,\n  units = \"cm\"\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "📮 Buzones"
     ]
@@ -290,7 +290,7 @@
     "section": "",
     "text": "Mapa de plantas de tratamiento de agua de Argentina.",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🚰Plantas potabilizadoras"
     ]
@@ -302,7 +302,7 @@
     "section": "Paquetes",
     "text": "Paquetes\n\n\nOcultar código\nlibrary(sf)\nlibrary(glue)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(tidyverse)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🚰Plantas potabilizadoras"
     ]
@@ -314,7 +314,7 @@
     "section": "Estilos",
     "text": "Estilos\nPaleta de colores.\n\n\nOcultar código\ncol &lt;- MoMAColors::moma.colors(palette_name = \"Smith\")\nc1 &lt;- \"#FFFFFF\"\nc2 &lt;- \"#000000\"\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🚰Plantas potabilizadoras"
     ]
@@ -326,7 +326,7 @@
     "section": "Epígrafe",
     "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{col[4]};'&gt;IGN&lt;/span&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{col[4]};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bluesky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{col[4]};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon} {icon_bluesky}&lt;/b&gt; {usuario}\"\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🚰Plantas potabilizadoras"
     ]
@@ -338,7 +338,7 @@
     "section": "Datos",
     "text": "Datos\nVectores de las provincias con sus departamentos. Obtengo el vector de plantas potabilizadoras del Instituto Geográfico Nacional, y conservo únicamente los que se encuentran en actividad. Asigno a cada provincia un color de la gama del azul.\n\n\nOcultar código\ndeptos &lt;- st_read(\"argentina/vectores/dptos_continental.gpkg\") |&gt;\n  st_transform(crs = 5346) |&gt;\n  st_geometry()\n\ncol_pcias &lt;- colorRampPalette(\n  c(col[5], scales::muted(col[5])), alpha = .6)(24)\n\npcias &lt;- st_read(\"argentina/vectores/pcias_continental.gpkg\") |&gt;\n  mutate(fill_pcias = col_pcias)\n\nv &lt;- st_read(\n  \"argentina/vectores/extras/puntos_de_fabricacion_y_procesamiento_BH220.json\") |&gt;\n  filter(fun == 6) |&gt;\n  st_transform(crs = 5346)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🚰Plantas potabilizadoras"
     ]
@@ -350,7 +350,7 @@
     "section": "Figura",
     "text": "Figura\nSubtítulo y posición.\n\n\nOcultar código\nx_sub &lt;- st_bbox(deptos)$xmax\ny_sub &lt;- st_bbox(deptos)$ymax\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {c1}'&gt;Argentina&lt;/b&gt; hay en\",\n  \"funcionamiento &lt;b style='color:#EF7923'&gt;{nrow(v)}&lt;/b&gt;\",\n  \"plantas de tratamiento\",\n  \"de agua.\",\n  .sep = \"&lt;br&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # provincias\n  geom_sf(\n    data = pcias, aes(fill = fill_pcias), linewidth = .4, color = c1,\n    show.legend = TRUE\n  ) +\n  # departamentos\n  geom_sf(\n    data = deptos, fill = NA, color = c1, linewidth = .1, linetype = \"55\"\n  ) +\n  # plantas potabilizadoras\n  geom_sf(\n    data = v, shape = 21, fill = col[4], size = 7, color = c2, alpha = .9\n  ) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = x_sub*.84, y = y_sub*.66, label = mi_subtitle,\n    fill = NA, label.color = NA, size = 12, color = col[4], hjust = 0,\n    family = \"ubuntu\"\n  ) +\n  scale_fill_identity() +\n  scale_shape_identity() +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 8, l = 8, t = 2),\n    plot.background = element_rect(\n      fill = col[5], color = col[2], linewidth = 3),\n    plot.caption = element_markdown(\n      family = \"jet\", color = c1, hjust = .5, size = 20,\n      margin = margin(b = 10))\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/plantas_potabilizadoras.png\",\n  width = 30,\n  height = 65,\n  units = \"cm\"\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🚰Plantas potabilizadoras"
     ]
@@ -362,7 +362,7 @@
     "section": "",
     "text": "En esta sección hay diferentes mapas de Argentina, tanto en el contenido que se representa (instalaciones, relieve) como en el resultado final (videos o mapas estáticos).\nA continuación comento sobre las distintas fuentes de datos de vectores y ráster, y los paquetes usados para acceder a los mismos.",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Mapas de Argentina"
     ]
   },
@@ -373,7 +373,7 @@
     "section": "Vectores",
     "text": "Vectores\n\nInstituto Geográfico Nacional: Las capas SIG contienen muchos tipos de datos, que incluyen geodesia y demarcación, industria y servicios, hidrografía y oceanografía, entre muchos otros. Los vectores se pueden descargar en multiples formatos.\nOpenStree Map: Es posible descargar todos los datos de Argentina y luego seleccionar los de interés.",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Mapas de Argentina"
     ]
   },
@@ -384,7 +384,7 @@
     "section": "Ráster",
     "text": "Ráster\n\nInstituto Geográfico Nacional: El modelo digital de elevación de todo el país están disponibles para descargar, a diferentes resoluciones.\n{elevatr}: Este paquete permite descargar datos de elevación en formato ráster para una región dada.",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Mapas de Argentina"
     ]
   },
@@ -4493,7 +4493,7 @@
     "section": "",
     "text": "Faros en las costas de Argentina, con topografía como mapa base.",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🕯️Faros"
     ]
@@ -4505,7 +4505,7 @@
     "section": "Paquetes",
     "text": "Paquetes\n\n\nOcultar código\nlibrary(terra)\nlibrary(ggtext)\nlibrary(showtext)\nlibrary(glue)\nlibrary(ggfx)\nlibrary(tidyverse)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🕯️Faros"
     ]
@@ -4517,7 +4517,7 @@
     "section": "Estilos",
     "text": "Estilos\n\n\nOcultar código\nc_arriba &lt;- c(\"#131631\", \"#264775\")\nc_abajo &lt;- c(\"#100A2C\", \"#540056\")\n\nc1 &lt;- \"white\"\nc2 &lt;- \"gold\"\n\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🕯️Faros"
     ]
@@ -4529,7 +4529,7 @@
     "section": "Epígrafe",
     "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos: &lt;/b&gt; &lt;span style='color:{c1};'&gt;IGN&lt;/span&gt;,\n  &lt;/b&gt; &lt;span style='color:{c1};'&gt;OpenTopography&lt;/span&gt;\"\n)\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\"\n)\nicon_instagram &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\"\n)\nicon_github &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\"\n)\nicon_mastodon &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\"\n)\nicon_bluesky &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\"\n)\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;{autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon} {icon_bluesky}&lt;/b&gt; {usuario}\"\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🕯️Faros"
     ]
@@ -4541,7 +4541,7 @@
     "section": "Datos",
     "text": "Datos\nVector de faros en las costas de Argentina, descargado del Instituto Geográfico Nacional (Hidrografía y oceanografía / Ayuda a la navegación / Punto / Faro).\n\n\nOcultar código\nfaro &lt;- vect(\n  \"argentina/vectores/ayuda_a_la_navegacion_BC050.json\"\n) |&gt;\n  project(\"EPSG:5346\")",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🕯️Faros"
     ]
@@ -4553,7 +4553,7 @@
     "section": "Elevación",
     "text": "Elevación\nIncremento el contorno del vector de faros para la descarga del modelo digital de elevación.\n\n\nOcultar código\ne1 &lt;- ext(faro)$xmin\ne2 &lt;- ext(faro)$xmax\ne3 &lt;- ext(faro)$ymin\ne4 &lt;- ext(faro)$ymax\n\nfaro_bb_elev &lt;- vect(\n  ext(e1-8e5, e2+8e5, e3-1e5, e4+1e5), \"EPSG:5346\"\n)\nfaro_bb_elev_sf &lt;- faro_bb_elev |&gt;\n  sf::st_as_sf()\n\n\nDescarga de datos de elevación.\n\n\nOcultar código\nele_arg &lt;- elevatr::get_elev_raster(\n  locations = faro_bb_elev_sf,\n  z = 5,\n  clip = \"locations\"\n) |&gt;\n  rast() |&gt;\n  project(\"EPSG:5346\")\n\nnames(ele_arg) &lt;- \"altura\"\n\n\nDivido los datos por arriba y abajo del nivel de 0m, así aplico dos escalas de color.\n\n\nOcultar código\narriba &lt;- ele_arg\narriba[arriba&lt;0] &lt;- NA\n\n\nPaleta de colores.\n\n\nOcultar código\nf_arriba &lt;- colorRampPalette(c_arriba)\npaleta_arriba &lt;- f_arriba(length(cells(arriba)))\n\n\nConvierto a tibble y agrego colores, de acuerdo a la altura.\n\n\nOcultar código\narriba_tbl &lt;- arriba |&gt;\n  as.data.frame(xy = TRUE) |&gt;\n  tibble() |&gt;\n  arrange(altura) |&gt;\n  mutate(n = row_number()) |&gt;\n  mutate(color = paleta_arriba[n])\n\n\nAbajo, remuevo todo lo mayor a 0m.\n\n\nOcultar código\nabajo &lt;- ele_arg\nabajo[abajo&gt;0] &lt;- NA\n\n\nPaleta de colores.\n\n\nOcultar código\nf_abajo &lt;- colorRampPalette(c_abajo)\npaleta_abajo &lt;- f_abajo(length(cells(abajo)))\n\n\nConvierto a tibble y agrego colores, de acuerdo a la altura.\n\n\nOcultar código\nabajo_tbl &lt;- abajo |&gt;\n  as.data.frame(xy = TRUE) |&gt;\n  tibble() |&gt;\n  arrange(altura) |&gt;\n  mutate(n = row_number()) |&gt;\n  mutate(color = paleta_abajo[n])\n\n\nObtengo las coordenadas de los faros.\n\n\nOcultar código\nfaro_tbl &lt;- as.data.frame(faro, geom = \"XY\") |&gt;\n  tibble()",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🕯️Faros"
     ]
@@ -4565,7 +4565,7 @@
     "section": "Figura",
     "text": "Figura\nRelación de aspecto del mapa.\n\n\nOcultar código\next_bb &lt;- ext(faro_bb_elev)\nasp &lt;- (ext_bb$ymax - ext_bb$ymin)/(ext_bb$xmax - ext_bb$xmin)\n\n\nTamaño del mapa, en centímetros.\n\n\nOcultar código\nancho &lt;- 30\nalto &lt;- ancho*asp\n\n\nÍconos y subtítulo.\n\n\nOcultar código\nfaro_icon &lt;- glue(\n  \"&lt;span style='font-family:jet;font-size:150px;'&gt;&#xf0a00;&lt;/span&gt;\"\n)\nequis_icon &lt;- \"&#xf467;\"\n\nmi_subtitle &lt;- glue(\n  \"{faro_icon}&lt;br&gt;\",\n  \"{equis_icon}{length(faro)}\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # abajo\n  geom_raster(data = abajo_tbl, aes(x, y, fill = color)) +\n  # arriba\n  geom_raster(data = arriba_tbl, aes(x, y, fill = color)) +\n  # faros\n  with_blur(\n    geom_point(\n      data = faro_tbl, aes(x, y), color = c2, size = 6, alpha = 1\n    ),\n    sigma = 20\n  ) +\n  geom_point(\n    data = faro_tbl, aes(x, y), color = c2, size = .5, alpha = 1\n  ) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = ext_bb$xmax*.98, y = ext_bb$ymin*1.8,\n    label = mi_subtitle, family = \"jet\", color = c2, fill = NA,\n    size = 10, label.color = NA, hjust = 1\n  ) +\n  # epígrafe\n  annotate(\n    geom = \"richtext\", x = ext_bb$xmin*1.01, y = ext_bb$ymin*1.02,\n    label = mi_caption, family = \"ubuntu\", color = c2, fill = NA,\n    size = 5, label.color = NA, hjust = 0, vjust = 0\n  ) +\n  # cuadro\n  annotate(\n    geom = \"rect\", xmin = ext_bb$xmin, xmax = ext_bb$xmax, ymin = ext_bb$ymin,\n    ymax = ext_bb$ymax, color = c_abajo[2], linewidth = 3, fill = NA\n  ) +\n  scale_fill_identity() +\n  coord_fixed(expand = FALSE) +\n  theme_void()\n\n\nGuardo la figura.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/faros.png\",\n  width = ancho,\n  height = alto,\n  units = \"cm\"\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🕯️Faros"
     ]
@@ -4577,7 +4577,7 @@
     "section": "",
     "text": "Parques Nacionales y su extensión.",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🏞️ Parques Nacionales"
     ]
@@ -4589,7 +4589,7 @@
     "section": "Paquetes",
     "text": "Paquetes\n\n\nOcultar código\nlibrary(sf)\nlibrary(ggrepel)\nlibrary(patchwork)\nlibrary(showtext)\nlibrary(ggtext)\nlibrary(glue)\nlibrary(tidyverse)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🏞️ Parques Nacionales"
     ]
@@ -4601,7 +4601,7 @@
     "section": "Estilos",
     "text": "Estilos\nColores.\n\n\nOcultar código\nMetBrewer::met.brewer(name = \"Moreau\")\nc1 &lt;- \"#421600\"\nc2 &lt;- \"#792503\"\nc3 &lt;- \"white\"\nc4 &lt;- \"#BC7524\"\nc5 &lt;- \"#8DADCA\"\nc6 &lt;- \"#527BAA\"\nc7 &lt;- \"#082844\"\n\n\nFuentes de texto.\n\n\nOcultar código\nfont_add(\n  family = \"bebas\",\n  regular = \"././fuente/BebasNeue-Regular.ttf\"\n)\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🏞️ Parques Nacionales"
     ]
@@ -4613,7 +4613,7 @@
     "section": "Epígrafe",
     "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos: &lt;/b&gt; &lt;span style='color:{c3};'&gt;IGN&lt;/span&gt;,\n  &lt;/b&gt; &lt;span style='color:{c3};'&gt;Instituto Geográfico Nacional&lt;/span&gt;\"\n)\nautor &lt;- glue(\"&lt;span style='color:{c3};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\"\n)\nicon_instagram &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\"\n)\nicon_github &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\"\n)\nicon_mastodon &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\"\n)\nicon_bluesky &lt;- glue(\n  \"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\"\n)\nusuario &lt;- glue(\"&lt;span style='color:{c3};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;{autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon} {icon_bluesky}&lt;/b&gt; {usuario}\"\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🏞️ Parques Nacionales"
     ]
@@ -4625,7 +4625,7 @@
     "section": "Datos",
     "text": "Datos\nVector de polígonos de Áreas Protegidas de Argentina, descargado del Instituto Geográfico Nacional (Geodesia y demarcación / Límites / Polígono / Área protegida).\n\n\nOcultar código\nap &lt;- st_read(\"argentina/vectores/extras/area_protegida.json\") |&gt;\n  st_transform(\"EPSG:5346\")\n\n\nConservo únicamente los Parques Nacionales. Unifico el Parque Nacional Iberá, que está dividido en varias partes.\n\n\nOcultar código\npn &lt;- ap |&gt;\n  filter(gna == \"Parque Nacional\") |&gt;\n  mutate(nam = if_else(str_detect(nam, \"Iberá\"), \"Iberá\", nam))\n\n\nCombino los polígonos, calculo el áreas y recorto los nombres de los Parques Nacionales.\n\n\nOcultar código\npn &lt;- pn |&gt;\n  summarise(geometry = st_union(geometry), .by = nam) |&gt;\n  mutate(a = st_area(geometry)) |&gt;\n  mutate(a = as.numeric(a)) |&gt;\n  mutate(a = a * 1e-6) |&gt;\n  mutate(nam_corto = str_wrap(nam, width = 15)) |&gt;\n  mutate(nam = fct_reorder(nam, a)) |&gt;\n  mutate(nam_corto = fct_reorder(nam_corto, a)) |&gt;\n  arrange(nam) |&gt;\n  mutate(fila = row_number())\n\n\nVector de Argentina continental.\n\n\nOcultar código\narg &lt;- st_read(\"argentina/vectores/arg_continental.gpkg\") |&gt;\n  st_transform(\"EPSG:5346\")",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🏞️ Parques Nacionales"
     ]
@@ -4637,7 +4637,7 @@
     "section": "Figura",
     "text": "Figura\nLa figura está compuesta por dos gráficos: un mapa con las ubicaciones de los Parques Nacionales y un gráfico de puntos indicando la extensión de cada uno.\n\nÁrea de los Parques Nacionales\nLos ejes y sus títulos.\n\n\nOcultar código\neje_x &lt;- tibble(\n  x = seq(0, 6000, 1000),\n  y = 0,\n  label = seq(0, 6000, 1000)\n) |&gt;\n  mutate(label = format(label, big.mark = \".\", decimal.mark = \",\"))\n\ntit_eje_x &lt;- tibble(\n  x = 3000,\n  y = -.5,\n  label = \"Área (km&lt;sup&gt;2&lt;/sup&gt;)\"\n)\n\nverticales &lt;- tibble(\n  x = seq(0, 6000, 1000),\n  xend = x,\n  y = .5,\n  yend = nrow(pn) + .5\n)\n\n\nFigura de puntos.\n\n\nOcultar código\ng1 &lt;- pn |&gt;\n  ggplot(aes(x = a, y = fila)) +\n  geom_segment(\n    data = verticales,\n    aes(x = x, xend = xend, y = y, yend = yend),\n    color = c2,\n    linewidth = .1\n  ) +\n  geom_segment(aes(x = 0, xend = a, yend = fila), color = c4, linewidth = .25) +\n  geom_point(color = c5, fill = c7, size = 4, shape = 23) +\n  geom_point(shape = 16, color = c5, size = .6) +\n  geom_text(\n    aes(label = nam),\n    nudge_x = 150,\n    hjust = 0,\n    color = c3,\n    family = \"ubuntu\",\n    size = 4.5\n  ) +\n  scale_x_continuous(\n    breaks = seq(0, 6000, 1000),\n    expand = c(0, 0),\n    labels = scales::label_number(big.mark = \".\", decimal.mark = \",\")\n  ) +\n  scale_y_continuous(\n    labels = c(nrow(pn):10, glue(\"0{9:1}\")),\n    breaks = 1:nrow(pn)\n  ) +\n  labs(y = NULL, x = \"Área (km&lt;sup&gt;2&lt;/sup&gt;)\") +\n  coord_cartesian(clip = \"off\", expand = FALSE) +\n  theme_void(base_size = 13) +\n  theme(\n    aspect.ratio = 2,\n    plot.margin = margin(10, 70, 10, 10),\n    axis.title.x = element_markdown(\n      family = \"ubuntu\",\n      color = c5,\n      size = rel(1.3),\n      hjust = 1,\n      margin = margin(t = 5)\n    ),\n    axis.text.x = element_text(\n      family = \"jet\",\n      color = c5,\n      margin = margin(t = 3)\n    ),\n    axis.text.y = element_text(\n      color = c5,\n      family = \"jet\",\n      hjust = 0,\n      margin = margin(0, 10, 0, 0)\n    ),\n    axis.ticks.y = element_blank()\n  )\n\n\n\n\nMapa de Parques Nacionales\nCalculo los centroides de cada Parque Nacional.\n\n\nOcultar código\ncen &lt;- pn |&gt;\n  st_centroid() |&gt;\n  st_geometry()\n\n\nMapa de los Parque Nacionales, indicando sus ubicaciones centrales. Los nombres se colocaron evitando que se superpongan mediante el paquete {ggrepel}.\n\n\nOcultar código\ng2 &lt;- ggplot() +\n  geom_sf(data = arg, fill = c2, color = c4, linewidth = .1) +\n  geom_sf(data = cen, shape = 23, color = c5, fill = c7, size = 4) +\n  geom_sf(data = cen, shape = 16, color = c5, size = .6) +\n  geom_label_repel(\n    data = pn,\n    aes(label = nam_corto, geometry = geometry),\n    stat = \"sf_coordinates\",\n    size = 4.5,\n    point.padding = 20,\n    hjust = 0,\n    family = \"ubuntu\",\n    seed = 2025,\n    fill = NA,\n    color = c3,\n    label.size = unit(0, \"line\"),\n    label.padding = unit(.1, \"line\")\n  ) +\n  coord_sf(clip = \"off\", expand = FALSE) +\n  theme_void()\n\n\n\n\nComposición final\nSe combinan ambas figuras (g_col y g_sf) mediante {patchwork}.\nDefino el diseño de la composición de figuras.\n\n\nOcultar código\ndiseño &lt;- \"\n  A#B\n  A#B\n\"\n\n\nDefino el título de la figura.\n\n\nOcultar código\nargentina &lt;- glue(\n  \"&lt;span style='color:{c6};'&gt;Ar&lt;/span&gt;ge&lt;span style='color:gold;'&gt;n&lt;/span&gt;ti&lt;span style='color:{c6};'&gt;na&lt;/span&gt;\"\n)\n\nmi_titulo &lt;- glue(\"Parques Nacionales de {argentina}\")\n\n\nFigura compuesta.\n\n\nOcultar código\ng &lt;- g2 +\n  g1 +\n  plot_layout(design = diseño, widths = c(1, .1, 1)) +\n  plot_annotation(\n    title = mi_titulo,\n    caption = mi_caption,\n    theme = theme(\n      plot.background = element_rect(\n        fill = c1,\n        color = c2,\n        linewidth = 3\n      ),\n      plot.margin = margin(10, 10, 10, 10),\n      plot.title.position = \"plot\",\n      plot.title = element_markdown(\n        hjust = .5,\n        size = 65,\n        family = \"bebas\",\n        color = \"white\",\n        margin = margin(r = -75)\n      ),\n      plot.caption.position = \"plot\",\n      plot.caption = element_markdown(\n        hjust = .5,\n        lineheight = 1.3,\n        color = c5,\n        size = 14,\n        family = \"jet\",\n        margin = margin(t = 10, r = -75)\n      )\n    )\n  )\n\n\nGuardo la figura.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/parques_nacionales.png\",\n  width = 35,\n  height = 35,\n  units = \"cm\"\n)\n\nbrowseURL(paste0(getwd(), \"/argentina/instalaciones/parques_nacionales.png\"))",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🏞️ Parques Nacionales"
     ]
@@ -4649,7 +4649,7 @@
     "section": "",
     "text": "Mapa de instituciones de ciencia y educación.",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🏫 Ciencia y educación"
     ]
@@ -4661,7 +4661,7 @@
     "section": "Paquetes",
     "text": "Paquetes\n\n\nOcultar código\nlibrary(terra)\nlibrary(glue)\nlibrary(tidyterra)\nlibrary(ggfx)\nlibrary(showtext)\nlibrary(ggtext)\nlibrary(tidyverse)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🏫 Ciencia y educación"
     ]
@@ -4673,7 +4673,7 @@
     "section": "Estilos",
     "text": "Estilos\nColores aleatorios a partir de una gama de rosados.\n\n\nOcultar código\nc1 &lt;- \"lightblue\"\nc2 &lt;- \"orange\"\nc3 &lt;- \"white\"\nc4 &lt;- \"grey5\"\nc5 &lt;- \"grey30\"\n\n\nFuentes: Ubuntu, JetBrains Mono y fontawesome.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🏫 Ciencia y educación"
     ]
@@ -4685,7 +4685,7 @@
     "section": "Epígrafe",
     "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{c3};'&gt;IGN&lt;/span&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{c3};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bluesky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c3};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon} {icon_bluesky}&lt;/b&gt; {usuario}\"\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🏫 Ciencia y educación"
     ]
@@ -4697,7 +4697,7 @@
     "section": "Datos",
     "text": "Datos\nObtengo los datos del Instituto Geográfico Nacional, en la categoría Ciencia y educación, Universidad.\n\n\nOcultar código\nu &lt;- vect(\"argentina/vectores/puntos_de_ciencia_y_educacion_020602.json\") |&gt;\n  project(\"EPSG:5346\")\n\n\nLeo los datos de las provincias y departamentos de Argentina.\n\n\nOcultar código\ndptos &lt;- vect(\"argentina/vectores/dptos_continental.gpkg\")\npcias &lt;- vect(\"argentina/vectores/pcias_continental.gpkg\")\n\n\nMe interesa la Universidad Tecnológica Nacional (UTN).\n\n\nOcultar código\nd &lt;- u |&gt;\n  mutate(\n    es_utn = str_detect(gna, \"Universidad Tecnológica Nacional\")\n  ) |&gt;\n  mutate(\n    es_utn = if_else(\n      is.na(es_utn),\n      FALSE,\n      es_utn\n    )\n  )\n\n\nDivido los datos según si son de la UTN o del resto de instituciones.\n\n\nOcultar código\nd_utn &lt;- filter(d, es_utn)\nd_otra &lt;- filter(d, !es_utn)\n\n\nCantidad total de UTN.\n\n\nOcultar código\nn_u &lt;- format(nrow(u), big.mark = \".\", decimal.mark = \",\")",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🏫 Ciencia y educación"
     ]
@@ -4709,7 +4709,7 @@
     "section": "Figura",
     "text": "Figura\nDescripción y subtítulo del mapa.\n\n\nOcultar código\nleyenda_tbl &lt;- tibble(\n  x = 5.1e6,\n  y = c(7.5e6, 7.38e6),\n  label = c(\n    \"Universidad Tecnológica\\nNacional (UTN)\",\n    \"Otras instituciones\\neducativas\")\n) |&gt;\n  mutate(x_label = x+.5e5)\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b&gt;Argentina&lt;/b&gt; hay {n_u} &lt;b style='color:{c1}'&gt;instituciones&lt;/b&gt;&lt;br&gt;\",\n  \"dedicadas al desarrollo científico y&lt;br&gt;\",\n  \"educativo. Del total, {nrow(d_utn)} son facultades&lt;br&gt;\",\n  \"regionales de la \",\n  \"&lt;b style='color:{c2}'&gt;Universidad&lt;br&gt;Tecnológica Nacional&lt;/b&gt;.\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # departamentos\n  geom_sf(data = dptos, fill = c4, color = c5, linewidth = .1) +\n  # provincias\n  geom_sf(data = pcias, fill = NA, color = c5, linewidth = .5) +\n  # otras universidades\n  with_blur(\n    geom_sf(\n      data = d_otra, color = c1, size = 4, shape = 20),\n    sigma = 8\n  ) +\n  geom_sf(\n    data = d_otra, color = c1, size = .5, shape = 20) +\n  # Universidad Tecnológica Nacional\n  with_blur(\n    geom_sf(\n      data = d_utn, color = c2, size = 4, shape = 20),\n    sigma = 8\n  ) +\n  geom_sf(\n    data = d_utn, color = c2, size = .5, shape = 20) +\n  # leyenda\n  with_blur(\n    geom_point(\n      data = leyenda_tbl, aes(x, y), color = c(c2, c1), size = 7),\n    sigma = 8\n  ) +\n  geom_point(\n    data = leyenda_tbl, aes(x, y), color = c(c2, c1), size = 2\n  ) +\n  geom_text(\n    data = leyenda_tbl, aes(x_label, y, label = label), family = \"ubuntu\",\n    color = c3, hjust = 0, size = 7, lineheight = unit(.8, \"line\")\n  ) +\n  annotate(\n    geom = \"richtext\", x = 4.7e6, y = 5e6, label = mi_subtitle, size = 8,\n    family = \"ubuntu\", color = c3, fill = NA, label.color = NA, hjust = 0,\n    lineheight = 1.2\n  ) +\n  coord_sf(clip = \"off\") +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 160, t = .6, b = .6),\n    plot.background = element_rect(fill = c4, color = c3, linewidth = 3),\n    plot.caption.position = \"plot\",\n    plot.caption = element_markdown(\n      family = \"ubuntu\", color = c1, size = 20, hjust = .5,\n      margin = margin(b = 10, r = -160)\n    )\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/educacion.png\",\n  width = 30,\n  height = 54,\n  units = \"cm\"\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🏫 Ciencia y educación"
     ]
@@ -4721,7 +4721,7 @@
     "section": "",
     "text": "Mapa de aeropuertos de Argentina.",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "✈️ Aeropuertos"
     ]
@@ -4733,7 +4733,7 @@
     "section": "Paquetes",
     "text": "Paquetes\n\n\nOcultar código\nlibrary(terra)\nlibrary(tidyterra)\nlibrary(glue)\nlibrary(showtext)\nlibrary(ggtext)\nlibrary(tidyverse)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "✈️ Aeropuertos"
     ]
@@ -4745,7 +4745,7 @@
     "section": "Estilos",
     "text": "Estilos\nColores aleatorios a partir de una gama de rosados.\n\n\nOcultar código\nset.seed(2024)\npp &lt;- PrettyCols::prettycols(palette = \"Pinks\", n = 24, type = \"continuous\") |&gt;\n  sample()\n\nc1 &lt;- \"black\"\nc2 &lt;- \"white\"\nc3 &lt;- \"#FCAADE\"\nc4 &lt;- \"#860A4D\"\n\n\nFuentes: Ubuntu, JetBrains Mono y fontawesome.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nfont_add(\n  family = \"fa\",\n  regular = \"././fuente/Font Awesome 6 Free-Solid-900.otf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "✈️ Aeropuertos"
     ]
@@ -4757,7 +4757,7 @@
     "section": "Epígrafe",
     "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{c1};'&gt;IGN&lt;/span&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{c1};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bluesky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c1};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon} {icon_bluesky}&lt;/b&gt; {usuario}\"\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "✈️ Aeropuertos"
     ]
@@ -4769,7 +4769,7 @@
     "section": "Datos",
     "text": "Datos\nVectores de las provincias con sus departamentos. Obtengo el vector de aeropuertos del Instituto Geográfico Nacional, y conservo únicamente los que se encuentran en actividad.\n\n\nOcultar código\npcias &lt;- vect(\"argentina/vectores/pcias_continental.gpkg\") |&gt;\n  project(\"EPSG:5346\")\n\ndptos_pcias &lt;- vect(\"argentina/vectores/dptos_pcias_continental.gpkg\")\n\naer &lt;- vect(\"argentina/vectores/extras/puntos_de_transporte_aereo_GB005.json\") |&gt;\n  project(\"EPSG:5346\")\n\naer &lt;- aer[aer$fun == 6]",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "✈️ Aeropuertos"
     ]
@@ -4781,7 +4781,7 @@
     "section": "Figura",
     "text": "Figura\nÍconos de los aviones\n\n\nOcultar código\nicon1 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5b0;&lt;/span&gt; \")\nicon2 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf072;&lt;/span&gt; \")\nicon3 &lt;- glue(\"&lt;span style='font-family:fa; color:{c2};'&gt;&#xf5af;&lt;/span&gt; \")\nicon &lt;- glue(\"{icon1} {icon2} {icon3}\")\n\n\nSubtítulo y posición.\n\n\nOcultar código\nx_sub &lt;- ext(aer)$xmax\ny_sub &lt;- ext(aer)$ymax\n\nmi_subtitle &lt;- glue(\n  \"En &lt;b style='color: {c1}'&gt;Argentina&lt;/b&gt; hay en\",\n  \"funcionamiento &lt;b style='color:{c4}'&gt;{nrow(aer)}&lt;/b&gt;\",\n  \"aeropuertos.&lt;br&gt;\",\n  \"{icon}\",\n  .sep = \"&lt;br&gt;\"\n)\n\n\nFigura.\n\n\nOcultar código\ng &lt;- ggplot() +\n  # departamentos\n  geom_sf(\n    data = dptos_pcias, aes(fill = provincia), color = c2, linewidth = .3,\n    linetype = \"22\"\n  ) +\n  # provincias\n  geom_sf(\n    data = pcias, fill = NA, color = c1, linewidth = .4\n  ) +\n  # aeropuertos\n  geom_sf(\n    data = aer, fill = c2, color = c1, size = 11, alpha = .8,\n    stroke = 1, shape = 21) +\n  # subtítulo\n  annotate(\n    geom = \"richtext\", x = x_sub*.84, y = y_sub*.66, label = mi_subtitle,\n    fill = NA, label.color = NA, size = 12, color = c1, hjust = 0,\n    family = \"ubuntu\"\n  ) +\n  scale_fill_manual(values = pp) +\n  labs(caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.margin = margin(r = 8, l = 8, t = 2),\n    plot.background = element_rect(\n      fill = c3, color = c4, linewidth = 3),\n    plot.caption = element_markdown(\n      family = \"jet\", color = c4, hjust = .5, size = 20,\n      margin = margin(b = 10)),\n    legend.position = \"none\"\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/aeropuertos.png\",\n  width = 30,\n  height = 65,\n  units = \"cm\"\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "✈️ Aeropuertos"
     ]
@@ -4793,7 +4793,7 @@
     "section": "",
     "text": "Mapa de la red eléctrica en Argentina, mostrando líneas de alta tensión y plantas transformadoras.",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🔌 Red eléctrica"
     ]
@@ -4805,7 +4805,7 @@
     "section": "Paquetes",
     "text": "Paquetes\n\n\nOcultar código\nlibrary(sf)\nlibrary(tidyverse)\nlibrary(glue)\nlibrary(showtext)\nlibrary(ggtext)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🔌 Red eléctrica"
     ]
@@ -4817,7 +4817,7 @@
     "section": "Estilos",
     "text": "Estilos\nColores de escalas de grises\n\n\nOcultar código\nl1 &lt;- \"grey10\"\nl2 &lt;- \"grey15\"\nl3 &lt;- \"grey20\"\nl4 &lt;- \"grey25\"\nl5 &lt;- \"grey90\"\np1 &lt;- \"#054544\"\np2 &lt;- \"#175F5D\"\np3 &lt;- \"#178F92\"\np4 &lt;- \"#4FB6CA\"\np5 &lt;- \"#EAF3FF\"\n\n\nFuentes: Ubuntu, JetBrains Mono y Voltage.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nfont_add(\n  family = \"voltage\",\n  regular = \"././fuente/Voltage-Regular.otf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🔌 Red eléctrica"
     ]
@@ -4829,7 +4829,7 @@
     "section": "Epígrafe",
     "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"&lt;b&gt;Datos:&lt;/b&gt; &lt;span style='color:{p4};'&gt;Instituto Geográfico Nacional&lt;/span&gt;\"\n)\nautor &lt;- glue(\"&lt;span style='color:{p4};'&gt;Víctor Gauto&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xeb72;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bluesky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{p4};'&gt;vhgauto&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente} {sep} {autor} {sep} &lt;b&gt;{icon_github} {icon_twitter} \",\n  \"{icon_instagram} {icon_mastodon} {icon_bluesky}&lt;/b&gt; {usuario}\"\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🔌 Red eléctrica"
     ]
@@ -4841,7 +4841,7 @@
     "section": "Datos",
     "text": "Datos\nVector del contorno continental de Argentina, obtenido del Instituto Geográfico Nacional (IGN).\n\n\nOcultar código\np &lt;- st_read(\"argentina/vectores/arg_continental.gpkg\") |&gt;\n  st_transform(crs = \"EPSG:5346\")\n\n\nVector del tendido eléctrico de Argentina y plantas transformadoras.\n\n\nOcultar código\nlin_elec &lt;- st_read(\"argentina/vectores/extras/lineas_de_energia_AT030.json\") |&gt;\n  st_transform(crs = \"EPSG:5346\")\nplanta_transf &lt;- st_read(\n  \"argentina/vectores/extras/puntos_de_energia_AD030.json\"\n) |&gt;\nst_transform(crs = \"EPSG:5346\")\n\n\nMantengo únicamente las líneas de alta tensión y plantas transformadoras activas.\n\n\nOcultar código\nalta_tension &lt;- lin_elec |&gt;\n  filter(ten == 6) |&gt;\n  filter(fun == 6) |&gt;\n  st_union() |&gt;\n  st_line_merge() |&gt;\n  st_coordinates() |&gt;\n  as.data.frame()\n\nplanta_transf_act &lt;- planta_transf |&gt;\n  filter(fun == 6)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🔌 Red eléctrica"
     ]
@@ -4853,7 +4853,7 @@
     "section": "Figura",
     "text": "Figura\nTítulo y subtítulo.\n\n\nOcultar código\nmi_titulo &lt;- \"RED ELECTRICA ARGENTINA\"\n\nmi_subtitulo &lt;- \"Las líneas representan la red de alta tensión y&lt;br&gt;\n  los puntos las plantas transformadoras.\"\n\n\n\n\nOcultar código\ng &lt;- ggplot() +\n  geom_sf(data = p, fill = \"black\", color = NA) +\n  geom_path(\n    data = alta_tension, aes(x = X, y = Y, group = L1),\n    color = l1, linewidth = 7, lineend = \"round\") +\n  geom_path(\n    data = alta_tension, aes(x = X, y = Y, group = L1),\n    color = l2, linewidth = 5, lineend = \"round\") +\n  geom_path(\n    data = alta_tension, aes(x = X, y = Y, group = L1),\n    color = l3, linewidth = 3, lineend = \"round\") +\n  geom_path(\n    data = alta_tension, aes(x = X, y = Y, group = L1),\n    color = l4, linewidth = 1, lineend = \"round\") +\n  geom_path(\n    data = alta_tension, aes(x = X, y = Y, group = L1),\n    color = l5, linewidth = .2, lineend = \"round\") +\n  geom_sf(data = planta_transf_act, size = 5, color = p1) +\n  geom_sf(data = planta_transf_act, size = 4, color = p2) +\n  geom_sf(data = planta_transf_act , size = 3, color = p3) +\n  geom_sf(data = planta_transf_act , size = 2, color = p4) +\n  geom_sf(data = planta_transf_act , size = .1, color = p5) +\n  labs(\n    title = mi_titulo,\n    subtitle = mi_subtitulo,\n    caption = mi_caption) +\n  theme_void() +\n  theme(\n    plot.background = element_rect(fill = \"grey5\", color = p4, linewidth = 3),\n    plot.margin = margin(15, 24, 15, 24),\n    plot.title.position = \"plot\",\n    plot.title = element_markdown(\n      color = p4, size = 100, family = \"voltage\", hjust = .5\n    ),\n    plot.subtitle = element_markdown(\n      color = p5, size = 25, hjust = .5, family = \"ubuntu\", lineheight = 1.3\n    ),\n    plot.caption.position = \"plot\",\n    plot.caption = element_markdown(\n      color = p5, family = \"ubuntu\", size = 23, margin = margin(10, 0, 5, 0),\n      hjust = .5\n    )\n  )\n\n\nGuardo.\n\n\nOcultar código\nggsave(\n  plot = g,\n  filename = \"argentina/instalaciones/red_electrica.png\",\n  width = 30,\n  height = 69,\n  units = \"cm\",\n  dpi = 300\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Instalaciones",
       "🔌 Red eléctrica"
     ]
@@ -4865,7 +4865,7 @@
     "section": "",
     "text": "Animación del avance de las torres de telecomunicaciones en Argentina, entr 2009 y 2024, para redes GSM, UMTS y LTE.",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones",
       "🗼Torres de telecomunicaciones"
     ]
@@ -4877,7 +4877,7 @@
     "section": "Paquetes",
     "text": "Paquetes\n\n\nOcultar código\nlibrary(glue)\nlibrary(showtext)\nlibrary(ggtext)\nlibrary(sf)\nlibrary(magick)\nlibrary(tidyverse)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones",
       "🗼Torres de telecomunicaciones"
     ]
@@ -4889,7 +4889,7 @@
     "section": "Estilos",
     "text": "Estilos\nColores.\n\n\nOcultar código\nc1 &lt;- \"#76BE72\"\nc2 &lt;- \"#F04C44\"\nc3 &lt;- \"#442224\"\nc4 &lt;- \"grey95\"\nc5 &lt;- \"grey92\"\n\n\nFuentes: Ubuntu y JetBrains Mono.\n\n\nOcultar código\nfont_add(\n  family = \"ubuntu\",\n  regular = \"././fuente/Ubuntu-Regular.ttf\",\n  bold = \"././fuente/Ubuntu-Bold.ttf\",\n  italic = \"././fuente/Ubuntu-Italic.ttf\"\n)\n\nfont_add(\n  family = \"jet\",\n  regular = \"././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf\"\n)\n\nshowtext_auto()\nshowtext_opts(dpi = 300)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones",
       "🗼Torres de telecomunicaciones"
     ]
@@ -4901,7 +4901,7 @@
     "section": "Epígrafe",
     "text": "Epígrafe\n\n\nOcultar código\nfuente &lt;- glue(\n  \"Datos: &lt;span style='color:{c2}; font-size: 8px'&gt;**OpenCelliD Project** is\n  licensed under a Creative&lt;br&gt;Commons Attribution-ShareAlike 4.0 International\n  License&lt;/span&gt;\")\nautor &lt;- glue(\"&lt;span style='color:{c2};'&gt;**Víctor Gauto**&lt;/span&gt;\")\nicon_twitter &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf099;&lt;/span&gt;\")\nicon_instagram &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf16d;&lt;/span&gt;\")\nicon_github &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf09b;&lt;/span&gt;\")\nicon_mastodon &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xf0ad1;&lt;/span&gt;\")\nicon_bsky &lt;- glue(\"&lt;span style='font-family:jet;'&gt;&#xe28e;&lt;/span&gt;\")\nusuario &lt;- glue(\"&lt;span style='color:{c2};'&gt;**vhgauto**&lt;/span&gt;\")\nsep &lt;- glue(\"**|**\")\n\nmi_caption &lt;- glue(\n  \"{fuente}&lt;br&gt;{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} \",\n  \"{icon_mastodon} {icon_bsky} {usuario}\"\n)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones",
       "🗼Torres de telecomunicaciones"
     ]
@@ -4913,7 +4913,7 @@
     "section": "Funciones",
     "text": "Funciones\nConvierte la cantidad de torres por período a largo del segmento, para mostrar avance.\n\n\nOcultar código\nf_escala &lt;- function(x) {\n  eje_x_min + x*(eje_x_max - eje_x_min)/l_max\n}\n\n\nGeneración y almacenamiento de cada mapa.\n\n\nOcultar código\nf_mapa &lt;- function(año_mes) {\n\n  # contador para seguimiento en consola\n  l &lt;- length(v_año_mes)\n  n &lt;- which(v_año_mes == año_mes)\n\n  n &lt;- case_when(\n    n &lt;= 9 ~ glue(\"00{n}\"),\n    n &lt;= 99 ~ glue(\"0{n}\"),\n    .default = glue(\"{n}\")\n  )\n\n  print(glue(\"-- {n} de {l} --\"))\n\n  # etiquetas de año y mes\n  año_label &lt;- year(año_mes)\n  mes_label &lt;- str_to_upper(format(año_mes, \"%B\"))\n\n  mi_title &lt;- glue(\n    \"&lt;span style='font-size:20px;'&gt;{año_label}&lt;/span&gt;&lt;br&gt;\",\n    \"&lt;span style='font-size:10px;'&gt;{mes_label}&lt;/span&gt;\")\n\n  # filtro los datos\n  e &lt;- d |&gt;\n    filter(primero &lt;= año_mes)\n\n  # color de la leyenda\n  label_tbl &lt;- count(e, radio) |&gt;\n    mutate(color = paleta_radio[radio]) |&gt;\n    mutate(label = glue(\"{radio}&lt;br&gt;&lt;span style='color:{color}'&gt;{n}&lt;/span&gt;\")) |&gt;\n    arrange(radio)\n\n  scale_color_names &lt;- pull(label_tbl, radio)\n  scale_color_labels &lt;- pull(label_tbl, label)\n  scale_color_values &lt;- pull(label_tbl, color)\n\n  # extensión\n  d_l &lt;- count(tibble(e), radio) |&gt;\n    arrange(radio) |&gt;\n    mutate(\n      x = eje_x_min,\n      xend = f_escala(n),\n      y = eje_y_radio[radio]\n    ) |&gt;\n    mutate(yend = y) |&gt;\n    mutate(color = paleta_radio[radio])\n\n  # figura\n  g &lt;- ggplot() +\n    # Argentina\n    geom_sf(data = arg_sf, fill = c5, color = NA, linewidth = .1) +\n    # torres de radio\n    geom_sf(data = e, aes(color = radio, size = radio), alpha = .5) +\n    # líneas horizontales\n    geom_segment(\n      data = d_l, aes(x, y, xend = xend, yend = yend),  color = d_l$color,\n      linewidth = 1) +\n    # año\n    annotate(\n      geom = \"text\", x = I(.85), y = I(.95), label = año_label, vjust = 0,\n      family = \"jet\", size = 6, color = c3) +\n    # mes\n    annotate(\n      geom = \"text\", x = I(.85), y = I(.944), label = mes_label, vjust = 1,\n      family = \"jet\", size = 3, color = c3) +\n    scale_color_manual(\n      breaks = scale_color_names,\n      labels = scale_color_labels,\n      values = scale_color_values) +\n    scale_size_manual(values = c(.1, .4, .7)) +\n    labs(color = NULL, caption = mi_caption) +\n    coord_sf(\n      xlim = c(bb_sf$xmin, bb_sf$xmax),\n      ylim = c(bb_sf$ymin, bb_sf$ymax),\n      expand = FALSE) +\n    guides(\n      color = guide_legend(\n        position = \"inside\",\n        override.aes = list(size = 3, alpha = 1)),\n      size = guide_none()\n    ) +\n    theme_void() +\n    theme(\n      plot.background = element_rect(fill = c4, color = c3, linewidth = 1),\n      plot.margin = margin(r = 4, b = 3, l = 4),\n      plot.caption = element_markdown(\n        family = \"ubuntu\", color = c1, size = 7, lineheight = unit(1.1, \"line\"),\n        margin = margin(t = -15, r = 5)),\n      legend.position.inside = c(0.6, 0.4),\n      legend.key.spacing.y = unit(.7, \"line\"),\n      legend.justification.inside = c(0, 1),\n      legend.text = element_markdown(family = \"jet\")\n    )\n\n  # guardo\n  ggsave(\n    plot = g,\n    filename = glue(\"./argentina/animaciones/torres_celulares/{n}.png\"),\n    width = 1000,\n    height = 2140,\n    units = \"px\"\n  )\n\n}",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones",
       "🗼Torres de telecomunicaciones"
     ]
@@ -4925,7 +4925,7 @@
     "section": "Datos",
     "text": "Datos\nLos datos de las torres de celulares se encuentran en OpenCellid. Es requisito tener una cuenta para poder solicitar un token de acceso y descargar los datos.\n\n\nOcultar código\nd &lt;- read_csv(\n  \"./argentina/vectores/722X.csv\",\n  col_names = 1:14,\n  col_select = c(1, 7, 8, 12, 13)) |&gt;\n  rename(radio = X1, lon = X7, lat = X8, primero = X12, ultimo = X13) |&gt;\n  mutate(primero = as_datetime(primero)) |&gt;\n  mutate(ultimo = as_datetime(ultimo)) |&gt;\n  mutate(primero = as.Date(primero)) |&gt;\n  mutate(ultimo = as.Date(ultimo)) |&gt;\n  mutate(año = year(primero), mes = month(primero)) |&gt;\n  mutate(radio = fct(radio, levels = c(\"GSM\", \"UMTS\", \"LTE\"))) |&gt;\n  st_as_sf(coords = c(\"lon\", \"lat\")) |&gt;\n  st_set_crs(value = 4326) |&gt;\n  st_transform(crs = 5346)\n\n\nVector de Argentina y contorno.\n\n\nOcultar código\narg_sf &lt;- st_read(\"./argentina/vectores/arg_continental.gpkg\") |&gt;\n  st_transform(crs = 5346)\n\n# extensión de Argentina, para ampliar el mapa\nbb &lt;- st_bbox(arg_sf)\next &lt;- terra::vect(arg_sf) |&gt; terra::ext()\nbb_sf &lt;- terra::vect(ext*1.1, crs = \"EPSG:5346\") |&gt;\n  st_as_sf() |&gt;\n  st_bbox()\n\n\nExtraigo los meses y años de la base de datos.\n\n\nOcultar código\nv_año_mes &lt;- tibble(d) |&gt;\n  distinct(año, mes) |&gt;\n  mutate(dia = 1) |&gt;\n  mutate(fecha = make_date(year = año, month = mes, day = dia)) |&gt;\n  arrange(fecha) |&gt;\n  pull(fecha)\n\n# máxima cantidad de torres de radio\nl_max &lt;- count(tibble(d), radio, sort = TRUE) |&gt;\n  arrange(radio) |&gt;\n  pull(n) |&gt;\n  max()",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones",
       "🗼Torres de telecomunicaciones"
     ]
@@ -4937,7 +4937,7 @@
     "section": "Figura",
     "text": "Figura\nPaleta de colores por tipo de red.\n\n\nOcultar código\npaleta_radio &lt;- c(c1, c2, c3)\nnames(paleta_radio) &lt;- c(\"GSM\", \"UMTS\", \"LTE\")\n\n\nPosición de cada segmento según tipo de torre.\n\n\nOcultar código\neje_x_min &lt;- bb_sf$xmax*.895\neje_x_max &lt;- bb_sf$xmax*.99\n\n# posición vertical, de los segmentos según tipo de radio\neje_y_gsm &lt;- bb_sf$ymin*1.402\neje_y_umts &lt;- eje_y_gsm - 2.22e5\neje_y_lte &lt;- eje_y_gsm - 2*2.22e5\n\neje_y_radio &lt;- c(eje_y_gsm, eje_y_umts, eje_y_lte)\nnames(eje_y_radio) &lt;- c(\"GSM\", \"UMTS\", \"LTE\")\n\n\nGenero todas las figuras.\n\n\nOcultar código\nwalk(v_año_mes, f_mapa)\nbeepr::beep(2)\nSys.sleep(1.5)\nbeepr::beep(2)\nSys.sleep(1.5)\nbeepr::beep(2)\nSys.sleep(1.5)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones",
       "🗼Torres de telecomunicaciones"
     ]
@@ -4949,7 +4949,7 @@
     "section": "Animación",
     "text": "Animación\nA partir de las figuras genero la animación.\n\n\nOcultar código\nav::av_encode_video(\n  input = list.files(\n    path = \"./argentina/animaciones/torres_celulares/\",\n    full.names = TRUE, pattern = \".png\"\n  )[-c(1, 2)],\n  framerate = 7,\n  output = \"./argentina/animaciones/torres_celulares.mp4\"\n)\n\n\nElimino la carpeta con todas las imágenes.\n\n\nOcultar código\nunlink(\"./argentina/animaciones/torres_celulares/\", recursive = TRUE)",
     "crumbs": [
-      "{{< iconify hugeicons:maps >}} Mapas de Argentina {{< iconify emojione:flag-for-argentina >}}",
+      "{{< iconify emojione:flag-for-argentina >}} Mapas de Argentina",
       "Animaciones",
       "🗼Torres de telecomunicaciones"
     ]
