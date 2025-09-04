@@ -28,28 +28,23 @@ about:
 ```{r}
 source(".soporte.R")
 source(".sudoku.R")
+source(".letterboxd.R")
 ```
 
 ::: {#about-cv}
 :::
 
-## Educación
+Los detalles de mi educación, experiencia laboral, publicaciones, cursos, habilidades e idiomas lo pueden encontrar en [mi CV {{< iconify quill:link-out >}}](https://vhgauto.github.io/cv/).
 
-`r edu4`
-<br>
-`r edu3`
-<br>
-`r edu2`
-<br>
-`r edu1`
+## Películas
 
-## Investigación
+Mis últimas 4 películas vistas. [Perfil en Letterboxd {{< iconify fa6-brands:letterboxd >}}](https://letterboxd.com/vhgauto/)
 
-`r inv3`
-<br>
-`r inv2`
-<br>
-`r inv1`
+<center>
+
+![](img/poster_4.png) ![](img/poster_3.png) ![](img/poster_2.png) ![](img/poster_1.png)
+
+</center>
 
 ## Sudoku
 
