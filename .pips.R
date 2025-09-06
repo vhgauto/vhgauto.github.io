@@ -19,8 +19,8 @@ colores <- c(
 
 # datos -------------------------------------------------------------------
 
-d_sudoku <- read_tsv(
-  file = "datos/sudoku.tsv",
+d_pips <- read_tsv(
+  file = "datos/pips.tsv",
   col_types = "cccc"
 ) |>
   mutate(fecha = dmy(fecha)) |>
@@ -60,12 +60,16 @@ d_sudoku <- read_tsv(
     )
   ) |>
   mutate(
-    tiempo_label = paste0(minutos, "m", segundos, "s")
+    tiempo_label = if_else(
+      minutos == "00",
+      paste0(segundos, "s"),
+      paste0(minutos, "m", segundos, "s")
+    )
   )
 
 # líneas ------------------------------------------------------------------
 
-d_label_sudoku <- d_sudoku |>
+d_label_pips <- d_pips |>
   mutate(
     color = colores[dificultad]
   ) |>
@@ -87,9 +91,9 @@ d_label_sudoku <- d_sudoku |>
     l = str_remove(l, " \\| $")
   )
 
-d2_sudoku <- inner_join(
-  d_sudoku,
-  d_label_sudoku,
+d2_pips <- inner_join(
+  d_pips,
+  d_label_pips,
   by = join_by(fecha)
 ) |>
   mutate(
@@ -100,8 +104,8 @@ d2_sudoku <- inner_join(
   ) |>
   mutate(dificultad_label = fct_reorder(dificultad_label, as.numeric(tiempo)))
 
-g_sudoku <- ggplot(
-  d2_sudoku,
+g_pips <- ggplot(
+  d2_pips,
   aes(as.numeric(tiempo), dificultad_label, fill = dificultad)
 ) +
   geom_point_interactive(
@@ -118,7 +122,7 @@ g_sudoku <- ggplot(
     values = colores
   ) +
   scale_x_continuous(
-    breaks = scales::breaks_width(120),
+    breaks = scales::breaks_width(60),
     labels = \(x) paste0(x / 60, "m")
   ) +
   theme_classic(base_family = "Ubuntu") +
@@ -147,8 +151,8 @@ g_sudoku <- ggplot(
     )
   )
 
-h_sudoku <- girafe(
-  ggobj = g_sudoku,
+h_pips <- girafe(
+  ggobj = g_pips,
   width_svg = 7,
   height_svg = 3,
   bg = "transparent",
@@ -177,7 +181,7 @@ h_sudoku <- girafe(
 
 # resumen ----------------------------------------------------------------
 
-horas_sudoku <- d_sudoku |>
+horas_pips <- d_pips |>
   mutate(
     duracion = as.duration(tiempo)
   ) |>
@@ -187,6 +191,6 @@ horas_sudoku <- d_sudoku |>
   pull() |>
   round()
 
-juegos_sudoku <- d_sudoku |>
+juegos_pips <- d_pips |>
   distinct(fecha, dificultad) |>
   nrow()
