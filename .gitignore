@@ -2,6 +2,7 @@
 .test.qmd
 .vscode
 test*
+.chromote*
 
 # History files
 .Rhistory
