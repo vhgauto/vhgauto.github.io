@@ -3,6 +3,7 @@
 .vscode
 test*
 .chromote*
+cookies*
 
 # History files
 .Rhistory
