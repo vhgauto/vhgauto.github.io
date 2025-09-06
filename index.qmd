@@ -23,12 +23,16 @@ about:
       href: https://scholar.google.es/citations?user=nxCfD0AAAAAJ
     - text: "{{< iconify simple-icons:orcid >}}"
       href: https://orcid.org/0000-0001-9960-8558
+execute: 
+  echo: false
+  eval: true
 ---
 
 ```{r}
 source(".soporte.R")
 source(".sudoku.R")
-source(".letterboxd.R")
+source(".pips.R")
+# source(".letterboxd.R")
 ```
 
 ::: {#about-cv}
@@ -38,7 +42,7 @@ Los detalles de mi educación, experiencia laboral, publicaciones, cursos, habil
 
 ## Películas
 
-Mis últimas 4 películas vistas. [Perfil en Letterboxd {{< iconify fa6-brands:letterboxd >}}](https://letterboxd.com/vhgauto/)
+Las últimas cuatro películas que he visto. [Perfil en Letterboxd {{< iconify fa6-brands:letterboxd >}}](https://letterboxd.com/vhgauto/)
 
 <center>
 
@@ -46,11 +50,17 @@ Mis últimas 4 películas vistas. [Perfil en Letterboxd {{< iconify fa6-brands:l
 
 </center>
 
+## Juegos
+
+Disfruto mucho resolver algunos de los juegos de New York Times {{< iconify simple-icons:newyorktimes >}}.
+
+Llevo registro del tiempo que me lleva resolver el [sudoku](https://www.nytimes.com/puzzles/sudoku) y [pips](https://www.nytimes.com/games/pips), en sus tres niveles de dificultad.
+
+::: {.panel-tabset}
+
 ## Sudoku
 
-Disfruto mucho resolver los [sudokus](https://www.nytimes.com/puzzles/sudoku) de New York Times {{< iconify simple-icons:newyorktimes >}}.
-
-Llevo registro de los tiempos que me lleva resolver los tres niveles de dificultad. <br> <br>
+<br>
 
 ::::: {.column-page}
 
@@ -59,10 +69,7 @@ Llevo registro de los tiempos que me lleva resolver los tres niveles de dificult
 ::: {.column width="80%"}
 
 ```{r}
-#| eval: true
-#| echo: false
-
-h
+h_sudoku
 ```
 
 :::
@@ -71,17 +78,17 @@ h
 
 <center>
 
-<icon-sudoku>{{< iconify arcticons:sudoku-alt >}}</icon-sudoku>
+![](img/sudoku.svg){width="40%"}
 
 ::: {.tiempo}
 
-`{r} juegos` sudokus
+`{r} juegos_sudoku` juegos
 
 :::
 
 ::: {.tiempo}
 
-`{r} horas` horas
+`{r} horas_sudoku` horas
 
 :::
 
@@ -92,6 +99,50 @@ h
 ::::
 
 :::::
+
+## Pips
+
+<br>
+
+::::: {.column-page}
+
+:::: {.columns}
+
+::: {.column width="80%"}
+
+```{r}
+h_pips
+```
+
+:::
+
+::: {.column width="20%" layout-align="center"}
+
+<center>
+
+![](img/pips.svg){width="40%"}
+
+::: {.tiempo}
+
+`{r} juegos_pips` juegos
+
+:::
+
+::: {.tiempo}
+
+`{r} horas_pips` horas
+
+:::
+
+</center>
+
+:::
+
+::::
+
+:::::
+
+:::
 
 ::: {.column-screen-right}
 
