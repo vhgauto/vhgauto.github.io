@@ -1,0 +1,368 @@
+---
+format:
+  html:
+    code-fold: show
+    code-summary: "Ocultar código"
+    code-line-numbers: false
+    code-annotations: false
+    code-link: true
+    code-tools:
+        source: true
+        toggle: true
+        caption: "Código"
+    code-overflow: scroll
+    page-layout: full
+editor_options:
+  chunk_output_type: console
+categories:
+  - geom_col
+  - geom_col
+execute:
+  eval: false
+  echo: true
+  warning: false
+title: "Semana 38"
+date: last-modified
+author: Víctor Gauto
+---
+
+Países con la mayor cantidad de Grandes Maestros de ajedrez.
+
+::: {.column-page-right}
+
+![Semana 38, 2025](semana_38.png)
+
+:::
+
+## Paquetes
+
+```{r}
+library(glue)
+library(ggtext)
+library(showtext)
+library(tidyverse)
+```
+
+## Estilos
+
+Colores.
+
+```{r}
+c1 <- "black"
+c2 <- "white"
+c3 <- "#B1615C"
+c4 <- "#5A5A83"
+```
+
+Fuentes: Ubuntu y JetBrains Mono.
+
+```{r}
+font_add(
+  family = "ubuntu",
+  regular = "././fuente/Ubuntu-Regular.ttf",
+  bold = "././fuente/Ubuntu-Bold.ttf",
+  italic = "././fuente/Ubuntu-Italic.ttf"
+)
+
+font_add(
+  family = "jet",
+  regular = "././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf"
+)
+
+showtext_auto()
+showtext_opts(dpi = 300)
+```
+
+## Epígrafe
+
+```{r}
+fuente <- glue(
+  "Datos: <span style='color:{c3};'><span style='font-family:jet;'>",
+  "{{<b>tidytuesdayR</b>}}</span> semana 38, ",
+  "<b>International Chess Federation</b>.</span>"
+)
+
+autor <- glue("<span style='color:{c3};'>**Víctor Gauto**</span>")
+icon_twitter <- glue("<span style='font-family:jet;'>&#xf099;</span>")
+icon_instagram <- glue("<span style='font-family:jet;'>&#xf16d;</span>")
+icon_github <- glue("<span style='font-family:jet;'>&#xf09b;</span>")
+icon_mastodon <- glue("<span style='font-family:jet;'>&#xf0ad1;</span>")
+icon_bsky <- glue("<span style='font-family:jet;'>&#xe28e;</span>")
+usuario <- glue("<span style='color:{c3};'>**vhgauto**</span>")
+sep <- glue("**|**")
+
+mi_caption <- glue(
+  "{fuente}<br>{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} ",
+  "{icon_mastodon} {icon_bsky} {usuario}"
+)
+```
+
+## Datos
+
+```{r}
+tuesdata <- tidytuesdayR::tt_load(2025, 38)
+september <- tuesdata$fide_ratings_september
+```
+
+## Procesamiento
+
+Me interesan los países con mayor cantidad de [Grandes Maestros](https://es.wikipedia.org/wiki/Gran_maestro_internacional).
+
+Obtengo los nombres de los países de acuerdo con la abreviatura de sus federaciones.
+
+```{r}
+fed_tbl <- rvest::read_html(
+  "https://www.mark-weeks.com/aboutcom/mw15b16.htm"
+) |>
+  rvest::html_table() |>
+  pluck(2) |>
+  rename_with(tolower) |>
+  select(fed, country)
+```
+
+Selecciono septiembre de 2025 como el mes de interés y creo datos con las traducciones de los países.
+
+```{r}
+d <- inner_join(september, fed_tbl, by = join_by(fed)) |>
+  filter(title %in% c("GM", "FGM")) |>
+  count(country, sort = TRUE) |>
+  mutate(country = fct_reorder(country, n)) |>
+  slice_max(order_by = country, n = 12)
+
+country_tbl <- tibble(
+  country = d$country,
+  pais = c(
+    "Alemania",
+    "EE.UU.",
+    "India",
+    "Rusia",
+    "Ucrania",
+    "Francia",
+    "Serbia",
+    "España",
+    "Israel",
+    "Polonia",
+    "Hungría",
+    "China"
+  )
+)
+```
+
+Combino todos los datos.
+
+```{r}
+d2 <- inner_join(country_tbl, d, by = join_by(country)) |>
+  mutate(pais = factor(pais, levels = rev(pais)))
+```
+
+## Figura
+
+Defino patrones para el fondo de la figura y las barras.
+
+```{r}
+p1 <- pattern(
+  rectGrob(x = c(.25, .75), y = c(.25, .75), width = .5, height = .5),
+  width = .05,
+  height = .05,
+  extend = "repeat",
+  gp = gpar(fill = c1),
+)
+
+p2 <- pattern(
+  rectGrob(x = c(.25, .75), y = c(.25, .75), width = .5, height = .5),
+  width = .05,
+  height = .05,
+  extend = "repeat",
+  gp = gpar(fill = c3, alpha = .1),
+)
+```
+
+Título  y figura.
+
+```{r}
+mi_titulo <- glue(
+  "Cantidad de <b style='color: {c3};'>Grandes Maestros</b> del ajedrez por ",
+  "país,<br>masculinos y femeninos, a septiembre de 2025"
+)
+
+g <- ggplot(d2, aes(n, pais, fill = pais)) +
+  annotate(
+    geom = "rect",
+    xmin = I(0),
+    xmax = I(1),
+    ymin = I(0),
+    ymax = I(1),
+    fill = c4,
+    alpha = .5
+  ) +
+  annotate(
+    geom = "rect",
+    xmin = I(0),
+    xmax = I(1),
+    ymin = I(0),
+    ymax = I(1),
+    fill = p2
+  ) +
+  geom_col(show.legend = FALSE, width = .8, fill = c2) +
+  geom_col(show.legend = FALSE, width = .8) +
+  scale_x_continuous(breaks = scales::breaks_width(10)) +
+  scale_fill_manual(
+    values = rep(list(p1), nrow(d))
+  ) +
+  coord_cartesian(expand = FALSE) +
+  labs(x = NULL, y = NULL, title = mi_titulo, caption = mi_caption) +
+  theme_bw(base_size = 24, base_family = "ubuntu") +
+  theme(
+    text = element_text(color = c2),
+    aspect.ratio = 1,
+    axis.ticks.y = element_blank(),
+    axis.ticks.x = element_line(color = c2, linewidth = .2),
+    panel.border = element_blank(),
+    panel.grid = element_blank(),
+    axis.text = element_text(color = c2),
+    axis.text.x = element_text(family = "jet"),
+    plot.background = element_rect(fill = c1, color = NA),
+    plot.title = element_markdown(lineheight = 1.2),
+    plot.title.position = "plot",
+    plot.caption = element_markdown(size = rel(.6), lineheight = 1.2)
+  )
+```
+
+Guardo.
+
+```{r}
+ggsave(
+  plot = g,
+  filename = "tidytuesday/2025/semana_38.png",
+  width = 30,
+  height = 30,
+  units = "cm"
+)
+```
+
+```{r}
+#| eval: false
+#| echo: false
+
+piezas <- c(
+  "\U265A",
+  "\U265B",
+  "\U265C",
+  "\U265D",
+  "\U265E",
+  "\U265F"
+)
+
+piezas_blancas <- glue("<span style='color: white;'>{piezas}</span>")
+piezas_oscuras <- glue("<span style='color: black;'>{piezas}</span>")
+
+
+ancho <- ceiling(max(d$n) / 2)
+alto <- nrow(d) * 3 - 1
+
+d_tablero <- expand_grid(
+  y = 1:alto,
+  x = 1:ancho
+) |>
+  mutate(id = row_number()) |>
+  mutate(fill = if_else(id %% 2 == 0, c2, c1)) |>
+  select(-id)
+
+
+d_country <- d |>
+  arrange(country) |>
+  mutate(id = row_number()) |>
+  mutate(y = lag(x = id, n = 2, default = 0)) |>
+  mutate(y = id * 2 + y) |>
+  mutate(y = if_else(id == 1, 1, y)) |>
+  mutate(y = y + 1) |>
+  inner_join(country_tbl, by = join_by(country)) |>
+  mutate(pais = fct_reorder(pais, n))
+
+d_y1 <- d |>
+  arrange(country) |>
+  mutate(id = row_number()) |>
+  mutate(y = lag(x = id, n = 2, default = 0)) |>
+  mutate(y = id * 2 + y) |>
+  mutate(y = if_else(id == 1, 1, y)) |>
+  mutate(y = y + 1) |>
+  mutate(x = map(ceiling(n / 2), ~ 1:.x)) |>
+  mutate(largo = map_dbl(x, length)) |>
+  mutate(blancas = c(piezas_blancas, piezas_blancas)) |>
+  mutate(oscuras = c(piezas_oscuras, piezas_oscuras)) |>
+  unnest(x) |>
+  inner_join(d_tablero, by = join_by(x, y)) |>
+  mutate(label = if_else(fill == c2, oscuras, blancas))
+
+d_y2 <- d |>
+  arrange(country) |>
+  mutate(id = row_number()) |>
+  mutate(y = lag(x = id, n = 2, default = 0)) |>
+  mutate(y = id * 2 + y) |>
+  mutate(y = if_else(id == 1, 1, y)) |>
+  mutate(x = map(n - ceiling(n / 2), ~ 1:.x)) |>
+  mutate(largo = map_dbl(x, length)) |>
+  mutate(blancas = c(piezas_blancas, piezas_blancas)) |>
+  mutate(oscuras = c(piezas_oscuras, piezas_oscuras)) |>
+  unnest(x) |>
+  inner_join(d_tablero, by = join_by(x, y)) |>
+  mutate(label = if_else(fill == c2, oscuras, blancas))
+
+d_y <- rbind(d_y1, d_y2)
+
+g <- ggplot(d_tablero, aes(x, y, fill = fill)) +
+  geom_tile() +
+  geom_richtext(
+    data = d_y,
+    aes(x + .1, y, label = label),
+    inherit.aes = FALSE,
+    size = 5,
+    fill = NA,
+    label.color = NA
+  ) +
+  geom_text(
+    data = d_country,
+    aes(0, y - .5, label = pais),
+    inherit.aes = FALSE,
+    family = "ubuntu",
+    color = c2,
+    size = 6,
+    hjust = 1
+  ) +
+  geom_point(
+    data = d_country,
+    aes(ceiling(n / 2) + 1.5, y - .5),
+    inherit.aes = FALSE,
+    shape = 21,
+    size = 8,
+    color = c1,
+    fill = c2,
+    stroke = .4
+  ) +
+  geom_text(
+    data = d_country,
+    aes(ceiling(n / 2) + 1.5, y - .5, label = n),
+    inherit.aes = FALSE,
+    family = "jet",
+    size = 4,
+    color = c1
+  ) +
+  scale_x_continuous(breaks = scales::breaks_width(1)) +
+  scale_y_continuous(breaks = scales::breaks_width(1)) +
+  scale_fill_identity() +
+  coord_equal(clip = "off", xlim = c(-3, NA)) +
+  theme_void(base_family = "ubuntu") +
+  theme(
+    plot.background = element_rect(fill = c1)
+  )
+
+ggsave(
+  plot = g,
+  filename = "tidytuesday/2025/semana_38.png",
+  width = 30,
+  height = 25,
+  units = "cm"
+)
+
+browseURL(paste0(getwd(), "/tidytuesday/2025/semana_38_XXX.png"))
+```
