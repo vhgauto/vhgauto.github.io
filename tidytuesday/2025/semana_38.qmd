@@ -40,6 +40,7 @@ Países con la mayor cantidad de Grandes Maestros de ajedrez.
 library(glue)
 library(ggtext)
 library(showtext)
+library(grid)
 library(tidyverse)
 ```
 
@@ -50,8 +51,8 @@ Colores.
 ```{r}
 c1 <- "black"
 c2 <- "white"
-c3 <- "#B1615C"
-c4 <- "#5A5A83"
+c3 <- "#BA5AA2"
+c4 <- "#659643"
 ```
 
 Fuentes: Ubuntu y JetBrains Mono.
@@ -108,7 +109,7 @@ september <- tuesdata$fide_ratings_september
 
 Me interesan los países con mayor cantidad de [Grandes Maestros](https://es.wikipedia.org/wiki/Gran_maestro_internacional).
 
-Obtengo los nombres de los países de acuerdo con la abreviatura de sus federaciones.
+Obtengo los nombres de los países de acuerdo con la abreviatura de sus [federaciones](https://www.mark-weeks.com/aboutcom/mw15b16.htm).
 
 ```{r}
 fed_tbl <- rvest::read_html(
@@ -157,23 +158,38 @@ d2 <- inner_join(country_tbl, d, by = join_by(country)) |>
 
 ## Figura
 
-Defino patrones para el fondo de la figura y las barras.
+Defino [patrones](https://www.tidyverse.org/blog/2024/02/ggplot2-3-5-0/#patterns-and-gradients) para las barras usando `{grid}` y diferentes intensidades de colores.
 
 ```{r}
-p1 <- pattern(
-  rectGrob(x = c(.25, .75), y = c(.25, .75), width = .5, height = .5),
-  width = .05,
-  height = .05,
-  extend = "repeat",
-  gp = gpar(fill = c1),
-)
+f_pattern <- function(C) {
+  pattern(
+    gTree(
+      children = gList(
+        rectGrob(
+          x = c(.25, .75),
+          y = c(.25, .75),
+          width = .5,
+          height = .5,
+          gp = gpar(fill = scales::col_darker(C), col = NA)
+        ),
+        rectGrob(
+          x = c(.25, .75),
+          y = c(.75, .25),
+          width = .5,
+          height = .5,
+          gp = gpar(fill = scales::col_lighter(C), col = NA)
+        )
+      )
+    ),
+    width = .05,
+    height = .05,
+    extend = "repeat"
+  )
+}
 
-p2 <- pattern(
-  rectGrob(x = c(.25, .75), y = c(.25, .75), width = .5, height = .5),
-  width = .05,
-  height = .05,
-  extend = "repeat",
-  gp = gpar(fill = c3, alpha = .1),
+p <- map(
+  scico::scico(n = 12, palette = "bam"),
+  f_pattern
 )
 ```
 
@@ -181,34 +197,14 @@ Título  y figura.
 
 ```{r}
 mi_titulo <- glue(
-  "Cantidad de <b style='color: {c3};'>Grandes Maestros</b> del ajedrez por ",
-  "país,<br>masculinos y femeninos, a septiembre de 2025"
+  "Países con mayor cantidad de <b style='color: {c3};'>Grandes Maestros</b> ",
+  " del<br><b style='color: {c4};'>ajedrez</b>, masculinos y femeninos, a ",
+  "septiembre de 2025"
 )
 
 g <- ggplot(d2, aes(n, pais, fill = pais)) +
-  annotate(
-    geom = "rect",
-    xmin = I(0),
-    xmax = I(1),
-    ymin = I(0),
-    ymax = I(1),
-    fill = c4,
-    alpha = .5
-  ) +
-  annotate(
-    geom = "rect",
-    xmin = I(0),
-    xmax = I(1),
-    ymin = I(0),
-    ymax = I(1),
-    fill = p2
-  ) +
-  geom_col(show.legend = FALSE, width = .8, fill = c2) +
-  geom_col(show.legend = FALSE, width = .8) +
+  geom_col(show.legend = FALSE, width = .8, fill = p) +
   scale_x_continuous(breaks = scales::breaks_width(10)) +
-  scale_fill_manual(
-    values = rep(list(p1), nrow(d))
-  ) +
   coord_cartesian(expand = FALSE) +
   labs(x = NULL, y = NULL, title = mi_titulo, caption = mi_caption) +
   theme_bw(base_size = 24, base_family = "ubuntu") +
@@ -218,13 +214,25 @@ g <- ggplot(d2, aes(n, pais, fill = pais)) +
     axis.ticks.y = element_blank(),
     axis.ticks.x = element_line(color = c2, linewidth = .2),
     panel.border = element_blank(),
+    panel.background = element_blank(),
     panel.grid = element_blank(),
+    panel.grid.major.x = element_line(
+      color = c2,
+      linewidth = .1,
+      linetype = "55"
+    ),
+    panel.ontop = TRUE,
     axis.text = element_text(color = c2),
     axis.text.x = element_text(family = "jet"),
+    axis.text.y = element_text(margin = margin(r = 15)),
     plot.background = element_rect(fill = c1, color = NA),
     plot.title = element_markdown(lineheight = 1.2),
     plot.title.position = "plot",
-    plot.caption = element_markdown(size = rel(.6), lineheight = 1.2)
+    plot.caption = element_markdown(
+      size = rel(.6),
+      lineheight = 1.2,
+      color = c4
+    )
   )
 ```
 
