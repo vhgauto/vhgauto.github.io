@@ -281,10 +281,8 @@ est1 {
 // tabs en navbar
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
     font-weight: bold;
-    text-shadow: 2px 2px 2px $c-rojo-oscuro;
-    &hover {
-        color: $c-dorado;
-    }
+    text-shadow: 1px 1px 1px $c-azul-oscuro;
+    color: $c-dorado;
 }
 
 // mi nombre en la barra de navegación
