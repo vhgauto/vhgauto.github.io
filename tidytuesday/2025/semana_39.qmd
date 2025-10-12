@@ -15,9 +15,9 @@ format:
 editor_options:
   chunk_output_type: console
 categories:
-  - GEOM_AAA
-  - GEOM_BBB
-  - GEOM_CCC
+  - geom_tile
+  - geom_segment
+  - geom_image
 execute:
   eval: false
   echo: true
@@ -27,9 +27,7 @@ date: last-modified
 author: Víctor Gauto
 ---
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXX DESCRIPCIÓN DE LA FIGURA XXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Cantidad de grullas observadas en el Lago Hornborgasjön, Suecia.
 
 ::: {.column-page-right}
 
@@ -51,9 +49,9 @@ library(tidyverse)
 Colores.
 
 ```{r}
-c1 <- "#000000"
-c2 <- "#000000"
-c3 <- "#000000"
+c1 <- "#4888B8"
+c2 <- "#C54A52"
+c3 <- "#F6F6F6"
 ```
 
 Fuentes: Ubuntu y JetBrains Mono.
@@ -81,7 +79,7 @@ showtext_opts(dpi = 300)
 fuente <- glue(
   "Datos: <span style='color:{c1};'><span style='font-family:jet;'>",
   "{{<b>tidytuesdayR</b>}}</span> semana 39, ",
-  "<b>---FUENTE---</b>.</span>"
+  "<b>Lake Hornborgasjön</b>.</span>"
 )
 
 autor <- glue("<span style='color:{c1};'>**Víctor Gauto**</span>")
@@ -108,32 +106,113 @@ cranes <- tuesdata$cranes
 
 ## Procesamiento
 
-Me interesa...
+Me interesa los meses y años en los que hubo mayores observaciones de grullas.
+
+Creo etiquetas para los meses y agrego por mes y año, de 2002 en adelante.
 
 ```{r}
-# ggplot(cranes, aes(date, observations, color = weather_disruption)) +
-#   geom_point()
+meses <- toupper(sort(unique(month(cranes$date, label = TRUE, abbr = FALSE))))
 
-cranes |>
-  mutate(año = year(date)) |>
-  reframe(
-    m = mean(observations, na.rm = TRUE),
-    s = sd(observations, na.rm = TRUE),
-    .by = año
+d <- cranes |>
+  mutate(
+    mes = month(date, label = TRUE, abbr = FALSE),
+    año = year(date)
   ) |>
-  ggplot(aes(año, m)) +
-  geom_point() +
-  geom_errorbar(aes(ymin = m - s, ymax = m + s))
-
-
+  mutate(mes = toupper(mes)) |>
+  reframe(
+    s = sum(observations, na.rm = TRUE),
+    .by = c(año, mes)
+  ) |>
+  filter(año >= 2002) |>
+  mutate(mes = factor(mes, levels = meses))
 ```
 
 ## Figura
 
+Logo de la estación de vigilancia en [Lago Hornborgasjön](https://www.hornborga.com/naturen/transtatistik/), en Suecia, y título de la figura.
+
+```{r}
+mi_titulo <- glue(
+  "Observaciones de <b style='color: {c1};'>grullas</b>, por mes y año, en el Lago Hornborgasjön en Suecia"
+)
+
+logo <- "https://www.hornborga.com/wp-content/uploads/Naturum-logotyp-Hornborgasjo%C2%A6en-sv-1.png"
+
+logo_tbl <- tibble(
+  x = I(.94),
+  y = I(1.1),
+  image = logo
+)
+```
+
 Figura.
 
 ```{r}
-g <- ggplot()
+g <- ggplot(d, aes(año, mes, fill = s)) +
+  geom_tile(color = c3, linewidth = 1) +
+  geom_segment(
+    x = 2000,
+    xend = 2024.6,
+    y = 2.5,
+    yend = 2.5,
+    linetype = 2,
+    linewidth = .2
+  ) +
+  ggimage::geom_image(
+    data = logo_tbl,
+    aes(x, y, image = image),
+    size = .5,
+    inherit.aes = FALSE
+  ) +
+  coord_equal(expand = FALSE, clip = "off") +
+  scale_x_continuous(breaks = scales::breaks_width(2)) +
+  tidyterra::scale_fill_whitebox_c(
+    palette = "muted",
+    labels = scales::label_number(scale = 1e-3),
+    name = "Cantidad de\ngrullas, en miles"
+  ) +
+  labs(x = NULL, y = NULL, title = mi_titulo, caption = mi_caption) +
+  theme_classic(base_size = 12, base_family = "ubuntu") +
+  theme(
+    plot.background = element_rect(fill = c3, color = NA),
+    plot.title = element_markdown(
+      hjust = 0,
+      margin = margin(b = 10, t = 5),
+      size = rel(1.5)
+    ),
+    plot.title.position = "panel",
+    plot.caption = element_markdown(
+      color = c2,
+      margin = margin(t = 15),
+      lineheight = 1.1,
+      size = rel(.8)
+    ),
+    axis.line = element_blank(),
+    axis.text.x = element_text(family = "jet", margin = margin(t = 5)),
+    axis.text.y = element_text(
+      face = "bold",
+      hjust = 1,
+      margin = margin(r = 5)
+    ),
+    axis.ticks = element_blank(),
+    legend.background = element_blank(),
+    legend.title = element_text(
+      hjust = 1,
+      margin = margin(r = 20, b = 10),
+      size = rel(.8)
+    ),
+    legend.position = "top",
+    legend.justification.top = c(0, 0),
+    legend.text = element_text(
+      family = "jet",
+      size = rel(.8),
+      margin = margin(t = 3)
+    ),
+    legend.key.height = unit(4, "mm"),
+    legend.key.width = unit(16, "mm"),
+    legend.ticks = element_blank(),
+    legend.box.spacing = unit(0, "mm")
+  )
 ```
 
 Guardo.
@@ -143,9 +222,7 @@ ggsave(
   plot = g,
   filename = "tidytuesday/2025/semana_39.png",
   width = 30,
-  height = 30,
+  height = 11,
   units = "cm"
 )
-
-browseURL(paste0(getwd(), "/tidytuesday/2025/semana_39.png"))
 ```
