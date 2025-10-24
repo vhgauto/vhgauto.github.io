@@ -60,3 +60,5 @@ rsconnect/
 /docs/
 /index_files/
 argentina/vectores/*
+
+**/*.quarto_ipynb
