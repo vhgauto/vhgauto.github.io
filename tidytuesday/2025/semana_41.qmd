@@ -27,9 +27,7 @@ date: last-modified
 author: Víctor Gauto
 ---
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXX DESCRIPCIÓN DE LA FIGURA XXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Evolución de la cantidad de personas obesas en Argentina.
 
 ::: {.column-page-right}
 
