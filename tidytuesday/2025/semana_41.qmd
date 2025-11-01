@@ -15,9 +15,12 @@ format:
 editor_options:
   chunk_output_type: console
 categories:
-  - GEOM_AAA
-  - GEOM_BBB
-  - GEOM_CCC
+  - geom_ribbon
+  - geom_line
+  - geom_segment
+  - geom_point
+  - geom_label
+  - geom_text
 execute:
   eval: false
   echo: true
