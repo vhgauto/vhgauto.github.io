@@ -26,6 +26,8 @@ about:
 execute: 
   echo: false
   eval: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r}
