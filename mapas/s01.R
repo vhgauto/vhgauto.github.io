@@ -1,4 +1,3 @@
-
 # paquetes ----------------------------------------------------------------
 
 # {glue}, {ggtext}, {showtext}, {tidyverse}
@@ -45,20 +44,20 @@ conf2024 <- tuesdata$conf2024
 # me interesa la cantidad de conferencias que hablan de QUARTO entre 2023 y 2024
 
 # cantidad de conferencias que mencionan QUARTO, 2023/2024
-n2023 <- conf2023 |> 
-  mutate(quarto = str_detect(session_abstract, "quarto|Quarto")) |> 
-  dplyr::filter(quarto) |> 
+n2023 <- conf2023 |>
+  mutate(quarto = str_detect(session_abstract, "quarto|Quarto")) |>
+  dplyr::filter(quarto) |>
   nrow()
 
-n2024 <- conf2024 |> 
-  mutate(quarto = str_detect(description, "quarto|Quarto")) |> 
-  dplyr::filter(quarto) |> 
+n2024 <- conf2024 |>
+  mutate(quarto = str_detect(description, "quarto|Quarto")) |>
+  dplyr::filter(quarto) |>
   nrow()
 
 d <- tibble(
   año = c(2023, 2024),
   n = c(n2023, n2024)
-) |> 
+) |>
   mutate(
     año = paste0("posit::conf\n", año)
   )
@@ -83,8 +82,13 @@ g <- ggplot(d, aes(año, n, label = n)) +
   geom_col(fill = c1) +
   geom_text(vjust = -.2, family = "jet", size = 9, color = c2) +
   annotate(
-    geom = "richtext", x = 2.12, y = 25, label = logo_img, fill = NA,
-    vjust = -1.2, label.color = NA
+    geom = "richtext",
+    x = 2.12,
+    y = 25,
+    label = logo_img,
+    fill = NA,
+    vjust = -1.2,
+    label.color = NA
   ) +
   scale_y_continuous(limits = c(0, 25)) +
   coord_cartesian(expand = FALSE, xlim = c(.5, 2.5), clip = "off") +
@@ -95,10 +99,15 @@ g <- ggplot(d, aes(año, n, label = n)) +
     plot.margin = margin(25, 5, 5, 5),
     plot.background = element_rect(fill = c3, color = NA),
     plot.subtitle = element_markdown(
-      color = c4, size = 30, lineheight = 1.3, margin = margin(b = 30, l = 20)
+      color = c4,
+      size = 30,
+      lineheight = 1.3,
+      margin = margin(b = 30, l = 20)
     ),
     plot.caption = element_markdown(
-      color = c2, lineheight = 1.2, margin = margin(b = 5, t = 20)
+      color = c2,
+      lineheight = 1.2,
+      margin = margin(b = 5, t = 20)
     ),
     axis.text.x = element_text(margin = margin(t = 5), family = "jet"),
   )
