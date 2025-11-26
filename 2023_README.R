@@ -1,4 +1,3 @@
-
 # paquetes ----------------------------------------------------------------
 
 library(tidyverse)
@@ -15,7 +14,7 @@ filas <- l_tbl |>
   pull(fila)
 
 desc <- l_tbl |>
-  filter(fila %in% c(filas+2)) |>
+  filter(fila %in% c(filas + 2)) |>
   pull(tex)
 
 desc_tbl <- l_tbl |>
@@ -29,4 +28,3 @@ desc_tbl <- l_tbl |>
     semana = if_else(semana == "Semana 7", "Semana 07", semana)
   ) |>
   arrange(semana)
-
