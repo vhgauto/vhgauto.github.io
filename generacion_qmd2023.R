@@ -1,4 +1,3 @@
-
 # paquetes ----------------------------------------------------------------
 
 library(tidyverse)
@@ -42,7 +41,10 @@ x_script
 f_link <- function(x) {
   paste0(
     "https://raw.githubusercontent.com/vhgauto/tidytuesday/refs/heads/main/2023/semana_",
-    x, "/2023-s", x, "_script.R"
+    x,
+    "/2023-s",
+    x,
+    "_script.R"
   )
 }
 
@@ -50,7 +52,8 @@ f_link <- function(x) {
 f_imagen <- function(x) {
   paste0(
     "https://raw.githubusercontent.com/vhgauto/tidytuesday/refs/heads/main/2023/semana_",
-    x,"/viz.png"
+    x,
+    "/viz.png"
   )
 }
 
@@ -107,18 +110,22 @@ f_principal <- function(semana) {
   descripcion <- f_readme(semana)
 
   prologo <- f_prologo(
-    semana = semana, fecha = fecha, categorias = categ, imagen = i
+    semana = semana,
+    fecha = fecha,
+    categorias = categ,
+    imagen = i
   )
 
   qmd <- f_qmd(
-    prologo = prologo, descripcion = descripcion,
-    script = str_flatten(ll, "\n"), imagen = i
+    prologo = prologo,
+    descripcion = descripcion,
+    script = str_flatten(ll, "\n"),
+    imagen = i
   )
 
   writeLines(qmd, paste0("tidytuesday/2023/semana_", semana, ".qmd"))
 
   print(glue::glue("\n\n--- Semana {semana} --- \n\n"))
-
 }
 
 f_readme <- function(x) {
@@ -139,7 +146,7 @@ filas <- l_tbl |>
   pull(fila)
 
 desc <- l_tbl |>
-  filter(fila %in% c(filas+2)) |>
+  filter(fila %in% c(filas + 2)) |>
   pull(tex)
 
 readme_tbl <- l_tbl |>
