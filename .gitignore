@@ -4,6 +4,8 @@
 test*
 .chromote*
 cookies*
+argentina/.edificios.R
+argentina/tile_index.gpkg
 
 # History files
 .Rhistory
