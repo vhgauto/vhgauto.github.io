@@ -6,6 +6,8 @@ test*
 cookies*
 argentina/.edificios.R
 argentina/tile_index.gpkg
+argentina/l.gpkg
+mapas/s01.R
 
 # History files
 .Rhistory
