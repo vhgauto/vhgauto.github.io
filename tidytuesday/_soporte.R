@@ -1,4 +1,3 @@
-
 # browseURL("https://nrennie.rbind.io/blog/script-templates-r/")
 
 # mensaje -----------------------------------------------------------------
@@ -8,7 +7,8 @@ mensaje <- function(x) {
     crayon::bgBlack(
       crayon::white(
         glue::glue(
-          "\n\n--- {x} ---\n\n\n")
+          "\n\n--- {x} ---\n\n\n"
+        )
       )
     )
   )
@@ -20,7 +20,6 @@ mensaje <- function(x) {
 # de los datos de {tidytuesday} de la semana de interés
 
 nueva_semana <- function(semana_numero, año = 2025) {
-
   semana_numero <<- semana_numero
 
   # nombre de la carpeta a crear
@@ -39,7 +38,6 @@ nueva_semana <- function(semana_numero, año = 2025) {
     as.numeric()
 
   if (length(semanas_ok) != 0 & mean(semanas_ok == semana_numero) != 0) {
-
     mensaje("Semana ya creada")
 
     system(glue::glue("open {new_file}"))
@@ -49,7 +47,6 @@ nueva_semana <- function(semana_numero, año = 2025) {
 
   # verifico que el número de semana sea correcto
   if (semana_numero %% as.integer(semana_numero) != 0) {
-
     stop(
       mensaje("Número de semana en formato incorrecto")
     )
@@ -61,7 +58,9 @@ nueva_semana <- function(semana_numero, año = 2025) {
     to = lubridate::ymd(paste0(año, "1231")),
     by = "1 day"
   )
-  fecha_tidytuesday <- i[lubridate::week(i) == semana_numero & lubridate::wday(i) == 3]
+  fecha_tidytuesday <- i[
+    lubridate::week(i) == semana_numero & lubridate::wday(i) == 3
+  ]
 
   if (!file.exists(new_file)) {
     file.create(new_file)
@@ -78,7 +77,11 @@ nueva_semana <- function(semana_numero, año = 2025) {
 
     r_txt <- gsub(
       pattern = "X_semana",
-      replacement = if (semana_numero < 10) paste0("0", semana_numero) else semana_numero,
+      replacement = if (semana_numero < 10) {
+        paste0("0", semana_numero)
+      } else {
+        semana_numero
+      },
       x = r_txt
     )
 
@@ -92,11 +95,9 @@ nueva_semana <- function(semana_numero, año = 2025) {
     writeLines(r_txt, con = new_file)
 
     mensaje(glue::glue("Script creado para semana {semana_numero}"))
-
   }
 
   file.edit(paste0(getwd(), '/', new_file))
-
 }
 
 l <- list.files("tidytuesday/2025/")
