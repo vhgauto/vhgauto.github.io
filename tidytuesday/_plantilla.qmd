@@ -132,5 +132,5 @@ ggsave(
   units = "cm"
 )
 
-browseURL(paste0(getwd(), "/tidytuesday/X_año/semana_X_semana.png"))
+browseURL("tidytuesday/X_año/semana_X_semana.png")
 ```
