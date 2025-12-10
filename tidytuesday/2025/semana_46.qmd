@@ -162,7 +162,7 @@ cuadro <- distinct(d, book_label) |>
 Título y subtítulo.
 
 ```{r}
-mi_titulo <- glue("The Adventure of<span style='color:{c7};'>—</span>the...")
+mi_titulo <- glue("The Adventure of<span style='color:{c7};'>...</span>the...")
 mi_subtitulo <- glue(
   "Las <b style='color: {c4}'>5</b> palabras más frecuentes en una ",
   "selección de<br>historias de <b style='color: {c4}'>Sherlock Holmes</b>"
@@ -199,7 +199,7 @@ g <- ggplot(
     size = c(22, 6, 4),
     layout = 22,
     color = c(c1, c5, c5),
-    hjust = c(-.36, .5, .5)
+    hjust = c(-.3, .5, .5)
   ) +
   facet_wrap(vars(book_label), nrow = 5, scales = "free") +
   scale_y_reordered(labels = 5:1) +
