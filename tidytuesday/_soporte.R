@@ -19,7 +19,7 @@ mensaje <- function(x) {
 # función que crea una nueva carpeta con un script para el procesamiento
 # de los datos de {tidytuesday} de la semana de interés
 
-nueva_semana <- function(semana_numero, año = 2025) {
+nueva_semana <- function(semana_numero, año = 2026) {
   semana_numero <<- semana_numero
 
   # nombre de la carpeta a crear
@@ -100,7 +100,7 @@ nueva_semana <- function(semana_numero, año = 2025) {
   file.edit(paste0(getwd(), '/', new_file))
 }
 
-l <- list.files("tidytuesday/2025/")
+l <- list.files("tidytuesday/2026/")
 m <- l[stringr::str_detect(l, "semana_(.+)qmd")] |>
   stringr::str_extract(pattern = "semana_(.+)\\.qmd", group = 1) |>
   as.numeric() |>
