@@ -1,0 +1,237 @@
+---
+format:
+  html:
+    code-fold: show
+    code-summary: "Ocultar código"
+    code-line-numbers: false
+    code-annotations: false
+    code-link: true
+    code-tools:
+        source: true
+        toggle: true
+        caption: "Código"
+    code-overflow: scroll
+    page-layout: full
+editor_options:
+  chunk_output_type: console
+categories:
+  - GEOM_AAA
+  - GEOM_BBB
+  - GEOM_CCC
+execute:
+  eval: false
+  echo: true
+  warning: false
+title: "Semana 02"
+date: last-modified
+author: Víctor Gauto
+---
+
+[Lenguajes de África](https://en.wikipedia.org/wiki/Languages_of_Africa), ordenados por cantidad de personas que los hablan.
+
+::: {.column-page-right}
+
+![Semana 02, 2026](semana_02.png)
+
+:::
+
+## Paquetes
+
+```{r}
+library(glue)
+library(ggtext)
+library(showtext)
+library(tidyverse)
+```
+
+## Estilos
+
+Colores de la [bandera panafricana](https://en.wikipedia.org/wiki/Pan-African_flag).
+
+```{r}
+c1 <- "#AC3E48"
+c2 <- "#000000"
+c3 <- "#00863D"
+```
+
+Fuentes: Ubuntu, JetBrains Mono y Anton.
+
+```{r}
+font_add(
+  family = "ubuntu",
+  regular = "././fuente/Ubuntu-Regular.ttf",
+  bold = "././fuente/Ubuntu-Bold.ttf",
+  italic = "././fuente/Ubuntu-Italic.ttf"
+)
+
+font_add(
+  family = "jet",
+  regular = "././fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf"
+)
+
+font_add_google(
+  name = "Anton",
+  family = "anton"
+)
+
+showtext_auto()
+showtext_opts(dpi = 300)
+```
+
+## Epígrafe
+
+```{r}
+fuente <- glue(
+  "Datos: <span style='color:{c1};'><span style='font-family:jet;'>",
+  "{{<b>tidytuesdayR</b>}}</span> semana 02, ",
+  "<b>Languages of Africa, Wikipedia</b>.</span>"
+)
+
+autor <- glue("<span style='color:{c1};'>**Víctor Gauto**</span>")
+icon_twitter <- glue("<span style='font-family:jet;'>&#xf099;</span>")
+icon_instagram <- glue("<span style='font-family:jet;'>&#xf16d;</span>")
+icon_github <- glue("<span style='font-family:jet;'>&#xf09b;</span>")
+icon_mastodon <- glue("<span style='font-family:jet;'>&#xf0ad1;</span>")
+icon_bsky <- glue("<span style='font-family:jet;'>&#xe28e;</span>")
+usuario <- glue("<span style='color:{c1};'>**vhgauto**</span>")
+sep <- glue("**|**")
+
+mi_caption <- glue(
+  "{fuente}<br>{autor} {sep} {icon_github} {icon_twitter} {icon_instagram} ",
+  "{icon_mastodon} {icon_bsky} {usuario}"
+)
+```
+
+## Datos
+
+```{r}
+tuesdata <- tidytuesdayR::tt_load(2026, 02)
+africa <- tuesdata$africa
+```
+
+## Procesamiento
+
+Me interesa visualizar todos los idiomas, ordenados por la cantidad de hablantes, con una animación en `.mp4`.
+
+Agrego estilo al número de posición y lenguaje.
+
+```{r}
+d <- africa |>
+  reframe(s = sum(native_speakers), .by = language) |>
+  mutate(language = str_wrap(language, 20)) |>
+  mutate(language = str_replace(language, "\\n", "<br>")) |>
+  mutate(language = fct_reorder(language, s)) |>
+  mutate(language = fct_rev(language)) |>
+  arrange(desc(language)) |>
+  mutate(id = row_number()) |>
+  mutate(
+    label = glue(
+      "<span style='color:#4d4d4d;font-size:8pt;'>{id}. </span>",
+      "<b style='font-size:9pt;'>{language}</b>"
+    )
+  )
+```
+
+Mapa del continente africano.
+
+```{r}
+af <- filter(rnaturalearth::ne_countries(), continent == "Africa") |>
+  terra::vect() |>
+  terra::aggregate()
+```
+
+## Figura
+
+Colores para cada idioma.
+
+```{r}
+col <- rep(
+  colorRampPalette(c(c1, c2, c3))(20),
+  length.out = nrow(d)
+)
+```
+
+Función para generar y almacenar cada fotograma de la animación.
+
+```{r}
+f_gg <- function(i) {
+  ii <- str_pad(as.character(i), width = 3, pad = "0")
+  g <- ggplot() +
+    tidyterra::geom_spatvector(
+      data = af,
+      fill = "grey95",
+      color = NA
+    ) +
+    annotate(
+      geom = "richtext",
+      x = I(.5),
+      y = I(seq(1, 0, length.out = 10)),
+      label = filter(d, between(id, i, i + 9))$label,
+      fill = NA,
+      color = col[i],
+      lineheight = 0,
+      family = "anton",
+      label.padding = unit(7, "lines"),
+      label.color = NA
+    ) +
+    coord_sf(clip = "off", expand = FALSE) +
+    labs(
+      title = glue(
+        "Los lenguajes de <b style='color: {c1};'>ÁFRICA</b>"
+      ),
+      caption = mi_caption
+    ) +
+    theme_void(base_family = "ubuntu", base_size = 5) +
+    theme_sub_axis_y(text = element_blank()) +
+    theme_sub_plot(
+      background = element_rect(fill = "grey80"),
+      title = element_markdown(
+        color = c3,
+        size = 10,
+        margin = margin(t = 3, b = 8)
+      ),
+      caption = element_markdown(
+        margin = margin(t = 10, b = 1),
+        color = c3,
+        hjust = .5
+      )
+    )
+
+  ggsave(
+    g,
+    filename = paste0("tidytuesday/2026/.semana_02/", ii, ".png"),
+    width = 700,
+    height = 700,
+    units = "px",
+    dpi = 300
+  )
+  cat("\n--", ii, "--\n")
+}
+```
+
+Itero para todos los idiomas.
+
+```{r}
+ti <- 1
+tf <- nrow(d) - 9
+walk(ti:tf, f_gg)
+```
+
+Genero el video a partir de los `.png`.
+
+```{r}
+av::av_encode_video(
+  input = list.files(
+    "tidytuesday/2026/.semana_02/",
+    full.names = TRUE
+  ),
+  output = "tidytuesday/2026/semana_02.mp4",
+  framerate = 7
+)
+```
+
+Elimino las figuras individuales.
+
+```{r}
+unlink("tidytuesday/2026/.semana_02/", recursive = TRUE)
+```
