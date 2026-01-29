@@ -15,9 +15,7 @@ format:
 editor_options:
   chunk_output_type: console
 categories:
-  - GEOM_AAA
-  - GEOM_BBB
-  - GEOM_CCC
+  - geom_spatvector
 execute:
   eval: false
   echo: true
