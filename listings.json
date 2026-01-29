@@ -76,6 +76,16 @@
     ]
   },
   {
+    "listing": "/publicaciones/index.html",
+    "items": []
+  },
+  {
+    "listing": "/mapas.html",
+    "items": [
+      "/mapas/mapa1.html"
+    ]
+  },
+  {
     "listing": "/tidytuesday/2024/index.html",
     "items": [
       "/tidytuesday/2024/semana_53.html",
@@ -131,16 +141,6 @@
       "/tidytuesday/2024/semana_03.html",
       "/tidytuesday/2024/semana_02.html"
     ]
-  },
-  {
-    "listing": "/mapas.html",
-    "items": [
-      "/mapas/mapa1.html"
-    ]
-  },
-  {
-    "listing": "/publicaciones/index.html",
-    "items": []
   },
   {
     "listing": "/tidytuesday/2023/index.html",
