@@ -29,7 +29,7 @@ author: Víctor Gauto
 
 ::: {.column-page-right}
 
-![Semana 02, 2026](semana_02.png)
+![Semana 02, 2026](semana_02.mp4)
 
 :::
 
