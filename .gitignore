@@ -8,6 +8,7 @@ argentina/.edificios.R
 argentina/tile_index.gpkg
 argentina/l.gpkg
 mapas/s01.R
+tidytuesday/2026/.test
 
 # History files
 .Rhistory
