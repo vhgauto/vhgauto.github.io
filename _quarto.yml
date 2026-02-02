@@ -61,12 +61,14 @@ website:
       contents:
         - href: tidytuesday/index.qmd
           text: "Inicio"
-        - section: "2025"
-          contents: tidytuesday/2025/*
-        - section: "2024"
-          contents: tidytuesday/2024/*
-        - section: "2023"
-          contents: tidytuesday/2023/*
+        - href: tidytuesday/2026/index.qmd
+          text: "2026"
+        - href: tidytuesday/2025/index.qmd
+          text: "2025"
+        - href: tidytuesday/2024/index.qmd
+          text: "2024"
+        - href: tidytuesday/2023/index.qmd
+          text: "2023"
     - title: "Mapas de Argentina"
       collapse-level: 2
       style: "floating"
