@@ -1,0 +1,175 @@
+---
+format:
+  html:
+    code-fold: show
+    code-summary: "Ocultar código"
+    code-line-numbers: false
+    code-annotations: false
+    code-link: true
+    code-tools:
+        source: true
+        toggle: true
+        caption: "Código"
+    code-overflow: scroll
+    page-layout: full
+    auto-play-media: true
+editor_options:
+  chunk_output_type: console
+execute:
+  eval: false
+  echo: true
+  warning: false
+title: "Semana 03"
+date: last-modified
+author: Víctor Gauto
+---
+
+Animación de imágenes de [Astronomy Picture of the Day](https://apod.nasa.gov/apod/astropix.html) relacionadas a **Argentina**.
+
+::: {.column-page-right}
+
+![Semana 03, 2026](semana_03.mp4){loop=True}
+
+:::
+
+## Paquetes
+
+```{r}
+library(glue)
+library(ggtext)
+library(showtext)
+library(tidyverse)
+library(magick)
+```
+
+## Estilos
+
+Colores.
+
+```{r}
+c1 <- "#000000"
+c2 <- "#000000"
+c3 <- "#000000"
+```
+
+## Epígrafe
+
+```{r}
+mi_caption <- "Selección de fotografías asociadas a ARGENTINA \n {tidytuesdayR} semana 3 | Víctor Gauto | @vhgauto"
+```
+
+## Datos
+
+```{r}
+tuesdata <- tidytuesdayR::tt_load(2026, 03)
+apod <- tuesdata$apod
+```
+
+## Procesamiento
+
+Me interesan sólamente aquellas imágenes asociadas a **Argentina** y crear una animación con todas ellas.
+
+Selecciono imágenes que en su descripción mencionen **Argentina**, creo una columna para identificar la imagen y remuevo saltos de línea al inicio y final del copyright.
+
+```{r}
+d <- apod |>
+  filter(str_detect(explanation, "Argentina")) |>
+  select(copyright, date, url) |>
+  mutate(id = str_pad(row_number(), width = 2, pad = "0")) |>
+  drop_na() |>
+  mutate(copyright = str_remove(copyright, "\n")) |>
+  mutate(copyright = str_remove(copyright, "\n$"))
+```
+
+Selecciono las columnas de identificación de cada imagen y la URL. Descargo todas las imágenes disponibles.
+
+```{r}
+pwalk(
+  select(d, id, url),
+  \(id, url) {
+    download.file(
+      url = url,
+      destfile = paste0("tidytuesday/2026/.test/", id, ".jpg"),
+      mode = "wb",
+      quiet = TRUE
+    )
+    cat(id, "\n")
+  }
+)
+```
+
+## Figura
+
+Función que toma cada imagen descargada y obtiene su tamaño. De acuerdo a la relación altura/ancho, se define el nuevo tamaño de la imagen. Luego, se extiende a un tamaño unificado (1000x1300) y se añaden anotaciones: título, copyright, fecha, descripción y fuente.
+
+```{r}
+f_image <- function(i) {
+  ii <- str_pad(i, width = 2, pad = "0")
+  lista_img <- list.files("tidytuesday/2026/.test/", full.names = TRUE)
+  ancho <- image_read(path = lista_img[i]) |>
+    image_info() |>
+    pull(width)
+
+  alto <- image_read(path = lista_img[i]) |>
+    image_info() |>
+    pull(height)
+
+  if (ancho >= alto) {
+    geo <- "1000x"
+  } else {
+    geo <- "x1000"
+  }
+
+  image_read(
+    path = list.files("tidytuesday/2026/.test/", full.names = TRUE)[i]
+  ) |>
+    image_scale(geometry = geo) |>
+    image_extent("1200x1300", color = 'white') |>
+    image_annotate(
+      text = "Astronomy Picture of the Day",
+      size = 50,
+      font = "Times",
+      gravity = "north",
+      location = "+0+10",
+      weight = 800
+    ) |>
+    image_annotate(
+      text = paste0(d$copyright[i], " | ", d$date[i]),
+      size = 20,
+      font = "Trebuchet",
+      gravity = "northwest",
+      location = "+10+70"
+    ) |>
+    image_annotate(
+      text = mi_caption,
+      size = 20,
+      font = "Trebuchet",
+      gravity = "southeast",
+      location = "+10+10"
+    ) |>
+    image_write(paste0("tidytuesday/2026/.test2/", ii, ".jpg"))
+  cat(ii, "\n")
+}
+```
+
+Ejecuto para todas las imágenes disponibles.
+
+```{r}
+walk(1:nrow(d), f_image)
+```
+
+Creo la animación a partir de todas las imágenes generadas.
+
+```{r}
+av::av_encode_video(
+  input = list.files("tidytuesday/2026/.test2/", full.names = TRUE),
+  output = "tidytuesday/2026/semana_03.mp4",
+  framerate = 2
+)
+```
+
+Elimino todas las figuras creadas.
+
+```{r}
+unlink("tidytuesday/2026/.test2/", recursive = TRUE)
+```
