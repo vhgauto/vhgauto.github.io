@@ -104,6 +104,8 @@ d2_pips <- inner_join(
   ) |>
   mutate(dificultad_label = fct_reorder(dificultad_label, as.numeric(tiempo)))
 
+ancho_min <- 120
+
 g_pips <- ggplot(
   d2_pips,
   aes(as.numeric(tiempo), dificultad_label, fill = dificultad)
@@ -122,8 +124,8 @@ g_pips <- ggplot(
     values = colores
   ) +
   scale_x_continuous(
-    breaks = scales::breaks_width(60),
-    labels = \(x) paste0(x / 60, "m")
+    breaks = scales::breaks_width(ancho_min),
+    labels = \(x) paste0(x / ancho_min, "m")
   ) +
   theme_classic(base_family = "Ubuntu") +
   theme(
