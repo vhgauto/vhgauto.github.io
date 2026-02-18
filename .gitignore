@@ -9,6 +9,7 @@ argentina/tile_index.gpkg
 argentina/l.gpkg
 mapas/s01.R
 tidytuesday/2026/.test
+tidytuesday/2026/temp
 
 # History files
 .Rhistory
