@@ -120,7 +120,7 @@ d <- africa |>
   mutate(language = str_replace(language, "\\n", "<br>")) |>
   mutate(language = fct_reorder(language, s)) |>
   mutate(language = fct_rev(language)) |>
-  arrange(desc(language)) |>
+  arrange(language) |>
   mutate(id = row_number()) |>
   mutate(
     label = glue(
