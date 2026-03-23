@@ -10,6 +10,7 @@ argentina/l.gpkg
 mapas/s01.R
 tidytuesday/2026/.test
 tidytuesday/2026/temp
+.env
 
 # History files
 .Rhistory
