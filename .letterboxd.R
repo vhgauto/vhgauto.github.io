@@ -1,28 +1,21 @@
-library(chromote)
+readRenviron(".env")
 
-# https://rstudio.github.io/chromote/
+m <- readr::read_tsv("datos/m.tsv", show_col_types = FALSE)
 
-b <- ChromoteSession$new()
-b$go_to("https://letterboxd.com/vhgauto/")
-b$screenshot("img/posters.png", selector = ".poster-list", expand = 7)
-b$close()
+f_poster <- function(id) {
+  l <- TMDb::search_movie(
+    api_key = Sys.getenv("api_key_TMDb"),
+    query = m$movie[id]
+  )$results$poster_path[1]
 
-# 150 X 225
+  download.file(
+    url = paste0("https://image.tmdb.org/t/p/original/", l),
+    mode = "wb",
+    quiet = TRUE,
+    destfile = paste0("img/poster_", id, ".jpg")
+  )
 
-i <- magick::image_read("img/posters.png")
-
-f_poster <- function(M) {
-  i |>
-    magick::image_crop(
-      geometry = magick::geometry_area(
-        width = 150,
-        height = 225,
-        x_off = 7 + (150 + 10) * M,
-        y_off = 7
-      ),
-      gravity = "NorthEast"
-    ) |>
-    magick::image_write(paste0("img/poster_", M + 1, ".png"))
+  cat("Poster ", id, "🆗\n")
 }
 
-purrr::walk(0:3, f_poster)
+purrr::walk(1:4, f_poster)
