@@ -31,10 +31,12 @@ editor_options:
 ---
 
 ```{r}
+#| warning: false
+#| output: false
 source(".soporte.R")
 source(".sudoku.R")
 source(".pips.R")
-# source(".letterboxd.R")
+source(".letterboxd.R")
 ```
 
 ::: {#about-cv}
@@ -48,7 +50,7 @@ Las últimas cuatro películas que he visto. [Perfil en Letterboxd {{< iconify f
 
 <center>
 
-![](img/poster_4.png) ![](img/poster_3.png) ![](img/poster_2.png) ![](img/poster_1.png)
+![](img/poster_1.jpg){width="170px"} ![](img/poster_2.jpg){width="170px"} ![](img/poster_3.jpg){width="170px"} ![](img/poster_4.jpg){width="170px"}
 
 </center>
 
