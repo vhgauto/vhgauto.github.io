@@ -1,0 +1,206 @@
+---
+format:
+  html:
+    code-fold: show
+    code-summary: "Ocultar código"
+    code-line-numbers: false
+    code-annotations: false
+    code-link: true
+    code-tools:
+        source: true
+        toggle: true
+        caption: "Código"
+    code-overflow: scroll
+    page-layout: full
+editor_options:
+  chunk_output_type: console
+categories:
+  - geom_point
+execute:
+  eval: false
+  echo: true
+  warning: false
+title: "24 de Marzo"
+date: last-updated
+author: Víctor Gauto
+---
+
+::: {.column-page}
+
+![](24_marzo.png)
+
+24 de Marzo de 2026, Día Nacional de la Memoria por la Verdad y la Justicia. A 50 años del golpe de Estado cívico militar en Argentina.
+
+:::
+
+Paquetes.
+
+```{r}
+library(showtext)
+library(ggtext)
+library(glue)
+library(tidyverse)
+```
+
+Fuentes, colores y autor.
+
+```{r}
+font_add(
+  family = "jet",
+  regular = "./fuente/JetBrainsMonoNLNerdFontMono-Regular.ttf"
+)
+
+showtext_auto()
+showtext_opts(dpi = 300)
+
+celeste <- "#00c8ff"
+sol <- "#ffc800"
+blanco <- "#ffffff"
+gris <- "#1a1a1a"
+
+nombre <- glue("<span style='color:{celeste};'>**Víctor Gauto**</span>")
+icon_twitter <- glue("<span style='font-family:jet;'>&#xf099;</span>")
+icon_instagram <- glue("<span style='font-family:jet;'>&#xf16d;</span>")
+icon_github <- glue("<span style='font-family:jet;'>&#xf09b;</span>")
+icon_mastodon <- glue("<span style='font-family:jet;'>&#xf0ad1;</span>")
+icon_bsky <- glue("<span style='font-family:jet;'>&#xe28e;</span>")
+usuario <- glue("<span style='color:{celeste};'>**vhgauto**</span>")
+sep <- glue("**|**")
+
+autor <- glue(
+  "{nombre} {sep} {icon_github} {icon_twitter} {icon_instagram} ",
+  "{icon_mastodon} {icon_bsky} {usuario}"
+)
+```
+
+
+Defino características de la figura, como cantidad de elementos, ancho y alto, separación entre franjas horizontales, posición del Sol.
+
+```{r}
+n <- 30000
+
+ancho <- 220
+alto <- ceiling(n / ancho)
+
+lim_v <- seq(1, alto, length.out = 4) |>
+  round()
+
+delta <- 0
+
+centro_x <- ancho / 2
+centro_y <- alto / 2
+r <- 19
+```
+
+Archivo `.svg` del [ícono del pañuelo](https://argob.github.io/poncho/identidad/iconos/) de las Madres de Plaza de Mayo, creo diferentes versiones con los colores de la [bandera Argentina](https://servicios.infoleg.gob.ar/infolegInternet/anexos/405000-409999/409284/res55-2.pdf) y función para identificar aquellos elementos que pertenezcan al Sol.
+
+```{r}
+svg <- paste(readLines("viz/temp/madres.svg"), collapse = "\n")
+
+svg_blanco <- sub("path", glue("path fill='{blanco}' "), svg)
+svg_celeste <- sub("path", glue("path fill='{celeste}' "), svg)
+svg_sol <- sub("path", glue("path fill='{sol}' "), svg)
+
+f_sol <- function(X, Y) {
+  sqrt((X - centro_x)^2 + (Y - centro_y)^2) <= r
+}
+```
+
+Creo tibble con las coordenadas de 30.000 elementos, indicando el ícono que le corresponde a cada uno, de acuerdo a la posición.
+
+```{r}
+d <- expand_grid(
+  y = alto:0,
+  x = 0:ancho
+) |>
+  slice_head(n = n) |>
+  mutate(id = 1:n) |>
+  mutate(
+    svg = case_when(
+      y >= lim_v[3] + delta ~ svg_celeste,
+      y < lim_v[2] - delta ~ svg_celeste,
+      .default = svg_blanco
+    )
+  ) |>
+  mutate(svg = if_else(f_sol(x, y), svg_sol, svg))
+```
+
+Título, subtítulo y tamaño de los elementos.
+
+```{r}
+titulo <- "MEMORIA, VERDAD Y JUSTICIA"
+subtitulo <- "30.000 <img src='viz/temp/madres_blanco.png' width=35 />, uno por cada detenido desaparecido"
+
+tamaño_svg <- 2.2
+```
+
+Figura.
+
+```{r}
+g <- ggplot() +
+  ggsvg::geom_point_svg(
+    data = filter(d, str_detect(svg, celeste)),
+    aes(x, y),
+    size = tamaño_svg,
+    svg = svg_celeste,
+    show.legend = FALSE
+  ) +
+  ggsvg::geom_point_svg(
+    data = filter(d, str_detect(svg, sol)),
+    aes(x, y),
+    size = tamaño_svg,
+    svg = svg_sol,
+    show.legend = FALSE
+  ) +
+  ggsvg::geom_point_svg(
+    data = filter(d, str_detect(svg, blanco)),
+    aes(x, y),
+    size = tamaño_svg,
+    svg = svg_blanco,
+    show.legend = FALSE
+  ) +
+  scale_color_identity() +
+  coord_equal(expand = TRUE, clip = "off") +
+  labs(
+    title = titulo,
+    subtitle = subtitulo,
+    caption = autor
+  ) +
+  theme_void(base_family = "serif") +
+  theme_sub_plot(
+    background = element_rect(fill = gris),
+    title = element_text(
+      color = blanco,
+      face = "bold",
+      hjust = .5,
+      size = 80
+    ),
+    subtitle = element_markdown(
+      color = blanco,
+      face = "bold",
+      hjust = .5,
+      size = 50
+    ),
+    caption = element_markdown(
+      color = blanco,
+      margin = margin(r = 80, b = 10),
+      size = 20
+    )
+  )
+```
+
+Almaceno la figura indicando el ancho del archivo y la relación de aspecto.
+
+```{r}
+ancho_img <- 60
+alto_img <- ancho_img / 1.3
+
+ggsave(
+  plot = g,
+  filename = "viz/24_marzo.png",
+  width = ancho_img,
+  height = alto_img,
+  units = "cm"
+)
+```
+
