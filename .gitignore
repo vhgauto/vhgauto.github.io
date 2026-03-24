@@ -11,6 +11,7 @@ mapas/s01.R
 tidytuesday/2026/.test
 tidytuesday/2026/temp
 .env
+viz/temp/
 
 # History files
 .Rhistory
