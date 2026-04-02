@@ -15,7 +15,7 @@ format:
 editor_options:
   chunk_output_type: console
 categories:
-  - geom_point
+  - geom_point_svg
 execute:
   eval: false
   echo: true
