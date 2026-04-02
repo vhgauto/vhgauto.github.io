@@ -1,18 +1,5 @@
 [
   {
-    "listing": "/argentina/instalaciones/index.html",
-    "items": [
-      "/argentina/instalaciones/parques_nacionales.html",
-      "/argentina/instalaciones/faros.html",
-      "/argentina/instalaciones/educacion.html",
-      "/argentina/instalaciones/aeropuertos.html",
-      "/argentina/instalaciones/plantas_potabilizadoras.html",
-      "/argentina/instalaciones/red_electrica.html",
-      "/argentina/instalaciones/buzones.html",
-      "/argentina/instalaciones/estaciones_smn.html"
-    ]
-  },
-  {
     "listing": "/publicaciones/index.html",
     "items": []
   },
@@ -74,18 +61,6 @@
     ]
   },
   {
-    "listing": "/tidytuesday/2026/index.html",
-    "items": [
-      "/tidytuesday/2026/semana_08.html",
-      "/tidytuesday/2026/semana_07.html",
-      "/tidytuesday/2026/semana_06.html",
-      "/tidytuesday/2026/semana_05.html",
-      "/tidytuesday/2026/semana_04.html",
-      "/tidytuesday/2026/semana_03.html",
-      "/tidytuesday/2026/semana_02.html"
-    ]
-  },
-  {
     "listing": "/tidytuesday/2025/index.html",
     "items": [
       "/tidytuesday/2025/semana_52.html",
@@ -142,6 +117,19 @@
     ]
   },
   {
+    "listing": "/tidytuesday/2026/index.html",
+    "items": [
+      "/tidytuesday/2026/semana_09.html",
+      "/tidytuesday/2026/semana_08.html",
+      "/tidytuesday/2026/semana_07.html",
+      "/tidytuesday/2026/semana_06.html",
+      "/tidytuesday/2026/semana_05.html",
+      "/tidytuesday/2026/semana_04.html",
+      "/tidytuesday/2026/semana_03.html",
+      "/tidytuesday/2026/semana_02.html"
+    ]
+  },
+  {
     "listing": "/tidytuesday/2023/index.html",
     "items": [
       "/tidytuesday/2023/semana_52.html",
@@ -189,9 +177,16 @@
     ]
   },
   {
-    "listing": "/mapas.html",
+    "listing": "/argentina/instalaciones/index.html",
     "items": [
-      "/mapas/mapa1.html"
+      "/argentina/instalaciones/parques_nacionales.html",
+      "/argentina/instalaciones/faros.html",
+      "/argentina/instalaciones/plantas_potabilizadoras.html",
+      "/argentina/instalaciones/educacion.html",
+      "/argentina/instalaciones/aeropuertos.html",
+      "/argentina/instalaciones/buzones.html",
+      "/argentina/instalaciones/red_electrica.html",
+      "/argentina/instalaciones/estaciones_smn.html"
     ]
   },
   {
@@ -199,6 +194,12 @@
     "items": [
       "/argentina/animaciones/crecimiento_rutas.html",
       "/argentina/animaciones/torres_celulares.html"
+    ]
+  },
+  {
+    "listing": "/mapas.html",
+    "items": [
+      "/mapas/mapa1.html"
     ]
   }
 ]
