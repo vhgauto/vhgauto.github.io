@@ -70,3 +70,4 @@ rsconnect/
 argentina/vectores/*
 
 **/*.quarto_ipynb
+.positai
