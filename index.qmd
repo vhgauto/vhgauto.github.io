@@ -36,7 +36,7 @@ editor_options:
 source(".soporte.R")
 source(".sudoku.R")
 source(".pips.R")
-source(".letterboxd.R")
+# source(".letterboxd.R")
 ```
 
 ::: {#about-cv}
